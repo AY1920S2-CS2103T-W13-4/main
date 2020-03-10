@@ -8,7 +8,7 @@ import seedu.address.model.person.Person;
 /**
  * Jackson-friendly version of {@link Person}.
  */
-class JsonAdaptedModule {
+public class JsonAdaptedModule {
 
     public static final String MISSING_FIELD_MESSAGE_FORMAT = "Module's %s field is missing!";
 

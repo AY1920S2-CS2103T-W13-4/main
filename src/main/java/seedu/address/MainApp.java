@@ -1,11 +1,19 @@
 package seedu.address;
 
+import java.io.File;
 import java.io.IOException;
 import java.nio.file.Path;
+import java.util.ArrayList;
+import java.util.Map;
 import java.util.Optional;
 import java.util.logging.Logger;
 
+import com.fasterxml.jackson.core.type.TypeReference;
+import com.fasterxml.jackson.databind.ObjectMapper;
 import javafx.application.Application;
+import javafx.beans.Observable;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.stage.Stage;
 import seedu.address.commons.core.Config;
 import seedu.address.commons.core.LogsCenter;
@@ -15,14 +23,10 @@ import seedu.address.commons.util.ConfigUtil;
 import seedu.address.commons.util.StringUtil;
 import seedu.address.logic.Logic;
 import seedu.address.logic.LogicManager;
-import seedu.address.model.AddressBook;
-import seedu.address.model.Model;
-import seedu.address.model.ModelManager;
-import seedu.address.model.Planner;
-import seedu.address.model.PlannerModelManager;
-import seedu.address.model.ReadOnlyAddressBook;
-import seedu.address.model.ReadOnlyUserPrefs;
-import seedu.address.model.UserPrefs;
+import seedu.address.model.*;
+import seedu.address.model.module.JsonAdaptedModule;
+import seedu.address.model.module.Module;
+import seedu.address.model.module.ModuleDataImporter;
 import seedu.address.model.util.SampleDataUtil;
 import seedu.address.storage.AddressBookStorage;
 import seedu.address.storage.JsonAddressBookStorage;
@@ -110,6 +114,7 @@ public class MainApp extends Application {
         Optional<Planner> plannerOptional;
         Planner initialData;
         try {
+
             plannerOptional = storage.readPlanner();
             if (!plannerOptional.isPresent()) {
                 logger.info("Data file not found. Will be starting with a sample Planner");
@@ -122,6 +127,7 @@ public class MainApp extends Application {
             logger.warning("Problem while reading from the file. Will be starting with an empty Planner");
             initialData = new Planner();
         }
+        //ModuleDataImporter.run();
 
         return new PlannerModelManager(initialData);
     }

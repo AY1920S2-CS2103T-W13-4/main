@@ -16,5 +16,4 @@ public interface ReadOnlyPlanner {
     ObservableList<Student> getStudentList();
 
     ObservableList<Module> getModuleList();
-
 }
