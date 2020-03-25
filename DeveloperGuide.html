@@ -33,12 +33,25 @@
 <li><a href="#documentation">4. Documentation</a></li>
 <li><a href="#testing">5. Testing</a></li>
 <li><a href="#dev-ops">6. Dev Ops</a></li>
-<li><a href="#product-scope">Appendix A: Product Scope</a></li>
+<li><a href="#product-scope">Appendix A: Product Scope</a>
+<ul class="sectlevel2">
+<li><a href="#target-user-profile">A.1. Target User Profile</a></li>
+<li><a href="#value-proposition">A.2. Value Proposition</a></li>
+</ul>
+</li>
 <li><a href="#user-stories">Appendix B: User Stories</a></li>
 <li><a href="#use-cases">Appendix C: Use Cases</a>
 <ul class="sectlevel2">
-<li><a href="#use-case-delete-module-ucc02">C.1. Use case: Delete module (UCC02)</a></li>
-<li><a href="#use-case-set-module-grade-ucd02">C.2. Use case: Set module grade (UCD02)</a></li>
+<li><a href="#use-case-add-plan-uca01">C.1. Use Case: Add Plan (UCA01)</a></li>
+<li><a href="#use-case-delete-plan-uca02">C.2. Use Case: Delete Plan (UCA02)</a></li>
+<li><a href="#use-case-select-plan-uca03">C.3. Use Case: Select Plan (UCA03)</a></li>
+<li><a href="#use-case-add-timetable-ucb01">C.4. Use Case: Add Timetable (UCB01)</a></li>
+<li><a href="#use-case-delete-timetable-ucb02">C.5. Use Case: Delete Timetable (UCB02)</a></li>
+<li><a href="#use-case-select-timetable-ucb03">C.6. Use Case: Select Timetable (UCB03)</a></li>
+<li><a href="#use-case-add-module-ucc01">C.7. Use Case: Add Module (UCC01)</a></li>
+<li><a href="#use-case-delete-module-ucc02">C.8. Use Case: Delete Module (UCC02)</a></li>
+<li><a href="#use-case-list-grades-ucd01">C.9. Use Case: List Grades (UCD01)</a></li>
+<li><a href="#use-case-set-module-grade-ucd02">C.10. Use Case: Set Module Grade (UCD02)</a></li>
 </ul>
 </li>
 <li><a href="#non-functional-requirements">Appendix D: Non-Functional Requirements</a></li>
@@ -47,9 +60,9 @@
 <li><a href="#instructions-for-manual-testing">Appendix G: Instructions for Manual Testing</a>
 <ul class="sectlevel2">
 <li><a href="#launch-and-shutdown">G.1. Launch and Shutdown</a></li>
-<li><a href="#deleting-a-plan">G.2. Deleting a plan</a></li>
-<li><a href="#adding-a-plan">G.3. Adding a plan</a></li>
-<li><a href="#saving-data">G.4. Saving data</a></li>
+<li><a href="#deleting-a-plan">G.2. Deleting a Plan</a></li>
+<li><a href="#adding-a-plan">G.3. Adding a Plan</a></li>
+<li><a href="#saving-data">G.4. Saving Data</a></li>
 </ul>
 </li>
 </ul>
@@ -1149,9 +1162,8 @@ When appended with <code>exempted</code> (i.e. <code>module list exempted</code>
 <div class="sect1">
 <h2 id="product-scope"><a class="link" href="#product-scope">Appendix A: Product Scope</a></h2>
 <div class="sectionbody">
-<div class="paragraph">
-<p><strong>Target user profile</strong>:</p>
-</div>
+<div class="sect2">
+<h3 id="target-user-profile"><a class="link" href="#target-user-profile">A.1. Target User Profile</a></h3>
 <div class="ulist">
 <ul>
 <li>
@@ -1174,9 +1186,9 @@ When appended with <code>exempted</code> (i.e. <code>module list exempted</code>
 </li>
 </ul>
 </div>
-<div class="paragraph">
-<p><strong>Value proposition</strong>:</p>
 </div>
+<div class="sect2">
+<h3 id="value-proposition"><a class="link" href="#value-proposition">A.2. Value Proposition</a></h3>
 <div class="ulist">
 <ul>
 <li>
@@ -1186,6 +1198,7 @@ When appended with <code>exempted</code> (i.e. <code>module list exempted</code>
 <p>manages academic progress and module planning faster than a typical mouse/GUI driven app</p>
 </li>
 </ul>
+</div>
 </div>
 </div>
 </div>
@@ -1380,7 +1393,8 @@ When appended with <code>exempted</code> (i.e. <code>module list exempted</code>
 <div class="paragraph">
 <p>(For all use cases below, the <strong>System</strong> is the <code>Planner</code> and the <strong>Actor</strong> is the <code>user</code>, unless specified otherwise)</p>
 </div>
-<h3 id="use-case-add-plan-uca01" class="discrete">Use case: Add plan (UCA01)</h3>
+<div class="sect2">
+<h3 id="use-case-add-plan-uca01"><a class="link" href="#use-case-add-plan-uca01">C.1. Use Case: Add Plan (UCA01)</a></h3>
 <div class="paragraph">
 <p><strong>MSS</strong></p>
 </div>
@@ -1420,7 +1434,9 @@ When appended with <code>exempted</code> (i.e. <code>module list exempted</code>
 </li>
 </ul>
 </div>
-<h3 id="use-case-delete-plan-uca02" class="discrete">Use case: Delete plan (UCA02)</h3>
+</div>
+<div class="sect2">
+<h3 id="use-case-delete-plan-uca02"><a class="link" href="#use-case-delete-plan-uca02">C.2. Use Case: Delete Plan (UCA02)</a></h3>
 <div class="paragraph">
 <p><strong>MSS</strong></p>
 </div>
@@ -1469,7 +1485,9 @@ When appended with <code>exempted</code> (i.e. <code>module list exempted</code>
 </li>
 </ul>
 </div>
-<h3 id="use-case-select-plan-uca03" class="discrete">Use case: Select plan (UCA03)</h3>
+</div>
+<div class="sect2">
+<h3 id="use-case-select-plan-uca03"><a class="link" href="#use-case-select-plan-uca03">C.3. Use Case: Select Plan (UCA03)</a></h3>
 <div class="paragraph">
 <p><strong>MSS</strong></p>
 </div>
@@ -1518,7 +1536,9 @@ When appended with <code>exempted</code> (i.e. <code>module list exempted</code>
 </li>
 </ul>
 </div>
-<h3 id="use-case-add-timetable-ucb01" class="discrete">Use case: Add timetable (UCB01)</h3>
+</div>
+<div class="sect2">
+<h3 id="use-case-add-timetable-ucb01"><a class="link" href="#use-case-add-timetable-ucb01">C.4. Use Case: Add Timetable (UCB01)</a></h3>
 <div class="paragraph">
 <p><strong>MSS</strong></p>
 </div>
@@ -1574,7 +1594,9 @@ When appended with <code>exempted</code> (i.e. <code>module list exempted</code>
 </li>
 </ul>
 </div>
-<h3 id="use-case-delete-timetable-ucb02" class="discrete">Use case: Delete timetable (UCB02)</h3>
+</div>
+<div class="sect2">
+<h3 id="use-case-delete-timetable-ucb02"><a class="link" href="#use-case-delete-timetable-ucb02">C.5. Use Case: Delete Timetable (UCB02)</a></h3>
 <div class="paragraph">
 <p><strong>MSS</strong></p>
 </div>
@@ -1633,7 +1655,9 @@ When appended with <code>exempted</code> (i.e. <code>module list exempted</code>
 </li>
 </ul>
 </div>
-<h3 id="use-case-select-timetable-ucb03" class="discrete">Use case: Select timetable (UCB03)</h3>
+</div>
+<div class="sect2">
+<h3 id="use-case-select-timetable-ucb03"><a class="link" href="#use-case-select-timetable-ucb03">C.6. Use Case: Select Timetable (UCB03)</a></h3>
 <div class="paragraph">
 <p><strong>MSS</strong></p>
 </div>
@@ -1685,7 +1709,9 @@ When appended with <code>exempted</code> (i.e. <code>module list exempted</code>
 </li>
 </ul>
 </div>
-<h3 id="use-case-add-module-ucc01" class="discrete">Use case: Add module (UCC01)</h3>
+</div>
+<div class="sect2">
+<h3 id="use-case-add-module-ucc01"><a class="link" href="#use-case-add-module-ucc01">C.7. Use Case: Add Module (UCC01)</a></h3>
 <div class="paragraph">
 <p><strong>MSS</strong></p>
 </div>
@@ -1742,8 +1768,9 @@ When appended with <code>exempted</code> (i.e. <code>module list exempted</code>
 </li>
 </ul>
 </div>
+</div>
 <div class="sect2">
-<h3 id="use-case-delete-module-ucc02"><a class="link" href="#use-case-delete-module-ucc02">C.1. Use case: Delete module (UCC02)</a></h3>
+<h3 id="use-case-delete-module-ucc02"><a class="link" href="#use-case-delete-module-ucc02">C.8. Use Case: Delete Module (UCC02)</a></h3>
 <div class="paragraph">
 <p><strong>MSS</strong></p>
 </div>
@@ -1800,64 +1827,9 @@ When appended with <code>exempted</code> (i.e. <code>module list exempted</code>
 </li>
 </ul>
 </div>
-<h3 id="use-case-delete-module-ucc02-2" class="discrete">Use case: Delete module (UCC02)</h3>
-<div class="paragraph">
-<p><strong>MSS</strong></p>
 </div>
-<div class="olist arabic">
-<ol class="arabic">
-<li>
-<p>User <span class="underline">selects a timetable (UCB03)</span></p>
-</li>
-<li>
-<p>User requests to delete a specified module</p>
-</li>
-<li>
-<p>Planner deletes the module from the active timetable</p>
-<div class="paragraph">
-<p>Use case ends</p>
-</div>
-</li>
-</ol>
-</div>
-<div class="paragraph">
-<p><strong>Extensions</strong></p>
-</div>
-<div class="ulist none">
-<ul class="none">
-<li>
-<p>2a. The given module is invalid</p>
-<div class="ulist none">
-<ul class="none">
-<li>
-<p>2a1. Planner shows an error message</p>
-<div class="paragraph">
-<p>Use case ends</p>
-</div>
-</li>
-</ul>
-</div>
-</li>
-</ul>
-</div>
-<div class="ulist none">
-<ul class="none">
-<li>
-<p>2b. The given module does not exist in the timetable</p>
-<div class="ulist none">
-<ul class="none">
-<li>
-<p>2b1. Planner shows an error message</p>
-<div class="paragraph">
-<p>Use case ends</p>
-</div>
-</li>
-</ul>
-</div>
-</li>
-</ul>
-</div>
-<h3 id="use-case-list-grades-ucd01" class="discrete">Use case: List grades (UCD01)</h3>
+<div class="sect2">
+<h3 id="use-case-list-grades-ucd01"><a class="link" href="#use-case-list-grades-ucd01">C.9. Use Case: List Grades (UCD01)</a></h3>
 <div class="paragraph">
 <p><strong>MSS</strong></p>
 </div>
@@ -1899,7 +1871,7 @@ When appended with <code>exempted</code> (i.e. <code>module list exempted</code>
 </div>
 </div>
 <div class="sect2">
-<h3 id="use-case-set-module-grade-ucd02"><a class="link" href="#use-case-set-module-grade-ucd02">C.2. Use case: Set module grade (UCD02)</a></h3>
+<h3 id="use-case-set-module-grade-ucd02"><a class="link" href="#use-case-set-module-grade-ucd02">C.10. Use Case: Set Module Grade (UCD02)</a></h3>
 <div class="paragraph">
 <p><strong>MSS</strong></p>
 </div>
@@ -2213,7 +2185,7 @@ Expected: The most recent window size and location is retained.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="deleting-a-plan"><a class="link" href="#deleting-a-plan">G.2. Deleting a plan</a></h3>
+<h3 id="deleting-a-plan"><a class="link" href="#deleting-a-plan">G.2. Deleting a Plan</a></h3>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
@@ -2242,7 +2214,7 @@ Expected: Similar to previous.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="adding-a-plan"><a class="link" href="#adding-a-plan">G.3. Adding a plan</a></h3>
+<h3 id="adding-a-plan"><a class="link" href="#adding-a-plan">G.3. Adding a Plan</a></h3>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
@@ -2274,7 +2246,7 @@ Expected: Similar to previous.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="saving-data"><a class="link" href="#saving-data">G.4. Saving data</a></h3>
+<h3 id="saving-data"><a class="link" href="#saving-data">G.4. Saving Data</a></h3>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
@@ -2301,4 +2273,4 @@ Expected: Shows the GUI with a set of sample plans.</p>
 </div>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2020-03-25 20:23:01 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2020-03-25 20:30:41 UTC</div></div></div></body></html>
