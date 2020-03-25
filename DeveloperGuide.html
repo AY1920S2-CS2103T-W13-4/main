@@ -22,10 +22,12 @@
 </li>
 <li><a href="#implementation">3. Implementation</a>
 <ul class="sectlevel2">
-<li><a href="#proposed-undo-redo-feature">3.1. [Proposed] Undo/Redo feature</a></li>
-<li><a href="#proposed-data-encryption">3.2. [Proposed] Data Encryption</a></li>
-<li><a href="#logging">3.3. Logging</a></li>
-<li><a href="#Implementation-Configuration">3.4. Configuration</a></li>
+<li><a href="#declaration-implementation">3.1. Declaration Implementation</a></li>
+<li><a href="#module-implementation">3.2. Module Implementation</a></li>
+<li><a href="#student-implementation">3.3. Student Implementation</a></li>
+<li><a href="#timetable-implementation">3.4. Timetable Implementation</a></li>
+<li><a href="#logging">3.5. Logging</a></li>
+<li><a href="#Implementation-Configuration">3.6. Configuration</a></li>
 </ul>
 </li>
 <li><a href="#documentation">4. Documentation</a></li>
@@ -39,7 +41,7 @@
 <li><a href="#use-case-set-module-grade-ucd02">C.2. Use case: Set module grade (UCD02)</a></li>
 </ul>
 </li>
-<li><a href="#non-functional-requirements">Appendix D: Non Functional Requirements</a></li>
+<li><a href="#non-functional-requirements">Appendix D: Non-Functional Requirements</a></li>
 <li><a href="#glossary">Appendix E: Glossary</a></li>
 <li><a href="#product-survey">Appendix F: Product Survey</a></li>
 <li><a href="#instructions-for-manual-testing">Appendix G: Instructions for Manual Testing</a>
@@ -336,56 +338,47 @@ As a more OOP model, we can store a <code>Tag</code> list in <code>Address Book<
 <p>This section describes some noteworthy details on how certain features are implemented.</p>
 </div>
 <div class="sect2">
-<h3 id="proposed-undo-redo-feature"><a class="link" href="#proposed-undo-redo-feature">3.1. [Proposed] Undo/Redo feature</a></h3>
+<h3 id="declaration-implementation"><a class="link" href="#declaration-implementation">3.1. Declaration Implementation</a></h3>
 <div class="sect3">
-<h4 id="proposed-implementation"><a class="link" href="#proposed-implementation">3.1.1. Proposed Implementation</a></h4>
+<h4 id="declare-major"><a class="link" href="#declare-major">3.1.1. Declare Major</a></h4>
 <div class="paragraph">
-<p>The undo/redo mechanism is facilitated by <code>VersionedAddressBook</code>.
-It extends <code>AddressBook</code> with an undo/redo history, stored internally as an <code>addressBookStateList</code> and <code>currentStatePointer</code>.
-Additionally, it implements the following operations:</p>
+<p>The <code>declare major</code> command associates an existing <code>Major</code> entity (with all associated values) provided by the user.</p>
 </div>
-<div class="ulist">
-<ul>
+<div class="paragraph">
+<p>It is appended with the tag <code>MAJOR</code>.</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+<code>Major</code> entities are automatically created and populated through the JSON data received from NUSMods.
+</td>
+</tr>
+</table>
+</div>
+<div class="sect4">
+<h5 id="current-implementation"><a class="link" href="#current-implementation">Current Implementation</a></h5>
+<div class="paragraph">
+<p><code>MajorSetCommand</code> extends from the <code>Command</code> class and uses the inheritance to facilitate the implementation. <code>MajorSetCommand</code> is parsed using <code>MajorCommandParser</code> to split the user input into relevant fields.</p>
+</div>
+<div class="paragraph">
+<p>The following high-level sequence diagram illustrates the interactions between the <code>Ui</code>, <code>Logic</code> &amp; <code>Model</code> components when a module is being added.</p>
+</div>
+<div class="paragraph">
+<p>%DiagramToBeInserted%</p>
+</div>
+<div class="paragraph">
+<p>Given below is an example usage scenario and how the <code>declare</code> mechanism behaves at each step:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
 <li>
-<p><code>VersionedAddressBook#commit()</code>&#8201;&#8212;&#8201;Saves the current address book state in its history.</p>
+<p>User enters the command. <code>MajorCommandParser</code> will associate the specified <code>Major</code> object (if it exists).</p>
 </li>
-<li>
-<p><code>VersionedAddressBook#undo()</code>&#8201;&#8212;&#8201;Restores the previous address book state from its history.</p>
-</li>
-<li>
-<p><code>VersionedAddressBook#redo()</code>&#8201;&#8212;&#8201;Restores a previously undone address book state from its history.</p>
-</li>
-</ul>
-</div>
-<div class="paragraph">
-<p>These operations are exposed in the <code>Model</code> interface as <code>Model#commitAddressBook()</code>, <code>Model#undoAddressBook()</code> and <code>Model#redoAddressBook()</code> respectively.</p>
-</div>
-<div class="paragraph">
-<p>Given below is an example usage scenario and how the undo/redo mechanism behaves at each step.</p>
-</div>
-<div class="paragraph">
-<p>Step 1. The user launches the application for the first time. The <code>VersionedAddressBook</code> will be initialized with the initial address book state, and the <code>currentStatePointer</code> pointing to that single address book state.</p>
-</div>
-<div class="imageblock">
-<div class="content">
-<img src="images/UndoRedoState0.png" alt="UndoRedoState0">
-</div>
-</div>
-<div class="paragraph">
-<p>Step 2. The user executes <code>delete 5</code> command to delete the 5th person in the address book. The <code>delete</code> command calls <code>Model#commitAddressBook()</code>, causing the modified state of the address book after the <code>delete 5</code> command executes to be saved in the <code>addressBookStateList</code>, and the <code>currentStatePointer</code> is shifted to the newly inserted address book state.</p>
-</div>
-<div class="imageblock">
-<div class="content">
-<img src="images/UndoRedoState1.png" alt="UndoRedoState1">
-</div>
-</div>
-<div class="paragraph">
-<p>Step 3. The user executes <code>add n/David &#8230;&#8203;</code> to add a new person. The <code>add</code> command also calls <code>Model#commitAddressBook()</code>, causing another modified address book state to be saved into the <code>addressBookStateList</code>.</p>
-</div>
-<div class="imageblock">
-<div class="content">
-<img src="images/UndoRedoState2.png" alt="UndoRedoState2">
-</div>
+</ol>
 </div>
 <div class="admonitionblock note">
 <table>
@@ -394,176 +387,704 @@ Additionally, it implements the following operations:</p>
 <i class="fa icon-note" title="Note"></i>
 </td>
 <td class="content">
-If a command fails its execution, it will not call <code>Model#commitAddressBook()</code>, so the address book state will not be saved into the <code>addressBookStateList</code>.
+As of this time, <code>Student</code> entities can only be associated in a 1-1 relationship with a <code>Major</code> entity.
 </td>
 </tr>
 </table>
 </div>
-<div class="paragraph">
-<p>Step 4. The user now decides that adding the person was a mistake, and decides to undo that action by executing the <code>undo</code> command. The <code>undo</code> command will call <code>Model#undoAddressBook()</code>, which will shift the <code>currentStatePointer</code> once to the left, pointing it to the previous address book state, and restores the address book to that state.</p>
 </div>
-<div class="imageblock">
-<div class="content">
-<img src="images/UndoRedoState3.png" alt="UndoRedoState3">
-</div>
-</div>
-<div class="admonitionblock note">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-note" title="Note"></i>
-</td>
-<td class="content">
-If the <code>currentStatePointer</code> is at index 0, pointing to the initial address book state, then there are no previous address book states to restore. The <code>undo</code> command uses <code>Model#canUndoAddressBook()</code> to check if this is the case. If so, it will return an error to the user rather than attempting to perform the undo.
-</td>
-</tr>
-</table>
-</div>
-<div class="paragraph">
-<p>The following sequence diagram shows how the undo operation works:</p>
-</div>
-<div class="imageblock">
-<div class="content">
-<img src="images/UndoSequenceDiagram.png" alt="UndoSequenceDiagram">
-</div>
-</div>
-<div class="admonitionblock note">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-note" title="Note"></i>
-</td>
-<td class="content">
-The lifeline for <code>UndoCommand</code> should end at the destroy marker (X) but due to a limitation of PlantUML, the lifeline reaches the end of diagram.
-</td>
-</tr>
-</table>
-</div>
-<div class="paragraph">
-<p>The <code>redo</code> command does the opposite&#8201;&#8212;&#8201;it calls <code>Model#redoAddressBook()</code>, which shifts the <code>currentStatePointer</code> once to the right, pointing to the previously undone state, and restores the address book to that state.</p>
-</div>
-<div class="admonitionblock note">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-note" title="Note"></i>
-</td>
-<td class="content">
-If the <code>currentStatePointer</code> is at index <code>addressBookStateList.size() - 1</code>, pointing to the latest address book state, then there are no undone address book states to restore. The <code>redo</code> command uses <code>Model#canRedoAddressBook()</code> to check if this is the case. If so, it will return an error to the user rather than attempting to perform the redo.
-</td>
-</tr>
-</table>
-</div>
-<div class="paragraph">
-<p>Step 5. The user then decides to execute the command <code>list</code>. Commands that do not modify the address book, such as <code>list</code>, will usually not call <code>Model#commitAddressBook()</code>, <code>Model#undoAddressBook()</code> or <code>Model#redoAddressBook()</code>. Thus, the <code>addressBookStateList</code> remains unchanged.</p>
-</div>
-<div class="imageblock">
-<div class="content">
-<img src="images/UndoRedoState4.png" alt="UndoRedoState4">
-</div>
-</div>
-<div class="paragraph">
-<p>Step 6. The user executes <code>clear</code>, which calls <code>Model#commitAddressBook()</code>. Since the <code>currentStatePointer</code> is not pointing at the end of the <code>addressBookStateList</code>, all address book states after the <code>currentStatePointer</code> will be purged. We designed it this way because it no longer makes sense to redo the <code>add n/David &#8230;&#8203;</code> command. This is the behavior that most modern desktop applications follow.</p>
-</div>
-<div class="imageblock">
-<div class="content">
-<img src="images/UndoRedoState5.png" alt="UndoRedoState5">
-</div>
-</div>
-<div class="paragraph">
-<p>The following activity diagram summarizes what happens when a user executes a new command:</p>
-</div>
-<div class="imageblock">
-<div class="content">
-<img src="images/CommitActivityDiagram.png" alt="CommitActivityDiagram">
+<div class="sect4">
+<h5 id="design-considerations"><a class="link" href="#design-considerations">Design Considerations</a></h5>
+<div class="sect5">
+<h6 id="aspect-how-code-majorsetcommand-code-executes"><a class="link" href="#aspect-how-code-majorsetcommand-code-executes">Aspect: How <code>MajorSetCommand</code> Executes</a></h6>
+
 </div>
 </div>
 </div>
 <div class="sect3">
-<h4 id="design-considerations"><a class="link" href="#design-considerations">3.1.2. Design Considerations</a></h4>
-<div class="sect4">
-<h5 id="aspect-how-undo-redo-executes"><a class="link" href="#aspect-how-undo-redo-executes">Aspect: How undo &amp; redo executes</a></h5>
-<div class="ulist">
-<ul>
-<li>
-<p><strong>Alternative 1 (current choice):</strong> Saves the entire address book.</p>
-<div class="ulist">
-<ul>
-<li>
-<p>Pros: Easy to implement.</p>
-</li>
-<li>
-<p>Cons: May have performance issues in terms of memory usage.</p>
-</li>
-</ul>
+<h4 id="declare-minor"><a class="link" href="#declare-minor">3.1.2. Declare Minor</a></h4>
+<div class="paragraph">
+<p>The <code>declare minor</code> command associates an existing <code>Minor</code> entity (with all associated values) provided by the user.</p>
 </div>
-</li>
-<li>
-<p><strong>Alternative 2:</strong> Individual command knows how to undo/redo by itself.</p>
-<div class="ulist">
-<ul>
-<li>
-<p>Pros: Will use less memory (e.g. for <code>delete</code>, just save the person being deleted).</p>
-</li>
-<li>
-<p>Cons: We must ensure that the implementation of each individual command are correct.</p>
-</li>
-</ul>
+<div class="paragraph">
+<p>It is appended with the tag <code>MINOR</code>.</p>
 </div>
-</li>
-</ul>
-</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+<code>Minor</code> entities are automatically created and populated through the JSON data received from NUSMods.
+</td>
+</tr>
+</table>
 </div>
 <div class="sect4">
-<h5 id="aspect-data-structure-to-support-the-undo-redo-commands"><a class="link" href="#aspect-data-structure-to-support-the-undo-redo-commands">Aspect: Data structure to support the undo/redo commands</a></h5>
-<div class="ulist">
-<ul>
-<li>
-<p><strong>Alternative 1 (current choice):</strong> Use a list to store the history of address book states.</p>
-<div class="ulist">
-<ul>
-<li>
-<p>Pros: Easy for new Computer Science student undergraduates to understand, who are likely to be the new incoming developers of our project.</p>
-</li>
-<li>
-<p>Cons: Logic is duplicated twice. For example, when a new command is executed, we must remember to update both <code>HistoryManager</code> and <code>VersionedAddressBook</code>.</p>
-</li>
-</ul>
+<h5 id="current-implementation-2"><a class="link" href="#current-implementation-2">Current Implementation</a></h5>
+<div class="paragraph">
+<p><code>MinorSetCommand</code> extends from the <code>Command</code> class and uses the inheritance to facilitate the implementation. <code>MinorSetCommand</code> is parsed using <code>MinorCommandParser</code> to split the user input into relevant fields.</p>
 </div>
-</li>
-<li>
-<p><strong>Alternative 2:</strong> Use <code>HistoryManager</code> for undo/redo</p>
-<div class="ulist">
-<ul>
-<li>
-<p>Pros: We do not need to maintain a separate list, and just reuse what is already in the codebase.</p>
-</li>
-<li>
-<p>Cons: Requires dealing with commands that have already been undone: We must remember to skip these commands. Violates Single Responsibility Principle and Separation of Concerns as <code>HistoryManager</code> now needs to do two different things.</p>
-</li>
-</ul>
+<div class="paragraph">
+<p>The following high-level sequence diagram illustrates the interactions between the <code>Ui</code>, <code>Logic</code> &amp; <code>Model</code> components when a module is being added.</p>
 </div>
+<div class="paragraph">
+<p>%DiagramToBeInserted%</p>
+</div>
+<div class="paragraph">
+<p>Given below is an example usage scenario and how the <code>declare</code> mechanism behaves at each step:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>User enters the command. <code>MinorCommandParser</code> will associate the specified <code>Minor</code> object (if it exists).</p>
 </li>
-</ul>
+</ol>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+As of this time, <code>Student</code> entities can only be associated in a 1-0..1 relationship with a <code>Minor</code> entity.
+</td>
+</tr>
+</table>
+</div>
+</div>
+<div class="sect4">
+<h5 id="design-considerations-2"><a class="link" href="#design-considerations-2">Design Considerations</a></h5>
+<div class="sect5">
+<h6 id="aspect-how-code-minorsetcommand-code-executes"><a class="link" href="#aspect-how-code-minorsetcommand-code-executes">Aspect: How <code>MinorSetCommand</code> Executes</a></h6>
+
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="declare-track"><a class="link" href="#declare-track">3.1.3. Declare Track</a></h4>
+<div class="paragraph">
+<p>The <code>declare track</code> command associates an existing <code>Track</code> entity (with all associated values) provided by the user.</p>
+</div>
+<div class="paragraph">
+<p>It is appended with the tag <code>ACTION</code> and <code>TRACK</code>.</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+<code>Track</code> entities are automatically created and populated through the JSON data received from NUSMods.
+</td>
+</tr>
+</table>
+</div>
+<div class="sect4">
+<h5 id="current-implementation-3"><a class="link" href="#current-implementation-3">Current Implementation</a></h5>
+<div class="paragraph">
+<p><code>TrackSetCommand</code> extends from the <code>Command</code> class and uses the inheritance to facilitate the implementation. <code>TrackSetCommand</code> is parsed using <code>TrackCommandParser</code> to split the user input into relevant fields.</p>
+</div>
+<div class="paragraph">
+<p>The following high-level sequence diagram illustrates the interactions between the <code>Ui</code>, <code>Logic</code> &amp; <code>Model</code> components when a module is being added.</p>
+</div>
+<div class="paragraph">
+<p>%DiagramToBeInserted%</p>
+</div>
+<div class="paragraph">
+<p>Given below is an example usage scenario and how the <code>declare</code> mechanism behaves at each step:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>User enters the command. <code>TrackCommandParser</code> will associate the specified <code>Minor</code> object (if it exists).</p>
+</li>
+</ol>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+As of this time, <code>Student</code> entities can only be associated in a 1-0..1 relationship with a <code>Track</code> entity.
+</td>
+</tr>
+</table>
+</div>
+</div>
+<div class="sect4">
+<h5 id="design-considerations-3"><a class="link" href="#design-considerations-3">Design Considerations</a></h5>
+<div class="sect5">
+<h6 id="aspect-how-code-tracksetcommand-code-executes"><a class="link" href="#aspect-how-code-tracksetcommand-code-executes">Aspect: How <code>TrackSetCommand</code> Executes</a></h6>
+
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="declare-specialisation"><a class="link" href="#declare-specialisation">3.1.4. Declare Specialisation</a></h4>
+<div class="paragraph">
+<p>The <code>declare spec</code> command associates an existing <code>Specialisation</code> entity (with all associated values) provided by the user.</p>
+</div>
+<div class="paragraph">
+<p>It is appended with the tag <code>ACTION</code> and <code>SPEC</code>.</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+<code>Specialisation</code> entities are automatically created and populated through the JSON data received from NUSMods.
+</td>
+</tr>
+</table>
+</div>
+<div class="sect4">
+<h5 id="current-implementation-4"><a class="link" href="#current-implementation-4">Current Implementation</a></h5>
+<div class="paragraph">
+<p><code>SpecialisationSetCommand</code> extends from the <code>Command</code> class and uses the inheritance to facilitate the implementation. <code>SpecialisationSetCommand</code> is parsed using <code>SpecialisationCommandParser</code> to split the user input into relevant fields.</p>
+</div>
+<div class="paragraph">
+<p>The following high-level sequence diagram illustrates the interactions between the <code>Ui</code>, <code>Logic</code> &amp; <code>Model</code> components when a module is being added.</p>
+</div>
+<div class="paragraph">
+<p>%DiagramToBeInserted%</p>
+</div>
+<div class="paragraph">
+<p>Given below is an example usage scenario and how the <code>declare</code> mechanism behaves at each step:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>User enters the command. <code>SpecialisationCommandParser</code> will associate the specified <code>Specialisation</code> object (if it exists).</p>
+</li>
+</ol>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+As of this time, <code>Student</code> entities can only be associated in a 1-0..1 relationship with a <code>Specialisation</code> entity.
+</td>
+</tr>
+</table>
+</div>
+</div>
+<div class="sect4">
+<h5 id="design-considerations-4"><a class="link" href="#design-considerations-4">Design Considerations</a></h5>
+<div class="sect5">
+<h6 id="aspect-how-code-specialisationsetcommand-code-executes"><a class="link" href="#aspect-how-code-specialisationsetcommand-code-executes">Aspect: How <code>SpecialisationSetCommand</code> Executes</a></h6>
+
 </div>
 </div>
 </div>
 </div>
 <div class="sect2">
-<h3 id="proposed-data-encryption"><a class="link" href="#proposed-data-encryption">3.2. [Proposed] Data Encryption</a></h3>
+<h3 id="module-implementation"><a class="link" href="#module-implementation">3.2. Module Implementation</a></h3>
+<div class="sect3">
+<h4 id="add-module"><a class="link" href="#add-module">3.2.1. Add Module</a></h4>
 <div class="paragraph">
-<p><em>{Explain here how the data encryption feature will be implemented}</em></p>
+<p>The <code>module add</code> command associates an existing <code>Module</code> entity (with all associated values) provided by the user.</p>
+</div>
+<div class="paragraph">
+<p>It is appended with the tag <code>MODULE_CODE</code>.</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+<code>Module</code> entities are automatically created and populated through the JSON data received from NUSMods.
+</td>
+</tr>
+</table>
+</div>
+<div class="sect4">
+<h5 id="current-implementation-5"><a class="link" href="#current-implementation-5">Current Implementation</a></h5>
+<div class="paragraph">
+<p><code>ModuleAddCommand</code> extends from the <code>Command</code> class and uses the inheritance to facilitate the implementation. <code>ModuleAddCommand</code> is parsed using <code>ModuleAddCommandParser</code> to split the user input into relevant fields.</p>
+</div>
+<div class="paragraph">
+<p>The following high-level sequence diagram illustrates the interactions between the <code>Ui</code>, <code>Logic</code> &amp; <code>Model</code> components when a module is being added.</p>
+</div>
+<div class="paragraph">
+<p>%DiagramToBeInserted%</p>
+</div>
+<div class="paragraph">
+<p>Given below is an example usage scenario and how the <code>add</code> mechanism behaves at each step:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>User enters the command. <code>ModuleAddCommandParser</code> will associate the specified <code>Module</code> object (if it exists).</p>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect4">
+<h5 id="design-considerations-5"><a class="link" href="#design-considerations-5">Design Considerations</a></h5>
+<div class="sect5">
+<h6 id="aspect-how-code-moduleaddcommand-code-executes"><a class="link" href="#aspect-how-code-moduleaddcommand-code-executes">Aspect: How <code>ModuleAddCommand</code> Executes</a></h6>
+
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="remove-module"><a class="link" href="#remove-module">3.2.2. Remove Module</a></h4>
+<div class="paragraph">
+<p>The <code>module remove</code> command disassociates a <code>Module</code> entity (with all associated values) when instructed by the user.</p>
+</div>
+<div class="paragraph">
+<p>It is appended with the tag <code>MODULE_CODE</code>.</p>
+</div>
+<div class="sect4">
+<h5 id="current-implementation-6"><a class="link" href="#current-implementation-6">Current Implementation</a></h5>
+<div class="paragraph">
+<p><code>ModuleRemoveCommand</code> extends from the <code>Command</code> class and uses the inheritance to facilitate the implementation. <code>ModuleRemoveCommand</code> is parsed using <code>ModuleRemoveCommandParser</code> to parse the action.</p>
+</div>
+<div class="paragraph">
+<p>The following high-level sequence diagram illustrates the interactions between the <code>Ui</code>, <code>Logic</code> &amp; <code>Model</code> components when a module is being added.</p>
+</div>
+<div class="paragraph">
+<p>%DiagramToBeInserted%</p>
+</div>
+<div class="paragraph">
+<p>Given below is an example usage scenario and how the <code>remove</code> mechanism behaves at each step:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>User enters the command. <code>ModuleRemoveCommandParser</code> will disassociate the specified <code>Module</code> object (if it exists), along with its associated values.</p>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect4">
+<h5 id="design-considerations-6"><a class="link" href="#design-considerations-6">Design Considerations</a></h5>
+<div class="sect5">
+<h6 id="aspect-how-code-moduleremovecommand-code-executes"><a class="link" href="#aspect-how-code-moduleremovecommand-code-executes">Aspect: How <code>ModuleRemoveCommand</code> Executes</a></h6>
+
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="list-modules"><a class="link" href="#list-modules">3.2.3. List Modules</a></h4>
+<div class="paragraph">
+<p>The <code>module list</code> command lists all <code>Module</code> entities.</p>
+</div>
+<div class="sect4">
+<h5 id="current-implementation-7"><a class="link" href="#current-implementation-7">Current Implementation</a></h5>
+<div class="paragraph">
+<p><code>ModuleListCommand</code> extends from the <code>Command</code> class and uses the inheritance to facilitate the implementation. <code>ModuleListCommand</code> is parsed using <code>ModuleCommandParser</code> to get the command input.</p>
+</div>
+<div class="paragraph">
+<p>The following high-level sequence diagram illustrates the interactions between the <code>Ui</code>, <code>Logic</code> &amp; <code>Model</code> components when a module is being added.</p>
+</div>
+<div class="paragraph">
+<p>%DiagramToBeInserted%</p>
+</div>
+<div class="paragraph">
+<p>Given below is an example usage scenario and how the <code>list</code> mechanism behaves at each step:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>User enters the command. <code>ModuleCommandParser</code> will list all <code>Module</code> objects (if any exists).</p>
+</li>
+</ol>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+When appended with <code>exempted</code> (i.e. <code>module list exempted</code>) the command lists all <code>Module</code> entities that have been marked as exempted.
+</td>
+</tr>
+</table>
+</div>
+</div>
+<div class="sect4">
+<h5 id="design-considerations-7"><a class="link" href="#design-considerations-7">Design Considerations</a></h5>
+<div class="sect5">
+<h6 id="aspect-how-code-modulelistcommand-code-executes"><a class="link" href="#aspect-how-code-modulelistcommand-code-executes">Aspect: How <code>ModuleListCommand</code> Executes</a></h6>
+
+</div>
+</div>
 </div>
 </div>
 <div class="sect2">
-<h3 id="logging"><a class="link" href="#logging">3.3. Logging</a></h3>
+<h3 id="student-implementation"><a class="link" href="#student-implementation">3.3. Student Implementation</a></h3>
+<div class="sect3">
+<h4 id="add-student"><a class="link" href="#add-student">3.3.1. Add Student</a></h4>
+<div class="paragraph">
+<p>The <code>student add</code> command creates a <code>Student</code> entity (with name and/or major) with the fields provided by the user.</p>
+</div>
+<div class="paragraph">
+<p>It is appended with the tags <code>n/NAME</code> and <code>major/MAJOR</code>.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>Student(Name name,)</code>&#8201;&#8212;&#8201;Creates a <code>Student</code> entity with only the student&#8217;s name.</p>
+</li>
+<li>
+<p><code>Student(Name name, Major major)</code>&#8201;&#8212;&#8201;Creates a <code>Student</code> entity with both the student&#8217;s name and intended major.</p>
+</li>
+<li>
+<p><code>Student(Name name, Major major, TimeTableMap timeTableMap)</code>&#8201;&#8212;&#8201;Creates a <code>Student</code> entity with the student&#8217;s TimeTable, alongside student&#8217;s name and intended major.</p>
+</li>
+<li>
+<p><code>Student(Name name, Degrees degrees, Major major)</code>&#8201;&#8212;&#8201;Creates a <code>Student</code> entity with the student&#8217;s Degrees, alongside the student&#8217;s name and intended major.</p>
+</li>
+</ul>
+</div>
+<div class="sect4">
+<h5 id="current-implementation-8"><a class="link" href="#current-implementation-8">Current Implementation</a></h5>
+<div class="paragraph">
+<p><code>StudentAddCommand</code> extends from the <code>Command</code> class and uses the inheritance to facilitate the implementation. <code>StudentAddCommand</code> is parsed using <code>StudentAddCommandParser</code> to split the user input into relevant fields.</p>
+</div>
+<div class="paragraph">
+<p>The following high-level sequence diagram illustrates the interactions between the <code>Ui</code>, <code>Logic</code> &amp; <code>Model</code> components when a module is being added.</p>
+</div>
+<div class="paragraph">
+<p>%DiagramToBeInserted%</p>
+</div>
+<div class="paragraph">
+<p>Given below is an example usage scenario and how the <code>add</code> mechanism behaves at each step:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>User launches the application.</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>If it is the first time, a <code>Student</code> object will be created using <code>StudentAddCommand</code>.</p>
+</li>
+</ol>
+</div>
+</li>
+<li>
+<p>User enters the command. <code>StudentAddCommandParser</code> will create a <code>Student</code> object, which can contain <code>name</code>, <code>major</code>, <code>timetable</code> and/or <code>degrees</code>.</p>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect4">
+<h5 id="design-considerations-8"><a class="link" href="#design-considerations-8">Design Considerations</a></h5>
+<div class="sect5">
+<h6 id="aspect-how-code-studentaddcommand-code-executes"><a class="link" href="#aspect-how-code-studentaddcommand-code-executes">Aspect: How <code>StudentAddCommand</code> Executes</a></h6>
+
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="remove-student"><a class="link" href="#remove-student">3.3.2. Remove Student</a></h4>
+<div class="paragraph">
+<p>The <code>student remove</code> command destroys a <code>Student</code> entity (with all associated values) when instructed by the user.</p>
+</div>
+<div class="paragraph">
+<p>It is appended with the tag <code>INDEX</code>.</p>
+</div>
+<div class="sect4">
+<h5 id="current-implementation-9"><a class="link" href="#current-implementation-9">Current Implementation</a></h5>
+<div class="paragraph">
+<p><code>StudentRemoveCommand</code> extends from the <code>Command</code> class and uses the inheritance to facilitate the implementation. <code>StudentRemoveCommand</code> is parsed using <code>StudentRemoveCommandParser</code> to parse the action.</p>
+</div>
+<div class="paragraph">
+<p>The following high-level sequence diagram illustrates the interactions between the <code>Ui</code>, <code>Logic</code> &amp; <code>Model</code> components when a module is being added.</p>
+</div>
+<div class="paragraph">
+<p>%DiagramToBeInserted%</p>
+</div>
+<div class="paragraph">
+<p>Given below is an example usage scenario and how the <code>remove</code> mechanism behaves at each step:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>User enters the command. <code>StudentRemoveCommandParser</code> will destroy the specified <code>Student</code> object (if it exists), along with its associated values.</p>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect4">
+<h5 id="design-considerations-9"><a class="link" href="#design-considerations-9">Design Considerations</a></h5>
+<div class="sect5">
+<h6 id="aspect-how-code-studentremovecommand-code-executes"><a class="link" href="#aspect-how-code-studentremovecommand-code-executes">Aspect: How <code>StudentRemoveCommand</code> Executes</a></h6>
+
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="active-student"><a class="link" href="#active-student">3.3.3. Active Student</a></h4>
+<div class="paragraph">
+<p>The <code>student active</code> command selects the specified <code>Student</code> entity with its associated values, by the index input provided by the user.</p>
+</div>
+<div class="paragraph">
+<p>It is appended with the tag <code>INDEX</code>.</p>
+</div>
+<div class="sect4">
+<h5 id="current-implementation-10"><a class="link" href="#current-implementation-10">Current Implementation</a></h5>
+<div class="paragraph">
+<p><code>StudentActiveCommand</code> extends from the <code>Command</code> class and uses the inheritance to facilitate the implementation. <code>StudentActiveCommand</code> is parsed using <code>StudentActiveCommandParser</code> to split the user input into relevant fields.</p>
+</div>
+<div class="paragraph">
+<p>The following high-level sequence diagram illustrates the interactions between the <code>Ui</code>, <code>Logic</code> &amp; <code>Model</code> components when a module is being added.</p>
+</div>
+<div class="paragraph">
+<p>%DiagramToBeInserted%</p>
+</div>
+<div class="paragraph">
+<p>Given below is an example usage scenario and how the <code>active</code> mechanism behaves at each step:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>User enters the command. <code>StudentActiveCommandParser</code> will select the specified <code>Student</code> object (if it exists), by the specified index.</p>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect4">
+<h5 id="design-considerations-10"><a class="link" href="#design-considerations-10">Design Considerations</a></h5>
+<div class="sect5">
+<h6 id="aspect-how-code-studentactivecommand-code-executes"><a class="link" href="#aspect-how-code-studentactivecommand-code-executes">Aspect: How <code>StudentActiveCommand</code> Executes</a></h6>
+
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="list-students"><a class="link" href="#list-students">3.3.4. List Students</a></h4>
+<div class="paragraph">
+<p>The <code>student list</code> command lists all <code>Student</code> entities.</p>
+</div>
+<div class="sect4">
+<h5 id="current-implementation-11"><a class="link" href="#current-implementation-11">Current Implementation</a></h5>
+<div class="paragraph">
+<p><code>StudentListCommand</code> extends from the <code>Command</code> class and uses the inheritance to facilitate the implementation. <code>StudentListCommand</code> is parsed using <code>StudentCommandParser</code> to get the command input.</p>
+</div>
+<div class="paragraph">
+<p>The following high-level sequence diagram illustrates the interactions between the <code>Ui</code>, <code>Logic</code> &amp; <code>Model</code> components when a module is being added.</p>
+</div>
+<div class="paragraph">
+<p>%DiagramToBeInserted%</p>
+</div>
+<div class="paragraph">
+<p>Given below is an example usage scenario and how the <code>list</code> mechanism behaves at each step:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>User enters the command. <code>StudentCommandParser</code> will list all <code>Student</code> objects (if any exists).</p>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect4">
+<h5 id="design-considerations-11"><a class="link" href="#design-considerations-11">Design Considerations</a></h5>
+<div class="sect5">
+<h6 id="aspect-how-code-studentlistcommand-code-executes"><a class="link" href="#aspect-how-code-studentlistcommand-code-executes">Aspect: How <code>StudentListCommand</code> Executes</a></h6>
+
+</div>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="timetable-implementation"><a class="link" href="#timetable-implementation">3.4. Timetable Implementation</a></h3>
+<div class="sect3">
+<h4 id="add-timetable"><a class="link" href="#add-timetable">3.4.1. Add Timetable</a></h4>
+<div class="paragraph">
+<p>The <code>timetable add</code> command creates a <code>TimeTable</code> entity (possibly with enrollments, year and semester) provided by the user.</p>
+</div>
+<div class="paragraph">
+<p>It is appended with the tags <code>year/YEAR</code> and <code>sem/SEM</code>.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>TimeTable()</code>&#8201;&#8212;&#8201;Creates a <code>TimeTable</code> entity with no associated values.</p>
+</li>
+<li>
+<p><code>TimeTable(List&lt;Enrollment&gt; enrollments)</code>&#8201;&#8212;&#8201;Creates a <code>TimeTable</code> entity with an associated <code>Enrollment</code> list.</p>
+</li>
+</ul>
+</div>
+<div class="sect4">
+<h5 id="current-implementation-12"><a class="link" href="#current-implementation-12">Current Implementation</a></h5>
+<div class="paragraph">
+<p><code>TimeTableAddCommand</code> extends from the <code>Command</code> class and uses the inheritance to facilitate the implementation. <code>TimeTableAddCommand</code> is parsed using <code>TimeTableAddCommandParser</code> to split the user input into relevant fields.</p>
+</div>
+<div class="paragraph">
+<p>The following high-level sequence diagram illustrates the interactions between the <code>Ui</code>, <code>Logic</code> &amp; <code>Model</code> components when a module is being added.</p>
+</div>
+<div class="paragraph">
+<p>%DiagramToBeInserted%</p>
+</div>
+<div class="paragraph">
+<p>Given below is an example usage scenario and how the <code>add</code> mechanism behaves at each step:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>User launches the application.</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>If it is the first time, a <code>TimeTable</code> object will be created using <code>TimeTableAddCommand</code>.</p>
+</li>
+</ol>
+</div>
+</li>
+<li>
+<p>User enters the command. <code>TimeTableAddCommandParser</code> will create a <code>TimeTable</code> object, which can contain <code>enrollments</code>.</p>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect4">
+<h5 id="design-considerations-12"><a class="link" href="#design-considerations-12">Design Considerations</a></h5>
+<div class="sect5">
+<h6 id="aspect-how-code-timetableaddcommand-code-executes"><a class="link" href="#aspect-how-code-timetableaddcommand-code-executes">Aspect: How <code>TimeTableAddCommand</code> Executes</a></h6>
+
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="remove-timetable"><a class="link" href="#remove-timetable">3.4.2. Remove TimeTable</a></h4>
+<div class="paragraph">
+<p>The <code>timetable remove</code> command destroys a <code>TimeTable</code> entity (with all associated values) when instructed by the user.</p>
+</div>
+<div class="paragraph">
+<p>It is appended with the tags <code>year/YEAR</code> and <code>sem/SEM</code>.</p>
+</div>
+<div class="sect4">
+<h5 id="current-implementation-13"><a class="link" href="#current-implementation-13">Current Implementation</a></h5>
+<div class="paragraph">
+<p><code>TimeTableRemoveCommand</code> extends from the <code>Command</code> class and uses the inheritance to facilitate the implementation. <code>TimeTableRemoveCommand</code> is parsed using <code>TimeTableRemoveCommandParser</code> to parse the action.</p>
+</div>
+<div class="paragraph">
+<p>The following high-level sequence diagram illustrates the interactions between the <code>Ui</code>, <code>Logic</code> &amp; <code>Model</code> components when a module is being added.</p>
+</div>
+<div class="paragraph">
+<p>%DiagramToBeInserted%</p>
+</div>
+<div class="paragraph">
+<p>Given below is an example usage scenario and how the <code>remove</code> mechanism behaves at each step:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>User enters the command. <code>TimeTableRemoveCommandParser</code> will destroy the specified <code>TimeTable</code> object (if it exists), along with its associated values.</p>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect4">
+<h5 id="design-considerations-13"><a class="link" href="#design-considerations-13">Design Considerations</a></h5>
+<div class="sect5">
+<h6 id="aspect-how-code-timetableremovecommand-code-executes"><a class="link" href="#aspect-how-code-timetableremovecommand-code-executes">Aspect: How <code>TimeTableRemoveCommand</code> Executes</a></h6>
+
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="active-timetable"><a class="link" href="#active-timetable">3.4.3. Active TimeTable</a></h4>
+<div class="paragraph">
+<p>The <code>TimeTable active</code> command selects the specified <code>TimeTable</code> entity with its associated values, by the index input provided by the user.</p>
+</div>
+<div class="paragraph">
+<p>It is appended with the tags <code>year/YEAR</code> and <code>sem/SEM</code>.</p>
+</div>
+<div class="sect4">
+<h5 id="current-implementation-14"><a class="link" href="#current-implementation-14">Current Implementation</a></h5>
+<div class="paragraph">
+<p><code>TimeTableActiveCommand</code> extends from the <code>Command</code> class and uses the inheritance to facilitate the implementation. <code>TimeTableActiveCommand</code> is parsed using <code>TimeTableActiveCommandParser</code> to split the user input into relevant fields.</p>
+</div>
+<div class="paragraph">
+<p>The following high-level sequence diagram illustrates the interactions between the <code>Ui</code>, <code>Logic</code> &amp; <code>Model</code> components when a module is being added.</p>
+</div>
+<div class="paragraph">
+<p>%DiagramToBeInserted%</p>
+</div>
+<div class="paragraph">
+<p>Given below is an example usage scenario and how the <code>active</code> mechanism behaves at each step:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>User enters the command. <code>TimeTableActiveCommandParser</code> will select the specified <code>TimeTable</code> object (if it exists), by the specified index.</p>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect4">
+<h5 id="design-considerations-14"><a class="link" href="#design-considerations-14">Design Considerations</a></h5>
+<div class="sect5">
+<h6 id="aspect-how-code-timetableactivecommand-code-executes"><a class="link" href="#aspect-how-code-timetableactivecommand-code-executes">Aspect: How <code>TimeTableActiveCommand</code> Executes</a></h6>
+
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="list-timetables"><a class="link" href="#list-timetables">3.4.4. List Timetables</a></h4>
+<div class="paragraph">
+<p>The <code>timetable list</code> command lists all <code>TimeTable</code> entities.</p>
+</div>
+<div class="sect4">
+<h5 id="current-implementation-15"><a class="link" href="#current-implementation-15">Current Implementation</a></h5>
+<div class="paragraph">
+<p><code>TimeTableListCommand</code> extends from the <code>Command</code> class and uses the inheritance to facilitate the implementation. <code>TimeTableListCommand</code> is parsed using <code>TimeTableCommandParser</code> to get the command input.</p>
+</div>
+<div class="paragraph">
+<p>The following high-level sequence diagram illustrates the interactions between the <code>Ui</code>, <code>Logic</code> &amp; <code>Model</code> components when a module is being added.</p>
+</div>
+<div class="paragraph">
+<p>%DiagramToBeInserted%</p>
+</div>
+<div class="paragraph">
+<p>Given below is an example usage scenario and how the <code>list</code> mechanism behaves at each step:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>User enters the command. <code>TimeTableCommandParser</code> will list all <code>TimeTable</code> objects (if any exists).</p>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect4">
+<h5 id="design-considerations-15"><a class="link" href="#design-considerations-15">Design Considerations</a></h5>
+<div class="sect5">
+<h6 id="aspect-how-code-timetablelistcommand-code-executes"><a class="link" href="#aspect-how-code-timetablelistcommand-code-executes">Aspect: How <code>TimeTableListCommand</code> Executes</a></h6>
+
+</div>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="logging"><a class="link" href="#logging">3.5. Logging</a></h3>
 <div class="paragraph">
 <p>We are using <code>java.util.logging</code> package for logging. The <code>LogsCenter</code> class is used to manage the logging levels and logging destinations.</p>
 </div>
 <div class="ulist">
 <ul>
 <li>
-<p>The logging level can be controlled using the <code>logLevel</code> setting in the configuration file (See <a href="#Implementation-Configuration">Section 3.4, &#8220;Configuration&#8221;</a>)</p>
+<p>The logging level can be controlled using the <code>logLevel</code> setting in the configuration file (See <a href="#Implementation-Configuration">Section 3.6, &#8220;Configuration&#8221;</a>)</p>
 </li>
 <li>
 <p>The <code>Logger</code> for a class can be obtained using <code>LogsCenter.getLogger(Class)</code> which will log messages according to the specified logging level</p>
@@ -594,7 +1115,7 @@ If the <code>currentStatePointer</code> is at index <code>addressBookStateList.s
 </div>
 </div>
 <div class="sect2">
-<h3 id="Implementation-Configuration"><a class="link" href="#Implementation-Configuration">3.4. Configuration</a></h3>
+<h3 id="Implementation-Configuration"><a class="link" href="#Implementation-Configuration">3.6. Configuration</a></h3>
 <div class="paragraph">
 <p>Certain properties of the application can be controlled (e.g user prefs file location, logging level) through the configuration file (default: <code>config.json</code>).</p>
 </div>
@@ -634,7 +1155,10 @@ If the <code>currentStatePointer</code> is at index <code>addressBookStateList.s
 <div class="ulist">
 <ul>
 <li>
-<p>has a need to manage a significant number of contacts</p>
+<p>targets prospective, incoming and current Undergraduate NUS Students</p>
+</li>
+<li>
+<p>needs to plan/track academic progression via enrolling and passed modules</p>
 </li>
 <li>
 <p>prefer desktop apps over other types</p>
@@ -651,7 +1175,17 @@ If the <code>currentStatePointer</code> is at index <code>addressBookStateList.s
 </ul>
 </div>
 <div class="paragraph">
-<p><strong>Value proposition</strong>: manage contacts faster than a typical mouse/GUI driven app</p>
+<p><strong>Value proposition</strong>:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>aggregates all information regarding modules and graduation requirements in a single app</p>
+</li>
+<li>
+<p>manages academic progress and module planning faster than a typical mouse/GUI driven app</p>
+</li>
+</ul>
 </div>
 </div>
 </div>
@@ -682,12 +1216,6 @@ If the <code>currentStatePointer</code> is at index <code>addressBookStateList.s
 <td class="tableblock halign-left valign-top"><p class="tableblock">new user</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">see usage instructions</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">can refer to instructions when I forget how to use the App</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>*</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">user with many persons in the address book</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">sort persons by name</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">can locate a person easily</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>* * *</code></p></td>
@@ -1452,15 +1980,21 @@ If the <code>currentStatePointer</code> is at index <code>addressBookStateList.s
 </div>
 </div>
 <div class="sect1">
-<h2 id="non-functional-requirements"><a class="link" href="#non-functional-requirements">Appendix D: Non Functional Requirements</a></h2>
+<h2 id="non-functional-requirements"><a class="link" href="#non-functional-requirements">Appendix D: Non-Functional Requirements</a></h2>
 <div class="sectionbody">
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p>Should work on any <a href="#mainstream-os">mainstream OS</a> as long as it has Java <code>11</code> or above installed.</p>
+<p>The application should be able to run on all major operating systems (i.e. Windows 10, macOS Catalina, and Ubuntu 18.04 LTS).</p>
 </li>
 <li>
-<p>Should be able to hold up to 1000 persons without a noticeable sluggishness in performance for typical usage.</p>
+<p>The user should run the software with OpenJDK 11 (as per constraints).</p>
+</li>
+<li>
+<p>The application should come prepackaged with pre-populated data (for offline use).</p>
+</li>
+<li>
+<p>The application be able to hold up to 10 students and their respective module plans/enrollments without a noticeable sluggishness in performance for typical usage.</p>
 </li>
 <li>
 <p>A user with above average typing speed for regular English text (i.e. not code, not system admin commands) should be able to accomplish most of the tasks faster using commands than using the mouse.</p>
@@ -1475,17 +2009,113 @@ If the <code>currentStatePointer</code> is at index <code>addressBookStateList.s
 <div class="sect1">
 <h2 id="glossary"><a class="link" href="#glossary">Appendix E: Glossary</a></h2>
 <div class="sectionbody">
-<div class="dlist">
-<dl>
-<dt class="hdlist1"><a id="mainstream-os"></a> Mainstream OS</dt>
-<dd>
-<p>Windows, Linux, Unix, OS-X</p>
-</dd>
-<dt class="hdlist1"><a id="private-contact-detail"></a> Private contact detail</dt>
-<dd>
-<p>A contact detail that is not meant to be shared with others</p>
-</dd>
-</dl>
+<div class="hdlist">
+<table>
+<tr>
+<td class="hdlist1">
+<a id="api"></a> API
+</td>
+<td class="hdlist2">
+<p>Stands for "Application Programming Interface" which simplifies programming by abstracting the underlying implementation and only exposing objects or actions the developer needs.</p>
+</td>
+</tr>
+<tr>
+<td class="hdlist1">
+<a id="locale"></a> Locale
+</td>
+<td class="hdlist2">
+<p>Stands for a setting on the user&#8217;s computer that defines the user&#8217;s language and region.</p>
+</td>
+</tr>
+<tr>
+<td class="hdlist1">
+<a id="mainstream-os"></a> Mainstream OS
+</td>
+<td class="hdlist2">
+<p>References major operating systems (i.e. Windows 10, macOS Catalina, and Ubuntu 18.04 LTS).</p>
+</td>
+</tr>
+<tr>
+<td class="hdlist1">
+<a id="major"></a> Major
+</td>
+<td class="hdlist2">
+<p>Refers to one of academic majors students read in NUS.</p>
+</td>
+</tr>
+<tr>
+<td class="hdlist1">
+<a id="minor"></a> Minor
+</td>
+<td class="hdlist2">
+<p>Refers to one of academic minors students can optionally read in NUS.</p>
+</td>
+</tr>
+<tr>
+<td class="hdlist1">
+<a id="module"></a> Module
+</td>
+<td class="hdlist2">
+<p>Refers to one of multiple academic modules students read in NUS.</p>
+</td>
+</tr>
+<tr>
+<td class="hdlist1">
+<a id="MSS"></a> MSS
+</td>
+<td class="hdlist2">
+<p>Stands for "Main Success Scenario" that describes the interaction for a given use case, which assumes that nothing goes wrong.</p>
+</td>
+</tr>
+<tr>
+<td class="hdlist1">
+<a id="nfr"></a> NFR
+</td>
+<td class="hdlist2">
+<p>Stands for "Non-Functional Requirement(s)".</p>
+</td>
+</tr>
+<tr>
+<td class="hdlist1">
+<a id="nus"></a> NUS
+</td>
+<td class="hdlist2">
+<p>Stands for "National University of Singapore", the university this application was developed for.</p>
+</td>
+</tr>
+<tr>
+<td class="hdlist1">
+<a id="puml"></a> PlantUML
+</td>
+<td class="hdlist2">
+<p>Is a tool used to render diagrams used in this document.</p>
+</td>
+</tr>
+<tr>
+<td class="hdlist1">
+<a id="specialisation"></a> Specialisation
+</td>
+<td class="hdlist2">
+<p>Refers to one of academic specialisations students can optionally read in NUS.</p>
+</td>
+</tr>
+<tr>
+<td class="hdlist1">
+<a id="timetable"></a> Timetable
+</td>
+<td class="hdlist2">
+<p>Refers to the module timetable that students will go for classes in NUS.</p>
+</td>
+</tr>
+<tr>
+<td class="hdlist1">
+<a id="track"></a> Track
+</td>
+<td class="hdlist2">
+<p>Refers to one of academic tracks students can optionally read in NUS.</p>
+</td>
+</tr>
+</table>
 </div>
 </div>
 </div>
@@ -1671,4 +2301,4 @@ Expected: Shows the GUI with a set of sample plans.</p>
 </div>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2020-03-24 16:45:22 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2020-03-25 13:47:38 UTC</div></div></div></body></html>
