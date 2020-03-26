@@ -3,9 +3,10 @@
 
 box Logic LOGIC_COLOR_T1
 participant ":LogicManager" as LogicManager LOGIC_COLOR
-participant ":AddressBookParser" as AddressBookParser LOGIC_COLOR
-participant ":DeleteCommandParser" as DeleteCommandParser LOGIC_COLOR
-participant "d:DeleteCommand" as DeleteCommand LOGIC_COLOR
+participant ":PlannerParser" as PlannerParser LOGIC_COLOR
+participant ":StudentCommandParser" as StudentCommandParser LOGIC_COLOR
+participant ":StudentRemoveCommandParser" as StudentRemoveCommandParser LOGIC_COLOR
+participant "d:StudentRemoveCommand" as StudentRemoveCommand LOGIC_COLOR
 participant ":CommandResult" as CommandResult LOGIC_COLOR
 end box
 
@@ -13,56 +14,69 @@ box Model MODEL_COLOR_T1
 participant ":Model" as Model MODEL_COLOR
 end box
 
-[-> LogicManager : execute("delete 1")
+[-> LogicManager : execute("student remove 1")
 activate LogicManager
 
-LogicManager -> AddressBookParser : parseCommand("delete 1")
-activate AddressBookParser
+LogicManager -> PlannerParser : parseCommand("student remove 1")
+activate PlannerParser
 
-create DeleteCommandParser
-AddressBookParser -> DeleteCommandParser
-activate DeleteCommandParser
+create StudentCommandParser
+PlannerParser -> StudentCommandParser
+activate StudentCommandParser
 
-DeleteCommandParser --> AddressBookParser
-deactivate DeleteCommandParser
+StudentCommandParser --> PlannerParser
+deactivate StudentCommandParser
 
-AddressBookParser -> DeleteCommandParser : parse("1")
-activate DeleteCommandParser
+PlannerParser -> StudentCommandParser : parse("remove 1")
+activate StudentCommandParser
 
-create DeleteCommand
-DeleteCommandParser -> DeleteCommand
-activate DeleteCommand
+create StudentRemoveCommandParser
+StudentCommandParser --> StudentRemoveCommandParser
+activate StudentRemoveCommandParser
 
-DeleteCommand --> DeleteCommandParser : d
-deactivate DeleteCommand
+StudentRemoveCommandParser --> StudentCommandParser
+deactivate StudentRemoveCommandParser
 
-DeleteCommandParser --> AddressBookParser : d
-deactivate DeleteCommandParser
+StudentCommandParser -> StudentRemoveCommandParser : parse("1")
+activate StudentRemoveCommandParser
+
+create StudentRemoveCommand
+StudentRemoveCommandParser -> StudentRemoveCommand
+activate StudentRemoveCommand
+
+StudentRemoveCommand --> StudentRemoveCommandParser : d
+deactivate StudentRemoveCommand
+
+StudentRemoveCommandParser --> StudentCommandParser : d
+deactivate StudentRemoveCommandParser
+
+StudentCommandParser --> PlannerParser : d
+deactivate StudentCommandParser
 'Hidden arrow to position the destroy marker below the end of the activation bar.
-DeleteCommandParser -[hidden]-> AddressBookParser
-destroy DeleteCommandParser
+StudentCommandParser -[hidden]-> PlannerParser
+destroy StudentCommandParser
 
-AddressBookParser --> LogicManager : d
-deactivate AddressBookParser
+PlannerParser --> LogicManager : d
+deactivate PlannerParser
 
-LogicManager -> DeleteCommand : execute()
-activate DeleteCommand
+LogicManager -> StudentRemoveCommand : execute()
+activate StudentRemoveCommand
 
-DeleteCommand -> Model : deletePerson(1)
+StudentRemoveCommand -> Model : deleteStudent(1)
 activate Model
 
-Model --> DeleteCommand
+Model --> StudentRemoveCommand
 deactivate Model
 
 create CommandResult
-DeleteCommand -> CommandResult
+StudentRemoveCommand -> CommandResult
 activate CommandResult
 
-CommandResult --> DeleteCommand
+CommandResult --> StudentRemoveCommand
 deactivate CommandResult
 
-DeleteCommand --> LogicManager : result
-deactivate DeleteCommand
+StudentRemoveCommand --> LogicManager : result
+deactivate StudentRemoveCommand
 
 [<--LogicManager
 deactivate LogicManager
