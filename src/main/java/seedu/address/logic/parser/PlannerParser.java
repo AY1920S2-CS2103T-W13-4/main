@@ -32,7 +32,7 @@ import seedu.address.logic.parser.timetable.TimeTableCommandParser;
 /**
  * Parses user input.
  */
-public class AddressBookParser {
+public class PlannerParser {
 
     /**
      * Used for initial separation of command word and args.
