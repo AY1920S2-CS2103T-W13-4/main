@@ -15,7 +15,7 @@
 <li><a href="#introduction">1. Introduction</a></li>
 <li><a href="#how-to-use-this-user-guide">2. How To Use This User Guide</a></li>
 <li><a href="#quick-start">3. Quick Start</a></li>
-<li><a href="#Features">4. Features</a>
+<li><a href="#features">4. Features</a>
 <ul class="sectlevel2">
 <li><a href="#main-navigation">4.1. Main Navigation</a>
 <ul class="sectlevel3">
@@ -42,6 +42,7 @@
 <li><a href="#adding-a-module-code-module-add-code">4.4.1. Adding a module: <code>module add</code></a></li>
 <li><a href="#removing-a-module-code-module-remove-code">4.4.2. Removing a module: <code>module remove</code></a></li>
 <li><a href="#viewing-added-modules-code-module-list-code">4.4.3. Viewing added modules: <code>module list</code></a></li>
+<li><a href="#viewing-exempted-modules-code-module-list-exempted-code">4.4.4. Viewing exempted modules: <code>module list exempted</code></a></li>
 </ul>
 </li>
 <li><a href="#student-management">4.5. Student Management</a>
@@ -70,8 +71,8 @@
 <ul class="sectlevel2">
 <li><a href="#main-navigation-2">7.1. Main Navigation</a></li>
 <li><a href="#declaration-management-2">7.2. Declaration Management</a></li>
-<li><a href="#module-management-2">7.3. Module Management</a></li>
-<li><a href="#grade-management-2">7.4. Grade Management</a></li>
+<li><a href="#grade-management-2">7.3. Grade Management</a></li>
+<li><a href="#module-management-2">7.4. Module Management</a></li>
 <li><a href="#student-management-2">7.5. Student Management</a></li>
 <li><a href="#timetable-management-2">7.6. Timetable Management</a></li>
 </ul>
@@ -112,7 +113,7 @@
 <h2 id="how-to-use-this-user-guide"><a class="anchor" href="#how-to-use-this-user-guide"></a><a class="link" href="#how-to-use-this-user-guide">2. How To Use This User Guide</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>NUSModPlnr is a timetable and enrollment management application. Users can add different student plans which consist of the student&#8217;s degree programme and timetables for different semesters.</p>
+<p>NUSModPlnr is a timetable and enrollment management application, which help you add plans which consist of your degree programme and timetables for different semesters.</p>
 </div>
 <div class="exampleblock">
 <div class="content">
@@ -149,15 +150,15 @@
 <div class="exampleblock">
 <div class="content">
 <div class="paragraph">
-<p>Please note the following which may serve as points of interests:</p>
+<p>Please note the following which may serve as points of interests throughout this <strong>User Guide</strong>:</p>
 </div>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p><code>word</code> : This grey highlight indicates commands that you can type with more info in <a id="Features"></a>.</p>
+<p><code>keyword</code> : This grey highlight indicates commands that you can type with more info in Features.</p>
 </li>
 <li>
-<p><kbd>Enter</kbd> : This grey highlight with white outline indicates a keyboard&#8217;s key</p>
+<p><kbd>Enter</kbd> : This grey highlight with white outline indicates a keyboard&#8217;s key to use.</p>
 </li>
 </ol>
 </div>
@@ -192,6 +193,9 @@ This symbol and corresponding box has tips from the team, which we think might b
 <div class="sect1">
 <h2 id="quick-start"><a class="anchor" href="#quick-start"></a><a class="link" href="#quick-start">3. Quick Start</a></h2>
 <div class="sectionbody">
+<div class="paragraph">
+<p>If you are looking to jump right into the application, you can follow the below quick steps to get the application up and running:</p>
+</div>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
@@ -215,11 +219,38 @@ e.g. typing <strong><code>help</code></strong> and pressing <kbd>Enter</kbd> wil
 </li>
 </ol>
 </div>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+These steps are recommended only if you have experience in setting up the application for first time use, or already have a saved file you would like to continue working with.
+</td>
+</tr>
+</table>
+</div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="Features"><a class="anchor" href="#Features"></a><a class="link" href="#Features">4. Features</a></h2>
+<h2 id="features"><a class="anchor" href="#features"></a><a class="link" href="#features">4. Features</a></h2>
 <div class="sectionbody">
+<div class="paragraph">
+<p>These are the key features that are part of the NUSModPlnr!</p>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+Before you dive into the commands themselves, do familiarise yourself with how the <strong>User Guide</strong> has been formatted in terms of the commands to key in!
+</td>
+</tr>
+</table>
+</div>
 <div class="exampleblock">
 <div class="content">
 <div class="paragraph">
@@ -300,10 +331,19 @@ e.g. typing <strong><code>help</code></strong> and pressing <kbd>Enter</kbd> wil
 </div>
 </div>
 </div>
+<div class="paragraph">
+<p>Let&#8217;s begin!</p>
+</div>
 <div class="sect2">
 <h3 id="main-navigation"><a class="anchor" href="#main-navigation"></a><a class="link" href="#main-navigation">4.1. Main Navigation</a></h3>
+<div class="paragraph">
+<p>The following commands below are part of the application&#8217;s <strong>Main Navigation</strong>.</p>
+</div>
 <div class="sect3">
 <h4 id="viewing-help-code-help-code"><a class="anchor" href="#viewing-help-code-help-code"></a><a class="link" href="#viewing-help-code-help-code">4.1.1. Viewing help : <code>help</code></a></h4>
+<div class="paragraph">
+<p>If you get lost or are unsure on what commands to use, while in the application, you can use the <code>help</code> command.</p>
+</div>
 <div class="paragraph">
 <p>Format: <code>help</code></p>
 </div>
@@ -311,21 +351,37 @@ e.g. typing <strong><code>help</code></strong> and pressing <kbd>Enter</kbd> wil
 <div class="sect3">
 <h4 id="exiting-the-program-code-exit-code"><a class="anchor" href="#exiting-the-program-code-exit-code"></a><a class="link" href="#exiting-the-program-code-exit-code">4.1.2. Exiting the program : <code>exit</code></a></h4>
 <div class="paragraph">
-<p>Exits the program.<br>
-Format: <code>exit</code></p>
+<p>When you are done using the application, you can exit the program with the <code>exit</code> command.</p>
+</div>
+<div class="paragraph">
+<p>Format: <code>exit</code></p>
 </div>
 </div>
 </div>
 <div class="sect2">
 <h3 id="declaration-management"><a class="anchor" href="#declaration-management"></a><a class="link" href="#declaration-management">4.2. Declaration Management</a></h3>
 <div class="paragraph">
-<p>All the following commands require a student to be selected (using the <code>student active</code> command).</p>
+<p>The following commands below are part of the application&#8217;s <strong>Declaration Management</strong>, which allow you to declare important details of your academic plan, such as your <code>majors</code>, <code>minors</code>, <code>specialisations</code> and <code>tracks</code>.</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+All the following commands require a <code>student</code> to be selected (using the <code>student active</code> command).
+</td>
+</tr>
+</table>
 </div>
 <div class="sect3">
 <h4 id="declaring-your-major-code-declare-major-code"><a class="anchor" href="#declaring-your-major-code-declare-major-code"></a><a class="link" href="#declaring-your-major-code-declare-major-code">4.2.1. Declaring your major: <code>declare major</code></a></h4>
 <div class="paragraph">
-<p>Declares your major for studies and is required for the module planning.<br>
-Format: <code>declare major MAJOR</code></p>
+<p>You can use this command to declare the <code>major</code> of your studies, which is also required for the module planning.</p>
+</div>
+<div class="paragraph">
+<p>Format: <code>declare major MAJOR</code></p>
 </div>
 <div class="paragraph">
 <p>Examples:</p>
@@ -341,8 +397,10 @@ Format: <code>declare major MAJOR</code></p>
 <div class="sect3">
 <h4 id="declaring-your-minor-code-declare-minor-code"><a class="anchor" href="#declaring-your-minor-code-declare-minor-code"></a><a class="link" href="#declaring-your-minor-code-declare-minor-code">4.2.2. Declaring your minor: <code>declare minor</code></a></h4>
 <div class="paragraph">
-<p>Declares your minor for studies.<br>
-Format: <code>declare minor MINOR</code></p>
+<p>You can use this command to declare any <code>minors</code> of your studies, which will affect module planning.</p>
+</div>
+<div class="paragraph">
+<p>Format: <code>declare minor MINOR</code></p>
 </div>
 <div class="paragraph">
 <p>Examples:</p>
@@ -361,8 +419,10 @@ Format: <code>declare minor MINOR</code></p>
 <div class="sect3">
 <h4 id="declaring-your-specialisation-code-declare-spec-code"><a class="anchor" href="#declaring-your-specialisation-code-declare-spec-code"></a><a class="link" href="#declaring-your-specialisation-code-declare-spec-code">4.2.3. Declaring your specialisation: <code>declare spec</code></a></h4>
 <div class="paragraph">
-<p>Declares your Focus Areas, should you require them in module planning.<br>
-Format: <code>declare spec [ACTION] [SPEC]</code></p>
+<p>You can use this command to declare any <code>specialisations</code> in your studies, should you require them in module planning.</p>
+</div>
+<div class="paragraph">
+<p>Format: <code>declare spec [ACTION] [SPEC]</code></p>
 </div>
 <div class="paragraph">
 <p>Examples:</p>
@@ -370,10 +430,10 @@ Format: <code>declare spec [ACTION] [SPEC]</code></p>
 <div class="ulist">
 <ul>
 <li>
-<p><code>declare spec add networking</code></p>
+<p><code>declare spec add it-security</code></p>
 </li>
 <li>
-<p><code>declare spec remove networking</code></p>
+<p><code>declare spec remove it-security</code></p>
 </li>
 </ul>
 </div>
@@ -381,18 +441,50 @@ Format: <code>declare spec [ACTION] [SPEC]</code></p>
 <div class="sect3">
 <h4 id="declaring-your-track-code-declare-track-code"><a class="anchor" href="#declaring-your-track-code-declare-track-code"></a><a class="link" href="#declaring-your-track-code-declare-track-code">4.2.4. Declaring your track: <code>declare track</code></a></h4>
 <div class="paragraph">
-<p>This is equivalent to <code>declare spec</code>.</p>
+<p>You can use this command to declare any <code>tracks</code> in your studies, should you require them in module planning.</p>
+</div>
+<div class="paragraph">
+<p>Format: <code>declare track [ACTION] [SPEC]</code></p>
+</div>
+<div class="paragraph">
+<p>Examples:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>declare track add networking</code></p>
+</li>
+<li>
+<p><code>declare track remove networking</code></p>
+</li>
+</ul>
 </div>
 </div>
 </div>
 <div class="sect2">
 <h3 id="grade-management"><a class="anchor" href="#grade-management"></a><a class="link" href="#grade-management">4.3. Grade Management</a></h3>
+<div class="paragraph">
+<p>The following commands below are part of the application&#8217;s <strong>Grade Management</strong>, which allow you to manage and view your <code>grades</code> to see modules affected in your academic plan.</p>
+</div>
 <div class="sect3">
 <h4 id="managing-a-module-s-grade-code-module-grade-code"><a class="anchor" href="#managing-a-module-s-grade-code-module-grade-code"></a><a class="link" href="#managing-a-module-s-grade-code-module-grade-code">4.3.1. Managing a module&#8217;s grade: <code>module grade</code></a></h4>
 <div class="paragraph">
-<p>Displays the grade of the specified module.<br>
-This command require a timetable to be selected (using the <code>timetable active</code> command).<br>
-Format: <code>module grade MODULE_CODE</code></p>
+<p>This command displays the <code>grade</code> of the specified module.</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+This command require a timetable to be selected (using the <code>timetable active</code> command).
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>Format: <code>module grade MODULE_CODE</code></p>
 </div>
 <div class="paragraph">
 <p>Example:</p>
@@ -405,9 +497,22 @@ Format: <code>module grade MODULE_CODE</code></p>
 </ul>
 </div>
 <div class="paragraph">
-<p>Sets the grade of the specified module.<br>
-This command require a timetable to be selected (using the <code>timetable active</code> command).<br>
-Format: <code>module grade MODULE_CODE grade/GRADE</code></p>
+<p>Furthermore, this follow-up command sets the <code>grade</code> of the specified module.</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+This command require a timetable to be selected (using the <code>timetable active</code> command).
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>Format: <code>module grade MODULE_CODE grade/GRADE</code></p>
 </div>
 <div class="paragraph">
 <p>Example:</p>
@@ -423,9 +528,22 @@ Format: <code>module grade MODULE_CODE grade/GRADE</code></p>
 <div class="sect3">
 <h4 id="viewing-a-student-s-grade-code-student-grade-code"><a class="anchor" href="#viewing-a-student-s-grade-code-student-grade-code"></a><a class="link" href="#viewing-a-student-s-grade-code-student-grade-code">4.3.2. Viewing a student&#8217;s grade: <code>student grade</code></a></h4>
 <div class="paragraph">
-<p>Displays the cumulative grade of the selected student (see the <code>student active</code> command).<br>
-This command require a student to be selected (using the <code>student active</code> command).<br>
-Format: <code>student grade</code></p>
+<p>This command displays  the cumulative grade of the selected student (<em>see the <code>student active</code> command</em>).</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+This command require a student to be selected (using the <code>student active</code> command).
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>Format: <code>student grade</code></p>
 </div>
 <div class="paragraph">
 <p>Example:</p>
@@ -441,20 +559,37 @@ Format: <code>student grade</code></p>
 </div>
 <div class="sect2">
 <h3 id="module-management"><a class="anchor" href="#module-management"></a><a class="link" href="#module-management">4.4. Module Management</a></h3>
+<div class="paragraph">
+<p>The following commands below are part of the application&#8217;s <strong>Module Management</strong>, which allow you manage the <code>modules</code> of your academic plan.</p>
+</div>
+<div class="paragraph">
+<p>When managing your <code>modules</code>, you will be able to see the <strong>Module View Screen</strong> (<em>Figure 2. below</em>).</p>
+</div>
 <div class="imageblock" style="text-align: left">
 <div class="content">
 <img src="images/ModuleList.png" alt="ModuleList" width="600">
 </div>
 <div class="title">Figure 2. Home Screen View</div>
 </div>
-<div class="paragraph">
-<p>All the following commands require a timetable to be selected (using the <code>timetable active</code> command).</p>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+All the following commands require a <code>timetable</code> to be selected (<em>using the <code>timetable active</code> command</em>).
+</td>
+</tr>
+</table>
 </div>
 <div class="sect3">
 <h4 id="adding-a-module-code-module-add-code"><a class="anchor" href="#adding-a-module-code-module-add-code"></a><a class="link" href="#adding-a-module-code-module-add-code">4.4.1. Adding a module: <code>module add</code></a></h4>
 <div class="paragraph">
-<p>Add a module to your timetable for the selected semester (see <code>timetable active</code>) and student (see <code>student active</code>).<br>
-Format: <code>module add MODULE_CODE</code></p>
+<p>This command adds a <code>module</code> to your <code>timetable</code> for the selected <code>semester</code> (see <code>timetable active</code>) and <code>student</code> (see <code>student active</code>).</p>
+</div>
+<div class="paragraph">
+<p>Format: <code>module add MODULE_CODE</code></p>
 </div>
 <div class="paragraph">
 <p>Example:</p>
@@ -470,8 +605,10 @@ Format: <code>module add MODULE_CODE</code></p>
 <div class="sect3">
 <h4 id="removing-a-module-code-module-remove-code"><a class="anchor" href="#removing-a-module-code-module-remove-code"></a><a class="link" href="#removing-a-module-code-module-remove-code">4.4.2. Removing a module: <code>module remove</code></a></h4>
 <div class="paragraph">
-<p>Remove a module from your timetable for the selected semester (see <code>timetable active</code>) and student (see <code>student active</code>).<br>
-Format: <code>module remove MODULE_CODE</code></p>
+<p>This command removes a <code>module</code> to your <code>timetable</code> for the selected <code>semester</code> (see <code>timetable active</code>) and <code>student</code> (see <code>student active</code>).</p>
+</div>
+<div class="paragraph">
+<p>Format: <code>module remove MODULE_CODE</code></p>
 </div>
 <div class="paragraph">
 <p>Example:</p>
@@ -487,8 +624,10 @@ Format: <code>module remove MODULE_CODE</code></p>
 <div class="sect3">
 <h4 id="viewing-added-modules-code-module-list-code"><a class="anchor" href="#viewing-added-modules-code-module-list-code"></a><a class="link" href="#viewing-added-modules-code-module-list-code">4.4.3. Viewing added modules: <code>module list</code></a></h4>
 <div class="paragraph">
-<p>Displays modules in your timetable for the selected semester (see <code>timetable active</code>) and student (see <code>student active</code>).<br>
-Format: <code>module list</code></p>
+<p>This command displays a list of <code>modules</code> of your <code>timetable</code> for the selected <code>semester</code> (see <code>timetable active</code>) and <code>student</code> (see <code>student active</code>).</p>
+</div>
+<div class="paragraph">
+<p>Format: <code>module list</code></p>
 </div>
 <div class="paragraph">
 <p>Example:</p>
@@ -501,9 +640,34 @@ Format: <code>module list</code></p>
 </ul>
 </div>
 </div>
+<div class="sect3">
+<h4 id="viewing-exempted-modules-code-module-list-exempted-code"><a class="anchor" href="#viewing-exempted-modules-code-module-list-exempted-code"></a><a class="link" href="#viewing-exempted-modules-code-module-list-exempted-code">4.4.4. Viewing exempted modules: <code>module list exempted</code></a></h4>
+<div class="paragraph">
+<p>This command displays a list of <code>modules</code> that you have declared as exempted.</p>
+</div>
+<div class="paragraph">
+<p>Format: `module list exempted</p>
+</div>
+<div class="paragraph">
+<p>Example:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>module list exempted</code></p>
+</li>
+</ul>
+</div>
+</div>
 </div>
 <div class="sect2">
 <h3 id="student-management"><a class="anchor" href="#student-management"></a><a class="link" href="#student-management">4.5. Student Management</a></h3>
+<div class="paragraph">
+<p>The following commands below are part of the application&#8217;s <strong>Student Management</strong>, which allow you manage the <code>students</code> <strong>which include you</strong> for the academic planning.</p>
+</div>
+<div class="paragraph">
+<p>When managing <code>students</code>, you will be able to see the <strong>Student View Screen</strong> (<em>Figure 3. below</em>).</p>
+</div>
 <div class="imageblock" style="text-align: left">
 <div class="content">
 <img src="images/StudentList.png" alt="StudentList" width="600">
@@ -513,8 +677,10 @@ Format: <code>module list</code></p>
 <div class="sect3">
 <h4 id="adding-a-student-code-student-add-code"><a class="anchor" href="#adding-a-student-code-student-add-code"></a><a class="link" href="#adding-a-student-code-student-add-code">4.5.1. Adding a student: <code>student add</code></a></h4>
 <div class="paragraph">
-<p>Adds a student to the student list.<br>
-Format: <code>student add n/NAME major/MAJOR</code></p>
+<p>This command adds a <code>student</code> to the student list.</p>
+</div>
+<div class="paragraph">
+<p>Format: <code>student add n/NAME major/MAJOR</code></p>
 </div>
 <div class="paragraph">
 <p>Example:</p>
@@ -530,8 +696,10 @@ Format: <code>student add n/NAME major/MAJOR</code></p>
 <div class="sect3">
 <h4 id="removing-a-student-code-student-remove-code"><a class="anchor" href="#removing-a-student-code-student-remove-code"></a><a class="link" href="#removing-a-student-code-student-remove-code">4.5.2. Removing a student: <code>student remove</code></a></h4>
 <div class="paragraph">
-<p>Removes the student with the number <code>INDEX</code> from the student list. =
-Format: <code>student remove INDEX</code></p>
+<p>This command removes the <code>student</code> with the number <code>INDEX</code> from the student list.</p>
+</div>
+<div class="paragraph">
+<p>Format: <code>student remove INDEX</code></p>
 </div>
 <div class="paragraph">
 <p>Example:</p>
@@ -547,8 +715,10 @@ Format: <code>student remove INDEX</code></p>
 <div class="sect3">
 <h4 id="selecting-a-student-code-student-active-code"><a class="anchor" href="#selecting-a-student-code-student-active-code"></a><a class="link" href="#selecting-a-student-code-student-active-code">4.5.3. Selecting a student: <code>student active</code></a></h4>
 <div class="paragraph">
-<p>Selects the student with the number <code>INDEX</code> from the student list.<br>
-Format: <code>student active INDEX</code></p>
+<p>This command selects the student with the number <code>INDEX</code> from the student list.</p>
+</div>
+<div class="paragraph">
+<p>Format: <code>student active INDEX</code></p>
 </div>
 <div class="paragraph">
 <p>Example:</p>
@@ -564,8 +734,10 @@ Format: <code>student active INDEX</code></p>
 <div class="sect3">
 <h4 id="viewing-the-student-list-code-student-list-code"><a class="anchor" href="#viewing-the-student-list-code-student-list-code"></a><a class="link" href="#viewing-the-student-list-code-student-list-code">4.5.4. Viewing the student list: <code>student list</code></a></h4>
 <div class="paragraph">
-<p>Displays a numbered list of students in the student list.<br>
-Format: <code>student list</code></p>
+<p>This commands displays a numbered list of students in the student list (if populated).</p>
+</div>
+<div class="paragraph">
+<p>Format: <code>student list</code></p>
 </div>
 <div class="paragraph">
 <p>Example:</p>
@@ -581,20 +753,37 @@ Format: <code>student list</code></p>
 </div>
 <div class="sect2">
 <h3 id="timetable-management"><a class="anchor" href="#timetable-management"></a><a class="link" href="#timetable-management">4.6. Timetable Management</a></h3>
+<div class="paragraph">
+<p>The following commands below are part of the application&#8217;s <strong>Timetable Management</strong>, which allow you manage the <code>timetables</code> of your academic plan.</p>
+</div>
+<div class="paragraph">
+<p>When managing your <code>timetable</code>, you will be able to see the <strong>Timetable View Screen</strong> (<em>Figure 4. below</em>).</p>
+</div>
 <div class="imageblock" style="text-align: left">
 <div class="content">
 <img src="images/TimeTableList.png" alt="TimeTableList" width="600">
 </div>
 <div class="title">Figure 4. Timetable List View</div>
 </div>
-<div class="paragraph">
-<p>All the following commands require a student to be selected (using the <code>student active</code> command).</p>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+All the following commands require a student to be selected (<em>using the <code>student active</code> command</em>).
+</td>
+</tr>
+</table>
 </div>
 <div class="sect3">
 <h4 id="adding-a-timetable-code-timetable-add-code"><a class="anchor" href="#adding-a-timetable-code-timetable-add-code"></a><a class="link" href="#adding-a-timetable-code-timetable-add-code">4.6.1. Adding a timetable: <code>timetable add</code></a></h4>
 <div class="paragraph">
-<p>Adds a timetable to the specified semester of the selected student (see <code>student active</code>).<br>
-Format: <code>timetable add year/YEAR sem/SEM</code></p>
+<p>This command adds a <code>timetable</code> to the specified <code>semester</code> of the selected <code>student</code> (see <code>student active</code>).</p>
+</div>
+<div class="paragraph">
+<p>Format: <code>timetable add year/YEAR sem/SEM</code></p>
 </div>
 <div class="paragraph">
 <p>Example:</p>
@@ -610,8 +799,10 @@ Format: <code>timetable add year/YEAR sem/SEM</code></p>
 <div class="sect3">
 <h4 id="removing-a-timetable-code-timetable-remove-code"><a class="anchor" href="#removing-a-timetable-code-timetable-remove-code"></a><a class="link" href="#removing-a-timetable-code-timetable-remove-code">4.6.2. Removing a timetable: <code>timetable remove</code></a></h4>
 <div class="paragraph">
-<p>Removes the timetable for the specified semester and the selected student (see <code>student active</code>).<br>
-Format: <code>timetable remove year/YEAR sem/SEM</code></p>
+<p>This command removes a <code>timetable</code> to the specified <code>semester</code> of the selected <code>student</code> (see <code>student active</code>).</p>
+</div>
+<div class="paragraph">
+<p>Format: <code>timetable remove year/YEAR sem/SEM</code></p>
 </div>
 <div class="paragraph">
 <p>Example:</p>
@@ -627,8 +818,10 @@ Format: <code>timetable remove year/YEAR sem/SEM</code></p>
 <div class="sect3">
 <h4 id="selecting-a-timetable-code-timetable-active-code"><a class="anchor" href="#selecting-a-timetable-code-timetable-active-code"></a><a class="link" href="#selecting-a-timetable-code-timetable-active-code">4.6.3. Selecting a timetable: <code>timetable active</code></a></h4>
 <div class="paragraph">
-<p>Selects the timetable for the specified semester and the selected student (see <code>student active</code>).<br>
-Format: <code>timetable active year/YEAR sem/SEM</code></p>
+<p>This command selects the <code>timetable</code> of the specified <code>semester</code> of the selected <code>student</code> (see <code>student active</code>).</p>
+</div>
+<div class="paragraph">
+<p>Format: <code>timetable active year/YEAR sem/SEM</code></p>
 </div>
 <div class="paragraph">
 <p>Example:</p>
@@ -644,8 +837,10 @@ Format: <code>timetable active year/YEAR sem/SEM</code></p>
 <div class="sect3">
 <h4 id="listing-timetables-code-timetable-list-code"><a class="anchor" href="#listing-timetables-code-timetable-list-code"></a><a class="link" href="#listing-timetables-code-timetable-list-code">4.6.4. Listing timetables: <code>timetable list</code></a></h4>
 <div class="paragraph">
-<p>Lists the timetables of the selected student (see <code>student active</code>).<br>
-Format: <code>timetable list</code></p>
+<p>This command lists all the <code>timetables</code>  of the selected <code>student</code> (see <code>student active</code>).</p>
+</div>
+<div class="paragraph">
+<p>Format: <code>timetable list</code></p>
 </div>
 <div class="paragraph">
 <p>Example:</p>
@@ -653,7 +848,7 @@ Format: <code>timetable list</code></p>
 <div class="ulist">
 <ul>
 <li>
-<p><code>student list</code></p>
+<p><code>timetable list</code></p>
 </li>
 </ul>
 </div>
@@ -680,14 +875,32 @@ Format: <code>timetable list</code></p>
 <h2 id="faq"><a class="anchor" href="#faq"></a><a class="link" href="#faq">5. FAQ</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
+<p>This provides a list of <strong>Frequently Asked Questions (FAQ)</strong>, that users may have!</p>
+</div>
+<div class="paragraph">
 <p><strong>Q</strong>: How do I transfer my data to another Computer?<br>
 <strong>A</strong>: Install the app in the other computer and overwrite the empty data file it creates with the file that contains the data of your previous NUSModPlnr folder.</p>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+If you have questions, feel free to open an issue in our <strong>Issue Tracker</strong> on GitHub!
+</td>
+</tr>
+</table>
 </div>
 </div>
 </div>
 <div class="sect1">
 <h2 id="glossary"><a class="anchor" href="#glossary"></a><a class="link" href="#glossary">6. Glossary</a></h2>
 <div class="sectionbody">
+<div class="paragraph">
+<p>This <strong>Glossary</strong> provides explanations for keywords used throughout the <strong>User Guide</strong>.</p>
+</div>
 <div class="hdlist">
 <table>
 <tr>
@@ -761,15 +974,30 @@ Format: <code>timetable list</code></p>
 <div class="sect1">
 <h2 id="command-summary"><a class="anchor" href="#command-summary"></a><a class="link" href="#command-summary">7. Command Summary</a></h2>
 <div class="sectionbody">
+<div class="paragraph">
+<p>This section provides a quick summary on all the commands currently available in the application.</p>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+If you need more in-depth information on a specific command, you can <span class="keyseq"><kbd>CTRL</kbd>+<kbd>F</kbd></span> the exact command name to find it in the <strong>Features</strong> section.
+</td>
+</tr>
+</table>
+</div>
 <div class="sect2">
 <h3 id="main-navigation-2"><a class="anchor" href="#main-navigation-2"></a><a class="link" href="#main-navigation-2">7.1. Main Navigation</a></h3>
 <div class="ulist">
 <ul>
 <li>
-<p><strong>Viewing Help</strong> : <code>help</code></p>
+<p><strong>Viewing help</strong> : <code>help</code></p>
 </li>
 <li>
-<p><strong>Exiting The Program</strong> : <code>exit</code></p>
+<p><strong>Exiting the program</strong> : <code>exit</code></p>
 </li>
 </ul>
 </div>
@@ -779,48 +1007,48 @@ Format: <code>timetable list</code></p>
 <div class="ulist">
 <ul>
 <li>
-<p><strong>Declare major</strong> : <code>declare major</code></p>
+<p><strong>Declaring your major</strong> : <code>declare major</code></p>
 </li>
 <li>
-<p><strong>Declare minor</strong> : <code>declare minor</code></p>
+<p><strong>Declaring your minor</strong> : <code>declare minor</code></p>
 </li>
 <li>
-<p><strong>Declare specialisation</strong> : <code>declare spec</code></p>
+<p><strong>Declaring your specialisation</strong> : <code>declare spec</code></p>
 </li>
 <li>
-<p><strong>Declare track</strong> : <code>declare track</code></p>
-</li>
-</ul>
-</div>
-</div>
-<div class="sect2">
-<h3 id="module-management-2"><a class="anchor" href="#module-management-2"></a><a class="link" href="#module-management-2">7.3. Module Management</a></h3>
-<div class="ulist">
-<ul>
-<li>
-<p><strong>Adding a Module</strong> : <code>module add</code></p>
-</li>
-<li>
-<p><strong>Removing a Module</strong> : <code>module remove</code></p>
-</li>
-<li>
-<p><strong>Viewing the (Added) Module List</strong> : <code>module list</code></p>
-</li>
-<li>
-<p><strong>Viewing the Exempted Module List</strong> : <code>module list exempted</code></p>
+<p><strong>Declaring your track</strong> : <code>declare track</code></p>
 </li>
 </ul>
 </div>
 </div>
 <div class="sect2">
-<h3 id="grade-management-2"><a class="anchor" href="#grade-management-2"></a><a class="link" href="#grade-management-2">7.4. Grade Management</a></h3>
+<h3 id="grade-management-2"><a class="anchor" href="#grade-management-2"></a><a class="link" href="#grade-management-2">7.3. Grade Management</a></h3>
 <div class="ulist">
 <ul>
 <li>
-<p><strong>Managing a Module&#8217;s Grade</strong> : <code>module grade</code></p>
+<p><strong>Managing a module&#8217;s grade</strong> : <code>module grade</code></p>
 </li>
 <li>
-<p><strong>Viewing a Student&#8217;s Grade</strong> : <code>student grade</code></p>
+<p><strong>Viewing a student&#8217;s grade</strong> : <code>student grade</code></p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="module-management-2"><a class="anchor" href="#module-management-2"></a><a class="link" href="#module-management-2">7.4. Module Management</a></h3>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Adding a module</strong> : <code>module add</code></p>
+</li>
+<li>
+<p><strong>Removing a module</strong> : <code>module remove</code></p>
+</li>
+<li>
+<p><strong>Viewing added modules</strong> : <code>module list</code></p>
+</li>
+<li>
+<p><strong>Viewing exempted modules</strong> : <code>module list exempted</code></p>
 </li>
 </ul>
 </div>
@@ -830,16 +1058,16 @@ Format: <code>timetable list</code></p>
 <div class="ulist">
 <ul>
 <li>
-<p><strong>Adding a Student</strong> : <code>student add</code></p>
+<p><strong>Adding a student</strong> : <code>student add</code></p>
 </li>
 <li>
-<p><strong>Removing a Student</strong> : <code>student remove</code></p>
+<p><strong>Removing a student</strong> : <code>student remove</code></p>
 </li>
 <li>
-<p><strong>Selecting a Student</strong> : <code>student active</code></p>
+<p><strong>Selecting a student</strong> : <code>student active</code></p>
 </li>
 <li>
-<p><strong>Viewing the Student List</strong> : <code>student list</code></p>
+<p><strong>Viewing the student list</strong> : <code>student list</code></p>
 </li>
 </ul>
 </div>
@@ -849,19 +1077,19 @@ Format: <code>timetable list</code></p>
 <div class="ulist">
 <ul>
 <li>
-<p><strong>Adding a Timetable</strong> : <code>timetable add</code></p>
+<p><strong>Adding a timetable</strong> : <code>timetable add</code></p>
 </li>
 <li>
-<p><strong>Removing a Timetable</strong> : <code>timetable remove</code></p>
+<p><strong>Removing a timetable</strong> : <code>timetable remove</code></p>
 </li>
 <li>
-<p><strong>Selecting a Timetable</strong> : <code>timetable active</code></p>
+<p><strong>Selecting a timetable</strong> : <code>timetable active</code></p>
 </li>
 <li>
-<p><strong>Viewing the Timetable List</strong> : <code>timetable list</code></p>
+<p><strong>Listing timetables</strong> : <code>timetable list</code></p>
 </li>
 </ul>
 </div>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2020-03-30 09:15:38 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2020-03-30 10:53:22 UTC</div></div></div></body></html>
