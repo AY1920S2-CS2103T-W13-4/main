@@ -22,10 +22,37 @@
 </li>
 <li><a href="#implementation">3. Implementation</a>
 <ul class="sectlevel2">
-<li><a href="#declaration-implementation">3.1. Declaration Implementation</a></li>
-<li><a href="#module-implementation">3.2. Module Implementation</a></li>
-<li><a href="#student-implementation">3.3. Student Implementation</a></li>
-<li><a href="#timetable-implementation">3.4. Timetable Implementation</a></li>
+<li><a href="#declaration-implementation">3.1. Declaration Implementation</a>
+<ul class="sectlevel3">
+<li><a href="#declare-major">3.1.1. Declare Major</a></li>
+<li><a href="#declare-minor">3.1.2. Declare Minor</a></li>
+<li><a href="#declare-track">3.1.3. Declare Track</a></li>
+<li><a href="#declare-specialisation">3.1.4. Declare Specialisation</a></li>
+</ul>
+</li>
+<li><a href="#module-implementation">3.2. Module Implementation</a>
+<ul class="sectlevel3">
+<li><a href="#add-module">3.2.1. Add Module</a></li>
+<li><a href="#remove-module">3.2.2. Remove Module</a></li>
+<li><a href="#list-modules">3.2.3. List Modules</a></li>
+</ul>
+</li>
+<li><a href="#student-implementation">3.3. Student Implementation</a>
+<ul class="sectlevel3">
+<li><a href="#add-student">3.3.1. Add Student</a></li>
+<li><a href="#remove-student">3.3.2. Remove Student</a></li>
+<li><a href="#active-student">3.3.3. Active Student</a></li>
+<li><a href="#list-students">3.3.4. List Students</a></li>
+</ul>
+</li>
+<li><a href="#timetable-implementation">3.4. Timetable Implementation</a>
+<ul class="sectlevel3">
+<li><a href="#add-timetable">3.4.1. Add Timetable</a></li>
+<li><a href="#remove-timetable">3.4.2. Remove TimeTable</a></li>
+<li><a href="#active-timetable">3.4.3. Active TimeTable</a></li>
+<li><a href="#list-timetables">3.4.4. List Timetables</a></li>
+</ul>
+</li>
 <li><a href="#logging">3.5. Logging</a></li>
 <li><a href="#Implementation-Configuration">3.6. Configuration</a></li>
 </ul>
@@ -69,7 +96,7 @@
 </div>
 </div>
 <div class="sect1">
-<h2 id="setting-up"><a class="link" href="#setting-up">1. Setting up</a></h2>
+<h2 id="setting-up"><a class="anchor" href="#setting-up"></a><a class="link" href="#setting-up">1. Setting up</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>Refer to the guide <a href="SettingUp.html">here</a>.</p>
@@ -77,10 +104,10 @@
 </div>
 </div>
 <div class="sect1">
-<h2 id="design"><a class="link" href="#design">2. Design</a></h2>
+<h2 id="design"><a class="anchor" href="#design"></a><a class="link" href="#design">2. Design</a></h2>
 <div class="sectionbody">
 <div class="sect2">
-<h3 id="Design-Architecture"><a class="link" href="#Design-Architecture">2.1. Architecture</a></h3>
+<h3 id="Design-Architecture"><a class="anchor" href="#Design-Architecture"></a><a class="link" href="#Design-Architecture">2.1. Architecture</a></h3>
 <div class="imageblock">
 <div class="content">
 <img src="images/ArchitectureDiagram.png" alt="ArchitectureDiagram">
@@ -183,7 +210,7 @@ The following class plays an important role at the architecture level:</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="Design-Ui"><a class="link" href="#Design-Ui">2.2. UI component</a></h3>
+<h3 id="Design-Ui"><a class="anchor" href="#Design-Ui"></a><a class="link" href="#Design-Ui">2.2. UI component</a></h3>
 <div class="imageblock">
 <div class="content">
 <img src="images/UiClassDiagram.png" alt="UiClassDiagram">
@@ -214,7 +241,7 @@ The following class plays an important role at the architecture level:</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="Design-Logic"><a class="link" href="#Design-Logic">2.3. Logic component</a></h3>
+<h3 id="Design-Logic"><a class="anchor" href="#Design-Logic"></a><a class="link" href="#Design-Logic">2.3. Logic component</a></h3>
 <div id="fig-LogicClassDiagram" class="imageblock">
 <div class="content">
 <img src="images/LogicClassDiagram.png" alt="LogicClassDiagram">
@@ -267,7 +294,7 @@ The lifeline for <code>StudentRemoveCommandParser</code> should end at the destr
 </div>
 </div>
 <div class="sect2">
-<h3 id="Design-Model"><a class="link" href="#Design-Model">2.4. Model component</a></h3>
+<h3 id="Design-Model"><a class="anchor" href="#Design-Model"></a><a class="link" href="#Design-Model">2.4. Model component</a></h3>
 <div class="imageblock">
 <div class="content">
 <img src="images/ModelClassDiagram.png" alt="ModelClassDiagram">
@@ -298,7 +325,7 @@ The lifeline for <code>StudentRemoveCommandParser</code> should end at the destr
 </div>
 </div>
 <div class="sect2">
-<h3 id="Design-Storage"><a class="link" href="#Design-Storage">2.5. Storage component</a></h3>
+<h3 id="Design-Storage"><a class="anchor" href="#Design-Storage"></a><a class="link" href="#Design-Storage">2.5. Storage component</a></h3>
 <div class="imageblock">
 <div class="content">
 <img src="images/StorageClassDiagram.png" alt="StorageClassDiagram">
@@ -323,7 +350,7 @@ The lifeline for <code>StudentRemoveCommandParser</code> should end at the destr
 </div>
 </div>
 <div class="sect2">
-<h3 id="Design-Commons"><a class="link" href="#Design-Commons">2.6. Common classes</a></h3>
+<h3 id="Design-Commons"><a class="anchor" href="#Design-Commons"></a><a class="link" href="#Design-Commons">2.6. Common classes</a></h3>
 <div class="paragraph">
 <p>Classes used by multiple components are in the <code>seedu.planner.commons</code> package.</p>
 </div>
@@ -331,15 +358,15 @@ The lifeline for <code>StudentRemoveCommandParser</code> should end at the destr
 </div>
 </div>
 <div class="sect1">
-<h2 id="implementation"><a class="link" href="#implementation">3. Implementation</a></h2>
+<h2 id="implementation"><a class="anchor" href="#implementation"></a><a class="link" href="#implementation">3. Implementation</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>This section describes some noteworthy details on how certain features are implemented.</p>
 </div>
 <div class="sect2">
-<h3 id="declaration-implementation"><a class="link" href="#declaration-implementation">3.1. Declaration Implementation</a></h3>
+<h3 id="declaration-implementation"><a class="anchor" href="#declaration-implementation"></a><a class="link" href="#declaration-implementation">3.1. Declaration Implementation</a></h3>
 <div class="sect3">
-<h4 id="declare-major"><a class="link" href="#declare-major">3.1.1. Declare Major</a></h4>
+<h4 id="declare-major"><a class="anchor" href="#declare-major"></a><a class="link" href="#declare-major">3.1.1. Declare Major</a></h4>
 <div class="paragraph">
 <p>The <code>declare major</code> command associates an existing <code>Major</code> entity (with all associated values) provided by the user.</p>
 </div>
@@ -359,7 +386,7 @@ The lifeline for <code>StudentRemoveCommandParser</code> should end at the destr
 </table>
 </div>
 <div class="sect4">
-<h5 id="current-implementation"><a class="link" href="#current-implementation">Current Implementation</a></h5>
+<h5 id="current-implementation"><a class="anchor" href="#current-implementation"></a><a class="link" href="#current-implementation">3.1.1.1. Current Implementation</a></h5>
 <div class="paragraph">
 <p><code>MajorSetCommand</code> extends from the <code>Command</code> class and uses the inheritance to facilitate the implementation. <code>MajorSetCommand</code> is parsed using <code>MajorCommandParser</code> to split the user input into relevant fields.</p>
 </div>
@@ -395,15 +422,15 @@ As of this time, <code>Student</code> entities can only be associated in a 1-1 r
 </div>
 </div>
 <div class="sect4">
-<h5 id="design-considerations"><a class="link" href="#design-considerations">Design Considerations</a></h5>
+<h5 id="design-considerations"><a class="anchor" href="#design-considerations"></a><a class="link" href="#design-considerations">3.1.1.2. Design Considerations</a></h5>
 <div class="sect5">
-<h6 id="aspect-how-code-majorsetcommand-code-executes"><a class="link" href="#aspect-how-code-majorsetcommand-code-executes">Aspect: How <code>MajorSetCommand</code> Executes</a></h6>
+<h6 id="aspect-how-code-majorsetcommand-code-executes"><a class="anchor" href="#aspect-how-code-majorsetcommand-code-executes"></a><a class="link" href="#aspect-how-code-majorsetcommand-code-executes">Aspect: How <code>MajorSetCommand</code> Executes</a></h6>
 
 </div>
 </div>
 </div>
 <div class="sect3">
-<h4 id="declare-minor"><a class="link" href="#declare-minor">3.1.2. Declare Minor</a></h4>
+<h4 id="declare-minor"><a class="anchor" href="#declare-minor"></a><a class="link" href="#declare-minor">3.1.2. Declare Minor</a></h4>
 <div class="paragraph">
 <p>The <code>declare minor</code> command associates an existing <code>Minor</code> entity (with all associated values) provided by the user.</p>
 </div>
@@ -423,7 +450,7 @@ As of this time, <code>Student</code> entities can only be associated in a 1-1 r
 </table>
 </div>
 <div class="sect4">
-<h5 id="current-implementation-2"><a class="link" href="#current-implementation-2">Current Implementation</a></h5>
+<h5 id="current-implementation-2"><a class="anchor" href="#current-implementation-2"></a><a class="link" href="#current-implementation-2">3.1.2.1. Current Implementation</a></h5>
 <div class="paragraph">
 <p><code>MinorSetCommand</code> extends from the <code>Command</code> class and uses the inheritance to facilitate the implementation. <code>MinorSetCommand</code> is parsed using <code>MinorCommandParser</code> to split the user input into relevant fields.</p>
 </div>
@@ -459,15 +486,15 @@ As of this time, <code>Student</code> entities can only be associated in a 1-0..
 </div>
 </div>
 <div class="sect4">
-<h5 id="design-considerations-2"><a class="link" href="#design-considerations-2">Design Considerations</a></h5>
+<h5 id="design-considerations-2"><a class="anchor" href="#design-considerations-2"></a><a class="link" href="#design-considerations-2">3.1.2.2. Design Considerations</a></h5>
 <div class="sect5">
-<h6 id="aspect-how-code-minorsetcommand-code-executes"><a class="link" href="#aspect-how-code-minorsetcommand-code-executes">Aspect: How <code>MinorSetCommand</code> Executes</a></h6>
+<h6 id="aspect-how-code-minorsetcommand-code-executes"><a class="anchor" href="#aspect-how-code-minorsetcommand-code-executes"></a><a class="link" href="#aspect-how-code-minorsetcommand-code-executes">Aspect: How <code>MinorSetCommand</code> Executes</a></h6>
 
 </div>
 </div>
 </div>
 <div class="sect3">
-<h4 id="declare-track"><a class="link" href="#declare-track">3.1.3. Declare Track</a></h4>
+<h4 id="declare-track"><a class="anchor" href="#declare-track"></a><a class="link" href="#declare-track">3.1.3. Declare Track</a></h4>
 <div class="paragraph">
 <p>The <code>declare track</code> command associates an existing <code>Track</code> entity (with all associated values) provided by the user.</p>
 </div>
@@ -487,7 +514,7 @@ As of this time, <code>Student</code> entities can only be associated in a 1-0..
 </table>
 </div>
 <div class="sect4">
-<h5 id="current-implementation-3"><a class="link" href="#current-implementation-3">Current Implementation</a></h5>
+<h5 id="current-implementation-3"><a class="anchor" href="#current-implementation-3"></a><a class="link" href="#current-implementation-3">3.1.3.1. Current Implementation</a></h5>
 <div class="paragraph">
 <p><code>TrackSetCommand</code> extends from the <code>Command</code> class and uses the inheritance to facilitate the implementation. <code>TrackSetCommand</code> is parsed using <code>TrackCommandParser</code> to split the user input into relevant fields.</p>
 </div>
@@ -523,15 +550,15 @@ As of this time, <code>Student</code> entities can only be associated in a 1-0..
 </div>
 </div>
 <div class="sect4">
-<h5 id="design-considerations-3"><a class="link" href="#design-considerations-3">Design Considerations</a></h5>
+<h5 id="design-considerations-3"><a class="anchor" href="#design-considerations-3"></a><a class="link" href="#design-considerations-3">3.1.3.2. Design Considerations</a></h5>
 <div class="sect5">
-<h6 id="aspect-how-code-tracksetcommand-code-executes"><a class="link" href="#aspect-how-code-tracksetcommand-code-executes">Aspect: How <code>TrackSetCommand</code> Executes</a></h6>
+<h6 id="aspect-how-code-tracksetcommand-code-executes"><a class="anchor" href="#aspect-how-code-tracksetcommand-code-executes"></a><a class="link" href="#aspect-how-code-tracksetcommand-code-executes">Aspect: How <code>TrackSetCommand</code> Executes</a></h6>
 
 </div>
 </div>
 </div>
 <div class="sect3">
-<h4 id="declare-specialisation"><a class="link" href="#declare-specialisation">3.1.4. Declare Specialisation</a></h4>
+<h4 id="declare-specialisation"><a class="anchor" href="#declare-specialisation"></a><a class="link" href="#declare-specialisation">3.1.4. Declare Specialisation</a></h4>
 <div class="paragraph">
 <p>The <code>declare spec</code> command associates an existing <code>Specialisation</code> entity (with all associated values) provided by the user.</p>
 </div>
@@ -551,7 +578,7 @@ As of this time, <code>Student</code> entities can only be associated in a 1-0..
 </table>
 </div>
 <div class="sect4">
-<h5 id="current-implementation-4"><a class="link" href="#current-implementation-4">Current Implementation</a></h5>
+<h5 id="current-implementation-4"><a class="anchor" href="#current-implementation-4"></a><a class="link" href="#current-implementation-4">3.1.4.1. Current Implementation</a></h5>
 <div class="paragraph">
 <p><code>SpecialisationSetCommand</code> extends from the <code>Command</code> class and uses the inheritance to facilitate the implementation. <code>SpecialisationSetCommand</code> is parsed using <code>SpecialisationCommandParser</code> to split the user input into relevant fields.</p>
 </div>
@@ -587,18 +614,18 @@ As of this time, <code>Student</code> entities can only be associated in a 1-0..
 </div>
 </div>
 <div class="sect4">
-<h5 id="design-considerations-4"><a class="link" href="#design-considerations-4">Design Considerations</a></h5>
+<h5 id="design-considerations-4"><a class="anchor" href="#design-considerations-4"></a><a class="link" href="#design-considerations-4">3.1.4.2. Design Considerations</a></h5>
 <div class="sect5">
-<h6 id="aspect-how-code-specialisationsetcommand-code-executes"><a class="link" href="#aspect-how-code-specialisationsetcommand-code-executes">Aspect: How <code>SpecialisationSetCommand</code> Executes</a></h6>
+<h6 id="aspect-how-code-specialisationsetcommand-code-executes"><a class="anchor" href="#aspect-how-code-specialisationsetcommand-code-executes"></a><a class="link" href="#aspect-how-code-specialisationsetcommand-code-executes">Aspect: How <code>SpecialisationSetCommand</code> Executes</a></h6>
 
 </div>
 </div>
 </div>
 </div>
 <div class="sect2">
-<h3 id="module-implementation"><a class="link" href="#module-implementation">3.2. Module Implementation</a></h3>
+<h3 id="module-implementation"><a class="anchor" href="#module-implementation"></a><a class="link" href="#module-implementation">3.2. Module Implementation</a></h3>
 <div class="sect3">
-<h4 id="add-module"><a class="link" href="#add-module">3.2.1. Add Module</a></h4>
+<h4 id="add-module"><a class="anchor" href="#add-module"></a><a class="link" href="#add-module">3.2.1. Add Module</a></h4>
 <div class="paragraph">
 <p>The <code>module add</code> command associates an existing <code>Module</code> entity (with all associated values) provided by the user.</p>
 </div>
@@ -618,7 +645,7 @@ As of this time, <code>Student</code> entities can only be associated in a 1-0..
 </table>
 </div>
 <div class="sect4">
-<h5 id="current-implementation-5"><a class="link" href="#current-implementation-5">Current Implementation</a></h5>
+<h5 id="current-implementation-5"><a class="anchor" href="#current-implementation-5"></a><a class="link" href="#current-implementation-5">3.2.1.1. Current Implementation</a></h5>
 <div class="paragraph">
 <p><code>ModuleAddCommand</code> extends from the <code>Command</code> class and uses the inheritance to facilitate the implementation. <code>ModuleAddCommand</code> is parsed using <code>ModuleAddCommandParser</code> to split the user input into relevant fields.</p>
 </div>
@@ -642,15 +669,15 @@ As of this time, <code>Student</code> entities can only be associated in a 1-0..
 </div>
 </div>
 <div class="sect4">
-<h5 id="design-considerations-5"><a class="link" href="#design-considerations-5">Design Considerations</a></h5>
+<h5 id="design-considerations-5"><a class="anchor" href="#design-considerations-5"></a><a class="link" href="#design-considerations-5">3.2.1.2. Design Considerations</a></h5>
 <div class="sect5">
-<h6 id="aspect-how-code-moduleaddcommand-code-executes"><a class="link" href="#aspect-how-code-moduleaddcommand-code-executes">Aspect: How <code>ModuleAddCommand</code> Executes</a></h6>
+<h6 id="aspect-how-code-moduleaddcommand-code-executes"><a class="anchor" href="#aspect-how-code-moduleaddcommand-code-executes"></a><a class="link" href="#aspect-how-code-moduleaddcommand-code-executes">Aspect: How <code>ModuleAddCommand</code> Executes</a></h6>
 
 </div>
 </div>
 </div>
 <div class="sect3">
-<h4 id="remove-module"><a class="link" href="#remove-module">3.2.2. Remove Module</a></h4>
+<h4 id="remove-module"><a class="anchor" href="#remove-module"></a><a class="link" href="#remove-module">3.2.2. Remove Module</a></h4>
 <div class="paragraph">
 <p>The <code>module remove</code> command disassociates a <code>Module</code> entity (with all associated values) when instructed by the user.</p>
 </div>
@@ -658,7 +685,7 @@ As of this time, <code>Student</code> entities can only be associated in a 1-0..
 <p>It is appended with the tag <code>MODULE_CODE</code>.</p>
 </div>
 <div class="sect4">
-<h5 id="current-implementation-6"><a class="link" href="#current-implementation-6">Current Implementation</a></h5>
+<h5 id="current-implementation-6"><a class="anchor" href="#current-implementation-6"></a><a class="link" href="#current-implementation-6">3.2.2.1. Current Implementation</a></h5>
 <div class="paragraph">
 <p><code>ModuleRemoveCommand</code> extends from the <code>Command</code> class and uses the inheritance to facilitate the implementation. <code>ModuleRemoveCommand</code> is parsed using <code>ModuleRemoveCommandParser</code> to parse the action.</p>
 </div>
@@ -682,20 +709,20 @@ As of this time, <code>Student</code> entities can only be associated in a 1-0..
 </div>
 </div>
 <div class="sect4">
-<h5 id="design-considerations-6"><a class="link" href="#design-considerations-6">Design Considerations</a></h5>
+<h5 id="design-considerations-6"><a class="anchor" href="#design-considerations-6"></a><a class="link" href="#design-considerations-6">3.2.2.2. Design Considerations</a></h5>
 <div class="sect5">
-<h6 id="aspect-how-code-moduleremovecommand-code-executes"><a class="link" href="#aspect-how-code-moduleremovecommand-code-executes">Aspect: How <code>ModuleRemoveCommand</code> Executes</a></h6>
+<h6 id="aspect-how-code-moduleremovecommand-code-executes"><a class="anchor" href="#aspect-how-code-moduleremovecommand-code-executes"></a><a class="link" href="#aspect-how-code-moduleremovecommand-code-executes">Aspect: How <code>ModuleRemoveCommand</code> Executes</a></h6>
 
 </div>
 </div>
 </div>
 <div class="sect3">
-<h4 id="list-modules"><a class="link" href="#list-modules">3.2.3. List Modules</a></h4>
+<h4 id="list-modules"><a class="anchor" href="#list-modules"></a><a class="link" href="#list-modules">3.2.3. List Modules</a></h4>
 <div class="paragraph">
 <p>The <code>module list</code> command lists all <code>Module</code> entities.</p>
 </div>
 <div class="sect4">
-<h5 id="current-implementation-7"><a class="link" href="#current-implementation-7">Current Implementation</a></h5>
+<h5 id="current-implementation-7"><a class="anchor" href="#current-implementation-7"></a><a class="link" href="#current-implementation-7">3.2.3.1. Current Implementation</a></h5>
 <div class="paragraph">
 <p><code>ModuleListCommand</code> extends from the <code>Command</code> class and uses the inheritance to facilitate the implementation. <code>ModuleListCommand</code> is parsed using <code>ModuleCommandParser</code> to get the command input.</p>
 </div>
@@ -731,18 +758,18 @@ When appended with <code>exempted</code> (i.e. <code>module list exempted</code>
 </div>
 </div>
 <div class="sect4">
-<h5 id="design-considerations-7"><a class="link" href="#design-considerations-7">Design Considerations</a></h5>
+<h5 id="design-considerations-7"><a class="anchor" href="#design-considerations-7"></a><a class="link" href="#design-considerations-7">3.2.3.2. Design Considerations</a></h5>
 <div class="sect5">
-<h6 id="aspect-how-code-modulelistcommand-code-executes"><a class="link" href="#aspect-how-code-modulelistcommand-code-executes">Aspect: How <code>ModuleListCommand</code> Executes</a></h6>
+<h6 id="aspect-how-code-modulelistcommand-code-executes"><a class="anchor" href="#aspect-how-code-modulelistcommand-code-executes"></a><a class="link" href="#aspect-how-code-modulelistcommand-code-executes">Aspect: How <code>ModuleListCommand</code> Executes</a></h6>
 
 </div>
 </div>
 </div>
 </div>
 <div class="sect2">
-<h3 id="student-implementation"><a class="link" href="#student-implementation">3.3. Student Implementation</a></h3>
+<h3 id="student-implementation"><a class="anchor" href="#student-implementation"></a><a class="link" href="#student-implementation">3.3. Student Implementation</a></h3>
 <div class="sect3">
-<h4 id="add-student"><a class="link" href="#add-student">3.3.1. Add Student</a></h4>
+<h4 id="add-student"><a class="anchor" href="#add-student"></a><a class="link" href="#add-student">3.3.1. Add Student</a></h4>
 <div class="paragraph">
 <p>The <code>student add</code> command creates a <code>Student</code> entity (with name and/or major) with the fields provided by the user.</p>
 </div>
@@ -766,7 +793,7 @@ When appended with <code>exempted</code> (i.e. <code>module list exempted</code>
 </ul>
 </div>
 <div class="sect4">
-<h5 id="current-implementation-8"><a class="link" href="#current-implementation-8">Current Implementation</a></h5>
+<h5 id="current-implementation-8"><a class="anchor" href="#current-implementation-8"></a><a class="link" href="#current-implementation-8">3.3.1.1. Current Implementation</a></h5>
 <div class="paragraph">
 <p><code>StudentAddCommand</code> extends from the <code>Command</code> class and uses the inheritance to facilitate the implementation. <code>StudentAddCommand</code> is parsed using <code>StudentAddCommandParser</code> to split the user input into relevant fields.</p>
 </div>
@@ -800,15 +827,15 @@ When appended with <code>exempted</code> (i.e. <code>module list exempted</code>
 </div>
 </div>
 <div class="sect4">
-<h5 id="design-considerations-8"><a class="link" href="#design-considerations-8">Design Considerations</a></h5>
+<h5 id="design-considerations-8"><a class="anchor" href="#design-considerations-8"></a><a class="link" href="#design-considerations-8">3.3.1.2. Design Considerations</a></h5>
 <div class="sect5">
-<h6 id="aspect-how-code-studentaddcommand-code-executes"><a class="link" href="#aspect-how-code-studentaddcommand-code-executes">Aspect: How <code>StudentAddCommand</code> Executes</a></h6>
+<h6 id="aspect-how-code-studentaddcommand-code-executes"><a class="anchor" href="#aspect-how-code-studentaddcommand-code-executes"></a><a class="link" href="#aspect-how-code-studentaddcommand-code-executes">Aspect: How <code>StudentAddCommand</code> Executes</a></h6>
 
 </div>
 </div>
 </div>
 <div class="sect3">
-<h4 id="remove-student"><a class="link" href="#remove-student">3.3.2. Remove Student</a></h4>
+<h4 id="remove-student"><a class="anchor" href="#remove-student"></a><a class="link" href="#remove-student">3.3.2. Remove Student</a></h4>
 <div class="paragraph">
 <p>The <code>student remove</code> command destroys a <code>Student</code> entity (with all associated values) when instructed by the user.</p>
 </div>
@@ -816,7 +843,7 @@ When appended with <code>exempted</code> (i.e. <code>module list exempted</code>
 <p>It is appended with the tag <code>INDEX</code>.</p>
 </div>
 <div class="sect4">
-<h5 id="current-implementation-9"><a class="link" href="#current-implementation-9">Current Implementation</a></h5>
+<h5 id="current-implementation-9"><a class="anchor" href="#current-implementation-9"></a><a class="link" href="#current-implementation-9">3.3.2.1. Current Implementation</a></h5>
 <div class="paragraph">
 <p><code>StudentRemoveCommand</code> extends from the <code>Command</code> class and uses the inheritance to facilitate the implementation. <code>StudentRemoveCommand</code> is parsed using <code>StudentRemoveCommandParser</code> to parse the action.</p>
 </div>
@@ -840,15 +867,15 @@ When appended with <code>exempted</code> (i.e. <code>module list exempted</code>
 </div>
 </div>
 <div class="sect4">
-<h5 id="design-considerations-9"><a class="link" href="#design-considerations-9">Design Considerations</a></h5>
+<h5 id="design-considerations-9"><a class="anchor" href="#design-considerations-9"></a><a class="link" href="#design-considerations-9">3.3.2.2. Design Considerations</a></h5>
 <div class="sect5">
-<h6 id="aspect-how-code-studentremovecommand-code-executes"><a class="link" href="#aspect-how-code-studentremovecommand-code-executes">Aspect: How <code>StudentRemoveCommand</code> Executes</a></h6>
+<h6 id="aspect-how-code-studentremovecommand-code-executes"><a class="anchor" href="#aspect-how-code-studentremovecommand-code-executes"></a><a class="link" href="#aspect-how-code-studentremovecommand-code-executes">Aspect: How <code>StudentRemoveCommand</code> Executes</a></h6>
 
 </div>
 </div>
 </div>
 <div class="sect3">
-<h4 id="active-student"><a class="link" href="#active-student">3.3.3. Active Student</a></h4>
+<h4 id="active-student"><a class="anchor" href="#active-student"></a><a class="link" href="#active-student">3.3.3. Active Student</a></h4>
 <div class="paragraph">
 <p>The <code>student active</code> command selects the specified <code>Student</code> entity with its associated values, by the index input provided by the user.</p>
 </div>
@@ -856,7 +883,7 @@ When appended with <code>exempted</code> (i.e. <code>module list exempted</code>
 <p>It is appended with the tag <code>INDEX</code>.</p>
 </div>
 <div class="sect4">
-<h5 id="current-implementation-10"><a class="link" href="#current-implementation-10">Current Implementation</a></h5>
+<h5 id="current-implementation-10"><a class="anchor" href="#current-implementation-10"></a><a class="link" href="#current-implementation-10">3.3.3.1. Current Implementation</a></h5>
 <div class="paragraph">
 <p><code>StudentActiveCommand</code> extends from the <code>Command</code> class and uses the inheritance to facilitate the implementation. <code>StudentActiveCommand</code> is parsed using <code>StudentActiveCommandParser</code> to split the user input into relevant fields.</p>
 </div>
@@ -880,20 +907,20 @@ When appended with <code>exempted</code> (i.e. <code>module list exempted</code>
 </div>
 </div>
 <div class="sect4">
-<h5 id="design-considerations-10"><a class="link" href="#design-considerations-10">Design Considerations</a></h5>
+<h5 id="design-considerations-10"><a class="anchor" href="#design-considerations-10"></a><a class="link" href="#design-considerations-10">3.3.3.2. Design Considerations</a></h5>
 <div class="sect5">
-<h6 id="aspect-how-code-studentactivecommand-code-executes"><a class="link" href="#aspect-how-code-studentactivecommand-code-executes">Aspect: How <code>StudentActiveCommand</code> Executes</a></h6>
+<h6 id="aspect-how-code-studentactivecommand-code-executes"><a class="anchor" href="#aspect-how-code-studentactivecommand-code-executes"></a><a class="link" href="#aspect-how-code-studentactivecommand-code-executes">Aspect: How <code>StudentActiveCommand</code> Executes</a></h6>
 
 </div>
 </div>
 </div>
 <div class="sect3">
-<h4 id="list-students"><a class="link" href="#list-students">3.3.4. List Students</a></h4>
+<h4 id="list-students"><a class="anchor" href="#list-students"></a><a class="link" href="#list-students">3.3.4. List Students</a></h4>
 <div class="paragraph">
 <p>The <code>student list</code> command lists all <code>Student</code> entities.</p>
 </div>
 <div class="sect4">
-<h5 id="current-implementation-11"><a class="link" href="#current-implementation-11">Current Implementation</a></h5>
+<h5 id="current-implementation-11"><a class="anchor" href="#current-implementation-11"></a><a class="link" href="#current-implementation-11">3.3.4.1. Current Implementation</a></h5>
 <div class="paragraph">
 <p><code>StudentListCommand</code> extends from the <code>Command</code> class and uses the inheritance to facilitate the implementation. <code>StudentListCommand</code> is parsed using <code>StudentCommandParser</code> to get the command input.</p>
 </div>
@@ -917,18 +944,18 @@ When appended with <code>exempted</code> (i.e. <code>module list exempted</code>
 </div>
 </div>
 <div class="sect4">
-<h5 id="design-considerations-11"><a class="link" href="#design-considerations-11">Design Considerations</a></h5>
+<h5 id="design-considerations-11"><a class="anchor" href="#design-considerations-11"></a><a class="link" href="#design-considerations-11">3.3.4.2. Design Considerations</a></h5>
 <div class="sect5">
-<h6 id="aspect-how-code-studentlistcommand-code-executes"><a class="link" href="#aspect-how-code-studentlistcommand-code-executes">Aspect: How <code>StudentListCommand</code> Executes</a></h6>
+<h6 id="aspect-how-code-studentlistcommand-code-executes"><a class="anchor" href="#aspect-how-code-studentlistcommand-code-executes"></a><a class="link" href="#aspect-how-code-studentlistcommand-code-executes">Aspect: How <code>StudentListCommand</code> Executes</a></h6>
 
 </div>
 </div>
 </div>
 </div>
 <div class="sect2">
-<h3 id="timetable-implementation"><a class="link" href="#timetable-implementation">3.4. Timetable Implementation</a></h3>
+<h3 id="timetable-implementation"><a class="anchor" href="#timetable-implementation"></a><a class="link" href="#timetable-implementation">3.4. Timetable Implementation</a></h3>
 <div class="sect3">
-<h4 id="add-timetable"><a class="link" href="#add-timetable">3.4.1. Add Timetable</a></h4>
+<h4 id="add-timetable"><a class="anchor" href="#add-timetable"></a><a class="link" href="#add-timetable">3.4.1. Add Timetable</a></h4>
 <div class="paragraph">
 <p>The <code>timetable add</code> command creates a <code>TimeTable</code> entity (possibly with enrollments, year and semester) provided by the user.</p>
 </div>
@@ -946,7 +973,7 @@ When appended with <code>exempted</code> (i.e. <code>module list exempted</code>
 </ul>
 </div>
 <div class="sect4">
-<h5 id="current-implementation-12"><a class="link" href="#current-implementation-12">Current Implementation</a></h5>
+<h5 id="current-implementation-12"><a class="anchor" href="#current-implementation-12"></a><a class="link" href="#current-implementation-12">3.4.1.1. Current Implementation</a></h5>
 <div class="paragraph">
 <p><code>TimeTableAddCommand</code> extends from the <code>Command</code> class and uses the inheritance to facilitate the implementation. <code>TimeTableAddCommand</code> is parsed using <code>TimeTableAddCommandParser</code> to split the user input into relevant fields.</p>
 </div>
@@ -980,15 +1007,15 @@ When appended with <code>exempted</code> (i.e. <code>module list exempted</code>
 </div>
 </div>
 <div class="sect4">
-<h5 id="design-considerations-12"><a class="link" href="#design-considerations-12">Design Considerations</a></h5>
+<h5 id="design-considerations-12"><a class="anchor" href="#design-considerations-12"></a><a class="link" href="#design-considerations-12">3.4.1.2. Design Considerations</a></h5>
 <div class="sect5">
-<h6 id="aspect-how-code-timetableaddcommand-code-executes"><a class="link" href="#aspect-how-code-timetableaddcommand-code-executes">Aspect: How <code>TimeTableAddCommand</code> Executes</a></h6>
+<h6 id="aspect-how-code-timetableaddcommand-code-executes"><a class="anchor" href="#aspect-how-code-timetableaddcommand-code-executes"></a><a class="link" href="#aspect-how-code-timetableaddcommand-code-executes">Aspect: How <code>TimeTableAddCommand</code> Executes</a></h6>
 
 </div>
 </div>
 </div>
 <div class="sect3">
-<h4 id="remove-timetable"><a class="link" href="#remove-timetable">3.4.2. Remove TimeTable</a></h4>
+<h4 id="remove-timetable"><a class="anchor" href="#remove-timetable"></a><a class="link" href="#remove-timetable">3.4.2. Remove TimeTable</a></h4>
 <div class="paragraph">
 <p>The <code>timetable remove</code> command destroys a <code>TimeTable</code> entity (with all associated values) when instructed by the user.</p>
 </div>
@@ -996,7 +1023,7 @@ When appended with <code>exempted</code> (i.e. <code>module list exempted</code>
 <p>It is appended with the tags <code>year/YEAR</code> and <code>sem/SEM</code>.</p>
 </div>
 <div class="sect4">
-<h5 id="current-implementation-13"><a class="link" href="#current-implementation-13">Current Implementation</a></h5>
+<h5 id="current-implementation-13"><a class="anchor" href="#current-implementation-13"></a><a class="link" href="#current-implementation-13">3.4.2.1. Current Implementation</a></h5>
 <div class="paragraph">
 <p><code>TimeTableRemoveCommand</code> extends from the <code>Command</code> class and uses the inheritance to facilitate the implementation. <code>TimeTableRemoveCommand</code> is parsed using <code>TimeTableRemoveCommandParser</code> to parse the action.</p>
 </div>
@@ -1020,15 +1047,15 @@ When appended with <code>exempted</code> (i.e. <code>module list exempted</code>
 </div>
 </div>
 <div class="sect4">
-<h5 id="design-considerations-13"><a class="link" href="#design-considerations-13">Design Considerations</a></h5>
+<h5 id="design-considerations-13"><a class="anchor" href="#design-considerations-13"></a><a class="link" href="#design-considerations-13">3.4.2.2. Design Considerations</a></h5>
 <div class="sect5">
-<h6 id="aspect-how-code-timetableremovecommand-code-executes"><a class="link" href="#aspect-how-code-timetableremovecommand-code-executes">Aspect: How <code>TimeTableRemoveCommand</code> Executes</a></h6>
+<h6 id="aspect-how-code-timetableremovecommand-code-executes"><a class="anchor" href="#aspect-how-code-timetableremovecommand-code-executes"></a><a class="link" href="#aspect-how-code-timetableremovecommand-code-executes">Aspect: How <code>TimeTableRemoveCommand</code> Executes</a></h6>
 
 </div>
 </div>
 </div>
 <div class="sect3">
-<h4 id="active-timetable"><a class="link" href="#active-timetable">3.4.3. Active TimeTable</a></h4>
+<h4 id="active-timetable"><a class="anchor" href="#active-timetable"></a><a class="link" href="#active-timetable">3.4.3. Active TimeTable</a></h4>
 <div class="paragraph">
 <p>The <code>TimeTable active</code> command selects the specified <code>TimeTable</code> entity with its associated values, by the index input provided by the user.</p>
 </div>
@@ -1036,7 +1063,7 @@ When appended with <code>exempted</code> (i.e. <code>module list exempted</code>
 <p>It is appended with the tags <code>year/YEAR</code> and <code>sem/SEM</code>.</p>
 </div>
 <div class="sect4">
-<h5 id="current-implementation-14"><a class="link" href="#current-implementation-14">Current Implementation</a></h5>
+<h5 id="current-implementation-14"><a class="anchor" href="#current-implementation-14"></a><a class="link" href="#current-implementation-14">3.4.3.1. Current Implementation</a></h5>
 <div class="paragraph">
 <p><code>TimeTableActiveCommand</code> extends from the <code>Command</code> class and uses the inheritance to facilitate the implementation. <code>TimeTableActiveCommand</code> is parsed using <code>TimeTableActiveCommandParser</code> to split the user input into relevant fields.</p>
 </div>
@@ -1060,20 +1087,20 @@ When appended with <code>exempted</code> (i.e. <code>module list exempted</code>
 </div>
 </div>
 <div class="sect4">
-<h5 id="design-considerations-14"><a class="link" href="#design-considerations-14">Design Considerations</a></h5>
+<h5 id="design-considerations-14"><a class="anchor" href="#design-considerations-14"></a><a class="link" href="#design-considerations-14">3.4.3.2. Design Considerations</a></h5>
 <div class="sect5">
-<h6 id="aspect-how-code-timetableactivecommand-code-executes"><a class="link" href="#aspect-how-code-timetableactivecommand-code-executes">Aspect: How <code>TimeTableActiveCommand</code> Executes</a></h6>
+<h6 id="aspect-how-code-timetableactivecommand-code-executes"><a class="anchor" href="#aspect-how-code-timetableactivecommand-code-executes"></a><a class="link" href="#aspect-how-code-timetableactivecommand-code-executes">Aspect: How <code>TimeTableActiveCommand</code> Executes</a></h6>
 
 </div>
 </div>
 </div>
 <div class="sect3">
-<h4 id="list-timetables"><a class="link" href="#list-timetables">3.4.4. List Timetables</a></h4>
+<h4 id="list-timetables"><a class="anchor" href="#list-timetables"></a><a class="link" href="#list-timetables">3.4.4. List Timetables</a></h4>
 <div class="paragraph">
 <p>The <code>timetable list</code> command lists all <code>TimeTable</code> entities.</p>
 </div>
 <div class="sect4">
-<h5 id="current-implementation-15"><a class="link" href="#current-implementation-15">Current Implementation</a></h5>
+<h5 id="current-implementation-15"><a class="anchor" href="#current-implementation-15"></a><a class="link" href="#current-implementation-15">3.4.4.1. Current Implementation</a></h5>
 <div class="paragraph">
 <p><code>TimeTableListCommand</code> extends from the <code>Command</code> class and uses the inheritance to facilitate the implementation. <code>TimeTableListCommand</code> is parsed using <code>TimeTableCommandParser</code> to get the command input.</p>
 </div>
@@ -1097,16 +1124,16 @@ When appended with <code>exempted</code> (i.e. <code>module list exempted</code>
 </div>
 </div>
 <div class="sect4">
-<h5 id="design-considerations-15"><a class="link" href="#design-considerations-15">Design Considerations</a></h5>
+<h5 id="design-considerations-15"><a class="anchor" href="#design-considerations-15"></a><a class="link" href="#design-considerations-15">3.4.4.2. Design Considerations</a></h5>
 <div class="sect5">
-<h6 id="aspect-how-code-timetablelistcommand-code-executes"><a class="link" href="#aspect-how-code-timetablelistcommand-code-executes">Aspect: How <code>TimeTableListCommand</code> Executes</a></h6>
+<h6 id="aspect-how-code-timetablelistcommand-code-executes"><a class="anchor" href="#aspect-how-code-timetablelistcommand-code-executes"></a><a class="link" href="#aspect-how-code-timetablelistcommand-code-executes">Aspect: How <code>TimeTableListCommand</code> Executes</a></h6>
 
 </div>
 </div>
 </div>
 </div>
 <div class="sect2">
-<h3 id="logging"><a class="link" href="#logging">3.5. Logging</a></h3>
+<h3 id="logging"><a class="anchor" href="#logging"></a><a class="link" href="#logging">3.5. Logging</a></h3>
 <div class="paragraph">
 <p>We are using <code>java.util.logging</code> package for logging. The <code>LogsCenter</code> class is used to manage the logging levels and logging destinations.</p>
 </div>
@@ -1144,7 +1171,7 @@ When appended with <code>exempted</code> (i.e. <code>module list exempted</code>
 </div>
 </div>
 <div class="sect2">
-<h3 id="Implementation-Configuration"><a class="link" href="#Implementation-Configuration">3.6. Configuration</a></h3>
+<h3 id="Implementation-Configuration"><a class="anchor" href="#Implementation-Configuration"></a><a class="link" href="#Implementation-Configuration">3.6. Configuration</a></h3>
 <div class="paragraph">
 <p>Certain properties of the application can be controlled (e.g user prefs file location, logging level) through the configuration file (default: <code>config.json</code>).</p>
 </div>
@@ -1152,7 +1179,7 @@ When appended with <code>exempted</code> (i.e. <code>module list exempted</code>
 </div>
 </div>
 <div class="sect1">
-<h2 id="documentation"><a class="link" href="#documentation">4. Documentation</a></h2>
+<h2 id="documentation"><a class="anchor" href="#documentation"></a><a class="link" href="#documentation">4. Documentation</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>Refer to the guide <a href="Documentation.html">here</a>.</p>
@@ -1160,7 +1187,7 @@ When appended with <code>exempted</code> (i.e. <code>module list exempted</code>
 </div>
 </div>
 <div class="sect1">
-<h2 id="testing"><a class="link" href="#testing">5. Testing</a></h2>
+<h2 id="testing"><a class="anchor" href="#testing"></a><a class="link" href="#testing">5. Testing</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>Refer to the guide <a href="Testing.html">here</a>.</p>
@@ -1168,7 +1195,7 @@ When appended with <code>exempted</code> (i.e. <code>module list exempted</code>
 </div>
 </div>
 <div class="sect1">
-<h2 id="dev-ops"><a class="link" href="#dev-ops">6. Dev Ops</a></h2>
+<h2 id="dev-ops"><a class="anchor" href="#dev-ops"></a><a class="link" href="#dev-ops">6. Dev Ops</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>Refer to the guide <a href="DevOps.html">here</a>.</p>
@@ -1176,10 +1203,10 @@ When appended with <code>exempted</code> (i.e. <code>module list exempted</code>
 </div>
 </div>
 <div class="sect1">
-<h2 id="product-scope"><a class="link" href="#product-scope">Appendix A: Product Scope</a></h2>
+<h2 id="product-scope"><a class="anchor" href="#product-scope"></a><a class="link" href="#product-scope">Appendix A: Product Scope</a></h2>
 <div class="sectionbody">
 <div class="sect2">
-<h3 id="target-user-profile"><a class="link" href="#target-user-profile">A.1. Target User Profile</a></h3>
+<h3 id="target-user-profile"><a class="anchor" href="#target-user-profile"></a><a class="link" href="#target-user-profile">A.1. Target User Profile</a></h3>
 <div class="ulist">
 <ul>
 <li>
@@ -1204,7 +1231,7 @@ When appended with <code>exempted</code> (i.e. <code>module list exempted</code>
 </div>
 </div>
 <div class="sect2">
-<h3 id="value-proposition"><a class="link" href="#value-proposition">A.2. Value Proposition</a></h3>
+<h3 id="value-proposition"><a class="anchor" href="#value-proposition"></a><a class="link" href="#value-proposition">A.2. Value Proposition</a></h3>
 <div class="ulist">
 <ul>
 <li>
@@ -1219,7 +1246,7 @@ When appended with <code>exempted</code> (i.e. <code>module list exempted</code>
 </div>
 </div>
 <div class="sect1">
-<h2 id="user-stories"><a class="link" href="#user-stories">Appendix B: User Stories</a></h2>
+<h2 id="user-stories"><a class="anchor" href="#user-stories"></a><a class="link" href="#user-stories">Appendix B: User Stories</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>Priorities: High (must have) - <code>* * *</code>, Medium (nice to have) - <code>* *</code>, Low (unlikely to have) - <code>*</code></p>
@@ -1404,13 +1431,13 @@ When appended with <code>exempted</code> (i.e. <code>module list exempted</code>
 </div>
 </div>
 <div class="sect1">
-<h2 id="use-cases"><a class="link" href="#use-cases">Appendix C: Use Cases</a></h2>
+<h2 id="use-cases"><a class="anchor" href="#use-cases"></a><a class="link" href="#use-cases">Appendix C: Use Cases</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>(For all use cases below, the <strong>System</strong> is the <code>Planner</code> and the <strong>Actor</strong> is the <code>user</code>, unless specified otherwise)</p>
 </div>
 <div class="sect2">
-<h3 id="use-case-add-plan-uca01"><a class="link" href="#use-case-add-plan-uca01">C.1. Use Case: Add Plan (UCA01)</a></h3>
+<h3 id="use-case-add-plan-uca01"><a class="anchor" href="#use-case-add-plan-uca01"></a><a class="link" href="#use-case-add-plan-uca01">C.1. Use Case: Add Plan (UCA01)</a></h3>
 <div class="paragraph">
 <p><strong>MSS</strong></p>
 </div>
@@ -1452,7 +1479,7 @@ When appended with <code>exempted</code> (i.e. <code>module list exempted</code>
 </div>
 </div>
 <div class="sect2">
-<h3 id="use-case-delete-plan-uca02"><a class="link" href="#use-case-delete-plan-uca02">C.2. Use Case: Delete Plan (UCA02)</a></h3>
+<h3 id="use-case-delete-plan-uca02"><a class="anchor" href="#use-case-delete-plan-uca02"></a><a class="link" href="#use-case-delete-plan-uca02">C.2. Use Case: Delete Plan (UCA02)</a></h3>
 <div class="paragraph">
 <p><strong>MSS</strong></p>
 </div>
@@ -1503,7 +1530,7 @@ When appended with <code>exempted</code> (i.e. <code>module list exempted</code>
 </div>
 </div>
 <div class="sect2">
-<h3 id="use-case-select-plan-uca03"><a class="link" href="#use-case-select-plan-uca03">C.3. Use Case: Select Plan (UCA03)</a></h3>
+<h3 id="use-case-select-plan-uca03"><a class="anchor" href="#use-case-select-plan-uca03"></a><a class="link" href="#use-case-select-plan-uca03">C.3. Use Case: Select Plan (UCA03)</a></h3>
 <div class="paragraph">
 <p><strong>MSS</strong></p>
 </div>
@@ -1554,7 +1581,7 @@ When appended with <code>exempted</code> (i.e. <code>module list exempted</code>
 </div>
 </div>
 <div class="sect2">
-<h3 id="use-case-add-timetable-ucb01"><a class="link" href="#use-case-add-timetable-ucb01">C.4. Use Case: Add Timetable (UCB01)</a></h3>
+<h3 id="use-case-add-timetable-ucb01"><a class="anchor" href="#use-case-add-timetable-ucb01"></a><a class="link" href="#use-case-add-timetable-ucb01">C.4. Use Case: Add Timetable (UCB01)</a></h3>
 <div class="paragraph">
 <p><strong>MSS</strong></p>
 </div>
@@ -1612,7 +1639,7 @@ When appended with <code>exempted</code> (i.e. <code>module list exempted</code>
 </div>
 </div>
 <div class="sect2">
-<h3 id="use-case-delete-timetable-ucb02"><a class="link" href="#use-case-delete-timetable-ucb02">C.5. Use Case: Delete Timetable (UCB02)</a></h3>
+<h3 id="use-case-delete-timetable-ucb02"><a class="anchor" href="#use-case-delete-timetable-ucb02"></a><a class="link" href="#use-case-delete-timetable-ucb02">C.5. Use Case: Delete Timetable (UCB02)</a></h3>
 <div class="paragraph">
 <p><strong>MSS</strong></p>
 </div>
@@ -1673,7 +1700,7 @@ When appended with <code>exempted</code> (i.e. <code>module list exempted</code>
 </div>
 </div>
 <div class="sect2">
-<h3 id="use-case-select-timetable-ucb03"><a class="link" href="#use-case-select-timetable-ucb03">C.6. Use Case: Select Timetable (UCB03)</a></h3>
+<h3 id="use-case-select-timetable-ucb03"><a class="anchor" href="#use-case-select-timetable-ucb03"></a><a class="link" href="#use-case-select-timetable-ucb03">C.6. Use Case: Select Timetable (UCB03)</a></h3>
 <div class="paragraph">
 <p><strong>MSS</strong></p>
 </div>
@@ -1727,7 +1754,7 @@ When appended with <code>exempted</code> (i.e. <code>module list exempted</code>
 </div>
 </div>
 <div class="sect2">
-<h3 id="use-case-add-module-ucc01"><a class="link" href="#use-case-add-module-ucc01">C.7. Use Case: Add Module (UCC01)</a></h3>
+<h3 id="use-case-add-module-ucc01"><a class="anchor" href="#use-case-add-module-ucc01"></a><a class="link" href="#use-case-add-module-ucc01">C.7. Use Case: Add Module (UCC01)</a></h3>
 <div class="paragraph">
 <p><strong>MSS</strong></p>
 </div>
@@ -1786,7 +1813,7 @@ When appended with <code>exempted</code> (i.e. <code>module list exempted</code>
 </div>
 </div>
 <div class="sect2">
-<h3 id="use-case-delete-module-ucc02"><a class="link" href="#use-case-delete-module-ucc02">C.8. Use Case: Delete Module (UCC02)</a></h3>
+<h3 id="use-case-delete-module-ucc02"><a class="anchor" href="#use-case-delete-module-ucc02"></a><a class="link" href="#use-case-delete-module-ucc02">C.8. Use Case: Delete Module (UCC02)</a></h3>
 <div class="paragraph">
 <p><strong>MSS</strong></p>
 </div>
@@ -1845,7 +1872,7 @@ When appended with <code>exempted</code> (i.e. <code>module list exempted</code>
 </div>
 </div>
 <div class="sect2">
-<h3 id="use-case-list-grades-ucd01"><a class="link" href="#use-case-list-grades-ucd01">C.9. Use Case: List Grades (UCD01)</a></h3>
+<h3 id="use-case-list-grades-ucd01"><a class="anchor" href="#use-case-list-grades-ucd01"></a><a class="link" href="#use-case-list-grades-ucd01">C.9. Use Case: List Grades (UCD01)</a></h3>
 <div class="paragraph">
 <p><strong>MSS</strong></p>
 </div>
@@ -1887,7 +1914,7 @@ When appended with <code>exempted</code> (i.e. <code>module list exempted</code>
 </div>
 </div>
 <div class="sect2">
-<h3 id="use-case-set-module-grade-ucd02"><a class="link" href="#use-case-set-module-grade-ucd02">C.10. Use Case: Set Module Grade (UCD02)</a></h3>
+<h3 id="use-case-set-module-grade-ucd02"><a class="anchor" href="#use-case-set-module-grade-ucd02"></a><a class="link" href="#use-case-set-module-grade-ucd02">C.10. Use Case: Set Module Grade (UCD02)</a></h3>
 <div class="paragraph">
 <p><strong>MSS</strong></p>
 </div>
@@ -1968,7 +1995,7 @@ When appended with <code>exempted</code> (i.e. <code>module list exempted</code>
 </div>
 </div>
 <div class="sect1">
-<h2 id="non-functional-requirements"><a class="link" href="#non-functional-requirements">Appendix D: Non-Functional Requirements</a></h2>
+<h2 id="non-functional-requirements"><a class="anchor" href="#non-functional-requirements"></a><a class="link" href="#non-functional-requirements">Appendix D: Non-Functional Requirements</a></h2>
 <div class="sectionbody">
 <div class="olist arabic">
 <ol class="arabic">
@@ -1995,7 +2022,7 @@ When appended with <code>exempted</code> (i.e. <code>module list exempted</code>
 </div>
 </div>
 <div class="sect1">
-<h2 id="glossary"><a class="link" href="#glossary">Appendix E: Glossary</a></h2>
+<h2 id="glossary"><a class="anchor" href="#glossary"></a><a class="link" href="#glossary">Appendix E: Glossary</a></h2>
 <div class="sectionbody">
 <div class="hdlist">
 <table>
@@ -2108,7 +2135,7 @@ When appended with <code>exempted</code> (i.e. <code>module list exempted</code>
 </div>
 </div>
 <div class="sect1">
-<h2 id="product-survey"><a class="link" href="#product-survey">Appendix F: Product Survey</a></h2>
+<h2 id="product-survey"><a class="anchor" href="#product-survey"></a><a class="link" href="#product-survey">Appendix F: Product Survey</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p><strong>Product Name</strong></p>
@@ -2145,7 +2172,7 @@ When appended with <code>exempted</code> (i.e. <code>module list exempted</code>
 </div>
 </div>
 <div class="sect1">
-<h2 id="instructions-for-manual-testing"><a class="link" href="#instructions-for-manual-testing">Appendix G: Instructions for Manual Testing</a></h2>
+<h2 id="instructions-for-manual-testing"><a class="anchor" href="#instructions-for-manual-testing"></a><a class="link" href="#instructions-for-manual-testing">Appendix G: Instructions for Manual Testing</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>Given below are instructions to test the app manually.</p>
@@ -2163,7 +2190,7 @@ These instructions only provide a starting point for testers to work on; testers
 </table>
 </div>
 <div class="sect2">
-<h3 id="launch-and-shutdown"><a class="link" href="#launch-and-shutdown">G.1. Launch and Shutdown</a></h3>
+<h3 id="launch-and-shutdown"><a class="anchor" href="#launch-and-shutdown"></a><a class="link" href="#launch-and-shutdown">G.1. Launch and Shutdown</a></h3>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
@@ -2201,7 +2228,7 @@ Expected: The most recent window size and location is retained.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="deleting-a-plan"><a class="link" href="#deleting-a-plan">G.2. Deleting a Plan</a></h3>
+<h3 id="deleting-a-plan"><a class="anchor" href="#deleting-a-plan"></a><a class="link" href="#deleting-a-plan">G.2. Deleting a Plan</a></h3>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
@@ -2230,7 +2257,7 @@ Expected: Similar to previous.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="adding-a-plan"><a class="link" href="#adding-a-plan">G.3. Adding a Plan</a></h3>
+<h3 id="adding-a-plan"><a class="anchor" href="#adding-a-plan"></a><a class="link" href="#adding-a-plan">G.3. Adding a Plan</a></h3>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
@@ -2262,7 +2289,7 @@ Expected: Similar to previous.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="saving-data"><a class="link" href="#saving-data">G.4. Saving Data</a></h3>
+<h3 id="saving-data"><a class="anchor" href="#saving-data"></a><a class="link" href="#saving-data">G.4. Saving Data</a></h3>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
@@ -2289,4 +2316,4 @@ Expected: Shows the GUI with a set of sample plans.</p>
 </div>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2020-03-30 10:53:22 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2020-03-30 13:04:29 UTC</div></div></div></body></html>
