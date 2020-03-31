@@ -87,9 +87,20 @@
 <li><a href="#instructions-for-manual-testing">Appendix G: Instructions for Manual Testing</a>
 <ul class="sectlevel2">
 <li><a href="#launch-and-shutdown">G.1. Launch and Shutdown</a></li>
-<li><a href="#deleting-a-plan">G.2. Deleting a Plan</a></li>
-<li><a href="#adding-a-plan">G.3. Adding a Plan</a></li>
-<li><a href="#saving-data">G.4. Saving Data</a></li>
+<li><a href="#adding-a-plan">G.2. Adding a Plan</a></li>
+<li><a href="#deleting-a-plan">G.3. Deleting a Plan</a></li>
+<li><a href="#selecting-a-plan">G.4. Selecting a Plan</a></li>
+<li><a href="#adding-a-timetable">G.5. Adding a Timetable</a></li>
+<li><a href="#deleting-a-timetable">G.6. Deleting a Timetable</a></li>
+<li><a href="#selecting-a-timetable">G.7. Selecting a Timetable</a></li>
+<li><a href="#adding-a-module">G.8. Adding a Module</a></li>
+<li><a href="#deleting-a-module">G.9. Deleting a Module</a></li>
+<li><a href="#setting-the-grade-of-a-module">G.10. Setting the Grade of a Module</a></li>
+<li><a href="#viewing-the-grade-of-a-module">G.11. Viewing the Grade of a Module</a></li>
+<li><a href="#viewing-the-grades-of-a-plan">G.12. Viewing the Grades of a Plan</a></li>
+<li><a href="#viewing-the-graduation-requirements-of-a-plan">G.13. Viewing the Graduation Requirements of a Plan</a></li>
+<li><a href="#setting-the-specialisation-of-a-plan">G.14. Setting the Specialisation of a Plan</a></li>
+<li><a href="#saving-data">G.15. Saving Data</a></li>
 </ul>
 </li>
 </ul>
@@ -2228,7 +2239,36 @@ Expected: The most recent window size and location is retained.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="deleting-a-plan"><a class="anchor" href="#deleting-a-plan"></a><a class="link" href="#deleting-a-plan">G.2. Deleting a Plan</a></h3>
+<h3 id="adding-a-plan"><a class="anchor" href="#adding-a-plan"></a><a class="link" href="#adding-a-plan">G.2. Adding a Plan</a></h3>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Adding a plan while all plans are listed</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>Prerequisites: List all plans using the <code>student list</code> command. All plans will be displayed the list.</p>
+</li>
+<li>
+<p>Test case: <code>student add name/Alice major/CS</code><br>
+Expected: Plan is added to the list. Details of the deleted plan are shown in the status message. Timestamp in the status bar is updated.</p>
+</li>
+<li>
+<p>Test case: <code>student add major/CS</code><br>
+Expected: No plan is added. Error details are shown in the status message. Status bar remains the same.</p>
+</li>
+<li>
+<p>Other incorrect delete commands to try: <code>student add</code>, <code>student add name/</code><br>
+Expected: Similar to previous.</p>
+</li>
+</ol>
+</div>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect2">
+<h3 id="deleting-a-plan"><a class="anchor" href="#deleting-a-plan"></a><a class="link" href="#deleting-a-plan">G.3. Deleting a Plan</a></h3>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
@@ -2236,15 +2276,15 @@ Expected: The most recent window size and location is retained.</p>
 <div class="olist loweralpha">
 <ol class="loweralpha" type="a">
 <li>
-<p>Prerequisites: List all plans using the <code>student list</code> command. Multiple plans in ll be displayed the list.</p>
+<p>Prerequisites: List all plans using the <code>student list</code> command. All plans will be displayed the list. At least one plan should be listed.</p>
 </li>
 <li>
 <p>Test case: <code>student remove 1</code><br>
-Expected: First plan is deleted from the list. Details of the deleted plan shown in the status message. Timestamp in the status bar is updated.</p>
+Expected: First plan is deleted from the list. Details of the deleted plan are shown in the status message. Timestamp in the status bar is updated.</p>
 </li>
 <li>
 <p>Test case: <code>student remove 0</code><br>
-Expected: No person is deleted. Error details shown in the status message. Status bar remains the same.</p>
+Expected: No plan is deleted. Error details are shown in the status message. Status bar remains the same.</p>
 </li>
 <li>
 <p>Other incorrect delete commands to try: <code>student remove</code>, <code>student remove x</code> (where x is larger than the list size), <code>student remove text</code> (where <code>text</code> is not a whole number)<br>
@@ -2257,26 +2297,26 @@ Expected: Similar to previous.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="adding-a-plan"><a class="anchor" href="#adding-a-plan"></a><a class="link" href="#adding-a-plan">G.3. Adding a Plan</a></h3>
+<h3 id="selecting-a-plan"><a class="anchor" href="#selecting-a-plan"></a><a class="link" href="#selecting-a-plan">G.4. Selecting a Plan</a></h3>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p>Adding a plan while all plans are listed</p>
+<p>Selecting a plan while all plans are listed</p>
 <div class="olist loweralpha">
 <ol class="loweralpha" type="a">
 <li>
-<p>Prerequisites: List all plans using the <code>student list</code> command. Multiple plans in ll be displayed the list.</p>
+<p>Prerequisites: List all plans using the <code>student list</code> command. All plans will be displayed the list. At least one plan should be listed.</p>
 </li>
 <li>
-<p>Test case: <code>student add name/Alice major/CS</code><br>
-Expected: Plan is added to the list. Details of the deleted plan shown in the status message. Timestamp in the status bar is updated.</p>
+<p>Test case: <code>student active 1</code><br>
+Expected: Plan is selected as the active plan. Details of the selected plan are shown in the status message. Timestamp in the status bar is updated.</p>
 </li>
 <li>
-<p>Test case: <code>student add major/CS</code><br>
-Expected: No plan is added. Error details shown in the status message. Status bar remains the same.</p>
+<p>Test case: <code>student active 0</code><br>
+Expected: No plan is selected. Error details are shown in the status message. Status bar remains the same.</p>
 </li>
 <li>
-<p>Other incorrect delete commands to try: <code>student add</code>, <code>student add name/</code><br>
+<p>Other incorrect delete commands to try: <code>student active</code>, <code>student active xyz</code><br>
 Expected: Similar to previous.</p>
 </li>
 </ol>
@@ -2284,12 +2324,311 @@ Expected: Similar to previous.</p>
 </li>
 </ol>
 </div>
-<div class="paragraph">
-<p><em>{ more test cases &#8230;&#8203; }</em></p>
+</div>
+<div class="sect2">
+<h3 id="adding-a-timetable"><a class="anchor" href="#adding-a-timetable"></a><a class="link" href="#adding-a-timetable">G.5. Adding a Timetable</a></h3>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Adding a timetable while a plan is selected and the selected plan&#8217;s timetables are listed</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>Prerequisites: Select a plan using the <code>student active</code> command. A plan will be set as the active plan. Plan should be empty.</p>
+</li>
+<li>
+<p>Test case: <code>timetable add year/1 sem/ONE</code><br>
+Expected: Timetable is added to the plan. Details of the added timetable are shown in the status message. Timestamp in the status bar is updated.</p>
+</li>
+<li>
+<p>Test case: <code>timetable add year/1 sem/THREE</code><br>
+Expected: No timetable is added. Error details are shown in the status message. Status bar remains the same.</p>
+</li>
+<li>
+<p>Other incorrect delete commands to try: <code>timetable add</code>, <code>timetable add year/</code><br>
+Expected: Similar to previous.</p>
+</li>
+</ol>
+</div>
+</li>
+<li>
+<p>Adding a timetable while a plan is selected with an existing timetable of the same semester</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>Prerequisites: Select a plan using the <code>student active</code> command. Add a timetable using the <code>timetable add year/1 sem/ONE</code> command</p>
+</li>
+<li>
+<p>Test case: <code>timetable add year/1 sem/ONE</code><br>
+Expected: No timetable is added. Error details are shown in the status message. Status bar remains the same.</p>
+</li>
+</ol>
+</div>
+</li>
+</ol>
 </div>
 </div>
 <div class="sect2">
-<h3 id="saving-data"><a class="anchor" href="#saving-data"></a><a class="link" href="#saving-data">G.4. Saving Data</a></h3>
+<h3 id="deleting-a-timetable"><a class="anchor" href="#deleting-a-timetable"></a><a class="link" href="#deleting-a-timetable">G.6. Deleting a Timetable</a></h3>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Deleting a timetable while a plan is selected and the selected plan&#8217;s timetables are listed</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>Prerequisites: Select a plan using the <code>student active</code> command. A plan will be set as the active plan. Then list timetables with <code>timetable list</code>. At least one timetable should be listed.</p>
+</li>
+<li>
+<p>Test case: <code>timetable remove year/YEAR sem/SEM</code> (where <code>YEAR</code> and <code>SEM</code> are the year and semester of one of the listed timetables, respectively).<br>
+Expected: Specified timetable is deleted from the list. Details of the deleted plan are shown in the status message. Timestamp in the status bar is updated.</p>
+</li>
+<li>
+<p>Test case: <code>timetable remove</code><br>
+Expected: No timetable is deleted. Error details are shown in the status message. Status bar remains the same.</p>
+</li>
+<li>
+<p>Other incorrect delete commands to try: <code>timetable remove year sem</code>, <code>timetable remove year/x</code> (where x is larger than the list size), <code>timetable remove text</code><br>
+Expected: Similar to previous.</p>
+</li>
+</ol>
+</div>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect2">
+<h3 id="selecting-a-timetable"><a class="anchor" href="#selecting-a-timetable"></a><a class="link" href="#selecting-a-timetable">G.7. Selecting a Timetable</a></h3>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Selecting a timetable while a plan is selected and the selected plan&#8217;s timetables are listed</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>Prerequisites: Select a plan using the <code>student active</code> command. A plan will be set as the active plan. Then list timetables with <code>timetable list</code>. At least one timetable should be listed.</p>
+</li>
+<li>
+<p>Test case: <code>timetable active year/YEAR sem/SEM</code> (where <code>YEAR</code> and <code>SEM</code> are the year and semester of one of the listed timetables, respectively).<br>
+Expected: Specified timetable is deleted from the list. Details of the deleted plan are shown in the status message. Timestamp in the status bar is updated.</p>
+</li>
+<li>
+<p>Test case: <code>timetable active</code><br>
+Expected: No timetable is selected. Error details are shown in the status message. Status bar remains the same.</p>
+</li>
+<li>
+<p>Other incorrect delete commands to try: <code>timetable active year sem</code>, <code>timetable active year/x</code> (where x is larger than the list size), <code>timetable active text</code><br>
+Expected: Similar to previous.</p>
+</li>
+</ol>
+</div>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect2">
+<h3 id="adding-a-module"><a class="anchor" href="#adding-a-module"></a><a class="link" href="#adding-a-module">G.8. Adding a Module</a></h3>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Adding a module while a timetable is selected and the selected timetable&#8217;s modules are listed</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>Prerequisites: Select a timetable using the <code>timetable active</code> command. A timetable will be set as the active timetable.</p>
+</li>
+<li>
+<p>Test case: <code>module add CS2040</code><br>
+Expected: Module is added to the timetable. Details of the added module are shown in the status message. Timestamp in the status bar is updated.</p>
+</li>
+<li>
+<p>Test case: <code>module add text</code><br>
+Expected: No module is added. Error details are shown in the status message. Status bar remains the same.</p>
+</li>
+<li>
+<p>Other incorrect delete commands to try: <code>module add</code>,<br>
+Expected: Similar to previous.</p>
+</li>
+</ol>
+</div>
+</li>
+<li>
+<p>Adding a module while a timetable is selected with the same module existing in the same timetable</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>Prerequisites: Select a timetable using the <code>timetable active</code> command. Add a module using the <code>module add CS2040</code> command</p>
+</li>
+<li>
+<p>Test case: <code>module add CS2040</code><br>
+Expected: No module is added. Error details are shown in the status message. Status bar remains the same.</p>
+</li>
+</ol>
+</div>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect2">
+<h3 id="deleting-a-module"><a class="anchor" href="#deleting-a-module"></a><a class="link" href="#deleting-a-module">G.9. Deleting a Module</a></h3>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Deleting a module while a timetable is selected and the selected timetable&#8217;s modules are listed</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>Prerequisites: Select a timetable using the <code>timetable active</code> command. A timetable will be set as the active timetable. Then list modules with <code>module list</code>. At least one module should be listed.</p>
+</li>
+<li>
+<p>Test case: <code>module remove MODULE_CODE</code> (where <code>MODULE_CODE</code> is one of the listed modules).<br>
+Expected: Specified module is deleted from the list. Details of the deleted timetable are shown in the status message. Timestamp in the status bar is updated.</p>
+</li>
+<li>
+<p>Test case: <code>module remove</code><br>
+Expected: No module is deleted. Error details are shown in the status message. Status bar remains the same.</p>
+</li>
+<li>
+<p>Other incorrect delete commands to try: <code>module remove text</code><br>
+Expected: Similar to previous.</p>
+</li>
+</ol>
+</div>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect2">
+<h3 id="setting-the-grade-of-a-module"><a class="anchor" href="#setting-the-grade-of-a-module"></a><a class="link" href="#setting-the-grade-of-a-module">G.10. Setting the Grade of a Module</a></h3>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Setting the grade of a module while a timetable is selected and the selected timetable&#8217;s modules are listed</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>Prerequisites: Select a timetable using the <code>timetable active</code> command. A timetable will be set as the active timetable. Then list modules with <code>module list</code>. At least one module should be listed.</p>
+</li>
+<li>
+<p>Test case: <code>module grade MODULE_CODE grade/A</code> (where <code>MODULE_CODE</code> is one of the listed modules).<br>
+Expected: Grade of specified module is updated. Details of the deleted timetable are shown in the status message. Timestamp in the status bar is updated.</p>
+</li>
+<li>
+<p>Test case: <code>module grade</code><br>
+Expected: Module grade is not updated. Error details are shown in the status message. Status bar remains the same.</p>
+</li>
+<li>
+<p>Other incorrect delete commands to try: <code>module grade text</code><br>
+Expected: Similar to previous.</p>
+</li>
+</ol>
+</div>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect2">
+<h3 id="viewing-the-grade-of-a-module"><a class="anchor" href="#viewing-the-grade-of-a-module"></a><a class="link" href="#viewing-the-grade-of-a-module">G.11. Viewing the Grade of a Module</a></h3>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Viewing the grade of a module while a timetable is selected and the selected timetable&#8217;s modules are listed</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>Prerequisites: Select a timetable using the <code>timetable active</code> command. A timetable will be set as the active timetable. Then list modules with <code>module list</code>. At least one module should be listed.</p>
+</li>
+<li>
+<p>Test case: <code>module grade MODULE_CODE</code> (where <code>MODULE_CODE</code> is one of the listed modules).<br>
+Expected: Grade of specified module is displayed. Details of the deleted timetable are shown in the status message. Timestamp in the status bar is updated.</p>
+</li>
+<li>
+<p>Test case: <code>module grade</code><br>
+Expected: Module grade is not displayed. Error details are shown in the status message. Status bar remains the same.</p>
+</li>
+<li>
+<p>Other incorrect delete commands to try: <code>module grade text</code><br>
+Expected: Similar to previous.</p>
+</li>
+</ol>
+</div>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect2">
+<h3 id="viewing-the-grades-of-a-plan"><a class="anchor" href="#viewing-the-grades-of-a-plan"></a><a class="link" href="#viewing-the-grades-of-a-plan">G.12. Viewing the Grades of a Plan</a></h3>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Viewing the grades of a plan while the plan is selected</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>Prerequisites: Select a plan using the <code>student active</code> command. A plan will be set as the active plan.</p>
+</li>
+<li>
+<p>Test case: <code>student grade</code><br>
+Expected: Selected student&#8217;s grades are listed in the status message.</p>
+</li>
+</ol>
+</div>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect2">
+<h3 id="viewing-the-graduation-requirements-of-a-plan"><a class="anchor" href="#viewing-the-graduation-requirements-of-a-plan"></a><a class="link" href="#viewing-the-graduation-requirements-of-a-plan">G.13. Viewing the Graduation Requirements of a Plan</a></h3>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Viewing the graduation requirements of a plan while the plan is selected</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>Prerequisites: Select a plan using the <code>student active</code> command. A plan will be set as the active plan.</p>
+</li>
+<li>
+<p>Test case: <code>major status</code><br>
+Expected: Selected student&#8217;s graduation requirements are listed in the status message.</p>
+</li>
+</ol>
+</div>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect2">
+<h3 id="setting-the-specialisation-of-a-plan"><a class="anchor" href="#setting-the-specialisation-of-a-plan"></a><a class="link" href="#setting-the-specialisation-of-a-plan">G.14. Setting the Specialisation of a Plan</a></h3>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Setting the specialisation of a plan while the plan is selected</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>Prerequisites: Select a plan using the <code>student active</code> command. A plan will be set as the active plan.</p>
+</li>
+<li>
+<p>Test case: <code>specilisation set algo</code><br>
+Expected: Selected student&#8217;s specialisation is updated. Details of the new specialisation are shown in the status message. Timestamp in the status bar is updated.</p>
+</li>
+<li>
+<p>Test case: <code>specilisation set abcdefg</code><br>
+Expected: Selected student&#8217;s specialisation is not updated. Error details are shown in the status message. Status bar remains the same.</p>
+</li>
+<li>
+<p>Other incorrect delete commands to try: <code>specialisation set</code><br>
+Expected: Similar to previous.</p>
+</li>
+</ol>
+</div>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect2">
+<h3 id="saving-data"><a class="anchor" href="#saving-data"></a><a class="link" href="#saving-data">G.15. Saving Data</a></h3>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
@@ -2316,4 +2655,4 @@ Expected: Shows the GUI with a set of sample plans.</p>
 </div>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2020-03-30 13:04:29 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2020-03-31 15:03:28 UTC</div></div></div></body></html>
