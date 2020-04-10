@@ -28,7 +28,7 @@
 <li><a href="#adding-a-student-code-student-add-code">4.2.1. Adding a student: <code>student add</code></a></li>
 <li><a href="#removing-a-student-code-student-remove-code">4.2.2. Removing a student: <code>student remove</code></a></li>
 <li><a href="#student-active-command">4.2.3. Selecting a student: <code>student active</code></a></li>
-<li><a href="#viewing-the-student-list-code-student-list-code">4.2.4. Viewing the student list: <code>student list</code></a></li>
+<li><a href="#student-list-command">4.2.4. Viewing the student list: <code>student list</code></a></li>
 </ul>
 </li>
 <li><a href="#degree-management">4.3. Degree Management</a>
@@ -43,7 +43,7 @@
 <li><a href="#adding-a-timetable-code-timetable-add-code">4.4.1. Adding a timetable: <code>timetable add</code></a></li>
 <li><a href="#removing-a-timetable-code-timetable-remove-code">4.4.2. Removing a timetable: <code>timetable remove</code></a></li>
 <li><a href="#timetable-active-command">4.4.3. Selecting a timetable: <code>timetable active</code></a></li>
-<li><a href="#viewing-the-timetable-list-code-timetable-list-code">4.4.4. Viewing the timetable list: <code>timetable list</code></a></li>
+<li><a href="#timetable-list-command">4.4.4. Viewing the timetable list: <code>timetable list</code></a></li>
 </ul>
 </li>
 <li><a href="#calendar-interface">4.5. Calendar Interface</a>
@@ -357,11 +357,11 @@ Before you dive into the commands themselves, do familiarise yourself with how t
 </div>
 </li>
 <li>
-<p><code>YEAR</code> - a year of study (e.g. Year 1, 2, 3, 4&#8230;&#8203;)</p>
+<p><code>YEAR</code> - a year of study (e.g. Year 1, 2, 3, 4, 5, 6)</p>
 <div class="ulist">
 <ul>
 <li>
-<p>Must be a non-negative integer</p>
+<p>Must be a non-negative integer from 1 to 6</p>
 </li>
 </ul>
 </div>
@@ -413,7 +413,7 @@ Before you dive into the commands themselves, do familiarise yourself with how t
 <p>The following commands below are part of the application&#8217;s <strong>Student Management</strong>, which allow you manage the students <em>which include you</em> for the academic planning. You are highly encouraged to use this <strong>Student Management</strong> feature to explore different academic plans.</p>
 </div>
 <div class="paragraph">
-<p>When managing students, you will be able to see the <strong>Student View Screen</strong> (<em>Figure 3. below</em>).</p>
+<p>When managing students, you will be able to see the <strong>Student View Screen</strong> (<em>Figure 2. below</em>).</p>
 </div>
 <div class="imageblock" style="text-align: left">
 <div class="content">
@@ -457,6 +457,34 @@ You may not add multiple students with the same name.
 <div class="paragraph">
 <p>You can use this command to remove the <a href="#student-management">student</a> with the number <code>INDEX</code> from the student list.</p>
 </div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+When you use this command on the same student as the student you are currently selecting (see the <a href="#student-active-command"><code>student active</code></a> command),
+the timetable you have currently selected (see the <a href="#timetable-active-command"><code>timetable active</code></a> command) will be deselected (if a timetable was selected).
+</td>
+</tr>
+</table>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+To work on another student&#8217;s timetable, first use the  <a href="#student-active-command"><code>student active</code></a> command to select a student, then
+use the <a href="#timetable-active-command"><code>timetable active</code></a> command to select another timetable.<br>
+You may see the list of students using the <a href="#student-list-command"><code>student list</code></a> command, and
+the list of timetables of a selected student has using the <a href="#timetable-list-command"><code>timetable list</code></a> command.
+</td>
+</tr>
+</table>
+</div>
 <div class="paragraph">
 <p>Format: <code>student remove INDEX</code></p>
 </div>
@@ -476,6 +504,20 @@ You may not add multiple students with the same name.
 <div class="paragraph">
 <p>You can use this command to select the <a href="#student-management">student</a> with the number <code>INDEX</code> from the student list.</p>
 </div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+When you use this command, any timetable you have selected (see the <a href="#timetable-active-command"><code>timetable active</code></a> command) will be deselected.
+To work on the newly selected student&#8217;s timetable, use the <a href="#timetable-active-command"><code>timetable active</code></a> command to select a timetable.<br>
+You may see the list of timetables the selected student has using the <a href="#timetable-list-command"><code>timetable list</code></a> command.
+</td>
+</tr>
+</table>
+</div>
 <div class="paragraph">
 <p>Format: <code>student active INDEX</code></p>
 </div>
@@ -491,7 +533,7 @@ You may not add multiple students with the same name.
 </div>
 </div>
 <div class="sect3">
-<h4 id="viewing-the-student-list-code-student-list-code"><a class="anchor" href="#viewing-the-student-list-code-student-list-code"></a><a class="link" href="#viewing-the-student-list-code-student-list-code">4.2.4. Viewing the student list: <code>student list</code></a></h4>
+<h4 id="student-list-command"><a class="anchor" href="#student-list-command"></a><a class="link" href="#student-list-command">4.2.4. Viewing the student list: <code>student list</code></a></h4>
 <div class="paragraph">
 <p>You can use this command to display a numbered list of students in the student list (if populated).</p>
 </div>
@@ -591,7 +633,7 @@ All the following commands require a <a href="#student-management">student</a> t
 <p>The following commands below are part of the application&#8217;s <strong>Timetable Management</strong>, which allow you manage the timetables of your academic plan.</p>
 </div>
 <div class="paragraph">
-<p>When managing your <a href="#timetable-management">timetable</a>, you will be able to see the <strong>Timetable View Screen</strong> (<em>Figure 4. below</em>).</p>
+<p>When managing your <a href="#timetable-management">timetable</a>, you will be able to see the <strong>Timetable View Screen</strong> (<em>Figure 3. below</em>).</p>
 </div>
 <div class="imageblock" style="text-align: left">
 <div class="content">
@@ -623,31 +665,9 @@ All the following commands require a <a href="#student-management">student</a> t
 <i class="fa icon-note" title="Note"></i>
 </td>
 <td class="content">
-This command requires the <code>YEAR</code> and <code>SEM</code> to conform to the parameter syntax in <a href="#common-parameter-list"><strong>Common Parameters</strong></a>.
-</td>
-</tr>
-</table>
-</div>
-<div class="admonitionblock tip">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-tip" title="Tip"></i>
-</td>
-<td class="content">
-While any non-negative degree year for the <code>YEAR</code> parameter is allowed (e.g. 0, 1, 999999999), try to use reasonable values for your academic planning.
-</td>
-</tr>
-</table>
-</div>
-<div class="admonitionblock tip">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-tip" title="Tip"></i>
-</td>
-<td class="content">
-The <code>YEAR</code> parameter can take the value of <code>0</code>. You can use this to add modules you have taken before entering NUS which you do not want to mark as exempt (using the <a href="#exempt-add-command"><code>exempt add</code></a> command).
+This command requires the <code>YEAR</code> and <code>SEM</code> to conform to the parameter syntax in <a href="#common-parameter-list"><strong>Common Parameters</strong></a>.<br>
+The <code>YEAR</code> parameter must be a valid degree year (from 1 to 6, inclusive).<br>
+The <code>SEM</code> parameter must be one of the following: <code>ONE</code>, <code>TWO</code>, <code>SPECIAL_ONE</code>, <code>SPECIAL_TWO</code>.
 </td>
 </tr>
 </table>
@@ -671,6 +691,20 @@ The <code>YEAR</code> parameter can take the value of <code>0</code>. You can us
 <div class="paragraph">
 <p>You can use this command to remove a <a href="#timetable-management">timetable</a> to the specified <a href="#common-parameter-list">semester</a> of the selected <a href="#student-management">student</a> (see the <a href="#student-active-command"><code>student active</code></a> command).</p>
 </div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+This command requires the <code>YEAR</code> and <code>SEM</code> to conform to the parameter syntax in <a href="#common-parameter-list"><strong>Common Parameters</strong></a>.<br>
+The <code>YEAR</code> parameter must be a valid degree year (from 1 to 6, inclusive).<br>
+The <code>SEM</code> parameter must be one of the following: <code>ONE</code>, <code>TWO</code>, <code>SPECIAL_ONE</code>, <code>SPECIAL_TWO</code>.
+</td>
+</tr>
+</table>
+</div>
 <div class="paragraph">
 <p>Format: <code>timetable remove year/YEAR sem/SEM</code></p>
 </div>
@@ -688,8 +722,24 @@ The <code>YEAR</code> parameter can take the value of <code>0</code>. You can us
 <div class="sect3">
 <h4 id="timetable-active-command"><a class="anchor" href="#timetable-active-command"></a><a class="link" href="#timetable-active-command">4.4.3. Selecting a timetable: <code>timetable active</code></a></h4>
 <div class="paragraph">
-<p>You can use this command to select a <a href="#timetable-management">timetable</a> of the specified <a href="#common-parameter-list">semester</a> of the selected <a href="#student-management">student</a> (see the <a href="#student-active-command"><code>student active</code></a> command).
-Format: <code>timetable active year/YEAR sem/SEM</code></p>
+<p>You can use this command to select a <a href="#timetable-management">timetable</a> of the specified <a href="#common-parameter-list">semester</a> of the selected <a href="#student-management">student</a> (see the <a href="#student-active-command"><code>student active</code></a> command).</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+This command requires the <code>YEAR</code> and <code>SEM</code> to conform to the parameter syntax in <a href="#common-parameter-list"><strong>Common Parameters</strong></a>.<br>
+The <code>YEAR</code> parameter must be a valid degree year (from 1 to 6, inclusive).<br>
+The <code>SEM</code> parameter must be one of the following: <code>ONE</code>, <code>TWO</code>, <code>SPECIAL_ONE</code>, <code>SPECIAL_TWO</code>.
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>Format: <code>timetable active year/YEAR sem/SEM</code></p>
 </div>
 <div class="paragraph">
 <p>Example:</p>
@@ -703,7 +753,7 @@ Format: <code>timetable active year/YEAR sem/SEM</code></p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="viewing-the-timetable-list-code-timetable-list-code"><a class="anchor" href="#viewing-the-timetable-list-code-timetable-list-code"></a><a class="link" href="#viewing-the-timetable-list-code-timetable-list-code">4.4.4. Viewing the timetable list: <code>timetable list</code></a></h4>
+<h4 id="timetable-list-command"><a class="anchor" href="#timetable-list-command"></a><a class="link" href="#timetable-list-command">4.4.4. Viewing the timetable list: <code>timetable list</code></a></h4>
 <div class="paragraph">
 <p>You can use this command to list all the <a href="#timetable-management">timetables</a>  of the selected <a href="#student-management">student</a> (see the <a href="#student-active-command"><code>student active</code></a> command).</p>
 </div>
@@ -1029,6 +1079,20 @@ You may not add multiple lesson with the same class number.
 <div class="paragraph">
 <p>The following commands below are part of the application&#8217;s <strong>Grade Management</strong>, which allow you to manage and view your grades to see modules affected in your academic plan.</p>
 </div>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+The same module can be added into multiple timetables of the same student. Therefore, each enrollment (one per semester) of the same module can have a separate grade.<br>
+For example, it is possible for you to enroll in the module <code>CS2040</code> during <code>year/1 sem/ONE</code> and then <code>year/1 sem/TWO</code>.<br>
+You may refer to <a href="#timetable-management"><strong>Timetable Management</strong></a> to see how you can use timetables.
+</td>
+</tr>
+</table>
+</div>
 <div class="sect3">
 <h4 id="managing-a-module-s-grade-code-module-grade-code"><a class="anchor" href="#managing-a-module-s-grade-code-module-grade-code"></a><a class="link" href="#managing-a-module-s-grade-code-module-grade-code">4.9.1. Managing a module&#8217;s grade: <code>module grade</code></a></h4>
 <div class="paragraph">
@@ -1091,7 +1155,9 @@ This command requires a timetable to be selected (using the <a href="#timetable-
 <div class="sect3">
 <h4 id="viewing-a-student-s-grade-code-student-grade-code"><a class="anchor" href="#viewing-a-student-s-grade-code-student-grade-code"></a><a class="link" href="#viewing-a-student-s-grade-code-student-grade-code">4.9.2. Viewing a student&#8217;s grade: <code>student grade</code></a></h4>
 <div class="paragraph">
-<p>You can use this command to display  the cumulative grade of the selected student (see the <a href="#student-active-command"><code>student active</code></a> command).</p>
+<p>You can use this command to display the <a href="#cap">Cumulative Average Point</a> of the selected student (see the <a href="#student-active-command"><code>student active</code></a> command).<br>
+Other statistics such as the number of modules declared as <a href="#su">Satisfactory/Unsatisfactory</a> are also shown.<br>
+You may also see a list of modules taken and their grades.</p>
 </div>
 <div class="admonitionblock note">
 <table>
@@ -1101,6 +1167,42 @@ This command requires a timetable to be selected (using the <a href="#timetable-
 </td>
 <td class="content">
 This command requires a student to be selected (using the <a href="#student-active-command"><code>student active</code></a> command).
+</td>
+</tr>
+</table>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+Use the <a href="#module-grade-command"><code>module grade</code></a> command to set the grade of modules in the currently selected timetable of a student.
+</td>
+</tr>
+</table>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+The same module can be added into multiple timetables of the same student. Refer to <a href="#timetable-management"><strong>Timetable Management</strong></a> to see how you can use timetables.
+</td>
+</tr>
+</table>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+Use this command to be informed of your academic progress and to plan ahead for difficult modules.
 </td>
 </tr>
 </table>
@@ -1237,6 +1339,22 @@ If you have questions, feel free to open an issue in our <strong>Issue Tracker</
 </td>
 <td class="hdlist2">
 <p>Refers to the module timetable that students will go for classes in NUS.</p>
+</td>
+</tr>
+<tr>
+<td class="hdlist1">
+<a id="cap"></a> Cumulative Average Point
+</td>
+<td class="hdlist2">
+<p>Refers to the average grade points of all modules taken, weighted by the number of module credits for each counted module.</p>
+</td>
+</tr>
+<tr>
+<td class="hdlist1">
+<a id="su"></a> Satisfactory/Unsatisfactory
+</td>
+<td class="hdlist2">
+<p>Refers to a module not being assigned grade points, and thus not affecting a student&#8217;s Cumulative Average Point.</p>
 </td>
 </tr>
 </table>
@@ -1412,4 +1530,4 @@ If you need more in-depth information on a specific command, you can <span class
 </div>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2020-04-10 11:35:50 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2020-04-10 14:03:48 UTC</div></div></div></body></html>
