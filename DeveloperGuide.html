@@ -9,57 +9,42 @@
 <div id="toc" class="toc">
 <div id="toctitle"></div>
 <ul class="sectlevel1">
-<li><a href="#setting-up">1. Setting up</a></li>
-<li><a href="#design">2. Design</a>
+<li><a href="#before-you-begin">1. Before You Begin</a></li>
+<li><a href="#setting-up">2. Setting Up</a></li>
+<li><a href="#design">3. Design</a>
 <ul class="sectlevel2">
-<li><a href="#Design-Architecture">2.1. Architecture</a></li>
-<li><a href="#Design-Ui">2.2. UI component</a></li>
-<li><a href="#Design-Logic">2.3. Logic component</a></li>
-<li><a href="#Design-Model">2.4. Model component</a></li>
-<li><a href="#Design-Storage">2.5. Storage component</a></li>
-<li><a href="#Design-Commons">2.6. Common classes</a></li>
+<li><a href="#Design-Architecture">3.1. Architecture</a></li>
+<li><a href="#Design-Ui">3.2. UI Component</a></li>
+<li><a href="#Design-Logic">3.3. Logic Component</a></li>
+<li><a href="#Design-Model">3.4. Model Component</a></li>
+<li><a href="#Design-Storage">3.5. Storage Component</a></li>
+<li><a href="#Design-Commons">3.6. Common Classes</a></li>
 </ul>
 </li>
-<li><a href="#implementation">3. Implementation</a>
+<li><a href="#Implementation">4. Implementation</a>
 <ul class="sectlevel2">
-<li><a href="#declaration-implementation">3.1. Declaration Implementation</a>
-<ul class="sectlevel3">
-<li><a href="#declare-major">3.1.1. Declare Major</a></li>
-<li><a href="#declare-minor">3.1.2. Declare Minor</a></li>
-<li><a href="#declare-track">3.1.3. Declare Track</a></li>
-<li><a href="#declare-specialisation">3.1.4. Declare Specialisation</a></li>
+<li><a href="#Implementation-Calendar">4.1. Calendar View</a></li>
+<li><a href="#Implementation-Grade">4.2. Grade Management</a></li>
+<li><a href="#Implementation-GradReq">4.3. Graduation Requirements Features</a></li>
+<li><a href="#Implementation-Lesson">4.4. Lesson Features</a></li>
+<li><a href="#Implementation-Module">4.5. Module Features &amp; Database</a></li>
+<li><a href="#Implementation-PlannerModel">4.6. Planner Model</a></li>
+<li><a href="#Implementation-Student">4.7. Student Features</a></li>
+<li><a href="#Implementation-Timetable">4.8. Timetable Features</a></li>
 </ul>
 </li>
-<li><a href="#module-implementation">3.2. Module Implementation</a>
-<ul class="sectlevel3">
-<li><a href="#add-module">3.2.1. Add Module</a></li>
-<li><a href="#remove-module">3.2.2. Remove Module</a></li>
-<li><a href="#list-modules">3.2.3. List Modules</a></li>
+<li><a href="#backend-debugging">5. Backend &amp; Debugging</a>
+<ul class="sectlevel2">
+<li><a href="#Backend-Configuration">5.1. Configuration</a></li>
+<li><a href="#Backend-JSON">5.2. JSON Handling &amp; Live Data Management</a></li>
+<li><a href="#logging">5.3. Logging</a></li>
+<li><a href="#Backend-SubCmd">5.4. Sub-Commands</a></li>
 </ul>
 </li>
-<li><a href="#student-implementation">3.3. Student Implementation</a>
-<ul class="sectlevel3">
-<li><a href="#add-student">3.3.1. Add Student</a></li>
-<li><a href="#remove-student">3.3.2. Remove Student</a></li>
-<li><a href="#active-student">3.3.3. Active Student</a></li>
-<li><a href="#list-students">3.3.4. List Students</a></li>
-</ul>
-</li>
-<li><a href="#timetable-implementation">3.4. Timetable Implementation</a>
-<ul class="sectlevel3">
-<li><a href="#add-timetable">3.4.1. Add Timetable</a></li>
-<li><a href="#remove-timetable">3.4.2. Remove TimeTable</a></li>
-<li><a href="#active-timetable">3.4.3. Active TimeTable</a></li>
-<li><a href="#list-timetables">3.4.4. List Timetables</a></li>
-</ul>
-</li>
-<li><a href="#logging">3.5. Logging</a></li>
-<li><a href="#Implementation-Configuration">3.6. Configuration</a></li>
-</ul>
-</li>
-<li><a href="#documentation">4. Documentation</a></li>
-<li><a href="#testing">5. Testing</a></li>
-<li><a href="#dev-ops">6. Dev Ops</a></li>
+<li><a href="#documentation">6. Documentation</a></li>
+<li><a href="#testing">7. Testing</a></li>
+<li><a href="#dev-ops">8. Dev Ops</a></li>
+<li><a href="#proposed-future-enhancements">9. Proposed Future Enhancements</a></li>
 <li><a href="#product-scope">Appendix A: Product Scope</a>
 <ul class="sectlevel2">
 <li><a href="#target-user-profile">A.1. Target User Profile</a></li>
@@ -107,7 +92,27 @@
 </div>
 </div>
 <div class="sect1">
-<h2 id="setting-up"><a class="anchor" href="#setting-up"></a><a class="link" href="#setting-up">1. Setting up</a></h2>
+<h2 id="before-you-begin"><a class="anchor" href="#before-you-begin"></a><a class="link" href="#before-you-begin">1. Before You Begin</a></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Welcome to the <strong>Developer Guide</strong> for the NUS Module Planner! Unlike the <strong>User Guide</strong> that has been ordered in the flow for a user, this guide has been ordered lexicographically (specifically for <em>Implementation</em>) to assist you in finding the features and their implementations faster.</p>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+As usual, if you have questions, feature suggestions or bugs to report, feel free to open an issue in our <strong>Issue Tracker</strong> on GitHub!
+</td>
+</tr>
+</table>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="setting-up"><a class="anchor" href="#setting-up"></a><a class="link" href="#setting-up">2. Setting Up</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>Refer to the guide <a href="SettingUp.html">here</a>.</p>
@@ -115,10 +120,10 @@
 </div>
 </div>
 <div class="sect1">
-<h2 id="design"><a class="anchor" href="#design"></a><a class="link" href="#design">2. Design</a></h2>
+<h2 id="design"><a class="anchor" href="#design"></a><a class="link" href="#design">3. Design</a></h2>
 <div class="sectionbody">
 <div class="sect2">
-<h3 id="Design-Architecture"><a class="anchor" href="#Design-Architecture"></a><a class="link" href="#Design-Architecture">2.1. Architecture</a></h3>
+<h3 id="Design-Architecture"><a class="anchor" href="#Design-Architecture"></a><a class="link" href="#Design-Architecture">3.1. Architecture</a></h3>
 <div class="imageblock">
 <div class="content">
 <img src="images/ArchitectureDiagram.png" alt="ArchitectureDiagram">
@@ -221,7 +226,7 @@ The following class plays an important role at the architecture level:</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="Design-Ui"><a class="anchor" href="#Design-Ui"></a><a class="link" href="#Design-Ui">2.2. UI component</a></h3>
+<h3 id="Design-Ui"><a class="anchor" href="#Design-Ui"></a><a class="link" href="#Design-Ui">3.2. UI Component</a></h3>
 <div class="imageblock">
 <div class="content">
 <img src="images/UiClassDiagram.png" alt="UiClassDiagram">
@@ -252,7 +257,7 @@ The following class plays an important role at the architecture level:</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="Design-Logic"><a class="anchor" href="#Design-Logic"></a><a class="link" href="#Design-Logic">2.3. Logic component</a></h3>
+<h3 id="Design-Logic"><a class="anchor" href="#Design-Logic"></a><a class="link" href="#Design-Logic">3.3. Logic Component</a></h3>
 <div id="fig-LogicClassDiagram" class="imageblock">
 <div class="content">
 <img src="images/LogicClassDiagram.png" alt="LogicClassDiagram">
@@ -305,7 +310,7 @@ The lifeline for <code>StudentRemoveCommandParser</code> should end at the destr
 </div>
 </div>
 <div class="sect2">
-<h3 id="Design-Model"><a class="anchor" href="#Design-Model"></a><a class="link" href="#Design-Model">2.4. Model component</a></h3>
+<h3 id="Design-Model"><a class="anchor" href="#Design-Model"></a><a class="link" href="#Design-Model">3.4. Model Component</a></h3>
 <div class="imageblock">
 <div class="content">
 <img src="images/ModelClassDiagram.png" alt="ModelClassDiagram">
@@ -313,10 +318,10 @@ The lifeline for <code>StudentRemoveCommandParser</code> should end at the destr
 <div class="title">Figure 7. Structure of the Model Component</div>
 </div>
 <div class="paragraph">
-<p><strong>API</strong> : <a href="https://github.com/AY1920S2-CS2103T-W13-4/main/tree/master/src/main/java/seedu/planner/model/PlannerModel.java"><code>PlannerModel.java</code></a></p>
+<p><strong>API</strong> : <a href="https://github.com/AY1920S2-CS2103T-W13-4/main/tree/master/src/main/java/seedu/planner/model/Planner.java"><code>Planner.java</code></a></p>
 </div>
 <div class="paragraph">
-<p>The <code>PlannerModel</code>,</p>
+<p>The <code>Planner</code>,</p>
 </div>
 <div class="ulist">
 <ul>
@@ -336,7 +341,7 @@ The lifeline for <code>StudentRemoveCommandParser</code> should end at the destr
 </div>
 </div>
 <div class="sect2">
-<h3 id="Design-Storage"><a class="anchor" href="#Design-Storage"></a><a class="link" href="#Design-Storage">2.5. Storage component</a></h3>
+<h3 id="Design-Storage"><a class="anchor" href="#Design-Storage"></a><a class="link" href="#Design-Storage">3.5. Storage Component</a></h3>
 <div class="imageblock">
 <div class="content">
 <img src="images/StorageClassDiagram.png" alt="StorageClassDiagram">
@@ -361,7 +366,7 @@ The lifeline for <code>StudentRemoveCommandParser</code> should end at the destr
 </div>
 </div>
 <div class="sect2">
-<h3 id="Design-Commons"><a class="anchor" href="#Design-Commons"></a><a class="link" href="#Design-Commons">2.6. Common classes</a></h3>
+<h3 id="Design-Commons"><a class="anchor" href="#Design-Commons"></a><a class="link" href="#Design-Commons">3.6. Common Classes</a></h3>
 <div class="paragraph">
 <p>Classes used by multiple components are in the <code>seedu.planner.commons</code> package.</p>
 </div>
@@ -369,789 +374,508 @@ The lifeline for <code>StudentRemoveCommandParser</code> should end at the destr
 </div>
 </div>
 <div class="sect1">
-<h2 id="implementation"><a class="anchor" href="#implementation"></a><a class="link" href="#implementation">3. Implementation</a></h2>
+<h2 id="Implementation"><a class="anchor" href="#Implementation"></a><a class="link" href="#Implementation">4. Implementation</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>This section describes some noteworthy details on how certain features are implemented.</p>
+<p>This section describes our implementation and design decision details of the features in the NUS Module Planner. As a reminder, they have been ordered laconically for easier search and reference.</p>
 </div>
 <div class="sect2">
-<h3 id="declaration-implementation"><a class="anchor" href="#declaration-implementation"></a><a class="link" href="#declaration-implementation">3.1. Declaration Implementation</a></h3>
-<div class="sect3">
-<h4 id="declare-major"><a class="anchor" href="#declare-major"></a><a class="link" href="#declare-major">3.1.1. Declare Major</a></h4>
+<h3 id="Implementation-Calendar"><a class="anchor" href="#Implementation-Calendar"></a><a class="link" href="#Implementation-Calendar">4.1. Calendar View</a></h3>
 <div class="paragraph">
-<p>The <code>declare major</code> command associates an existing <code>Major</code> entity (with all associated values) provided by the user.</p>
-</div>
-<div class="paragraph">
-<p>It is appended with the tag <code>MAJOR</code>.</p>
-</div>
-<div class="admonitionblock note">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-note" title="Note"></i>
-</td>
-<td class="content">
-<code>Major</code> entities are automatically created and populated through the JSON data received from NUSMods.
-</td>
-</tr>
-</table>
-</div>
-<div class="sect4">
-<h5 id="current-implementation"><a class="anchor" href="#current-implementation"></a><a class="link" href="#current-implementation">3.1.1.1. Current Implementation</a></h5>
-<div class="paragraph">
-<p><code>MajorSetCommand</code> extends from the <code>Command</code> class and uses the inheritance to facilitate the implementation. <code>MajorSetCommand</code> is parsed using <code>MajorCommandParser</code> to split the user input into relevant fields.</p>
-</div>
-<div class="paragraph">
-<p>The following high-level sequence diagram illustrates the interactions between the <code>Ui</code>, <code>Logic</code> &amp; <code>Model</code> components when a module is being added.</p>
-</div>
-<div class="imageblock">
-<div class="content">
-<img src="images/sequenceDiagram3.1.1.png" alt="sequenceDiagram3.1.1">
-</div>
-</div>
-<div class="paragraph">
-<p>Given below is an example usage scenario and how the <code>declare</code> mechanism behaves at each step:</p>
-</div>
-<div class="olist arabic">
-<ol class="arabic">
-<li>
-<p>User enters the command. <code>MajorCommandParser</code> will associate the specified <code>Major</code> object (if it exists).</p>
-</li>
-</ol>
-</div>
-<div class="admonitionblock note">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-note" title="Note"></i>
-</td>
-<td class="content">
-As of this time, <code>Student</code> entities can only be associated in a 1-1 relationship with a <code>Major</code> entity.
-</td>
-</tr>
-</table>
-</div>
-</div>
-<div class="sect4">
-<h5 id="design-considerations"><a class="anchor" href="#design-considerations"></a><a class="link" href="#design-considerations">3.1.1.2. Design Considerations</a></h5>
-<div class="sect5">
-<h6 id="aspect-how-code-majorsetcommand-code-executes"><a class="anchor" href="#aspect-how-code-majorsetcommand-code-executes"></a><a class="link" href="#aspect-how-code-majorsetcommand-code-executes">Aspect: How <code>MajorSetCommand</code> Executes</a></h6>
-
-</div>
-</div>
+<p>The application has a <strong>"Calendar Schedule"</strong> window implemented to allow students to see their timetable and lesson schedules. Once a lesson has been added, will they be visible in this window upon launch by the <code>Launch Calendar</code> button.</p>
 </div>
 <div class="sect3">
-<h4 id="declare-minor"><a class="anchor" href="#declare-minor"></a><a class="link" href="#declare-minor">3.1.2. Declare Minor</a></h4>
+<h4 id="calendar-ui-implementation"><a class="anchor" href="#calendar-ui-implementation"></a><a class="link" href="#calendar-ui-implementation">4.1.1. Calendar UI Implementation</a></h4>
 <div class="paragraph">
-<p>The <code>declare minor</code> command associates an existing <code>Minor</code> entity (with all associated values) provided by the user.</p>
-</div>
-<div class="paragraph">
-<p>It is appended with the tag <code>MINOR</code>.</p>
-</div>
-<div class="admonitionblock note">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-note" title="Note"></i>
-</td>
-<td class="content">
-<code>Minor</code> entities are automatically created and populated through the JSON data received from NUSMods.
-</td>
-</tr>
-</table>
-</div>
-<div class="sect4">
-<h5 id="current-implementation-2"><a class="anchor" href="#current-implementation-2"></a><a class="link" href="#current-implementation-2">3.1.2.1. Current Implementation</a></h5>
-<div class="paragraph">
-<p><code>MinorSetCommand</code> extends from the <code>Command</code> class and uses the inheritance to facilitate the implementation. <code>MinorSetCommand</code> is parsed using <code>MinorCommandParser</code> to split the user input into relevant fields.</p>
+<p>There are two ways to view the Calendar. You can click on the launch calendar to see the lessons that you have added. Another way is to click on the semester button in the module description page to see the lessons available.</p>
 </div>
 <div class="paragraph">
-<p>The following high-level sequence diagram illustrates the interactions between the <code>Ui</code>, <code>Logic</code> &amp; <code>Model</code> components when a module is being added.</p>
-</div>
-<div class="imageblock">
-<div class="content">
-<img src="images/sequenceDiagram3.1.2.png" alt="sequenceDiagram3.1.2">
-</div>
-</div>
-<div class="paragraph">
-<p>Given below is an example usage scenario and how the <code>declare</code> mechanism behaves at each step:</p>
-</div>
-<div class="olist arabic">
-<ol class="arabic">
-<li>
-<p>User enters the command. <code>MinorCommandParser</code> will associate the specified <code>Minor</code> object (if it exists).</p>
-</li>
-</ol>
-</div>
-<div class="admonitionblock note">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-note" title="Note"></i>
-</td>
-<td class="content">
-As of this time, <code>Student</code> entities can only be associated in a 1-0..1 relationship with a <code>Minor</code> entity.
-</td>
-</tr>
-</table>
-</div>
-</div>
-<div class="sect4">
-<h5 id="design-considerations-2"><a class="anchor" href="#design-considerations-2"></a><a class="link" href="#design-considerations-2">3.1.2.2. Design Considerations</a></h5>
-<div class="sect5">
-<h6 id="aspect-how-code-minorsetcommand-code-executes"><a class="anchor" href="#aspect-how-code-minorsetcommand-code-executes"></a><a class="link" href="#aspect-how-code-minorsetcommand-code-executes">Aspect: How <code>MinorSetCommand</code> Executes</a></h6>
-
-</div>
-</div>
-</div>
-<div class="sect3">
-<h4 id="declare-track"><a class="anchor" href="#declare-track"></a><a class="link" href="#declare-track">3.1.3. Declare Track</a></h4>
-<div class="paragraph">
-<p>The <code>declare track</code> command associates an existing <code>Track</code> entity (with all associated values) provided by the user.</p>
-</div>
-<div class="paragraph">
-<p>It is appended with the tag <code>ACTION</code> and <code>TRACK</code>.</p>
-</div>
-<div class="admonitionblock note">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-note" title="Note"></i>
-</td>
-<td class="content">
-<code>Track</code> entities are automatically created and populated through the JSON data received from NUSMods.
-</td>
-</tr>
-</table>
-</div>
-<div class="sect4">
-<h5 id="current-implementation-3"><a class="anchor" href="#current-implementation-3"></a><a class="link" href="#current-implementation-3">3.1.3.1. Current Implementation</a></h5>
-<div class="paragraph">
-<p><code>TrackSetCommand</code> extends from the <code>Command</code> class and uses the inheritance to facilitate the implementation. <code>TrackSetCommand</code> is parsed using <code>TrackCommandParser</code> to split the user input into relevant fields.</p>
-</div>
-<div class="paragraph">
-<p>The following high-level sequence diagram illustrates the interactions between the <code>Ui</code>, <code>Logic</code> &amp; <code>Model</code> components when a module is being added.</p>
-</div>
-<div class="imageblock">
-<div class="content">
-<img src="images/sequenceDiagram3.1.3.png" alt="sequenceDiagram3.1.3">
-</div>
-</div>
-<div class="paragraph">
-<p>Given below is an example usage scenario and how the <code>declare</code> mechanism behaves at each step:</p>
-</div>
-<div class="olist arabic">
-<ol class="arabic">
-<li>
-<p>User enters the command. <code>TrackCommandParser</code> will associate the specified <code>Minor</code> object (if it exists).</p>
-</li>
-</ol>
-</div>
-<div class="admonitionblock note">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-note" title="Note"></i>
-</td>
-<td class="content">
-As of this time, <code>Student</code> entities can only be associated in a 1-0..1 relationship with a <code>Track</code> entity.
-</td>
-</tr>
-</table>
-</div>
-</div>
-<div class="sect4">
-<h5 id="design-considerations-3"><a class="anchor" href="#design-considerations-3"></a><a class="link" href="#design-considerations-3">3.1.3.2. Design Considerations</a></h5>
-<div class="sect5">
-<h6 id="aspect-how-code-tracksetcommand-code-executes"><a class="anchor" href="#aspect-how-code-tracksetcommand-code-executes"></a><a class="link" href="#aspect-how-code-tracksetcommand-code-executes">Aspect: How <code>TrackSetCommand</code> Executes</a></h6>
-
-</div>
-</div>
-</div>
-<div class="sect3">
-<h4 id="declare-specialisation"><a class="anchor" href="#declare-specialisation"></a><a class="link" href="#declare-specialisation">3.1.4. Declare Specialisation</a></h4>
-<div class="paragraph">
-<p>The <code>declare spec</code> command associates an existing <code>Specialisation</code> entity (with all associated values) provided by the user.</p>
-</div>
-<div class="paragraph">
-<p>It is appended with the tag <code>ACTION</code> and <code>SPEC</code>.</p>
-</div>
-<div class="admonitionblock note">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-note" title="Note"></i>
-</td>
-<td class="content">
-<code>Specialisation</code> entities are automatically created and populated through the JSON data received from NUSMods.
-</td>
-</tr>
-</table>
-</div>
-<div class="sect4">
-<h5 id="current-implementation-4"><a class="anchor" href="#current-implementation-4"></a><a class="link" href="#current-implementation-4">3.1.4.1. Current Implementation</a></h5>
-<div class="paragraph">
-<p><code>SpecialisationSetCommand</code> extends from the <code>Command</code> class and uses the inheritance to facilitate the implementation. <code>SpecialisationSetCommand</code> is parsed using <code>SpecialisationCommandParser</code> to split the user input into relevant fields.</p>
-</div>
-<div class="paragraph">
-<p>The following high-level sequence diagram illustrates the interactions between the <code>Ui</code>, <code>Logic</code> &amp; <code>Model</code> components when a module is being added.</p>
-</div>
-<div class="imageblock">
-<div class="content">
-<img src="images/sequenceDiagram3.1.4.png" alt="sequenceDiagram3.1.4">
-</div>
-</div>
-<div class="paragraph">
-<p>Given below is an example usage scenario and how the <code>declare</code> mechanism behaves at each step:</p>
-</div>
-<div class="olist arabic">
-<ol class="arabic">
-<li>
-<p>User enters the command. <code>SpecialisationCommandParser</code> will associate the specified <code>Specialisation</code> object (if it exists).</p>
-</li>
-</ol>
-</div>
-<div class="admonitionblock note">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-note" title="Note"></i>
-</td>
-<td class="content">
-As of this time, <code>Student</code> entities can only be associated in a 1-0..1 relationship with a <code>Specialisation</code> entity.
-</td>
-</tr>
-</table>
-</div>
-</div>
-<div class="sect4">
-<h5 id="design-considerations-4"><a class="anchor" href="#design-considerations-4"></a><a class="link" href="#design-considerations-4">3.1.4.2. Design Considerations</a></h5>
-<div class="sect5">
-<h6 id="aspect-how-code-specialisationsetcommand-code-executes"><a class="anchor" href="#aspect-how-code-specialisationsetcommand-code-executes"></a><a class="link" href="#aspect-how-code-specialisationsetcommand-code-executes">Aspect: How <code>SpecialisationSetCommand</code> Executes</a></h6>
-
-</div>
-</div>
-</div>
-</div>
-<div class="sect2">
-<h3 id="module-implementation"><a class="anchor" href="#module-implementation"></a><a class="link" href="#module-implementation">3.2. Module Implementation</a></h3>
-<div class="sect3">
-<h4 id="add-module"><a class="anchor" href="#add-module"></a><a class="link" href="#add-module">3.2.1. Add Module</a></h4>
-<div class="paragraph">
-<p>The <code>module add</code> command associates an existing <code>Module</code> entity (with all associated values) provided by the user.</p>
-</div>
-<div class="paragraph">
-<p>It is appended with the tag <code>MODULE_CODE</code>.</p>
-</div>
-<div class="admonitionblock note">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-note" title="Note"></i>
-</td>
-<td class="content">
-<code>Module</code> entities are automatically created and populated through the JSON data received from NUSMods.
-</td>
-</tr>
-</table>
-</div>
-<div class="sect4">
-<h5 id="current-implementation-5"><a class="anchor" href="#current-implementation-5"></a><a class="link" href="#current-implementation-5">3.2.1.1. Current Implementation</a></h5>
-<div class="paragraph">
-<p><code>ModuleAddCommand</code> extends from the <code>Command</code> class and uses the inheritance to facilitate the implementation. <code>ModuleAddCommand</code> is parsed using <code>ModuleAddCommandParser</code> to split the user input into relevant fields.</p>
-</div>
-<div class="paragraph">
-<p>The following high-level sequence diagram illustrates the interactions between the <code>Ui</code>, <code>Logic</code> &amp; <code>Model</code> components when a module is being added.</p>
-</div>
-<div class="imageblock">
-<div class="content">
-<img src="images/sequenceDiagram3.2.1.png" alt="sequenceDiagram3.2.1">
-</div>
-</div>
-<div class="paragraph">
-<p>Given below is an example usage scenario and how the <code>add</code> mechanism behaves at each step:</p>
-</div>
-<div class="olist arabic">
-<ol class="arabic">
-<li>
-<p>User enters the command. <code>ModuleAddCommandParser</code> will associate the specified <code>Module</code> object (if it exists).</p>
-</li>
-</ol>
-</div>
-</div>
-<div class="sect4">
-<h5 id="design-considerations-5"><a class="anchor" href="#design-considerations-5"></a><a class="link" href="#design-considerations-5">3.2.1.2. Design Considerations</a></h5>
-<div class="sect5">
-<h6 id="aspect-how-code-moduleaddcommand-code-executes"><a class="anchor" href="#aspect-how-code-moduleaddcommand-code-executes"></a><a class="link" href="#aspect-how-code-moduleaddcommand-code-executes">Aspect: How <code>ModuleAddCommand</code> Executes</a></h6>
-
-</div>
-</div>
-</div>
-<div class="sect3">
-<h4 id="remove-module"><a class="anchor" href="#remove-module"></a><a class="link" href="#remove-module">3.2.2. Remove Module</a></h4>
-<div class="paragraph">
-<p>The <code>module remove</code> command disassociates a <code>Module</code> entity (with all associated values) when instructed by the user.</p>
-</div>
-<div class="paragraph">
-<p>It is appended with the tag <code>MODULE_CODE</code>.</p>
-</div>
-<div class="sect4">
-<h5 id="current-implementation-6"><a class="anchor" href="#current-implementation-6"></a><a class="link" href="#current-implementation-6">3.2.2.1. Current Implementation</a></h5>
-<div class="paragraph">
-<p><code>ModuleRemoveCommand</code> extends from the <code>Command</code> class and uses the inheritance to facilitate the implementation. <code>ModuleRemoveCommand</code> is parsed using <code>ModuleRemoveCommandParser</code> to parse the action.</p>
-</div>
-<div class="paragraph">
-<p>The following high-level sequence diagram illustrates the interactions between the <code>Ui</code>, <code>Logic</code> &amp; <code>Model</code> components when a module is being added.</p>
-</div>
-<div class="imageblock">
-<div class="content">
-<img src="images/sequenceDiagram3.2.2.png" alt="sequenceDiagram3.2.2">
-</div>
-</div>
-<div class="paragraph">
-<p>Given below is an example usage scenario and how the <code>remove</code> mechanism behaves at each step:</p>
-</div>
-<div class="olist arabic">
-<ol class="arabic">
-<li>
-<p>User enters the command. <code>ModuleRemoveCommandParser</code> will disassociate the specified <code>Module</code> object (if it exists), along with its associated values.</p>
-</li>
-</ol>
-</div>
-</div>
-<div class="sect4">
-<h5 id="design-considerations-6"><a class="anchor" href="#design-considerations-6"></a><a class="link" href="#design-considerations-6">3.2.2.2. Design Considerations</a></h5>
-<div class="sect5">
-<h6 id="aspect-how-code-moduleremovecommand-code-executes"><a class="anchor" href="#aspect-how-code-moduleremovecommand-code-executes"></a><a class="link" href="#aspect-how-code-moduleremovecommand-code-executes">Aspect: How <code>ModuleRemoveCommand</code> Executes</a></h6>
-
-</div>
-</div>
-</div>
-<div class="sect3">
-<h4 id="list-modules"><a class="anchor" href="#list-modules"></a><a class="link" href="#list-modules">3.2.3. List Modules</a></h4>
-<div class="paragraph">
-<p>The <code>module list</code> command lists all <code>Module</code> entities.</p>
-</div>
-<div class="sect4">
-<h5 id="current-implementation-7"><a class="anchor" href="#current-implementation-7"></a><a class="link" href="#current-implementation-7">3.2.3.1. Current Implementation</a></h5>
-<div class="paragraph">
-<p><code>ModuleListCommand</code> extends from the <code>Command</code> class and uses the inheritance to facilitate the implementation. <code>ModuleListCommand</code> is parsed using <code>ModuleCommandParser</code> to get the command input.</p>
-</div>
-<div class="paragraph">
-<p>The following high-level sequence diagram illustrates the interactions between the <code>Ui</code>, <code>Logic</code> &amp; <code>Model</code> components when a module is being added.</p>
-</div>
-<div class="imageblock">
-<div class="content">
-<img src="images/sequenceDiagram3.2.3.png" alt="sequenceDiagram3.2.3">
-</div>
-</div>
-<div class="paragraph">
-<p>Given below is an example usage scenario and how the <code>list</code> mechanism behaves at each step:</p>
-</div>
-<div class="olist arabic">
-<ol class="arabic">
-<li>
-<p>User enters the command. <code>ModuleCommandParser</code> will list all <code>Module</code> objects (if any exists).</p>
-</li>
-</ol>
-</div>
-<div class="admonitionblock note">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-note" title="Note"></i>
-</td>
-<td class="content">
-When appended with <code>exempted</code> (i.e. <code>module list exempted</code>) the command lists all <code>Module</code> entities that have been marked as exempted.
-</td>
-</tr>
-</table>
-</div>
-</div>
-<div class="sect4">
-<h5 id="design-considerations-7"><a class="anchor" href="#design-considerations-7"></a><a class="link" href="#design-considerations-7">3.2.3.2. Design Considerations</a></h5>
-<div class="sect5">
-<h6 id="aspect-how-code-modulelistcommand-code-executes"><a class="anchor" href="#aspect-how-code-modulelistcommand-code-executes"></a><a class="link" href="#aspect-how-code-modulelistcommand-code-executes">Aspect: How <code>ModuleListCommand</code> Executes</a></h6>
-
-</div>
-</div>
-</div>
-</div>
-<div class="sect2">
-<h3 id="student-implementation"><a class="anchor" href="#student-implementation"></a><a class="link" href="#student-implementation">3.3. Student Implementation</a></h3>
-<div class="sect3">
-<h4 id="add-student"><a class="anchor" href="#add-student"></a><a class="link" href="#add-student">3.3.1. Add Student</a></h4>
-<div class="paragraph">
-<p>The <code>student add</code> command creates a <code>Student</code> entity (with name and/or major) with the fields provided by the user.</p>
-</div>
-<div class="paragraph">
-<p>It is appended with the tags <code>n/NAME</code> and <code>major/MAJOR</code>.</p>
+<p>The Calendar builds its UI based on 999 implemented components:</p>
 </div>
 <div class="ulist">
 <ul>
 <li>
-<p><code>Student(Name name,)</code>&#8201;&#8212;&#8201;Creates a <code>Student</code> entity with only the student&#8217;s name.</p>
-</li>
-<li>
-<p><code>Student(Name name, Major major)</code>&#8201;&#8212;&#8201;Creates a <code>Student</code> entity with both the student&#8217;s name and intended major.</p>
-</li>
-<li>
-<p><code>Student(Name name, Major major, TimeTableMap timeTableMap)</code>&#8201;&#8212;&#8201;Creates a <code>Student</code> entity with the student&#8217;s TimeTable, alongside student&#8217;s name and intended major.</p>
-</li>
-<li>
-<p><code>Student(Name name, Degrees degrees, Major major)</code>&#8201;&#8212;&#8201;Creates a <code>Student</code> entity with the student&#8217;s Degrees, alongside the student&#8217;s name and intended major.</p>
+<p><strong>METHOD ACTION NAME HERE</strong> <code>method name here</code></p>
 </li>
 </ul>
 </div>
-<div class="sect4">
-<h5 id="current-implementation-8"><a class="anchor" href="#current-implementation-8"></a><a class="link" href="#current-implementation-8">3.3.1.1. Current Implementation</a></h5>
 <div class="paragraph">
-<p><code>StudentAddCommand</code> extends from the <code>Command</code> class and uses the inheritance to facilitate the implementation. <code>StudentAddCommand</code> is parsed using <code>StudentAddCommandParser</code> to split the user input into relevant fields.</p>
+<p><em>We will add more about how we implemented this further, and the design decisions made.</em></p>
 </div>
-<div class="paragraph">
-<p>The following high-level sequence diagram illustrates the interactions between the <code>Ui</code>, <code>Logic</code> &amp; <code>Model</code> components when a module is being added.</p>
-</div>
-<div class="imageblock">
+<div class="imageblock" style="text-align: center">
 <div class="content">
-<img src="images/StudentAddSequenceDiagram.png" alt="StudentAddSequenceDiagram">
+<img src="images/#INSERTDIAGRAM" alt="#INSERTDIAGRAM">
 </div>
-</div>
-<div class="paragraph">
-<p>Given below is an example usage scenario and how the <code>add</code> mechanism behaves at each step:</p>
-</div>
-<div class="olist arabic">
-<ol class="arabic">
-<li>
-<p>User launches the application.</p>
-<div class="olist loweralpha">
-<ol class="loweralpha" type="a">
-<li>
-<p>If it is the first time, a <code>Student</code> object will be created using <code>StudentAddCommand</code>.</p>
-</li>
-</ol>
-</div>
-</li>
-<li>
-<p>User enters the command. <code>StudentAddCommandParser</code> will create a <code>Student</code> object, which can contain <code>name</code>, <code>major</code>, <code>timetable</code> and/or <code>degrees</code>.</p>
-</li>
-</ol>
-</div>
-</div>
-<div class="sect4">
-<h5 id="design-considerations-8"><a class="anchor" href="#design-considerations-8"></a><a class="link" href="#design-considerations-8">3.3.1.2. Design Considerations</a></h5>
-<div class="sect5">
-<h6 id="aspect-how-code-studentaddcommand-code-executes"><a class="anchor" href="#aspect-how-code-studentaddcommand-code-executes"></a><a class="link" href="#aspect-how-code-studentaddcommand-code-executes">Aspect: How <code>StudentAddCommand</code> Executes</a></h6>
-
-</div>
+<div class="title">Figure 9. Calendar UI ??DIAGRAM??</div>
 </div>
 </div>
 <div class="sect3">
-<h4 id="remove-student"><a class="anchor" href="#remove-student"></a><a class="link" href="#remove-student">3.3.2. Remove Student</a></h4>
-<div class="paragraph">
-<p>The <code>student remove</code> command destroys a <code>Student</code> entity (with all associated values) when instructed by the user.</p>
-</div>
-<div class="paragraph">
-<p>It is appended with the tag <code>INDEX</code>.</p>
-</div>
-<div class="sect4">
-<h5 id="current-implementation-9"><a class="anchor" href="#current-implementation-9"></a><a class="link" href="#current-implementation-9">3.3.2.1. Current Implementation</a></h5>
-<div class="paragraph">
-<p><code>StudentRemoveCommand</code> extends from the <code>Command</code> class and uses the inheritance to facilitate the implementation. <code>StudentRemoveCommand</code> is parsed using <code>StudentRemoveCommandParser</code> to parse the action.</p>
-</div>
-<div class="paragraph">
-<p>The following high-level sequence diagram illustrates the interactions between the <code>Ui</code>, <code>Logic</code> &amp; <code>Model</code> components when a module is being added.</p>
-</div>
-<div class="imageblock">
-<div class="content">
-<img src="images/StudentRemoveSequenceDiagram.png" alt="StudentRemoveSequenceDiagram">
-</div>
-</div>
-<div class="paragraph">
-<p>Given below is an example usage scenario and how the <code>remove</code> mechanism behaves at each step:</p>
-</div>
-<div class="olist arabic">
-<ol class="arabic">
+<h4 id="design-considerations"><a class="anchor" href="#design-considerations"></a><a class="link" href="#design-considerations">4.1.2. Design Considerations</a></h4>
+<div class="ulist">
+<ul>
 <li>
-<p>User enters the command. <code>StudentRemoveCommandParser</code> will destroy the specified <code>Student</code> object (if it exists), along with its associated values.</p>
-</li>
-</ol>
-</div>
-</div>
-<div class="sect4">
-<h5 id="design-considerations-9"><a class="anchor" href="#design-considerations-9"></a><a class="link" href="#design-considerations-9">3.3.2.2. Design Considerations</a></h5>
-<div class="sect5">
-<h6 id="aspect-how-code-studentremovecommand-code-executes"><a class="anchor" href="#aspect-how-code-studentremovecommand-code-executes"></a><a class="link" href="#aspect-how-code-studentremovecommand-code-executes">Aspect: How <code>StudentRemoveCommand</code> Executes</a></h6>
-
-</div>
-</div>
-</div>
-<div class="sect3">
-<h4 id="active-student"><a class="anchor" href="#active-student"></a><a class="link" href="#active-student">3.3.3. Active Student</a></h4>
-<div class="paragraph">
-<p>The <code>student active</code> command selects the specified <code>Student</code> entity with its associated values, by the index input provided by the user.</p>
-</div>
-<div class="paragraph">
-<p>It is appended with the tag <code>INDEX</code>.</p>
-</div>
-<div class="sect4">
-<h5 id="current-implementation-10"><a class="anchor" href="#current-implementation-10"></a><a class="link" href="#current-implementation-10">3.3.3.1. Current Implementation</a></h5>
-<div class="paragraph">
-<p><code>StudentActiveCommand</code> extends from the <code>Command</code> class and uses the inheritance to facilitate the implementation. <code>StudentActiveCommand</code> is parsed using <code>StudentActiveCommandParser</code> to split the user input into relevant fields.</p>
-</div>
-<div class="paragraph">
-<p>The following high-level sequence diagram illustrates the interactions between the <code>Ui</code>, <code>Logic</code> &amp; <code>Model</code> components when a module is being added.</p>
-</div>
-<div class="imageblock">
-<div class="content">
-<img src="images/StudentActiveSequenceDiagram.png" alt="StudentActiveSequenceDiagram">
-</div>
-</div>
-<div class="paragraph">
-<p>Given below is an example usage scenario and how the <code>active</code> mechanism behaves at each step:</p>
-</div>
-<div class="olist arabic">
-<ol class="arabic">
+<p><strong>Alternative 1:</strong></p>
+<div class="ulist">
+<ul>
 <li>
-<p>User enters the command. <code>StudentActiveCommandParser</code> will select the specified <code>Student</code> object (if it exists), by the specified index.</p>
+<p>Pros:</p>
 </li>
-</ol>
-</div>
-</div>
-<div class="sect4">
-<h5 id="design-considerations-10"><a class="anchor" href="#design-considerations-10"></a><a class="link" href="#design-considerations-10">3.3.3.2. Design Considerations</a></h5>
-<div class="sect5">
-<h6 id="aspect-how-code-studentactivecommand-code-executes"><a class="anchor" href="#aspect-how-code-studentactivecommand-code-executes"></a><a class="link" href="#aspect-how-code-studentactivecommand-code-executes">Aspect: How <code>StudentActiveCommand</code> Executes</a></h6>
-
-</div>
-</div>
-</div>
-<div class="sect3">
-<h4 id="list-students"><a class="anchor" href="#list-students"></a><a class="link" href="#list-students">3.3.4. List Students</a></h4>
-<div class="paragraph">
-<p>The <code>student list</code> command lists all <code>Student</code> entities.</p>
-</div>
-<div class="sect4">
-<h5 id="current-implementation-11"><a class="anchor" href="#current-implementation-11"></a><a class="link" href="#current-implementation-11">3.3.4.1. Current Implementation</a></h5>
-<div class="paragraph">
-<p><code>StudentListCommand</code> extends from the <code>Command</code> class and uses the inheritance to facilitate the implementation. <code>StudentListCommand</code> is parsed using <code>StudentCommandParser</code> to get the command input.</p>
-</div>
-<div class="paragraph">
-<p>The following high-level sequence diagram illustrates the interactions between the <code>Ui</code>, <code>Logic</code> &amp; <code>Model</code> components when a module is being added.</p>
-</div>
-<div class="imageblock">
-<div class="content">
-<img src="images/StudentListSequenceDiagram.png" alt="StudentListSequenceDiagram">
-</div>
-</div>
-<div class="paragraph">
-<p>Given below is an example usage scenario and how the <code>list</code> mechanism behaves at each step:</p>
-</div>
-<div class="olist arabic">
-<ol class="arabic">
 <li>
-<p>User enters the command. <code>StudentCommandParser</code> will list all <code>Student</code> objects (if any exists).</p>
+<p>Cons:</p>
 </li>
-</ol>
+</ul>
 </div>
+</li>
+<li>
+<p><strong>Alternative 2:</strong></p>
+<div class="ulist">
+<ul>
+<li>
+<p>Pros:</p>
+</li>
+<li>
+<p>Cons:</p>
+</li>
+</ul>
 </div>
-<div class="sect4">
-<h5 id="design-considerations-11"><a class="anchor" href="#design-considerations-11"></a><a class="link" href="#design-considerations-11">3.3.4.2. Design Considerations</a></h5>
-<div class="sect5">
-<h6 id="aspect-how-code-studentlistcommand-code-executes"><a class="anchor" href="#aspect-how-code-studentlistcommand-code-executes"></a><a class="link" href="#aspect-how-code-studentlistcommand-code-executes">Aspect: How <code>StudentListCommand</code> Executes</a></h6>
-
-</div>
+</li>
+</ul>
 </div>
 </div>
 </div>
 <div class="sect2">
-<h3 id="timetable-implementation"><a class="anchor" href="#timetable-implementation"></a><a class="link" href="#timetable-implementation">3.4. Timetable Implementation</a></h3>
-<div class="sect3">
-<h4 id="add-timetable"><a class="anchor" href="#add-timetable"></a><a class="link" href="#add-timetable">3.4.1. Add Timetable</a></h4>
+<h3 id="Implementation-Grade"><a class="anchor" href="#Implementation-Grade"></a><a class="link" href="#Implementation-Grade">4.2. Grade Management</a></h3>
 <div class="paragraph">
-<p>The <code>timetable add</code> command creates a <code>TimeTable</code> entity (possibly with enrollments, year and semester) provided by the user.</p>
+<p><em>This section will be updated soon!</em></p>
 </div>
+<div class="sect3">
+<h4 id="grade-implementation"><a class="anchor" href="#grade-implementation"></a><a class="link" href="#grade-implementation">4.2.1. Grade Implementation</a></h4>
 <div class="paragraph">
-<p>It is appended with the tags <code>year/YEAR</code> and <code>sem/SEM</code>.</p>
+<p><em>This section will be updated soon!</em></p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="design-considerations-2"><a class="anchor" href="#design-considerations-2"></a><a class="link" href="#design-considerations-2">4.2.2. Design Considerations</a></h4>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Alternative 1:</strong></p>
+<div class="ulist">
+<ul>
+<li>
+<p>Pros:</p>
+</li>
+<li>
+<p>Cons:</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><strong>Alternative 2:</strong></p>
+<div class="ulist">
+<ul>
+<li>
+<p>Pros:</p>
+</li>
+<li>
+<p>Cons:</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="Implementation-GradReq"><a class="anchor" href="#Implementation-GradReq"></a><a class="link" href="#Implementation-GradReq">4.3. Graduation Requirements Features</a></h3>
+<div class="paragraph">
+<p>The <strong>Graduation Requirements</strong> feature is what allows students to ensure that their academic plan and corresponding modules are assisting them towards fulfilling their own criteria to graduate.</p>
+</div>
+<div class="sect3">
+<h4 id="degree-management"><a class="anchor" href="#degree-management"></a><a class="link" href="#degree-management">4.3.1. Degree Management</a></h4>
+<div class="paragraph">
+<p>The Graduation Requirements are made up of 2 implemented components:</p>
 </div>
 <div class="ulist">
 <ul>
 <li>
-<p><code>TimeTable()</code>&#8201;&#8212;&#8201;Creates a <code>TimeTable</code> entity with no associated values.</p>
+<p><strong>Declaration of Major:</strong> <code>major set</code></p>
 </li>
 <li>
-<p><code>TimeTable(List&lt;Enrollment&gt; enrollments)</code>&#8201;&#8212;&#8201;Creates a <code>TimeTable</code> entity with an associated <code>Enrollment</code> list.</p>
+<p><strong>Declaration of Specialisation:</strong> <code>specialisation set</code></p>
 </li>
 </ul>
 </div>
-<div class="sect4">
-<h5 id="current-implementation-12"><a class="anchor" href="#current-implementation-12"></a><a class="link" href="#current-implementation-12">3.4.1.1. Current Implementation</a></h5>
 <div class="paragraph">
-<p><code>TimeTableAddCommand</code> extends from the <code>Command</code> class and uses the inheritance to facilitate the implementation. <code>TimeTableAddCommand</code> is parsed using <code>TimeTableAddCommandParser</code> to split the user input into relevant fields.</p>
+<p>The <code>Major</code> and <code>Specialisation</code> entities are automatically created and populated through the JSON data received from NUSMods. Furthermore, <code>Student</code> entities can only be associated in a <em>1-0..1</em> relationship with a <code>Specialisation</code> entity.</p>
 </div>
 <div class="paragraph">
-<p>The following high-level sequence diagram illustrates the interactions between the <code>Ui</code>, <code>Logic</code> &amp; <code>Model</code> components when a module is being added.</p>
+<p>The following high-level sequence diagram illustrates the interactions between the <code>Ui</code>, <code>Logic</code> &amp; <code>Model</code> components when either a <strong>Major</strong> or <strong>Specialisation</strong> is being set:</p>
 </div>
-<div class="imageblock">
+<div class="imageblock" style="text-align: center">
 <div class="content">
-<img src="images/TimeTableAddSequenceDiagram.png" alt="TimeTableAddSequenceDiagram">
+<img src="images/#INSERTDIAGRAM" alt="#INSERTDIAGRAM">
 </div>
-</div>
-<div class="paragraph">
-<p>Given below is an example usage scenario and how the <code>add</code> mechanism behaves at each step:</p>
-</div>
-<div class="olist arabic">
-<ol class="arabic">
-<li>
-<p>User launches the application.</p>
-<div class="olist loweralpha">
-<ol class="loweralpha" type="a">
-<li>
-<p>If it is the first time, a <code>TimeTable</code> object will be created using <code>TimeTableAddCommand</code>.</p>
-</li>
-</ol>
-</div>
-</li>
-<li>
-<p>User enters the command. <code>TimeTableAddCommandParser</code> will create a <code>TimeTable</code> object, which can contain <code>enrollments</code>.</p>
-</li>
-</ol>
-</div>
-</div>
-<div class="sect4">
-<h5 id="design-considerations-12"><a class="anchor" href="#design-considerations-12"></a><a class="link" href="#design-considerations-12">3.4.1.2. Design Considerations</a></h5>
-<div class="sect5">
-<h6 id="aspect-how-code-timetableaddcommand-code-executes"><a class="anchor" href="#aspect-how-code-timetableaddcommand-code-executes"></a><a class="link" href="#aspect-how-code-timetableaddcommand-code-executes">Aspect: How <code>TimeTableAddCommand</code> Executes</a></h6>
-
-</div>
+<div class="title">Figure 10. Sequence Diagram for Degree Management (i.e. Handling of <code>Major</code> or <code>Specialisation</code>)</div>
 </div>
 </div>
 <div class="sect3">
-<h4 id="remove-timetable"><a class="anchor" href="#remove-timetable"></a><a class="link" href="#remove-timetable">3.4.2. Remove TimeTable</a></h4>
+<h4 id="verification-of-graduation"><a class="anchor" href="#verification-of-graduation"></a><a class="link" href="#verification-of-graduation">4.3.2. Verification of Graduation</a></h4>
 <div class="paragraph">
-<p>The <code>timetable remove</code> command destroys a <code>TimeTable</code> entity (with all associated values) when instructed by the user.</p>
-</div>
-<div class="paragraph">
-<p>It is appended with the tags <code>year/YEAR</code> and <code>sem/SEM</code>.</p>
-</div>
-<div class="sect4">
-<h5 id="current-implementation-13"><a class="anchor" href="#current-implementation-13"></a><a class="link" href="#current-implementation-13">3.4.2.1. Current Implementation</a></h5>
-<div class="paragraph">
-<p><code>TimeTableRemoveCommand</code> extends from the <code>Command</code> class and uses the inheritance to facilitate the implementation. <code>TimeTableRemoveCommand</code> is parsed using <code>TimeTableRemoveCommandParser</code> to parse the action.</p>
-</div>
-<div class="paragraph">
-<p>The following high-level sequence diagram illustrates the interactions between the <code>Ui</code>, <code>Logic</code> &amp; <code>Model</code> components when a module is being added.</p>
-</div>
-<div class="imageblock">
-<div class="content">
-<img src="images/TimeTableRemoveSequenceDiagram.png" alt="TimeTableRemoveSequenceDiagram">
-</div>
-</div>
-<div class="paragraph">
-<p>Given below is an example usage scenario and how the <code>remove</code> mechanism behaves at each step:</p>
+<p>Once the <strong>Major</strong> and <strong>Specialisation</strong> (if any), or a <strong>Student</strong> is set, the following logic is used to verify if the student&#8217;s <strong>Graduation Rquirements</strong> are being met, as modules are managed:</p>
 </div>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p>User enters the command. <code>TimeTableRemoveCommandParser</code> will destroy the specified <code>TimeTable</code> object (if it exists), along with its associated values.</p>
+<p>Retrival of the main base of the <code>Graduation Requirements</code> based on the <code>Major</code> of the <code>Student</code> entity.</p>
+</li>
+<li>
+<p>Matching of the sub <code>Graduation Requirements</code> (which can come in the form of <em>"Focus Areas", "Specialisations" or "Tracks"</em> depending on the terminology of the respective faculty that the <code>Major</code> belongs to), of the <code>Specialisation</code> given and compiled.</p>
+</li>
+<li>
+<p>Thereafter, the corresponding <code>Module</code> entities that have been added will be verified against the compiled <code>Graduation Requirements</code>.</p>
+</li>
+<li>
+<p>Finally, requirements that are met, are checked or crossed accordingly - which is displayed in the left-panel of the GUI.</p>
 </li>
 </ol>
 </div>
+<div class="paragraph">
+<p>The flow of how the <code>Graduation Requirements</code> is put together with information from <code>Major</code> and <code>Specialisation</code> can be found in the below class diagram:</p>
 </div>
-<div class="sect4">
-<h5 id="design-considerations-13"><a class="anchor" href="#design-considerations-13"></a><a class="link" href="#design-considerations-13">3.4.2.2. Design Considerations</a></h5>
-<div class="sect5">
-<h6 id="aspect-how-code-timetableremovecommand-code-executes"><a class="anchor" href="#aspect-how-code-timetableremovecommand-code-executes"></a><a class="link" href="#aspect-how-code-timetableremovecommand-code-executes">Aspect: How <code>TimeTableRemoveCommand</code> Executes</a></h6>
-
+<div class="imageblock" style="text-align: center">
+<div class="content">
+<img src="images/#INSERTDIAGRAM" alt="#INSERTDIAGRAM">
 </div>
+<div class="title">Figure 11. Class Diagram of Graduation Requirements Implementation</div>
 </div>
 </div>
 <div class="sect3">
-<h4 id="active-timetable"><a class="anchor" href="#active-timetable"></a><a class="link" href="#active-timetable">3.4.3. Active TimeTable</a></h4>
-<div class="paragraph">
-<p>The <code>TimeTable active</code> command selects the specified <code>TimeTable</code> entity with its associated values, by the index input provided by the user.</p>
-</div>
-<div class="paragraph">
-<p>It is appended with the tags <code>year/YEAR</code> and <code>sem/SEM</code>.</p>
-</div>
-<div class="sect4">
-<h5 id="current-implementation-14"><a class="anchor" href="#current-implementation-14"></a><a class="link" href="#current-implementation-14">3.4.3.1. Current Implementation</a></h5>
-<div class="paragraph">
-<p><code>TimeTableActiveCommand</code> extends from the <code>Command</code> class and uses the inheritance to facilitate the implementation. <code>TimeTableActiveCommand</code> is parsed using <code>TimeTableActiveCommandParser</code> to split the user input into relevant fields.</p>
-</div>
-<div class="paragraph">
-<p>The following high-level sequence diagram illustrates the interactions between the <code>Ui</code>, <code>Logic</code> &amp; <code>Model</code> components when a module is being added.</p>
-</div>
-<div class="imageblock">
-<div class="content">
-<img src="images/TimeTableActiveSequenceDiagram.png" alt="TimeTableActiveSequenceDiagram">
-</div>
-</div>
-<div class="paragraph">
-<p>Given below is an example usage scenario and how the <code>active</code> mechanism behaves at each step:</p>
-</div>
-<div class="olist arabic">
-<ol class="arabic">
+<h4 id="design-considerations-3"><a class="anchor" href="#design-considerations-3"></a><a class="link" href="#design-considerations-3">4.3.3. Design Considerations</a></h4>
+<div class="ulist">
+<ul>
 <li>
-<p>User enters the command. <code>TimeTableActiveCommandParser</code> will select the specified <code>TimeTable</code> object (if it exists), by the specified index.</p>
-</li>
-</ol>
-</div>
-</div>
-<div class="sect4">
-<h5 id="design-considerations-14"><a class="anchor" href="#design-considerations-14"></a><a class="link" href="#design-considerations-14">3.4.3.2. Design Considerations</a></h5>
-<div class="sect5">
-<h6 id="aspect-how-code-timetableactivecommand-code-executes"><a class="anchor" href="#aspect-how-code-timetableactivecommand-code-executes"></a><a class="link" href="#aspect-how-code-timetableactivecommand-code-executes">Aspect: How <code>TimeTableActiveCommand</code> Executes</a></h6>
-
-</div>
-</div>
-</div>
-<div class="sect3">
-<h4 id="list-timetables"><a class="anchor" href="#list-timetables"></a><a class="link" href="#list-timetables">3.4.4. List Timetables</a></h4>
-<div class="paragraph">
-<p>The <code>timetable list</code> command lists all <code>TimeTable</code> entities.</p>
-</div>
-<div class="sect4">
-<h5 id="current-implementation-15"><a class="anchor" href="#current-implementation-15"></a><a class="link" href="#current-implementation-15">3.4.4.1. Current Implementation</a></h5>
-<div class="paragraph">
-<p><code>TimeTableListCommand</code> extends from the <code>Command</code> class and uses the inheritance to facilitate the implementation. <code>TimeTableListCommand</code> is parsed using <code>TimeTableCommandParser</code> to get the command input.</p>
-</div>
-<div class="paragraph">
-<p>The following high-level sequence diagram illustrates the interactions between the <code>Ui</code>, <code>Logic</code> &amp; <code>Model</code> components when a module is being added.</p>
-</div>
-<div class="imageblock">
-<div class="content">
-<img src="images/TimeTableListSequenceDiagram.png" alt="TimeTableListSequenceDiagram">
-</div>
-</div>
-<div class="paragraph">
-<p>Given below is an example usage scenario and how the <code>list</code> mechanism behaves at each step:</p>
-</div>
-<div class="olist arabic">
-<ol class="arabic">
+<p><strong>Alternative 1:</strong></p>
+<div class="ulist">
+<ul>
 <li>
-<p>User enters the command. <code>TimeTableCommandParser</code> will list all <code>TimeTable</code> objects (if any exists).</p>
+<p>Pros:</p>
 </li>
-</ol>
+<li>
+<p>Cons:</p>
+</li>
+</ul>
 </div>
+</li>
+<li>
+<p><strong>Alternative 2:</strong></p>
+<div class="ulist">
+<ul>
+<li>
+<p>Pros:</p>
+</li>
+<li>
+<p>Cons:</p>
+</li>
+</ul>
 </div>
-<div class="sect4">
-<h5 id="design-considerations-15"><a class="anchor" href="#design-considerations-15"></a><a class="link" href="#design-considerations-15">3.4.4.2. Design Considerations</a></h5>
-<div class="sect5">
-<h6 id="aspect-how-code-timetablelistcommand-code-executes"><a class="anchor" href="#aspect-how-code-timetablelistcommand-code-executes"></a><a class="link" href="#aspect-how-code-timetablelistcommand-code-executes">Aspect: How <code>TimeTableListCommand</code> Executes</a></h6>
-
-</div>
+</li>
+</ul>
 </div>
 </div>
 </div>
 <div class="sect2">
-<h3 id="logging"><a class="anchor" href="#logging"></a><a class="link" href="#logging">3.5. Logging</a></h3>
+<h3 id="Implementation-Lesson"><a class="anchor" href="#Implementation-Lesson"></a><a class="link" href="#Implementation-Lesson">4.4. Lesson Features</a></h3>
+<div class="paragraph">
+<p>The <strong>Lesson Feature</strong> allows students to manage the their respective lessons for the academic planning. When managing lessons, they are rendered in a <strong>Lesson View Screen</strong> in the GUI.</p>
+</div>
+<div class="sect3">
+<h4 id="lesson-implementation"><a class="anchor" href="#lesson-implementation"></a><a class="link" href="#lesson-implementation">4.4.1. Lesson Implementation</a></h4>
+<div class="paragraph">
+<p>The <code>Lesson</code> entities are automatically created and populated through the JSON data received from NUSMods. Furthermore, <code>Lesson</code> entities are coupled to <code>Module</code> entities in a <em>*..1</em> relationship.</p>
+</div>
+<div class="paragraph">
+<p>This coupling allows us to detect if a student tries to add duplicate <code>Lesson</code> entities and perform error handling or alternative advisement, where possible.</p>
+</div>
+<div class="imageblock" style="text-align: center">
+<div class="content">
+<img src="images/#INSERTDIAGRAM" alt="#INSERTDIAGRAM">
+</div>
+<div class="title">Figure 12. Class Diagram of <code>Lesson</code> Implementation</div>
+</div>
+<div class="paragraph">
+<p><em>We will add more about how we implemented this further, and the design decisions made.</em></p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="design-considerations-4"><a class="anchor" href="#design-considerations-4"></a><a class="link" href="#design-considerations-4">4.4.2. Design Considerations</a></h4>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Alternative 1:</strong></p>
+<div class="ulist">
+<ul>
+<li>
+<p>Pros:</p>
+</li>
+<li>
+<p>Cons:</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><strong>Alternative 2:</strong></p>
+<div class="ulist">
+<ul>
+<li>
+<p>Pros:</p>
+</li>
+<li>
+<p>Cons:</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="Implementation-Module"><a class="anchor" href="#Implementation-Module"></a><a class="link" href="#Implementation-Module">4.5. Module Features &amp; Database</a></h3>
+<div class="paragraph">
+<p>Bulk of the sections (of <a href="#Implementation">Section 4, &#8220;Implementation&#8221;</a>) and features throughout, require interaction with the <code>Module</code> entities. <strong>Modules</strong> form the majority of what students will need to interact with, as these are the classes they must take and clear, in order to graduate.</p>
+</div>
+<div class="sect3">
+<h4 id="module-implementation"><a class="anchor" href="#module-implementation"></a><a class="link" href="#module-implementation">4.5.1. Module Implementation</a></h4>
+<div class="paragraph">
+<p>The <code>Module</code> entities are automatically created and populated through the JSON data received from NUSMods. The following class diagram below shows all the values that the <code>Module</code> entity stores or is associated with:</p>
+</div>
+<div class="imageblock" style="text-align: center">
+<div class="content">
+<img src="images/#INSERTDIAGRAM" alt="#INSERTDIAGRAM">
+</div>
+<div class="title">Figure 13. Class Diagram of <code>Module</code> Implementation</div>
+</div>
+<div class="paragraph">
+<p>Additionally, <code>Module</code> entities can be marked as <code>exempted</code> which allow Students to declare in the application, that will get the module credits associated, without having to declare taking it or associate a <code>Grade</code>.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="Implementation-Module-Search"><a class="anchor" href="#Implementation-Module-Search"></a><a class="link" href="#Implementation-Module-Search">4.5.2. Module Search</a></h4>
+<div class="paragraph">
+<p>On First Launch, all the modules that are available in NUS (in accordance to NUSMods data) is populated into the <strong>Module Panel Screen</strong>. This allows a student to select modules and view the corresponding module descriptions and details.</p>
+</div>
+<div class="paragraph">
+<p>Students are able utilise the <em>"Search Bar"</em> to search for any module based on the <code>module code</code> or <code>module name</code>. When given the query with the corresponding values, the following logic takes place:</p>
+</div>
+<div class="imageblock" style="text-align: center">
+<div class="content">
+<img src="images/#INSERTDIAGRAM" alt="#INSERTDIAGRAM">
+</div>
+<div class="title">Figure 14. Sequence Diagram for Module Search</div>
+</div>
+<div class="paragraph">
+<p>If any results match the query enetered, they are populated into the <strong>Search Screen</strong> GUI for the user.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="design-considerations-5"><a class="anchor" href="#design-considerations-5"></a><a class="link" href="#design-considerations-5">4.5.3. Design Considerations</a></h4>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Alternative 1:</strong></p>
+<div class="ulist">
+<ul>
+<li>
+<p>Pros:</p>
+</li>
+<li>
+<p>Cons:</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><strong>Alternative 2:</strong></p>
+<div class="ulist">
+<ul>
+<li>
+<p>Pros:</p>
+</li>
+<li>
+<p>Cons:</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="Implementation-PlannerModel"><a class="anchor" href="#Implementation-PlannerModel"></a><a class="link" href="#Implementation-PlannerModel">4.6. Planner Model</a></h3>
+<div class="paragraph">
+<p><em>This section will be updated soon!</em></p>
+</div>
+<div class="sect3">
+<h4 id="design-considerations-6"><a class="anchor" href="#design-considerations-6"></a><a class="link" href="#design-considerations-6">4.6.1. Design Considerations</a></h4>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Alternative 1:</strong></p>
+<div class="ulist">
+<ul>
+<li>
+<p>Pros:</p>
+</li>
+<li>
+<p>Cons:</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><strong>Alternative 2:</strong></p>
+<div class="ulist">
+<ul>
+<li>
+<p>Pros:</p>
+</li>
+<li>
+<p>Cons:</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="Implementation-Student"><a class="anchor" href="#Implementation-Student"></a><a class="link" href="#Implementation-Student">4.7. Student Features</a></h3>
+<div class="paragraph">
+<p><em>This section will be updated soon!</em></p>
+</div>
+<div class="sect3">
+<h4 id="student-management"><a class="anchor" href="#student-management"></a><a class="link" href="#student-management">4.7.1. Student Management</a></h4>
+<div class="paragraph">
+<p><em>This section will be updated soon!</em></p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="design-considerations-7"><a class="anchor" href="#design-considerations-7"></a><a class="link" href="#design-considerations-7">4.7.2. Design Considerations</a></h4>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Alternative 1:</strong></p>
+<div class="ulist">
+<ul>
+<li>
+<p>Pros:</p>
+</li>
+<li>
+<p>Cons:</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><strong>Alternative 2:</strong></p>
+<div class="ulist">
+<ul>
+<li>
+<p>Pros:</p>
+</li>
+<li>
+<p>Cons:</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="Implementation-Timetable"><a class="anchor" href="#Implementation-Timetable"></a><a class="link" href="#Implementation-Timetable">4.8. Timetable Features</a></h3>
+<div class="paragraph">
+<p><em>This section will be updated soon!</em></p>
+</div>
+<div class="sect3">
+<h4 id="timetable-management"><a class="anchor" href="#timetable-management"></a><a class="link" href="#timetable-management">4.8.1. Timetable Management</a></h4>
+<div class="paragraph">
+<p><em>This section will be updated soon!</em></p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="design-considerations-8"><a class="anchor" href="#design-considerations-8"></a><a class="link" href="#design-considerations-8">4.8.2. Design Considerations</a></h4>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Alternative 1:</strong></p>
+<div class="ulist">
+<ul>
+<li>
+<p>Pros:</p>
+</li>
+<li>
+<p>Cons:</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><strong>Alternative 2:</strong></p>
+<div class="ulist">
+<ul>
+<li>
+<p>Pros:</p>
+</li>
+<li>
+<p>Cons:</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="backend-debugging"><a class="anchor" href="#backend-debugging"></a><a class="link" href="#backend-debugging">5. Backend &amp; Debugging</a></h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="Backend-Configuration"><a class="anchor" href="#Backend-Configuration"></a><a class="link" href="#Backend-Configuration">5.1. Configuration</a></h3>
+<div class="paragraph">
+<p>Certain properties of the application can be controlled (e.g user prefs file location, logging level) through the configuration file (default: <code>config.json</code>).</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="Backend-JSON"><a class="anchor" href="#Backend-JSON"></a><a class="link" href="#Backend-JSON">5.2. JSON Handling &amp; Live Data Management</a></h3>
+<div class="paragraph">
+<p>As mentioned in several sections (of <a href="#Implementation">Section 4, &#8220;Implementation&#8221;</a>) above, NUS Module Planner has the capability to pull live data for entities, such as, <code>Major</code> and <code>Module</code>, via <strong>JSON</strong>.</p>
+</div>
+<div class="paragraph">
+<p><strong>JSON</strong> stands for <em>JavaScript Object Notation</em> and is a lightweight format for storing and transporting data. We choose this syntax as it is "self-describing" and thus, easy to understand, while keeping our application size low.</p>
+</div>
+<div class="paragraph">
+<p><em>We will add more about how we implemented JSON and how we get, format, read and store the data.</em></p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="logging"><a class="anchor" href="#logging"></a><a class="link" href="#logging">5.3. Logging</a></h3>
 <div class="paragraph">
 <p>We are using <code>java.util.logging</code> package for logging. The <code>LogsCenter</code> class is used to manage the logging levels and logging destinations.</p>
 </div>
 <div class="ulist">
 <ul>
 <li>
-<p>The logging level can be controlled using the <code>logLevel</code> setting in the configuration file (See <a href="#Implementation-Configuration">Section 3.6, &#8220;Configuration&#8221;</a>)</p>
+<p>The logging level can be controlled using the <code>logLevel</code> setting in the configuration file (See <a href="#Backend-Configuration">Section 5.1, &#8220;Configuration&#8221;</a>)</p>
 </li>
 <li>
 <p>The <code>Logger</code> for a class can be obtained using <code>LogsCenter.getLogger(Class)</code> which will log messages according to the specified logging level</p>
@@ -1182,15 +906,15 @@ When appended with <code>exempted</code> (i.e. <code>module list exempted</code>
 </div>
 </div>
 <div class="sect2">
-<h3 id="Implementation-Configuration"><a class="anchor" href="#Implementation-Configuration"></a><a class="link" href="#Implementation-Configuration">3.6. Configuration</a></h3>
+<h3 id="Backend-SubCmd"><a class="anchor" href="#Backend-SubCmd"></a><a class="link" href="#Backend-SubCmd">5.4. Sub-Commands</a></h3>
 <div class="paragraph">
-<p>Certain properties of the application can be controlled (e.g user prefs file location, logging level) through the configuration file (default: <code>config.json</code>).</p>
+<p><em>This section will be updated soon!</em></p>
 </div>
 </div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="documentation"><a class="anchor" href="#documentation"></a><a class="link" href="#documentation">4. Documentation</a></h2>
+<h2 id="documentation"><a class="anchor" href="#documentation"></a><a class="link" href="#documentation">6. Documentation</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>Refer to the guide <a href="Documentation.html">here</a>.</p>
@@ -1198,7 +922,7 @@ When appended with <code>exempted</code> (i.e. <code>module list exempted</code>
 </div>
 </div>
 <div class="sect1">
-<h2 id="testing"><a class="anchor" href="#testing"></a><a class="link" href="#testing">5. Testing</a></h2>
+<h2 id="testing"><a class="anchor" href="#testing"></a><a class="link" href="#testing">7. Testing</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>Refer to the guide <a href="Testing.html">here</a>.</p>
@@ -1206,10 +930,40 @@ When appended with <code>exempted</code> (i.e. <code>module list exempted</code>
 </div>
 </div>
 <div class="sect1">
-<h2 id="dev-ops"><a class="anchor" href="#dev-ops"></a><a class="link" href="#dev-ops">6. Dev Ops</a></h2>
+<h2 id="dev-ops"><a class="anchor" href="#dev-ops"></a><a class="link" href="#dev-ops">8. Dev Ops</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>Refer to the guide <a href="DevOps.html">here</a>.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="proposed-future-enhancements"><a class="anchor" href="#proposed-future-enhancements"></a><a class="link" href="#proposed-future-enhancements">9. Proposed Future Enhancements</a></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>NUS Module Planner has a lot more potential to grow!</p>
+</div>
+<div class="paragraph">
+<p>Below are some of the other great features we think can be implemented in v2.0 onward:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Module Viewer with Search</strong> - Other than just searching for modules, search for their content instead, such as modules that deal with <em>Heat Transfer</em> or <em>Geology</em>.</p>
+</li>
+<li>
+<p><strong>Timetable Planner with Friends</strong> - Instead of just viewing timetables of different students (<em>i.e. friends</em>) separately, be able to overlay them in one <em>"Timetable View"</em>, for easier group planning.</p>
+</li>
+<li>
+<p><strong>Requirements Double-Upper</strong> - Instead of just one <code>Major</code>, handle double <code>Major</code> programme students, or even those with Minors.</p>
+</li>
+<li>
+<p><strong>Module Popularity Prediction</strong> - Get and analyse historic data from NUSMods about module uptake, so that students do not have to plan for modules that would be overly subscribed.</p>
+</li>
+<li>
+<p><strong>Support for Overseas Exchange and University Town College Programmes</strong> - Be able to plan for special modules only offered in these programmes, if a student is enrolled in them.</p>
+</li>
+</ul>
 </div>
 </div>
 </div>
@@ -1278,12 +1032,6 @@ When appended with <code>exempted</code> (i.e. <code>module list exempted</code>
 </tr>
 </thead>
 <tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>* * *</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">new user</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">see usage instructions</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">can refer to instructions when I forget how to use the App</p></td>
-</tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>* * *</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">freshman</p></td>
@@ -1460,7 +1208,7 @@ When appended with <code>exempted</code> (i.e. <code>module list exempted</code>
 <li>
 <p>Planner adds the plan</p>
 <div class="paragraph">
-<p>Use case ends</p>
+<p>Use case ends.</p>
 </div>
 </li>
 </ol>
@@ -1468,8 +1216,8 @@ When appended with <code>exempted</code> (i.e. <code>module list exempted</code>
 <div class="paragraph">
 <p><strong>Extensions</strong></p>
 </div>
-<div class="ulist none">
-<ul class="none">
+<div class="ulist">
+<ul>
 <li>
 <p>2a. Any of the plan or major is missing or invalid</p>
 <div class="ulist none">
@@ -1477,7 +1225,7 @@ When appended with <code>exempted</code> (i.e. <code>module list exempted</code>
 <li>
 <p>2a1. Planner shows an error message</p>
 <div class="paragraph">
-<p>Use case ends</p>
+<p>Use case ends.</p>
 </div>
 </li>
 </ul>
@@ -1505,7 +1253,7 @@ When appended with <code>exempted</code> (i.e. <code>module list exempted</code>
 <li>
 <p>Planner deletes the plan</p>
 <div class="paragraph">
-<p>Use case ends</p>
+<p>Use case ends.</p>
 </div>
 </li>
 </ol>
@@ -1513,12 +1261,12 @@ When appended with <code>exempted</code> (i.e. <code>module list exempted</code>
 <div class="paragraph">
 <p><strong>Extensions</strong></p>
 </div>
-<div class="ulist none">
-<ul class="none">
+<div class="ulist">
+<ul>
 <li>
 <p>2a. The list is empty</p>
 <div class="paragraph">
-<p>Use case ends</p>
+<p>Use case ends.</p>
 </div>
 </li>
 <li>
@@ -1528,7 +1276,7 @@ When appended with <code>exempted</code> (i.e. <code>module list exempted</code>
 <li>
 <p>3a1. Planner shows an error message</p>
 <div class="paragraph">
-<p>Use case resumes at step 2</p>
+<p>Use case resumes at step 2.</p>
 </div>
 </li>
 </ul>
@@ -1556,7 +1304,7 @@ When appended with <code>exempted</code> (i.e. <code>module list exempted</code>
 <li>
 <p>Planner selects the plan as the active plan</p>
 <div class="paragraph">
-<p>Use case ends</p>
+<p>Use case ends.</p>
 </div>
 </li>
 </ol>
@@ -1564,8 +1312,8 @@ When appended with <code>exempted</code> (i.e. <code>module list exempted</code>
 <div class="paragraph">
 <p><strong>Extensions</strong></p>
 </div>
-<div class="ulist none">
-<ul class="none">
+<div class="ulist">
+<ul>
 <li>
 <p>2a. The list is empty</p>
 <div class="paragraph">
@@ -1579,7 +1327,7 @@ When appended with <code>exempted</code> (i.e. <code>module list exempted</code>
 <li>
 <p>3a1. Planner shows an error message</p>
 <div class="paragraph">
-<p>Use case resumes at step 2</p>
+<p>Use case resumes at step 2.</p>
 </div>
 </li>
 </ul>
@@ -1607,7 +1355,7 @@ When appended with <code>exempted</code> (i.e. <code>module list exempted</code>
 <li>
 <p>Planner adds the timetable to the active plan</p>
 <div class="paragraph">
-<p>Use case ends</p>
+<p>Use case ends.</p>
 </div>
 </li>
 </ol>
@@ -1615,8 +1363,8 @@ When appended with <code>exempted</code> (i.e. <code>module list exempted</code>
 <div class="paragraph">
 <p><strong>Extensions</strong></p>
 </div>
-<div class="ulist none">
-<ul class="none">
+<div class="ulist">
+<ul>
 <li>
 <p>2a. There is no plan currently selected</p>
 <div class="ulist none">
@@ -1624,7 +1372,7 @@ When appended with <code>exempted</code> (i.e. <code>module list exempted</code>
 <li>
 <p>2a1. Planner shows an error message</p>
 <div class="paragraph">
-<p>Use case ends</p>
+<p>Use case ends.</p>
 </div>
 </li>
 </ul>
@@ -1637,7 +1385,7 @@ When appended with <code>exempted</code> (i.e. <code>module list exempted</code>
 <li>
 <p>3a1. Planner shows an error message</p>
 <div class="paragraph">
-<p>Use case ends</p>
+<p>Use case ends.</p>
 </div>
 </li>
 </ul>
@@ -1668,7 +1416,7 @@ When appended with <code>exempted</code> (i.e. <code>module list exempted</code>
 <li>
 <p>Planner deletes the timetable from the active plan</p>
 <div class="paragraph">
-<p>Use case ends</p>
+<p>Use case ends.</p>
 </div>
 </li>
 </ol>
@@ -1676,8 +1424,8 @@ When appended with <code>exempted</code> (i.e. <code>module list exempted</code>
 <div class="paragraph">
 <p><strong>Extensions</strong></p>
 </div>
-<div class="ulist none">
-<ul class="none">
+<div class="ulist">
+<ul>
 <li>
 <p>2a. There is no plan currently selected</p>
 <div class="ulist none">
@@ -1685,7 +1433,7 @@ When appended with <code>exempted</code> (i.e. <code>module list exempted</code>
 <li>
 <p>2a1. Planner shows an error message</p>
 <div class="paragraph">
-<p>Use case ends</p>
+<p>Use case ends.</p>
 </div>
 </li>
 </ul>
@@ -1696,9 +1444,9 @@ When appended with <code>exempted</code> (i.e. <code>module list exempted</code>
 <div class="ulist none">
 <ul class="none">
 <li>
-<p>3a1. Planner shows an error message</p>
+<p>4a1. Planner shows an error message</p>
 <div class="paragraph">
-<p>Use case ends</p>
+<p>Use case resumes at step 3.</p>
 </div>
 </li>
 </ul>
@@ -1729,7 +1477,7 @@ When appended with <code>exempted</code> (i.e. <code>module list exempted</code>
 <li>
 <p>Planner selects the timetable as the active timetable</p>
 <div class="paragraph">
-<p>Use case ends</p>
+<p>Use case ends.</p>
 </div>
 </li>
 </ol>
@@ -1737,12 +1485,12 @@ When appended with <code>exempted</code> (i.e. <code>module list exempted</code>
 <div class="paragraph">
 <p><strong>Extensions</strong></p>
 </div>
-<div class="ulist none">
-<ul class="none">
+<div class="ulist">
+<ul>
 <li>
 <p>2a. The list is empty</p>
 <div class="paragraph">
-<p>Use case ends</p>
+<p>Use case ends.</p>
 </div>
 </li>
 <li>
@@ -1750,9 +1498,9 @@ When appended with <code>exempted</code> (i.e. <code>module list exempted</code>
 <div class="ulist none">
 <ul class="none">
 <li>
-<p>3a1. Planner shows an error message</p>
+<p>4a1. Planner shows an error message</p>
 <div class="paragraph">
-<p>Use case resumes at step 3</p>
+<p>Use case resumes at step 3.</p>
 </div>
 </li>
 </ul>
@@ -1777,7 +1525,7 @@ When appended with <code>exempted</code> (i.e. <code>module list exempted</code>
 <li>
 <p>Planner adds the module to the active timetable</p>
 <div class="paragraph">
-<p>Use case ends</p>
+<p>Use case ends.</p>
 </div>
 </li>
 </ol>
@@ -1785,8 +1533,8 @@ When appended with <code>exempted</code> (i.e. <code>module list exempted</code>
 <div class="paragraph">
 <p><strong>Extensions</strong></p>
 </div>
-<div class="ulist none">
-<ul class="none">
+<div class="ulist">
+<ul>
 <li>
 <p>2a. The given module is invalid</p>
 <div class="ulist none">
@@ -1794,16 +1542,12 @@ When appended with <code>exempted</code> (i.e. <code>module list exempted</code>
 <li>
 <p>2a1. Planner shows an error message</p>
 <div class="paragraph">
-<p>Use case ends</p>
+<p>Use case ends.</p>
 </div>
 </li>
 </ul>
 </div>
 </li>
-</ul>
-</div>
-<div class="ulist none">
-<ul class="none">
 <li>
 <p>2b. The given module already exists in the timetable</p>
 <div class="ulist none">
@@ -1811,7 +1555,7 @@ When appended with <code>exempted</code> (i.e. <code>module list exempted</code>
 <li>
 <p>2b1. Planner shows an error message</p>
 <div class="paragraph">
-<p>Use case ends</p>
+<p>Use case ends.</p>
 </div>
 </li>
 </ul>
@@ -1836,7 +1580,7 @@ When appended with <code>exempted</code> (i.e. <code>module list exempted</code>
 <li>
 <p>Planner deletes the module from the active timetable</p>
 <div class="paragraph">
-<p>Use case ends</p>
+<p>Use case ends.</p>
 </div>
 </li>
 </ol>
@@ -1844,8 +1588,8 @@ When appended with <code>exempted</code> (i.e. <code>module list exempted</code>
 <div class="paragraph">
 <p><strong>Extensions</strong></p>
 </div>
-<div class="ulist none">
-<ul class="none">
+<div class="ulist">
+<ul>
 <li>
 <p>2a. The given module is invalid</p>
 <div class="ulist none">
@@ -1853,16 +1597,12 @@ When appended with <code>exempted</code> (i.e. <code>module list exempted</code>
 <li>
 <p>2a1. Planner shows an error message</p>
 <div class="paragraph">
-<p>Use case ends</p>
+<p>Use case ends.</p>
 </div>
 </li>
 </ul>
 </div>
 </li>
-</ul>
-</div>
-<div class="ulist none">
-<ul class="none">
 <li>
 <p>2b. The given module does not exist in the timetable</p>
 <div class="ulist none">
@@ -1870,7 +1610,7 @@ When appended with <code>exempted</code> (i.e. <code>module list exempted</code>
 <li>
 <p>2b1. Planner shows an error message</p>
 <div class="paragraph">
-<p>Use case ends</p>
+<p>Use case ends.</p>
 </div>
 </li>
 </ul>
@@ -1893,9 +1633,9 @@ When appended with <code>exempted</code> (i.e. <code>module list exempted</code>
 <p>User requests to list grades</p>
 </li>
 <li>
-<p>Planner lists grades and statistics</p>
+<p>Planner lists the total number of grades, and cumulative statistics</p>
 <div class="paragraph">
-<p>Use case ends</p>
+<p>Use case ends.</p>
 </div>
 </li>
 </ol>
@@ -1903,16 +1643,16 @@ When appended with <code>exempted</code> (i.e. <code>module list exempted</code>
 <div class="paragraph">
 <p><strong>Extensions</strong></p>
 </div>
+<div class="ulist">
+<ul>
+<li>
+<p>2a. The user requests to list all modules taken instead</p>
 <div class="ulist none">
 <ul class="none">
 <li>
-<p>2a. The user requests to list all modules taken</p>
-<div class="ulist none">
-<ul class="none">
-<li>
-<p>2a1. Planner lists all modules taken and their respective grades</p>
+<p>2a1. Planner lists all modules taken with their respective grades instead</p>
 <div class="paragraph">
-<p>Use case ends</p>
+<p>Use case ends.</p>
 </div>
 </li>
 </ul>
@@ -1937,7 +1677,7 @@ When appended with <code>exempted</code> (i.e. <code>module list exempted</code>
 <li>
 <p>Planner sets the grade of the specified module</p>
 <div class="paragraph">
-<p>Use case ends</p>
+<p>Use case ends.</p>
 </div>
 </li>
 </ol>
@@ -1945,8 +1685,8 @@ When appended with <code>exempted</code> (i.e. <code>module list exempted</code>
 <div class="paragraph">
 <p><strong>Extensions</strong></p>
 </div>
-<div class="ulist none">
-<ul class="none">
+<div class="ulist">
+<ul>
 <li>
 <p>2a. The given module is invalid</p>
 <div class="ulist none">
@@ -1954,16 +1694,12 @@ When appended with <code>exempted</code> (i.e. <code>module list exempted</code>
 <li>
 <p>2a1. Planner shows an error message</p>
 <div class="paragraph">
-<p>Use case ends</p>
+<p>Use case ends.</p>
 </div>
 </li>
 </ul>
 </div>
 </li>
-</ul>
-</div>
-<div class="ulist none">
-<ul class="none">
 <li>
 <p>2b. The given module does not exist in the timetable</p>
 <div class="ulist none">
@@ -1971,16 +1707,12 @@ When appended with <code>exempted</code> (i.e. <code>module list exempted</code>
 <li>
 <p>2b1. Planner shows an error message</p>
 <div class="paragraph">
-<p>Use case ends</p>
+<p>Use case ends.</p>
 </div>
 </li>
 </ul>
 </div>
 </li>
-</ul>
-</div>
-<div class="ulist none">
-<ul class="none">
 <li>
 <p>2c. The given grade is invalid</p>
 <div class="ulist none">
@@ -1988,7 +1720,7 @@ When appended with <code>exempted</code> (i.e. <code>module list exempted</code>
 <li>
 <p>2c1. Planner shows an error message</p>
 <div class="paragraph">
-<p>Use case ends</p>
+<p>Use case ends.</p>
 </div>
 </li>
 </ul>
@@ -2005,16 +1737,16 @@ When appended with <code>exempted</code> (i.e. <code>module list exempted</code>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p>The application should be able to run on all major operating systems (i.e. Windows 10, macOS Catalina, and Ubuntu 18.04 LTS).</p>
+<p>Should be able to run on all major operating systems (<em>i.e. Windows 10, macOS Catalina, and Ubuntu 18.04 LTS</em>), with <code>Java 11</code> (as per constraints).</p>
 </li>
 <li>
-<p>The user should run the software with OpenJDK 11 (as per constraints).</p>
+<p>Should come prepackaged with pre-populated NUSMods data (for offline use).</p>
 </li>
 <li>
-<p>The application should come prepackaged with pre-populated data (for offline use).</p>
+<p>Should be able to accommodate any user (<em>i.e. Undergraduate Student</em>) from NUS.</p>
 </li>
 <li>
-<p>The application be able to hold up to 10 students and their respective module plans/enrollments without a noticeable sluggishness in performance for typical usage.</p>
+<p>Should be able to hold up to 10 students, and their respective module plans/enrollments without a noticeable sluggishness in performance for typical usage.</p>
 </li>
 <li>
 <p>A user with above average typing speed for regular English text (i.e. not code, not system admin commands) should be able to accomplish most of the tasks faster using commands than using the mouse.</p>
@@ -2038,14 +1770,6 @@ When appended with <code>exempted</code> (i.e. <code>module list exempted</code>
 </tr>
 <tr>
 <td class="hdlist1">
-<a id="locale"></a> Locale
-</td>
-<td class="hdlist2">
-<p>Stands for a setting on the user&#8217;s computer that defines the user&#8217;s language and region.</p>
-</td>
-</tr>
-<tr>
-<td class="hdlist1">
 <a id="mainstream-os"></a> Mainstream OS
 </td>
 <td class="hdlist2">
@@ -2058,14 +1782,6 @@ When appended with <code>exempted</code> (i.e. <code>module list exempted</code>
 </td>
 <td class="hdlist2">
 <p>Refers to one of academic majors students read in NUS.</p>
-</td>
-</tr>
-<tr>
-<td class="hdlist1">
-<a id="minor"></a> Minor
-</td>
-<td class="hdlist2">
-<p>Refers to one of academic minors students can optionally read in NUS.</p>
 </td>
 </tr>
 <tr>
@@ -2086,26 +1802,10 @@ When appended with <code>exempted</code> (i.e. <code>module list exempted</code>
 </tr>
 <tr>
 <td class="hdlist1">
-<a id="nfr"></a> NFR
-</td>
-<td class="hdlist2">
-<p>Stands for "Non-Functional Requirement(s)".</p>
-</td>
-</tr>
-<tr>
-<td class="hdlist1">
 <a id="nus"></a> NUS
 </td>
 <td class="hdlist2">
 <p>Stands for "National University of Singapore", the university this application was developed for.</p>
-</td>
-</tr>
-<tr>
-<td class="hdlist1">
-<a id="puml"></a> PlantUML
-</td>
-<td class="hdlist2">
-<p>Is a tool used to render diagrams used in this document.</p>
 </td>
 </tr>
 <tr>
@@ -2124,14 +1824,6 @@ When appended with <code>exempted</code> (i.e. <code>module list exempted</code>
 <p>Refers to the module timetable that students will go for classes in NUS.</p>
 </td>
 </tr>
-<tr>
-<td class="hdlist1">
-<a id="track"></a> Track
-</td>
-<td class="hdlist2">
-<p>Refers to one of academic tracks students can optionally read in NUS.</p>
-</td>
-</tr>
 </table>
 </div>
 </div>
@@ -2140,10 +1832,7 @@ When appended with <code>exempted</code> (i.e. <code>module list exempted</code>
 <h2 id="product-survey"><a class="anchor" href="#product-survey"></a><a class="link" href="#product-survey">Appendix F: Product Survey</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p><strong>Product Name</strong></p>
-</div>
-<div class="paragraph">
-<p>Author: &#8230;&#8203;</p>
+<p><a href="https://github.com/eugenecys/NUS-Module-Planner"><strong>NUS Module Planner by @eugenecys (via Microsoft Excel Sheet)</strong></a></p>
 </div>
 <div class="paragraph">
 <p>Pros:</p>
@@ -2151,10 +1840,10 @@ When appended with <code>exempted</code> (i.e. <code>module list exempted</code>
 <div class="ulist">
 <ul>
 <li>
-<p>&#8230;&#8203;</p>
+<p>Available for offline use</p>
 </li>
 <li>
-<p>&#8230;&#8203;</p>
+<p>Highly-personalisable, with freedom to arrange modules and semesters wherever</p>
 </li>
 </ul>
 </div>
@@ -2164,10 +1853,10 @@ When appended with <code>exempted</code> (i.e. <code>module list exempted</code>
 <div class="ulist">
 <ul>
 <li>
-<p>&#8230;&#8203;</p>
+<p>Relies on another third-party application (<em>i.e. Microsoft Excel</em>) to run</p>
 </li>
 <li>
-<p>&#8230;&#8203;</p>
+<p>Extremely tedious to use, and requires some knowledge as a <em>Microsoft Excel</em> power user</p>
 </li>
 </ul>
 </div>
@@ -2640,4 +2329,4 @@ Expected: Shows the GUI with a set of sample plans.</p>
 </div>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2020-04-09 13:20:18 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2020-04-10 11:35:50 UTC</div></div></div></body></html>
