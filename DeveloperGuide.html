@@ -652,12 +652,12 @@ The lifeline for <code>StudentRemoveCommandParser</code> should end at the destr
 <p>There are two ways to view the Calendar. You can click on the launch calendar to see the lessons that you have added. Another way is to click on the semester button in the module description page to see the lessons available.</p>
 </div>
 <div class="paragraph">
-<p>The Calendar builds its UI based on 999 implemented components:</p>
+<p>The Calendar builds its UI based on this implemented components:</p>
 </div>
 <div class="ulist">
 <ul>
 <li>
-<p><strong>METHOD ACTION NAME HERE</strong> <code>method name here</code></p>
+<p><strong>Show Calendar</strong> <code>setCalendar(List&lt;Lesson&gt; lessons)</code></p>
 </li>
 </ul>
 </div>
@@ -666,9 +666,12 @@ The lifeline for <code>StudentRemoveCommandParser</code> should end at the destr
 </div>
 <div class="imageblock" style="text-align: center">
 <div class="content">
-<img src="images/#INSERTDIAGRAM" alt="#INSERTDIAGRAM">
+<img src="images/CalendarActivityDiagram.png" alt="CalendarActivityDiagram">
 </div>
-<div class="title">Figure 9. Calendar UI ??DIAGRAM??</div>
+<div class="title">Figure 9. Activity Diagram for launching Calendar</div>
+</div>
+<div class="paragraph">
+<p>The Calendar populates each of the Label in the grid pane based on the list of <code>Lesson</code> provided by the planner.</p>
 </div>
 </div>
 <div class="sect3">
@@ -676,27 +679,27 @@ The lifeline for <code>StudentRemoveCommandParser</code> should end at the destr
 <div class="ulist">
 <ul>
 <li>
-<p><strong>Alternative 1:</strong></p>
+<p><strong>Alternative 1 (Current implementation):</strong> To build the table using scene builder with each labels being shaded to show the time</p>
 <div class="ulist">
 <ul>
 <li>
-<p>Pros:</p>
+<p>Pros: Every single UI component of the calendar is customizable, allowing for further modifications.</p>
 </li>
 <li>
-<p>Cons:</p>
+<p>Cons: Tedious and duplicated code for each Label to be set a value.</p>
 </li>
 </ul>
 </div>
 </li>
 <li>
-<p><strong>Alternative 2:</strong></p>
+<p><strong>Alternative 2:</strong> Use another library jfxtras which has an i calendar API</p>
 <div class="ulist">
 <ul>
 <li>
-<p>Pros:</p>
+<p>Pros: Reduce the amount of work needed to create the component</p>
 </li>
 <li>
-<p>Cons:</p>
+<p>Cons: Comes with bugs that scene builder is unable to support</p>
 </li>
 </ul>
 </div>
@@ -863,12 +866,46 @@ The lifeline for <code>StudentRemoveCommandParser</code> should end at the destr
 </div>
 <div class="imageblock" style="text-align: center">
 <div class="content">
-<img src="images/#INSERTDIAGRAM" alt="#INSERTDIAGRAM">
+<img src="images/LessonClassDiagram.png" alt="LessonClassDiagram">
 </div>
 <div class="title">Figure 12. Class Diagram of <code>Lesson</code> Implementation</div>
 </div>
 <div class="paragraph">
-<p><em>We will add more about how we implemented this further, and the design decisions made.</em></p>
+<p>The attributes of the <code>Lesson</code> class are retrieved from the serialised JSON file.</p>
+</div>
+<div class="paragraph">
+<p>This implementation consist of 3 commands.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>LessonAdd</code> - Finds the lessons from the module and add it into the list of lessons for the active student.</p>
+</li>
+<li>
+<p><code>LessonList</code> - List down the lessons for the active student.</p>
+</li>
+<li>
+<p><code>LessonRemove</code> - Remove the lessons from the active student based on the provided index.</p>
+</li>
+</ul>
+</div>
+<div class="sect4">
+<h5 id="adding-of-lesson"><a class="anchor" href="#adding-of-lesson"></a><a class="link" href="#adding-of-lesson">4.4.1.1. Adding of Lesson</a></h5>
+<div class="paragraph">
+<p>The <code>LessonAddCommandParser</code> method is called and it will get the <code>ModuleCode</code> and <code>Semester</code> provided by the arguments. It will run the <code>LessonDataImporter</code> class run method to convert the json file to <code>Lesson</code> Object. This is then added to the active student on the planner.</p>
+</div>
+</div>
+<div class="sect4">
+<h5 id="listing-of-lesson"><a class="anchor" href="#listing-of-lesson"></a><a class="link" href="#listing-of-lesson">4.4.1.2. Listing of Lesson</a></h5>
+<div class="paragraph">
+<p>The <code>LessonListCommand</code> method is called and it will iterate through the list of <code>Lesson</code> that is associated with the active student in the planner.</p>
+</div>
+</div>
+<div class="sect4">
+<h5 id="deleting-of-lesson"><a class="anchor" href="#deleting-of-lesson"></a><a class="link" href="#deleting-of-lesson">4.4.1.3. Deleting of Lesson</a></h5>
+<div class="paragraph">
+<p>The <code>LessonRemoveCommandParser</code> method is called and it will get the <code>Index</code> provided by the arguments. It will retrieve the list of <code>Lesson</code> and delete the object based on the index given.</p>
+</div>
 </div>
 </div>
 <div class="sect3">
@@ -938,7 +975,7 @@ The lifeline for <code>StudentRemoveCommandParser</code> should end at the destr
 </div>
 <div class="imageblock" style="text-align: center">
 <div class="content">
-<img src="images/#INSERTDIAGRAM" alt="#INSERTDIAGRAM">
+<img src="images/sequenceDiagramSearch.png" alt="sequenceDiagramSearch">
 </div>
 <div class="title">Figure 14. Sequence Diagram for Module Search</div>
 </div>
@@ -2594,4 +2631,4 @@ Expected: Shows the GUI with a set of sample plans.</p>
 </div>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2020-04-10 19:01:31 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2020-04-10 19:05:58 UTC</div></div></div></body></html>
