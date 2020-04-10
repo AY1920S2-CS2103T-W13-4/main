@@ -237,7 +237,7 @@ The following class plays an important role at the architecture level:</p>
 <p><strong>API</strong> : <a href="https://github.com/AY1920S2-CS2103T-W13-4/main/tree/master/src/main/java/seedu/planner/ui/Ui.java"><code>Ui.java</code></a></p>
 </div>
 <div class="paragraph">
-<p>The UI consists of a <code>MainWindow</code> that is made up of parts e.g.<code>CommandBox</code>, <code>ResultDisplay</code>, <code>PersonListPanel</code>, <code>StatusBarFooter</code> etc. All these, including the <code>MainWindow</code>, inherit from the abstract <code>UiPart</code> class.</p>
+<p>The UI consists of a <code>MainWindow</code> that is made up of parts e.g. <code>CalendarBox</code>, <code>CommandBox</code>, <code>GradWindow</code>, <code>ModuleCard</code>, <code>ModuleListPanel</code>, <code>ResultDisplay</code>, <code>StatusBarFooter</code> etc. All these, including the <code>MainWindow</code>, inherit from the abstract <code>UiPart</code> class.</p>
 </div>
 <div class="paragraph">
 <p>The <code>UI</code> component uses JavaFx UI framework. The layout of these UI parts are defined in matching <code>.fxml</code> files that are in the <code>src/main/resources/view</code> folder. For example, the layout of the <a href="https://github.com/AY1920S2-CS2103T-W13-4/main/tree/master/src/main/java/seedu/planner/ui/MainWindow.java"><code>MainWindow</code></a> is specified in <a href="https://github.com/AY1920S2-CS2103T-W13-4/main/tree/master/src/main/resources/view/MainWindow.fxml"><code>MainWindow.fxml</code></a></p>
@@ -277,7 +277,7 @@ The following class plays an important role at the architecture level:</p>
 <p>This results in a <code>Command</code> object which is executed by the <code>LogicManager</code>.</p>
 </li>
 <li>
-<p>The command execution can affect the <code>Model</code> (e.g. adding a person).</p>
+<p>The command execution can affect the <code>Model</code> (e.g. adding a Student).</p>
 </li>
 <li>
 <p>The result of the command execution is encapsulated as a <code>CommandResult</code> object which is passed back to the <code>Ui</code>.</p>
@@ -311,6 +311,8 @@ The lifeline for <code>StudentRemoveCommandParser</code> should end at the destr
 </div>
 <div class="sect2">
 <h3 id="Design-Model"><a class="anchor" href="#Design-Model"></a><a class="link" href="#Design-Model">3.4. Model Component</a></h3>
+<div class="sect3">
+<h4 id="planner-model"><a class="anchor" href="#planner-model"></a><a class="link" href="#planner-model">3.4.1. Planner Model</a></h4>
 <div class="imageblock">
 <div class="content">
 <img src="images/ModelClassDiagram.png" alt="ModelClassDiagram">
@@ -329,10 +331,19 @@ The lifeline for <code>StudentRemoveCommandParser</code> should end at the destr
 <p>stores a <code>UserPref</code> object that represents the user&#8217;s preferences.</p>
 </li>
 <li>
-<p>stores the Planner data.</p>
+<p>stores the Planner data such as the list of <code>Student</code>, <code>Module</code></p>
 </li>
 <li>
-<p>exposes an unmodifiable <code>ObservableList&lt;Person&gt;</code> that can be 'observed' e.g. the UI can be bound to this list so that the UI automatically updates when the data in the list change.</p>
+<p>store an index for the currently active <code>Student</code></p>
+</li>
+<li>
+<p>store an index for the currently active <code>Semester</code></p>
+</li>
+<li>
+<p>exposes an unmodifiable <code>ObservableList&lt;Student&gt;</code> that can be 'observed' e.g. the UI can be bound to this list so that the UI automatically updates when the data in the list change.</p>
+</li>
+<li>
+<p>exposes an unmodifiable <code>ObservableList&lt;Module&gt;</code> that can be 'observed' e.g. the UI can be bound to this list so that the UI automatically updates when the data in the list change.</p>
 </li>
 <li>
 <p>does not depend on any of the other three components.</p>
@@ -340,11 +351,256 @@ The lifeline for <code>StudentRemoveCommandParser</code> should end at the destr
 </ul>
 </div>
 </div>
+<div class="sect3">
+<h4 id="student-model"><a class="anchor" href="#student-model"></a><a class="link" href="#student-model">3.4.2. Student Model</a></h4>
+<div class="imageblock">
+<div class="content">
+<img src="images/ModelStudent.png" alt="ModelStudent">
+</div>
+</div>
+<div class="paragraph">
+<p><strong>API</strong> : <a href="https://github.com/AY1920S2-CS2103T-W13-4/main/tree/master/src/main/java/seedu/planner/model/student/Student.java"><code>Student.java</code></a></p>
+</div>
+<div class="paragraph">
+<p>The <code>Student</code>,</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>stores a <code>Name</code> object that represents the Student&#8217;s Name</p>
+</li>
+<li>
+<p>stores a <code>Major</code> object that represents the Student&#8217;s Major</p>
+</li>
+<li>
+<p>stores a <code>Enrollment</code> object that represents the Student&#8217;s Name</p>
+</li>
+<li>
+<p>stores a <code>TimeTableMap</code> object that represents the Student&#8217;s TimeTables</p>
+</li>
+<li>
+<p>stores a <code>GenericSpecialisation</code> object that represents the Student&#8217;s Specialisation</p>
+</li>
+<li>
+<p>stores a <code>List&lt;Lesson&gt;</code> object that represents the Student&#8217;s currently selected Lessons</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect3">
+<h4 id="module-model"><a class="anchor" href="#module-model"></a><a class="link" href="#module-model">3.4.3. Module Model</a></h4>
+<div class="imageblock">
+<div class="content">
+<img src="images/ModelModule.png" alt="ModelModule">
+</div>
+</div>
+<div class="paragraph">
+<p><strong>API</strong> : <a href="https://github.com/AY1920S2-CS2103T-W13-4/main/tree/master/src/main/java/seedu/planner/model/module/Module.java"><code>Module.java</code></a></p>
+</div>
+<div class="paragraph">
+<p>The <code>Module</code>,</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>stores a <code>ModuleCode</code> object that represents the Module&#8217;s Module Code. This is used as the key identifier between modules.</p>
+</li>
+<li>
+<p>stores a <code>List&lt;SemesterData&gt;</code> object that represents the Semester-specific data of the Module, such as Exam Dates, Exam Duration and Timetable.</p>
+</li>
+<li>
+<p>stores other <code>String</code> objects that represents the various other attributes of the Module such as:</p>
+<div class="ulist">
+<ul>
+<li>
+<p><code>acadYear</code> representing Academic Year</p>
+</li>
+<li>
+<p><code>preclusion</code> representing Precluded Modules</p>
+</li>
+<li>
+<p><code>description</code> representing Module Description</p>
+</li>
+<li>
+<p><code>title</code> representing Module Title</p>
+</li>
+<li>
+<p><code>department</code> representing Module department</p>
+</li>
+<li>
+<p><code>faculty</code> representing Module faculty</p>
+</li>
+<li>
+<p><code>workload</code> representing Module workload</p>
+</li>
+<li>
+<p><code>prerequisite</code> representing Module prerequisites</p>
+</li>
+<li>
+<p><code>moduleCredit</code> representing Module Credits</p>
+</li>
+<li>
+<p><code>prereqTree</code> representing Module prerequisite tree</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p><strong>API</strong> : <a href="https://github.com/AY1920S2-CS2103T-W13-4/main/tree/master/src/main/java/seedu/planner/commons/util/ModuleDataImporterUtil.java"><code>ModuleDataImporterUtil.java</code></a></p>
+</div>
+<div class="paragraph">
+<p>The <code>ModuleDataImportUtil</code>,</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>is a helper class used to load Modules from a JSON file downloaded from NUSMods API</p>
+</li>
+<li>
+<p>handles the conversion of Modules from JSON format to <code>Module</code> objects using <code>JsonSerializableModule</code> and <code>JsonAdaptedModule</code></p>
+</li>
+<li>
+<p>loads <code>SemesterData</code> into each <code>Module</code></p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect3">
+<h4 id="graduation-models"><a class="anchor" href="#graduation-models"></a><a class="link" href="#graduation-models">3.4.4. Graduation Models</a></h4>
+<div class="imageblock">
+<div class="content">
+<img src="images/ModelPackageGraduation.png" alt="ModelPackageGraduation">
+</div>
+</div>
+<div class="paragraph">
+<p><strong>API</strong> : <a href="https://github.com/AY1920S2-CS2103T-W13-4/main/tree/master/src/main/java/seedu/planner/model/graduation/"><code>Graduation Package</code></a></p>
+</div>
+<div class="paragraph">
+<p>The <code>Graduation</code> package,</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>contains a list of <code>GraduationRequirement</code> classes that represents the Modules which are required to be taken by Student in order to Graduate.</p>
+</li>
+<li>
+<p>contains an <code>AggregationType</code> class</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect3">
+<h4 id="graduation-requirement-model"><a class="anchor" href="#graduation-requirement-model"></a><a class="link" href="#graduation-requirement-model">3.4.5. Graduation Requirement Model</a></h4>
+<div class="paragraph">
+<p><strong>API</strong> : <a href="https://github.com/AY1920S2-CS2103T-W13-4/main/tree/master/src/main/java/seedu/planner/model/graduation/GraduationRequirement.java"><code>GraduationRequirement.java</code></a></p>
+</div>
+<div class="paragraph">
+<p>The <code>GraduationRequirement</code> interface,</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>provides the interface of all implementations of <code>GraduationRequirement</code></p>
+</li>
+<li>
+<p>provides a helper function <code>getStatusIcon</code> to display a tick or cross depending on whether the <code>GraduationRequirement</code> is fulfilled or not.</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect3">
+<h4 id="single-graduation-requirement-model"><a class="anchor" href="#single-graduation-requirement-model"></a><a class="link" href="#single-graduation-requirement-model">3.4.6. Single Graduation Requirement Model</a></h4>
+<div class="paragraph">
+<p><strong>API</strong> : <a href="https://github.com/AY1920S2-CS2103T-W13-4/main/tree/master/src/main/java/seedu/planner/model/graduation/SingleGraduationRequirement.java"><code>SingleGraduationRequirement.java</code></a></p>
+</div>
+<div class="paragraph">
+<p>The <code>SingleGraduationRequirement</code> class,</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>is an implementation of the interface <code>GraduationRequirement</code></p>
+</li>
+<li>
+<p>acts as a basic <code>GraduationRequirement</code> containing only a single <code>Module</code></p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect3">
+<h4 id="compound-graduation-requirement-model"><a class="anchor" href="#compound-graduation-requirement-model"></a><a class="link" href="#compound-graduation-requirement-model">3.4.7. Compound Graduation Requirement Model</a></h4>
+<div class="paragraph">
+<p><strong>API</strong> : <a href="https://github.com/AY1920S2-CS2103T-W13-4/main/tree/master/src/main/java/seedu/planner/model/graduation/CompoundGraduationRequirement.java"><code>CompoundGraduationRequirement.java</code></a></p>
+</div>
+<div class="paragraph">
+<p>The <code>CompoundGraduationRequirement</code> class,</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>is an implementation of the interface <code>GraduationRequirement</code></p>
+</li>
+<li>
+<p>contains a list of <code>GraduationRequirement</code> objects</p>
+</li>
+<li>
+<p>contains an <code>AggregationType</code> enum to represent how to calculate fulfillment of the <code>CompoundGraduationRequirement</code> object</p>
+</li>
+<li>
+<p>acts as a aggregator of <code>GraduationRequirement</code> representing requirements where a Student needs to complete a group of modules in certain ways such as:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>any module can be completed or</p>
+</li>
+<li>
+<p>all modules must be completed or</p>
+</li>
+<li>
+<p>completed modules must be within a specified list</p>
+</li>
+<li>
+<p>add up to a certain amount of Module Credits</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect3">
+<h4 id="specialisation-graduation-requirement-model"><a class="anchor" href="#specialisation-graduation-requirement-model"></a><a class="link" href="#specialisation-graduation-requirement-model">3.4.8. Specialisation Graduation Requirement Model</a></h4>
+<div class="paragraph">
+<p><strong>API</strong> : <a href="https://github.com/AY1920S2-CS2103T-W13-4/main/tree/master/src/main/java/seedu/planner/model/graduation/SpecialisationGraduationRequirement.java"><code>SpecialisationGraduationRequirement.java</code></a></p>
+</div>
+<div class="paragraph">
+<p>The <code>SpecialisationGraduationRequirement</code> class,</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>is an implementation of the interface <code>GraduationRequirement</code></p>
+</li>
+<li>
+<p>contains a list of <code>GraduationRequirement</code> objects to represent a Specialisation&#8217;s primary modules</p>
+</li>
+<li>
+<p>contains a list of <code>GraduationRequirement</code> objects to represent a Specialisation&#8217;s elective modules</p>
+</li>
+<li>
+<p>handles the calculation of fulfillment for the <code>SpecialisationGraduationRequirement</code> object based on <code>Major</code> and primary and elective modules</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
 <div class="sect2">
 <h3 id="Design-Storage"><a class="anchor" href="#Design-Storage"></a><a class="link" href="#Design-Storage">3.5. Storage Component</a></h3>
 <div class="imageblock">
 <div class="content">
-<img src="images/StorageClassDiagram.png" alt="StorageClassDiagram">
+<img src="images/StorageDiagram.png" alt="StorageDiagram">
 </div>
 <div class="title">Figure 8. Structure of the Storage Component</div>
 </div>
@@ -361,6 +617,12 @@ The lifeline for <code>StudentRemoveCommandParser</code> should end at the destr
 </li>
 <li>
 <p>can save the Planner data in json format and read it back.</p>
+</li>
+<li>
+<p>consists of various JSON implementations of Models</p>
+</li>
+<li>
+<p>handles the saving and loading of Models to provide stateful behaviour in the application</p>
 </li>
 </ul>
 </div>
@@ -532,7 +794,7 @@ The lifeline for <code>StudentRemoveCommandParser</code> should end at the destr
 <p>Retrival of the main base of the <code>Graduation Requirements</code> based on the <code>Major</code> of the <code>Student</code> entity.</p>
 </li>
 <li>
-<p>Matching of the sub <code>Graduation Requirements</code> (which can come in the form of <em>"Focus Areas", "Specialisations" or "Tracks"</em> depending on the terminology of the respective faculty that the <code>Major</code> belongs to), of the <code>Specialisation</code> given and compiled.</p>
+<p>Matching of the sub <code>Graduation Requirements</code> (which can come in the form of <em>"Specialisations" or "Tracks"</em> depending on the terminology of the respective faculty that the <code>Major</code> belongs to), of the <code>Specialisation</code> given and compiled.</p>
 </li>
 <li>
 <p>Thereafter, the corresponding <code>Module</code> entities that have been added will be verified against the compiled <code>Graduation Requirements</code>.</p>
@@ -646,7 +908,7 @@ The lifeline for <code>StudentRemoveCommandParser</code> should end at the destr
 <div class="sect2">
 <h3 id="Implementation-Module"><a class="anchor" href="#Implementation-Module"></a><a class="link" href="#Implementation-Module">4.5. Module Features &amp; Database</a></h3>
 <div class="paragraph">
-<p>Bulk of the sections (of <a href="#Implementation">Section 4, &#8220;Implementation&#8221;</a>) and features throughout, require interaction with the <code>Module</code> entities. <strong>Modules</strong> form the majority of what students will need to interact with, as these are the classes they must take and clear, in order to graduate.</p>
+<p>Bulk of the sections (of <a href="#Implementation">Section 4, &#8220;Implementation&#8221;</a>) and features throughout, require heavy interaction with the <code>Module</code> entities. <strong>Modules</strong> form the majority of what students will need to interact with, as these are the classes they must take and clear, in order to graduate.</p>
 </div>
 <div class="sect3">
 <h4 id="module-implementation"><a class="anchor" href="#module-implementation"></a><a class="link" href="#module-implementation">4.5.1. Module Implementation</a></h4>
@@ -655,9 +917,12 @@ The lifeline for <code>StudentRemoveCommandParser</code> should end at the destr
 </div>
 <div class="imageblock" style="text-align: center">
 <div class="content">
-<img src="images/#INSERTDIAGRAM" alt="#INSERTDIAGRAM">
+<img src="images/ModuleClassDiagram.png" alt="ModuleClassDiagram">
 </div>
 <div class="title">Figure 13. Class Diagram of <code>Module</code> Implementation</div>
+</div>
+<div class="paragraph">
+<p>The attributes of the <code>Module</code> class are retrieved from the serialised JSON file.</p>
 </div>
 <div class="paragraph">
 <p>Additionally, <code>Module</code> entities can be marked as <code>exempted</code> which allow Students to declare in the application, that will get the module credits associated, without having to declare taking it or associate a <code>Grade</code>.</p>
@@ -1743,7 +2008,7 @@ The lifeline for <code>StudentRemoveCommandParser</code> should end at the destr
 <p>Should come prepackaged with pre-populated NUSMods data (for offline use).</p>
 </li>
 <li>
-<p>Should be able to accommodate any user (<em>i.e. Undergraduate Student</em>) from NUS.</p>
+<p>Should be able to accommodate any Computer Science or Information System Undergraduate Students from NUS.</p>
 </li>
 <li>
 <p>Should be able to hold up to 10 students, and their respective module plans/enrollments without a noticeable sluggishness in performance for typical usage.</p>
@@ -2329,4 +2594,4 @@ Expected: Shows the GUI with a set of sample plans.</p>
 </div>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2020-04-10 14:03:48 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2020-04-10 17:45:30 UTC</div></div></div></body></html>
