@@ -64,6 +64,8 @@
 <li><a href="#use-case-delete-module-ucc02">C.8. Use Case: Delete Module (UCC02)</a></li>
 <li><a href="#use-case-list-grades-ucd01">C.9. Use Case: List Grades (UCD01)</a></li>
 <li><a href="#use-case-set-module-grade-ucd02">C.10. Use Case: Set Module Grade (UCD02)</a></li>
+<li><a href="#use-case-add-lesson-uce01">C.11. Use Case: Add Lesson (UCE01)</a></li>
+<li><a href="#use-case-delete-lesson-uce02">C.12. Use Case: Delete Lesson (UCE02)</a></li>
 </ul>
 </li>
 <li><a href="#non-functional-requirements">Appendix D: Non-Functional Requirements</a></li>
@@ -85,7 +87,12 @@
 <li><a href="#viewing-the-grades-of-a-plan">G.12. Viewing the Grades of a Plan</a></li>
 <li><a href="#viewing-the-graduation-requirements-of-a-plan">G.13. Viewing the Graduation Requirements of a Plan</a></li>
 <li><a href="#setting-the-specialisation-of-a-plan">G.14. Setting the Specialisation of a Plan</a></li>
-<li><a href="#saving-data">G.15. Saving Data</a></li>
+<li><a href="#adding-a-lesson">G.15. Adding a Lesson</a></li>
+<li><a href="#removing-a-lesson">G.16. Removing a Lesson</a></li>
+<li><a href="#listing-all-lesson">G.17. Listing all Lesson</a></li>
+<li><a href="#viewing-module-information">G.18. Viewing module information</a></li>
+<li><a href="#viewing-lesson-information-for-a-module">G.19. Viewing lesson information for a module</a></li>
+<li><a href="#saving-data">G.20. Saving Data</a></li>
 </ul>
 </li>
 </ul>
@@ -973,27 +980,27 @@ The lifeline for <code>StudentRemoveCommandParser</code> should end at the destr
 <div class="ulist">
 <ul>
 <li>
-<p><strong>Alternative 1:</strong></p>
+<p><strong>Alternative 1 (Current Implementation):</strong> Letting the users decide the lesson they want.</p>
 <div class="ulist">
 <ul>
 <li>
-<p>Pros:</p>
+<p>Pros: Allows for flexibility as it can reuse some of the code written for modules to adapt for lessons.</p>
 </li>
 <li>
-<p>Cons:</p>
+<p>Cons: More checks are needed to ensure user do not key in invalid values</p>
 </li>
 </ul>
 </div>
 </li>
 <li>
-<p><strong>Alternative 2:</strong></p>
+<p><strong>Alternative 2:</strong> Hard code to take the first option of each lesson.</p>
 <div class="ulist">
 <ul>
 <li>
-<p>Pros:</p>
+<p>Pros: Easier logic for the developer. Less bugs to deal with.</p>
 </li>
 <li>
-<p>Cons:</p>
+<p>Cons: Inconvenient for the user and does not allow the flexibility to choose the lesson that they want to take.</p>
 </li>
 </ul>
 </div>
@@ -1035,7 +1042,7 @@ The lifeline for <code>StudentRemoveCommandParser</code> should end at the destr
 </div>
 <div class="imageblock" style="text-align: center">
 <div class="content">
-<img src="images/sequenceDiagramSearch.png" alt="sequenceDiagramSearch">
+<img src="images/searchSequenceDiagram.png" alt="searchSequenceDiagram">
 </div>
 <div class="title">Figure 19. Sequence Diagram for Module Search</div>
 </div>
@@ -1048,27 +1055,27 @@ The lifeline for <code>StudentRemoveCommandParser</code> should end at the destr
 <div class="ulist">
 <ul>
 <li>
-<p><strong>Alternative 1:</strong></p>
+<p><strong>Alternative 1 (Current Implementation):</strong> Using streams to collect the modules and search</p>
 <div class="ulist">
 <ul>
 <li>
-<p>Pros:</p>
+<p>Pros: Less mutability as the modules will not be accidentally modified.</p>
 </li>
 <li>
-<p>Cons:</p>
+<p>Cons: Hard to debug when there is a bug.</p>
 </li>
 </ul>
 </div>
 </li>
 <li>
-<p><strong>Alternative 2:</strong></p>
+<p><strong>Alternative 2:</strong> Loop and search each modules.</p>
 <div class="ulist">
 <ul>
 <li>
-<p>Pros:</p>
+<p>Pros: Lightweight using a for loop.</p>
 </li>
 <li>
-<p>Cons:</p>
+<p>Cons: Modules may be accidentally modified if it is not protected properly.</p>
 </li>
 </ul>
 </div>
@@ -2199,6 +2206,116 @@ The lifeline for <code>StudentRemoveCommandParser</code> should end at the destr
 </ul>
 </div>
 </div>
+<div class="sect2">
+<h3 id="use-case-add-lesson-uce01"><a class="anchor" href="#use-case-add-lesson-uce01"></a><a class="link" href="#use-case-add-lesson-uce01">C.11. Use Case: Add Lesson (UCE01)</a></h3>
+<div class="paragraph">
+<p><strong>MSS</strong></p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>User <span class="underline">selects a timetable (UCB03)</span></p>
+</li>
+<li>
+<p>User requests to add a specific lesson for a module</p>
+</li>
+<li>
+<p>Planner adds the lesson to the active timetable</p>
+<div class="paragraph">
+<p>Use case ends.</p>
+</div>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p><strong>Extensions</strong></p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>2a. The given module is invalid</p>
+<div class="ulist none">
+<ul class="none">
+<li>
+<p>2a1. Planner shows an error message</p>
+<div class="paragraph">
+<p>Use case ends.</p>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>2b. The given lesson number is invalid</p>
+<div class="ulist none">
+<ul class="none">
+<li>
+<p>2b1. Planner shows an error message</p>
+<div class="paragraph">
+<p>Use case ends.</p>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>2c. The given semester is invalid</p>
+<div class="ulist none">
+<ul class="none">
+<li>
+<p>2c1. Planner shows an error message</p>
+<div class="paragraph">
+<p>Use case ends.</p>
+</div>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="use-case-delete-lesson-uce02"><a class="anchor" href="#use-case-delete-lesson-uce02"></a><a class="link" href="#use-case-delete-lesson-uce02">C.12. Use Case: Delete Lesson (UCE02)</a></h3>
+<div class="paragraph">
+<p><strong>MSS</strong></p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>User <span class="underline">selects a timetable (UCB03)</span></p>
+</li>
+<li>
+<p>User requests to delete a specified lesson</p>
+</li>
+<li>
+<p>Planner deletes the lesson from the active timetable</p>
+<div class="paragraph">
+<p>Use case ends.</p>
+</div>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p><strong>Extensions</strong></p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>2a. The given index is invalid</p>
+<div class="ulist none">
+<ul class="none">
+<li>
+<p>2a1. Planner shows an error message</p>
+<div class="paragraph">
+<p>Use case ends.</p>
+</div>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</div>
 </div>
 </div>
 <div class="sect1">
@@ -2775,7 +2892,128 @@ Expected: Similar to previous.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="saving-data"><a class="anchor" href="#saving-data"></a><a class="link" href="#saving-data">G.15. Saving Data</a></h3>
+<h3 id="adding-a-lesson"><a class="anchor" href="#adding-a-lesson"></a><a class="link" href="#adding-a-lesson">G.15. Adding a Lesson</a></h3>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Adding a lesson while a active student is selected</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>Prerequisites: Set active student with command <code>student active</code>.</p>
+</li>
+<li>
+<p>Test case: <code>lessons add m/CS1231 lesson/10 sem/ONE</code><br>
+Expected: Lesson is added to the active student timetable. Details of the added lessons are shown in the status message. Calendar is filled up to show the change.</p>
+</li>
+<li>
+<p>Test case: <code>lessons add text</code><br>
+Expected: No lessons is added. Error details are shown in the status message. Status bar remains the same. Calendar remains the same.</p>
+</li>
+<li>
+<p>Other incorrect delete commands to try: <code>lessons add</code>,<br>
+Expected: Similar to previous.</p>
+</li>
+</ol>
+</div>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect2">
+<h3 id="removing-a-lesson"><a class="anchor" href="#removing-a-lesson"></a><a class="link" href="#removing-a-lesson">G.16. Removing a Lesson</a></h3>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Removing a lesson while a active student is selected</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>Prerequisites: Set active student with command <code>student active</code> and at least one lesson is added.</p>
+</li>
+<li>
+<p>Test case: <code>lessons remove 1</code><br>
+Expected: Lesson is moved from the active student timetable. Details of the removed lessons are shown in the status message. Calendar is updated to show the change.</p>
+</li>
+<li>
+<p>Test case: <code>lessons remove text</code><br>
+Expected: No lessons is removed. Error details are shown in the status message. Status bar remains the same. Calendar remains the same.</p>
+</li>
+<li>
+<p>Other incorrect delete commands to try: <code>lessons remove</code>,<br>
+Expected: Similar to previous.</p>
+</li>
+</ol>
+</div>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect2">
+<h3 id="listing-all-lesson"><a class="anchor" href="#listing-all-lesson"></a><a class="link" href="#listing-all-lesson">G.17. Listing all Lesson</a></h3>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Listing all lessons while a active student is selected</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>Prerequisites: Set active student with command <code>student active</code>.</p>
+</li>
+<li>
+<p>Test case: <code>lessons list</code><br>
+Expected: Lesson is listed out in the status message. You can also launch calendar to see the bottom scroll pane which will have the same information as well.</p>
+</li>
+</ol>
+</div>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect2">
+<h3 id="viewing-module-information"><a class="anchor" href="#viewing-module-information"></a><a class="link" href="#viewing-module-information">G.18. Viewing module information</a></h3>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Viewing the module information</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>Prerequisites: Module has been successfully loaded.</p>
+</li>
+<li>
+<p>Test case: Click on any module in the module pane.
+Expected: A new window is opened to show the module information.</p>
+</li>
+</ol>
+</div>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect2">
+<h3 id="viewing-lesson-information-for-a-module"><a class="anchor" href="#viewing-lesson-information-for-a-module"></a><a class="link" href="#viewing-lesson-information-for-a-module">G.19. Viewing lesson information for a module</a></h3>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Viewing the lesson information for a module</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>Prerequisites: A module has been selected.</p>
+</li>
+<li>
+<p>Test case: Click on either of the semesters button on the module description page if applicable.
+Expected: A new window is opened to show the timetable containing the lesson information.</p>
+</li>
+</ol>
+</div>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect2">
+<h3 id="saving-data"><a class="anchor" href="#saving-data"></a><a class="link" href="#saving-data">G.20. Saving Data</a></h3>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
@@ -2799,4 +3037,4 @@ Expected: Shows the GUI with a set of sample plans.</p>
 </div>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2020-04-12 06:19:05 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2020-04-12 08:08:39 UTC</div></div></div></body></html>

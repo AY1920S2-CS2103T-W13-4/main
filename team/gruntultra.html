@@ -12,6 +12,9 @@
 <div class="paragraph">
 <p>The NUS Module Planner (NUSModPlnr) is for Computer Science (CS) students at the National University of Singapore (NUS) to manage their enrollments in NUS modules over their school life. With NUSModPlnr, module planning has never been easier!</p>
 </div>
+<div class="paragraph">
+<p>The user interacts with it using a CLI, and it has a GUI created with JavaFX. It is written in Java, and has about 250+ kLoC.</p>
+</div>
 </div>
 </div>
 <div class="sect1">
@@ -20,23 +23,100 @@
 <div class="ulist">
 <ul>
 <li>
-<p>Major Enhancement: Added in the UI</p>
+<p><strong>Major feature</strong>: Importing of all lessons for each module offered by NUS, made available using the NUSMods.</p>
 <div class="ulist">
 <ul>
 <li>
-<p>Added in panel to show Graduation Requirements</p>
+<p>What it does: Allows the user to view the list of all the lessons offered by NUS for a given modules, including details such as class number, start time, end time, venue.</p>
 </li>
 <li>
-<p>Added in a list panel to show modules</p>
+<p>Justification: This feature improves the product significantly because a user can view actual accurate data of the lessons currently being offered by NUS for a given module, with the latest data available.</p>
 </li>
 <li>
-<p>Interactable module list to see lesson schedule</p>
+<p>Highlights: This feature allows the calendar portion of the application to be filled up. As real life data was provided by NUSMods, there was no need to populate with fake data.</p>
+</li>
+<li>
+<p>Credits: NUSMods for providing the data and API.</p>
 </li>
 </ul>
 </div>
 </li>
 <li>
+<p><strong>Major feature</strong>: Revamped the entire UI of the application.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>What it does: Allows the user to use the application with an interface instead of a command line.</p>
+</li>
+<li>
+<p>Justification: This feature allows the application to be more user friendly and also show information that would be deem hard to read through a command line.</p>
+</li>
+<li>
+<p>Highlights: The calendar was build from scratch using grid panes and anchor panes.</p>
+</li>
+<li>
+<p>Credits: SceneBuilder.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><strong>Minor enhancement</strong>: Added in panel to show Graduation Requirements by using the graduation requirements developed by <a href="https://github.com/DANamic">@DANamic</a> and <a href="https://github.com/Capeguy">@Capeguy</a>.</p>
+</li>
+<li>
+<p><strong>Minor enhancement</strong>: Modified the module panel to display the modules as well as their information when clicked. It also provides the lesson details based on the calendar feature.</p>
+</li>
+<li>
 <p><strong>Code contributed</strong>: Please see the <a href="++https://nus-cs2103-ay1920s2.github.io/tp-dashboard/#=undefined&amp;search=gruntultra">RepoSense Report here</a>!</p>
+</li>
+<li>
+<p><strong>Other contributions</strong>:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Project contributions:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Contributed to releases <code>v1.0</code> - <code>v1.4</code> (5 releases) on GitHub</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Documentation:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Generated diagrams to enhance readability of Developer Guide</p>
+</li>
+<li>
+<p>Contributed to Features and Module Management sections of User Guide</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Community:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>PRs reviewed: <a href="https://github.com/AY1920S2-CS2103T-W13-4/main/pull/197">#197</a></p>
+</li>
+<li>
+<p>Reported bugs and suggestions for other teams in the class: <a href="https://github.com/gruntultra/ped/issues/1">#1</a>, <a href="https://github.com/gruntultra/ped/issues/2">#2</a>, <a href="https://github.com/gruntultra/ped/issues/3">#3</a>, <a href="https://github.com/gruntultra/ped/issues/4">#4</a>, <a href="https://github.com/gruntultra/ped/issues/5">#5</a>, <a href="https://github.com/gruntultra/ped/issues/6">#6</a>, <a href="https://github.com/gruntultra/ped/issues/7">#7</a>, <a href="https://github.com/gruntultra/ped/issues/8">#8</a></p>
+</li>
+<li>
+<p>Added in initial fxml files for the UI: <a href="https://github.com/AY1920S2-CS2103T-W13-4/main/pull/46/commits/bd9aa888b20b4e87344df7e23202de2344e286d4">#1</a></p>
+</li>
+<li>
+<p>Fixed the calendar for bugs found during PE dry run: <a href="https://github.com/AY1920S2-CS2103T-W13-4/main/commit/1c31809f533f37a53d329efa0ca7aa232c90d233">#1</a></p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
 </li>
 </ul>
 </div>
@@ -56,145 +136,125 @@
 </tbody>
 </table>
 <div class="sect2">
-<h3 id="module-management"><a class="link" href="#module-management">Module Management</a></h3>
+<h3 id="calendar-interface"><a class="link" href="#calendar-interface">Calendar Interface</a></h3>
 <div class="paragraph">
-<p>The following commands below are part of the application&#8217;s <strong>Module Management</strong>, which allow you manage the modules of your academic plan.</p>
+<p>The application has a calendar feature to see the timetable schedule. Once a lesson has been added, it will show up in calendar after pressing the launch calendar button.</p>
 </div>
 <div class="paragraph">
-<p>Do note that you can click on the modules to see the module description.
-When managing your <a href="#module-management">modules</a>, you will be able to see the <strong>Module View Screen</strong> (<em>Figure 2. below</em>).</p>
+<p>You can see the <strong>Launch Calendar Button</strong> (<em>Figure X. below</em>).</p>
 </div>
 <div class="imageblock" style="text-align: left">
 <div class="content">
-<img src="../images/ModuleList.png" alt="ModuleList" width="600">
+<img src="../images/CalendarButton.png" alt="CalendarButton" width="600">
 </div>
-<div class="title">Figure 1. Home Screen View</div>
+<div class="title">Figure 1. Launch Calendar Button</div>
 </div>
-<div class="admonitionblock note">
+<div class="sect3">
+<h4 id="viewing-the-calendar-schedule"><a class="link" href="#viewing-the-calendar-schedule">Viewing the "Calendar Schedule"</a></h4>
+<div class="paragraph">
+<p>There are two ways to view the Calendar. You can click on the launch calendar to see the lessons that you have added. Another way is to click on the semester button in the module description page to see the lessons available.</p>
+</div>
+<div class="paragraph">
+<p>You can see the <strong>Calendar Schedule</strong> (<em>Figure X. below</em>).</p>
+</div>
+<div class="imageblock" style="text-align: left">
+<div class="content">
+<img src="../images/CalSchedule.png" alt="CalSchedule" width="600">
+</div>
+<div class="title">Figure 2. Calendar Schedule</div>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="module-interface-and-search"><a class="link" href="#module-interface-and-search">Module Interface and Search</a></h3>
+<div class="paragraph">
+<p>When the application is first launched, you can see all the modules available to you in NUS. You can scroll through all the modules
+to find the desirable module to take for the semester.</p>
+</div>
+<div class="paragraph">
+<p>You can see the <strong>Module Panel Screen</strong> (<em>Figure X. below</em>).</p>
+</div>
+<div class="imageblock" style="text-align: left">
+<div class="content">
+<img src="../images/ModulePanel.png" alt="ModulePanel" width="600">
+</div>
+<div class="title">Figure 3. Module Panel View</div>
+</div>
+<div class="sect3">
+<h4 id="viewing-information-on-a-specific-module"><a class="link" href="#viewing-information-on-a-specific-module">Viewing information on a specific module</a></h4>
+<div class="paragraph">
+<p>You can click on any of the modules to see the module description. It will launch a separate screen to show you the details.</p>
+</div>
+<div class="paragraph">
+<p>Here is the <strong>Module Description Screen</strong> (<em>Figure X. below</em>).</p>
+</div>
+<div class="imageblock" style="text-align: left">
+<div class="content">
+<img src="../images/ModuleDescription.png" alt="ModuleDescription" width="600">
+</div>
+<div class="title">Figure 4. Module Description View</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="searching-for-a-specific-module"><a class="link" href="#searching-for-a-specific-module">Searching for a specific module</a></h4>
+<div class="paragraph">
+<p>You can use the search bar to search for any module based on their module code or module name. Click on the search button to begin the search.</p>
+</div>
+<div class="paragraph">
+<p>Here is the <strong>Search Screen</strong> (<em>Figure X. below</em>).</p>
+</div>
+<div class="imageblock" style="text-align: left">
+<div class="content">
+<img src="../images/Search.png" alt="Search" width="600">
+</div>
+<div class="title">Figure 5. Search View</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="faq"><a class="link" href="#faq">FAQ</a></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>This provides a list of <strong>Frequently Asked Questions (FAQ)</strong> that you may have.</p>
+</div>
+<div class="sect2">
+<h3 id="general-questions"><a class="link" href="#general-questions">General Questions</a></h3>
+<div class="paragraph">
+<p><strong>Q</strong>: Do I need any particular system requirements to run this application?<br>
+<strong>A</strong>: Our application is designed to work on most major operating systems (i.e. Windows, macOS and Linux) and is lightweight, as long as you have Java 11 installed.</p>
+</div>
+<div class="paragraph">
+<p><strong>Q</strong>: How do I transfer my data to another Computer?<br>
+<strong>A</strong>: Install the app in the other computer and overwrite the empty data file it creates with the file that contains the data of your previous NUSModPlnr folder.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="feature-specific"><a class="link" href="#feature-specific">Feature Specific</a></h3>
+<div class="paragraph">
+<p><strong>Q</strong>: Who can I add as students?<br>
+<strong>A</strong>: You can add yourself to track your degree progression, or add your friends as well, if you would like to sync your academic plan together.</p>
+</div>
+<div class="paragraph">
+<p><strong>Q</strong>: Why is there alphabets beside the lesson number in the calendar?<br>
+<strong>A</strong>: NUS provides a alphabet code to each lesson type. Type in the lesson number without the lesson number for the lesson management section.</p>
+</div>
+<div class="paragraph">
+<p><strong>Q</strong>: Why is the lessons not shifted for each timetable?<br>
+<strong>A</strong>: Lessons is tagged to the active students so you can always see what lesson you took from the previous semesters.</p>
+</div>
+<div class="admonitionblock tip">
 <table>
 <tr>
 <td class="icon">
-<i class="fa icon-note" title="Note"></i>
+<i class="fa icon-tip" title="Tip"></i>
 </td>
 <td class="content">
-All the following commands require a <a href="#timetable-management">timetable</a>  to be selected (using the <a href="#timetable-active-command"><code>timetable active</code></a> command).
+If you have questions, feel free to open an issue in our <strong>Issue Tracker</strong> on GitHub!
 </td>
 </tr>
 </table>
-</div>
-<div class="sect3">
-<h4 id="adding-a-module-code-module-add-code"><a class="link" href="#adding-a-module-code-module-add-code">Adding a module: <code>module add</code></a></h4>
-<div class="paragraph">
-<p>You can use this command to add a <a href="#module-management">module</a> to your <a href="#timetable-management">timetable</a>  for the selected <a href="#common-parameter-list">semester</a> (see the <a href="#timetable-active-command"><code>timetable active</code></a> command) and <a href="#student-management">student</a> (see the <a href="#student-active-command"><code>student active</code></a> command).</p>
-</div>
-<div class="paragraph">
-<p>Format: <code>module add MODULE_CODE</code></p>
-</div>
-<div class="paragraph">
-<p>Example:</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p><code>module add CS2040</code></p>
-</li>
-</ul>
-</div>
-</div>
-<div class="sect3">
-<h4 id="removing-a-module-code-module-remove-code"><a class="link" href="#removing-a-module-code-module-remove-code">Removing a module: <code>module remove</code></a></h4>
-<div class="paragraph">
-<p>You can use this command to remove a <a href="#module-management">module</a> to your <a href="#timetable-management">timetable</a> for the selected <a href="#common-parameter-list">semester</a> (see the <a href="#timetable-active-command"><code>timetable active</code></a> command) and <a href="#student-management">student</a> (see the <a href="#student-active-command"><code>student active</code></a> command).</p>
-</div>
-<div class="paragraph">
-<p>Format: <code>module remove MODULE_CODE</code></p>
-</div>
-<div class="paragraph">
-<p>Example:</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p><code>module remove CS2040</code></p>
-</li>
-</ul>
-</div>
-</div>
-<div class="sect3">
-<h4 id="viewing-added-modules-code-module-list-code"><a class="link" href="#viewing-added-modules-code-module-list-code">Viewing added modules: <code>module list</code></a></h4>
-<div class="paragraph">
-<p>You can use this command to display a list of <a href="#module-management">modules</a> of your <a href="#timetable-management">timetable</a> for the selected <a href="#common-parameter-list">semester</a> (see the <a href="#timetable-active-command"><code>timetable active</code></a> command) and <a href="#student-management">student</a> (see the <a href="#student-active-command"><code>student active</code></a> command).</p>
-</div>
-<div class="paragraph">
-<p>Format: <code>module list</code></p>
-</div>
-<div class="paragraph">
-<p>Example:</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p><code>module list</code></p>
-</li>
-</ul>
-</div>
-</div>
-<div class="sect3">
-<h4 id="exempt-add-command"><a class="link" href="#exempt-add-command">Adding an exempted module: <code>exempt add</code></a></h4>
-<div class="paragraph">
-<p>You can use this command to add an exempted module for the selected <a href="#student-management">student</a> (see the <a href="#student-active-command"><code>student active</code></a> command).</p>
-</div>
-<div class="paragraph">
-<p>Format: <code>exempt add MODULE_CODE</code></p>
-</div>
-<div class="paragraph">
-<p>Example:</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p><code>exempt add CS2040</code></p>
-</li>
-</ul>
-</div>
-</div>
-<div class="sect3">
-<h4 id="removing-an-exempted-module-code-exempt-remove-code"><a class="link" href="#removing-an-exempted-module-code-exempt-remove-code">Removing an exempted module: <code>exempt remove</code></a></h4>
-<div class="paragraph">
-<p>You can use this command to remove an exempted module from the selected <a href="#student-management">student</a> (see the <a href="#student-active-command"><code>student active</code></a> command).</p>
-</div>
-<div class="paragraph">
-<p>Format: <code>exempt remove MODULE_CODE</code></p>
-</div>
-<div class="paragraph">
-<p>Example:</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p><code>exempt remove CS2040</code></p>
-</li>
-</ul>
-</div>
-</div>
-<div class="sect3">
-<h4 id="viewing-exempted-modules-code-exempt-list-code"><a class="link" href="#viewing-exempted-modules-code-exempt-list-code">Viewing exempted modules: <code>exempt list</code></a></h4>
-<div class="paragraph">
-<p>You can use this command to display a list of <a href="#module-management">modules</a> that you have declared as exempted.</p>
-</div>
-<div class="paragraph">
-<p>Format: <code>exempt list</code></p>
-</div>
-<div class="paragraph">
-<p>Example:</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p><code>exempt list</code></p>
-</li>
-</ul>
-</div>
 </div>
 </div>
 </div>
@@ -212,14 +272,1492 @@ All the following commands require a <a href="#timetable-management">timetable</
 </tr>
 </tbody>
 </table>
+<div class="sect2">
+<h3 id="Design-Ui"><a class="link" href="#Design-Ui">UI Component</a></h3>
+<div class="imageblock" style="text-align: center">
+<div class="content">
+<img src="../images/UiClassDiagram.png" alt="UiClassDiagram">
+</div>
+<div class="title">Figure 6. Structure of the UI Component</div>
+</div>
+<div class="paragraph">
+<p><strong>API</strong> : <a href="{repoURL}/src/main/java/seedu/planner/ui/Ui.java"><code>Ui.java</code></a></p>
+</div>
+<div class="paragraph">
+<p>The UI consists of a <code>MainWindow</code> that is made up of parts e.g. <code>CalendarBox</code>, <code>CommandBox</code>, <code>GradWindow</code>, <code>ModuleCard</code>, <code>ModuleListPanel</code>, <code>ResultDisplay</code>, <code>StatusBarFooter</code> etc. All these, including the <code>MainWindow</code>, inherit from the abstract <code>UiPart</code> class.</p>
+</div>
+<div class="paragraph">
+<p>The <code>UI</code> component uses JavaFx UI framework. The layout of these UI parts are defined in matching <code>.fxml</code> files that are in the <code>src/main/resources/view</code> folder. For example, the layout of the <a href="{repoURL}/src/main/java/seedu/planner/ui/MainWindow.java"><code>MainWindow</code></a> is specified in <a href="{repoURL}/src/main/resources/view/MainWindow.fxml"><code>MainWindow.fxml</code></a></p>
+</div>
+<div class="paragraph">
+<p>The <code>UI</code> component,</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Executes user commands using the <code>Logic</code> component.</p>
+</li>
+<li>
+<p>Listens for changes to <code>Model</code> data so that the UI can be updated with the modified data.</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="Implementation-Calendar"><a class="link" href="#Implementation-Calendar">Calendar View</a></h3>
+<div class="paragraph">
+<p>The application has a <strong>"Calendar Schedule"</strong> window implemented to allow students to see their timetable and lesson schedules. Once a lesson has been added, will they be visible in this window upon launch by the <code>Launch Calendar</code> button.</p>
+</div>
+<div class="sect3">
+<h4 id="calendar-ui-implementation"><a class="link" href="#calendar-ui-implementation">Calendar UI Implementation</a></h4>
+<div class="paragraph">
+<p>There are two ways to view the Calendar. You can click on the launch calendar to see the lessons that you have added. Another way is to click on the semester button in the module description page to see the lessons available.</p>
+</div>
+<div class="paragraph">
+<p>The Calendar builds its UI based on this implemented components:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Show Calendar</strong> <code>setCalendar(List&lt;Lesson&gt; lessons)</code></p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p><em>We will add more about how we implemented this further, and the design decisions made.</em></p>
+</div>
+<div class="imageblock" style="text-align: center">
+<div class="content">
+<img src="../images/CalendarActivityDiagram.png" alt="CalendarActivityDiagram">
+</div>
+<div class="title">Figure 7. Activity Diagram for launching Calendar</div>
+</div>
+<div class="paragraph">
+<p>The Calendar populates each of the Label in the grid pane based on the list of <code>Lesson</code> provided by the planner.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="design-considerations"><a class="link" href="#design-considerations">Design Considerations</a></h4>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Alternative 1 (Current implementation):</strong> To build the table using scene builder with each labels being shaded to show the time</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Pros: Every single UI component of the calendar is customizable, allowing for further modifications.</p>
+</li>
+<li>
+<p>Cons: Tedious and duplicated code for each Label to be set a value.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><strong>Alternative 2:</strong> Use another library jfxtras which has an i calendar API</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Pros: Reduce the amount of work needed to create the component</p>
+</li>
+<li>
+<p>Cons: Comes with bugs that scene builder is unable to support</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="Implementation-Lesson"><a class="link" href="#Implementation-Lesson">Lesson Features</a></h3>
+<div class="paragraph">
+<p>The <strong>Lesson Feature</strong> allows students to manage the their respective lessons for the academic planning. When managing lessons, they are rendered in a <strong>Lesson View Screen</strong> in the GUI.</p>
+</div>
+<div class="sect3">
+<h4 id="lesson-implementation"><a class="link" href="#lesson-implementation">Lesson Implementation</a></h4>
+<div class="paragraph">
+<p>The <code>Lesson</code> entities are automatically created and populated through the JSON data received from NUSMods. Furthermore, <code>Lesson</code> entities are coupled to <code>Module</code> entities in a <em>*..1</em> relationship.</p>
+</div>
+<div class="paragraph">
+<p>This coupling allows us to detect if a student tries to add duplicate <code>Lesson</code> entities and perform error handling or alternative advisement, where possible.</p>
+</div>
+<div class="imageblock" style="text-align: center">
+<div class="content">
+<img src="../images/LessonClassDiagram.png" alt="LessonClassDiagram">
+</div>
+<div class="title">Figure 8. Class Diagram of <code>Lesson</code> Implementation</div>
+</div>
+<div class="paragraph">
+<p>The attributes of the <code>Lesson</code> class are retrieved from the serialised JSON file.</p>
+</div>
+<div class="paragraph">
+<p>This implementation consist of 3 commands.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>LessonAdd</code> - Finds the lessons from the module and add it into the list of lessons for the active student.</p>
+</li>
+<li>
+<p><code>LessonList</code> - List down the lessons for the active student.</p>
+</li>
+<li>
+<p><code>LessonRemove</code> - Remove the lessons from the active student based on the provided index.</p>
+</li>
+</ul>
+</div>
+<div class="sect4">
+<h5 id="adding-of-lesson"><a class="link" href="#adding-of-lesson">Adding of Lesson</a></h5>
+<div class="paragraph">
+<p>The <code>LessonAddCommandParser</code> method is called and it will get the <code>ModuleCode</code> and <code>Semester</code> provided by the arguments. It will run the <code>LessonDataImporterUtil</code> class run method to convert the json file to <code>Lesson</code> Object. This is then added to the active student on the planner.</p>
+</div>
+</div>
+<div class="sect4">
+<h5 id="listing-of-lesson"><a class="link" href="#listing-of-lesson">Listing of Lesson</a></h5>
+<div class="paragraph">
+<p>The <code>LessonListCommand</code> method is called and it will iterate through the list of <code>Lesson</code> that is associated with the active student in the planner.</p>
+</div>
+</div>
+<div class="sect4">
+<h5 id="deleting-of-lesson"><a class="link" href="#deleting-of-lesson">Deleting of Lesson</a></h5>
+<div class="paragraph">
+<p>The <code>LessonRemoveCommandParser</code> method is called and it will get the <code>Index</code> provided by the arguments. It will retrieve the list of <code>Lesson</code> and delete the object based on the index given.</p>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="design-considerations-2"><a class="link" href="#design-considerations-2">Design Considerations</a></h4>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Alternative 1 (Current Implementation):</strong> Letting the users decide the lesson they want.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Pros: Allows for flexibility as it can reuse some of the code written for modules to adapt for lessons.</p>
+</li>
+<li>
+<p>Cons: More checks are needed to ensure user do not key in invalid values</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><strong>Alternative 2:</strong> Hard code to take the first option of each lesson.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Pros: Easier logic for the developer. Less bugs to deal with.</p>
+</li>
+<li>
+<p>Cons: Inconvenient for the user and does not allow the flexibility to choose the lesson that they want to take.</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect3">
+<h4 id="Implementation-Module-Search"><a class="link" href="#Implementation-Module-Search">Module Search</a></h4>
+<div class="paragraph">
+<p>On First Launch, all the modules that are available in NUS (in accordance to NUSMods data) is populated into the <strong>Module Panel Screen</strong>. This allows a student to select modules and view the corresponding module descriptions and details.</p>
+</div>
+<div class="paragraph">
+<p>Students are able utilise the <em>"Search Bar"</em> to search for any module based on the <code>module code</code> or <code>module name</code>. When given the query with the corresponding values, the following logic takes place:</p>
+</div>
+<div class="imageblock" style="text-align: center">
+<div class="content">
+<img src="../images/searchSequenceDiagram.png" alt="searchSequenceDiagram">
+</div>
+<div class="title">Figure 9. Sequence Diagram for Module Search</div>
+</div>
+<div class="paragraph">
+<p>If any results match the query enetered, they are populated into the <strong>Search Screen</strong> GUI for the user.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="design-considerations-3"><a class="link" href="#design-considerations-3">Design Considerations</a></h4>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Alternative 1 (Current Implementation):</strong> Using streams to collect the modules and search</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Pros: Less mutability as the modules will not be accidentally modified.</p>
+</li>
+<li>
+<p>Cons: Hard to debug when there is a bug.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><strong>Alternative 2:</strong> Loop and search each modules.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Pros: Lightweight using a for loop.</p>
+</li>
+<li>
+<p>Cons: Modules may be accidentally modified if it is not protected properly.</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>These parts below are in collaboration with the team. <a href="https://github.com/Capeguy">@Capeguy</a>,  <a href="https://github.com/DANamic">@DANamic</a> and <a href="https://github.com/thetruevincentchow">@thetruevincentchow</a></p>
+</div>
+</div>
+</div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="project-powerpointlabs"><a class="link" href="#project-powerpointlabs">PROJECT: PowerPointLabs</a></h2>
+<h2 id="use-cases"><a class="link" href="#use-cases">Appendix A: Use Cases</a></h2>
 <div class="sectionbody">
-<hr>
 <div class="paragraph">
-<p><em>{Optionally, you may include other projects in your portfolio.}</em></p>
+<p>(For all use cases below, the <strong>System</strong> is the <code>Planner</code> and the <strong>Actor</strong> is the <code>user</code>, unless specified otherwise)</p>
+</div>
+<div class="sect2">
+<h3 id="use-case-add-plan-uca01"><a class="link" href="#use-case-add-plan-uca01">Use Case: Add Plan (UCA01)</a></h3>
+<div class="paragraph">
+<p><strong>MSS</strong></p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>User requests to add a plan</p>
+</li>
+<li>
+<p>User supplies plan name and plan major</p>
+</li>
+<li>
+<p>Planner adds the plan</p>
+<div class="paragraph">
+<p>Use case ends.</p>
+</div>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p><strong>Extensions</strong></p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>2a. Any of the plan or major is missing or invalid</p>
+<div class="ulist none">
+<ul class="none">
+<li>
+<p>2a1. Planner shows an error message</p>
+<div class="paragraph">
+<p>Use case ends.</p>
+</div>
+</li>
+</ul>
+</div>
+</li>
+</ul>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2020-04-12 06:19:05 UTC</div></div></div></body></html>
+<div class="sect2">
+<h3 id="use-case-delete-plan-uca02"><a class="link" href="#use-case-delete-plan-uca02">Use Case: Delete Plan (UCA02)</a></h3>
+<div class="paragraph">
+<p><strong>MSS</strong></p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>User requests to list plans</p>
+</li>
+<li>
+<p>Planner shows a list of plans</p>
+</li>
+<li>
+<p>User requests to delete a specific plan in the list</p>
+</li>
+<li>
+<p>Planner deletes the plan</p>
+<div class="paragraph">
+<p>Use case ends.</p>
+</div>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p><strong>Extensions</strong></p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>2a. The list is empty</p>
+<div class="paragraph">
+<p>Use case ends.</p>
+</div>
+</li>
+<li>
+<p>3a. The given index is invalid</p>
+<div class="ulist none">
+<ul class="none">
+<li>
+<p>3a1. Planner shows an error message</p>
+<div class="paragraph">
+<p>Use case resumes at step 2.</p>
+</div>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="use-case-select-plan-uca03"><a class="link" href="#use-case-select-plan-uca03">Use Case: Select Plan (UCA03)</a></h3>
+<div class="paragraph">
+<p><strong>MSS</strong></p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>User requests to list plans</p>
+</li>
+<li>
+<p>Planner shows a list of plans</p>
+</li>
+<li>
+<p>User requests to select a specific plan in the list</p>
+</li>
+<li>
+<p>Planner selects the plan as the active plan</p>
+<div class="paragraph">
+<p>Use case ends.</p>
+</div>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p><strong>Extensions</strong></p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>2a. The list is empty</p>
+<div class="paragraph">
+<p>Use case ends</p>
+</div>
+</li>
+<li>
+<p>3a. The given index is invalid</p>
+<div class="ulist none">
+<ul class="none">
+<li>
+<p>3a1. Planner shows an error message</p>
+<div class="paragraph">
+<p>Use case resumes at step 2.</p>
+</div>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="use-case-add-timetable-ucb01"><a class="link" href="#use-case-add-timetable-ucb01">Use Case: Add Timetable (UCB01)</a></h3>
+<div class="paragraph">
+<p><strong>MSS</strong></p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>User <span class="underline">selects a plan (UCA03)</span></p>
+</li>
+<li>
+<p>User requests to add a timetable</p>
+</li>
+<li>
+<p>User specifies semester of the timetable</p>
+</li>
+<li>
+<p>Planner adds the timetable to the active plan</p>
+<div class="paragraph">
+<p>Use case ends.</p>
+</div>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p><strong>Extensions</strong></p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>2a. There is no plan currently selected</p>
+<div class="ulist none">
+<ul class="none">
+<li>
+<p>2a1. Planner shows an error message</p>
+<div class="paragraph">
+<p>Use case ends.</p>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>3a. The given semester is invalid</p>
+<div class="ulist none">
+<ul class="none">
+<li>
+<p>3a1. Planner shows an error message</p>
+<div class="paragraph">
+<p>Use case ends.</p>
+</div>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="use-case-delete-timetable-ucb02"><a class="link" href="#use-case-delete-timetable-ucb02">Use Case: Delete Timetable (UCB02)</a></h3>
+<div class="paragraph">
+<p><strong>MSS</strong></p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>User <span class="underline">selects a plan (UCA03)</span></p>
+</li>
+<li>
+<p>User requests to list timetables</p>
+</li>
+<li>
+<p>Planner shows a list of timetables of the active plan</p>
+</li>
+<li>
+<p>User specifies a corresponding semester for a timetable to delete</p>
+</li>
+<li>
+<p>Planner deletes the timetable from the active plan</p>
+<div class="paragraph">
+<p>Use case ends.</p>
+</div>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p><strong>Extensions</strong></p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>2a. There is no plan currently selected</p>
+<div class="ulist none">
+<ul class="none">
+<li>
+<p>2a1. Planner shows an error message</p>
+<div class="paragraph">
+<p>Use case ends.</p>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>4a. The given semester is invalid</p>
+<div class="ulist none">
+<ul class="none">
+<li>
+<p>4a1. Planner shows an error message</p>
+<div class="paragraph">
+<p>Use case resumes at step 3.</p>
+</div>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="use-case-select-timetable-ucb03"><a class="link" href="#use-case-select-timetable-ucb03">Use Case: Select Timetable (UCB03)</a></h3>
+<div class="paragraph">
+<p><strong>MSS</strong></p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>User <span class="underline">selects a plan (UCA03)</span></p>
+</li>
+<li>
+<p>User requests to list timetables</p>
+</li>
+<li>
+<p>Planner shows a list of timetables of the active plan</p>
+</li>
+<li>
+<p>User requests to select a specific timetable in the list</p>
+</li>
+<li>
+<p>Planner selects the timetable as the active timetable</p>
+<div class="paragraph">
+<p>Use case ends.</p>
+</div>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p><strong>Extensions</strong></p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>2a. The list is empty</p>
+<div class="paragraph">
+<p>Use case ends.</p>
+</div>
+</li>
+<li>
+<p>4a. The given semester is invalid</p>
+<div class="ulist none">
+<ul class="none">
+<li>
+<p>4a1. Planner shows an error message</p>
+<div class="paragraph">
+<p>Use case resumes at step 3.</p>
+</div>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="use-case-add-module-ucc01"><a class="link" href="#use-case-add-module-ucc01">Use Case: Add Module (UCC01)</a></h3>
+<div class="paragraph">
+<p><strong>MSS</strong></p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>User <span class="underline">selects a timetable (UCB03)</span></p>
+</li>
+<li>
+<p>User requests to add a specified module</p>
+</li>
+<li>
+<p>Planner adds the module to the active timetable</p>
+<div class="paragraph">
+<p>Use case ends.</p>
+</div>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p><strong>Extensions</strong></p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>2a. The given module is invalid</p>
+<div class="ulist none">
+<ul class="none">
+<li>
+<p>2a1. Planner shows an error message</p>
+<div class="paragraph">
+<p>Use case ends.</p>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>2b. The given module already exists in the timetable</p>
+<div class="ulist none">
+<ul class="none">
+<li>
+<p>2b1. Planner shows an error message</p>
+<div class="paragraph">
+<p>Use case ends.</p>
+</div>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="use-case-delete-module-ucc02"><a class="link" href="#use-case-delete-module-ucc02">Use Case: Delete Module (UCC02)</a></h3>
+<div class="paragraph">
+<p><strong>MSS</strong></p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>User <span class="underline">selects a timetable (UCB03)</span></p>
+</li>
+<li>
+<p>User requests to delete a specified module</p>
+</li>
+<li>
+<p>Planner deletes the module from the active timetable</p>
+<div class="paragraph">
+<p>Use case ends.</p>
+</div>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p><strong>Extensions</strong></p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>2a. The given module is invalid</p>
+<div class="ulist none">
+<ul class="none">
+<li>
+<p>2a1. Planner shows an error message</p>
+<div class="paragraph">
+<p>Use case ends.</p>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>2b. The given module does not exist in the timetable</p>
+<div class="ulist none">
+<ul class="none">
+<li>
+<p>2b1. Planner shows an error message</p>
+<div class="paragraph">
+<p>Use case ends.</p>
+</div>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="use-case-list-grades-ucd01"><a class="link" href="#use-case-list-grades-ucd01">Use Case: List Grades (UCD01)</a></h3>
+<div class="paragraph">
+<p><strong>MSS</strong></p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>User <span class="underline">selects a plan (UCA03)</span></p>
+</li>
+<li>
+<p>User requests to list grades</p>
+</li>
+<li>
+<p>Planner lists the total number of grades, and cumulative statistics</p>
+<div class="paragraph">
+<p>Use case ends.</p>
+</div>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p><strong>Extensions</strong></p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>2a. The user requests to list all modules taken instead</p>
+<div class="ulist none">
+<ul class="none">
+<li>
+<p>2a1. Planner lists all modules taken with their respective grades instead</p>
+<div class="paragraph">
+<p>Use case ends.</p>
+</div>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="use-case-set-module-grade-ucd02"><a class="link" href="#use-case-set-module-grade-ucd02">Use Case: Set Module Grade (UCD02)</a></h3>
+<div class="paragraph">
+<p><strong>MSS</strong></p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>User <span class="underline">selects a timetable (UCB03)</span></p>
+</li>
+<li>
+<p>User requests to set the grade of a specified module</p>
+</li>
+<li>
+<p>Planner sets the grade of the specified module</p>
+<div class="paragraph">
+<p>Use case ends.</p>
+</div>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p><strong>Extensions</strong></p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>2a. The given module is invalid</p>
+<div class="ulist none">
+<ul class="none">
+<li>
+<p>2a1. Planner shows an error message</p>
+<div class="paragraph">
+<p>Use case ends.</p>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>2b. The given module does not exist in the timetable</p>
+<div class="ulist none">
+<ul class="none">
+<li>
+<p>2b1. Planner shows an error message</p>
+<div class="paragraph">
+<p>Use case ends.</p>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>2c. The given grade is invalid</p>
+<div class="ulist none">
+<ul class="none">
+<li>
+<p>2c1. Planner shows an error message</p>
+<div class="paragraph">
+<p>Use case ends.</p>
+</div>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="use-case-add-lesson-uce01"><a class="link" href="#use-case-add-lesson-uce01">Use Case: Add Lesson (UCE01)</a></h3>
+<div class="paragraph">
+<p><strong>MSS</strong></p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>User <span class="underline">selects a timetable (UCB03)</span></p>
+</li>
+<li>
+<p>User requests to add a specific lesson for a module</p>
+</li>
+<li>
+<p>Planner adds the lesson to the active timetable</p>
+<div class="paragraph">
+<p>Use case ends.</p>
+</div>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p><strong>Extensions</strong></p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>2a. The given module is invalid</p>
+<div class="ulist none">
+<ul class="none">
+<li>
+<p>2a1. Planner shows an error message</p>
+<div class="paragraph">
+<p>Use case ends.</p>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>2b. The given lesson number is invalid</p>
+<div class="ulist none">
+<ul class="none">
+<li>
+<p>2b1. Planner shows an error message</p>
+<div class="paragraph">
+<p>Use case ends.</p>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>2c. The given semester is invalid</p>
+<div class="ulist none">
+<ul class="none">
+<li>
+<p>2c1. Planner shows an error message</p>
+<div class="paragraph">
+<p>Use case ends.</p>
+</div>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="use-case-delete-lesson-uce02"><a class="link" href="#use-case-delete-lesson-uce02">Use Case: Delete Lesson (UCE02)</a></h3>
+<div class="paragraph">
+<p><strong>MSS</strong></p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>User <span class="underline">selects a timetable (UCB03)</span></p>
+</li>
+<li>
+<p>User requests to delete a specified lesson</p>
+</li>
+<li>
+<p>Planner deletes the lesson from the active timetable</p>
+<div class="paragraph">
+<p>Use case ends.</p>
+</div>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p><strong>Extensions</strong></p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>2a. The given index is invalid</p>
+<div class="ulist none">
+<ul class="none">
+<li>
+<p>2a1. Planner shows an error message</p>
+<div class="paragraph">
+<p>Use case ends.</p>
+</div>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="instructions-for-manual-testing"><a class="link" href="#instructions-for-manual-testing">Appendix B: Instructions for Manual Testing</a></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Given below are instructions to test the app manually.</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+These instructions only provide a starting point for testers to work on; testers are expected to do more <em>exploratory</em> testing.
+</td>
+</tr>
+</table>
+</div>
+<div class="sect2">
+<h3 id="launch-and-shutdown"><a class="link" href="#launch-and-shutdown">Launch and Shutdown</a></h3>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Initial launch</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>Download the jar file and copy into an empty folder</p>
+</li>
+<li>
+<p>Double-click the jar file<br>
+Expected: Shows the GUI with a set of sample plans. The window size may not be optimal.</p>
+</li>
+</ol>
+</div>
+</li>
+<li>
+<p>Saving window preferences</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>Resize the window to an optimum size. Move the window to a different location. Close the window.</p>
+</li>
+<li>
+<p>Re-launch the app by double-clicking the jar file.<br>
+Expected: The most recent window size and location is retained.</p>
+</li>
+</ol>
+</div>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect2">
+<h3 id="adding-a-plan"><a class="link" href="#adding-a-plan">Adding a Plan</a></h3>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Adding a plan while all plans are listed</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>Prerequisites: List all plans using the <code>student list</code> command. All plans will be displayed the list.</p>
+</li>
+<li>
+<p>Test case: <code>student add name/Alice major/CS</code><br>
+Expected: Plan is added to the list. Details of the deleted plan are shown in the status message. Timestamp in the status bar is updated.</p>
+</li>
+<li>
+<p>Test case: <code>student add major/CS</code><br>
+Expected: No plan is added. Error details are shown in the status message. Status bar remains the same.</p>
+</li>
+<li>
+<p>Other incorrect delete commands to try: <code>student add</code>, <code>student add name/</code><br>
+Expected: Similar to previous.</p>
+</li>
+</ol>
+</div>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect2">
+<h3 id="deleting-a-plan"><a class="link" href="#deleting-a-plan">Deleting a Plan</a></h3>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Deleting a plan while all plans are listed</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>Prerequisites: List all plans using the <code>student list</code> command. All plans will be displayed the list. At least one plan should be listed.</p>
+</li>
+<li>
+<p>Test case: <code>student remove 1</code><br>
+Expected: First plan is deleted from the list. Details of the deleted plan are shown in the status message. Timestamp in the status bar is updated.</p>
+</li>
+<li>
+<p>Test case: <code>student remove 0</code><br>
+Expected: No plan is deleted. Error details are shown in the status message. Status bar remains the same.</p>
+</li>
+<li>
+<p>Other incorrect delete commands to try: <code>student remove</code>, <code>student remove x</code> (where x is larger than the list size), <code>student remove text</code> (where <code>text</code> is not a whole number)<br>
+Expected: Similar to previous.</p>
+</li>
+</ol>
+</div>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect2">
+<h3 id="selecting-a-plan"><a class="link" href="#selecting-a-plan">Selecting a Plan</a></h3>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Selecting a plan while all plans are listed</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>Prerequisites: List all plans using the <code>student list</code> command. All plans will be displayed the list. At least one plan should be listed.</p>
+</li>
+<li>
+<p>Test case: <code>student active 1</code><br>
+Expected: Plan is selected as the active plan. Details of the selected plan are shown in the status message. Timestamp in the status bar is updated.</p>
+</li>
+<li>
+<p>Test case: <code>student active 0</code><br>
+Expected: No plan is selected. Error details are shown in the status message. Status bar remains the same.</p>
+</li>
+<li>
+<p>Other incorrect delete commands to try: <code>student active</code>, <code>student active xyz</code><br>
+Expected: Similar to previous.</p>
+</li>
+</ol>
+</div>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect2">
+<h3 id="adding-a-timetable"><a class="link" href="#adding-a-timetable">Adding a Timetable</a></h3>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Adding a timetable while a plan is selected and the selected plan&#8217;s timetables are listed</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>Prerequisites: Select a plan using the <code>student active</code> command. A plan will be set as the active plan. Plan should be empty.</p>
+</li>
+<li>
+<p>Test case: <code>timetable add year/1 sem/ONE</code><br>
+Expected: Timetable is added to the plan. Details of the added timetable are shown in the status message. Timestamp in the status bar is updated.</p>
+</li>
+<li>
+<p>Test case: <code>timetable add year/1 sem/THREE</code><br>
+Expected: No timetable is added. Error details are shown in the status message. Status bar remains the same.</p>
+</li>
+<li>
+<p>Other incorrect delete commands to try: <code>timetable add</code>, <code>timetable add year/</code><br>
+Expected: Similar to previous.</p>
+</li>
+</ol>
+</div>
+</li>
+<li>
+<p>Adding a timetable while a plan is selected with an existing timetable of the same semester</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>Prerequisites: Select a plan using the <code>student active</code> command. Add a timetable using the <code>timetable add year/1 sem/ONE</code> command</p>
+</li>
+<li>
+<p>Test case: <code>timetable add year/1 sem/ONE</code><br>
+Expected: No timetable is added. Error details are shown in the status message. Status bar remains the same.</p>
+</li>
+</ol>
+</div>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect2">
+<h3 id="deleting-a-timetable"><a class="link" href="#deleting-a-timetable">Deleting a Timetable</a></h3>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Deleting a timetable while a plan is selected and the selected plan&#8217;s timetables are listed</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>Prerequisites: Select a plan using the <code>student active</code> command. A plan will be set as the active plan. Then list timetables with <code>timetable list</code>. At least one timetable should be listed.</p>
+</li>
+<li>
+<p>Test case: <code>timetable remove year/YEAR sem/SEM</code> (where <code>YEAR</code> and <code>SEM</code> are the year and semester of one of the listed timetables, respectively).<br>
+Expected: Specified timetable is deleted from the list. Details of the deleted plan are shown in the status message. Timestamp in the status bar is updated.</p>
+</li>
+<li>
+<p>Test case: <code>timetable remove</code><br>
+Expected: No timetable is deleted. Error details are shown in the status message. Status bar remains the same.</p>
+</li>
+<li>
+<p>Other incorrect delete commands to try: <code>timetable remove year sem</code>, <code>timetable remove year/x</code> (where x is larger than the list size), <code>timetable remove text</code><br>
+Expected: Similar to previous.</p>
+</li>
+</ol>
+</div>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect2">
+<h3 id="selecting-a-timetable"><a class="link" href="#selecting-a-timetable">Selecting a Timetable</a></h3>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Selecting a timetable while a plan is selected and the selected plan&#8217;s timetables are listed</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>Prerequisites: Select a plan using the <code>student active</code> command. A plan will be set as the active plan. Then list timetables with <code>timetable list</code>. At least one timetable should be listed.</p>
+</li>
+<li>
+<p>Test case: <code>timetable active year/YEAR sem/SEM</code> (where <code>YEAR</code> and <code>SEM</code> are the year and semester of one of the listed timetables, respectively).<br>
+Expected: Specified timetable is deleted from the list. Details of the deleted plan are shown in the status message. Timestamp in the status bar is updated.</p>
+</li>
+<li>
+<p>Test case: <code>timetable active</code><br>
+Expected: No timetable is selected. Error details are shown in the status message. Status bar remains the same.</p>
+</li>
+<li>
+<p>Other incorrect delete commands to try: <code>timetable active year sem</code>, <code>timetable active year/x</code> (where x is larger than the list size), <code>timetable active text</code><br>
+Expected: Similar to previous.</p>
+</li>
+</ol>
+</div>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect2">
+<h3 id="adding-a-module"><a class="link" href="#adding-a-module">Adding a Module</a></h3>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Adding a module while a timetable is selected and the selected timetable&#8217;s modules are listed</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>Prerequisites: Select a timetable using the <code>timetable active</code> command. A timetable will be set as the active timetable.</p>
+</li>
+<li>
+<p>Test case: <code>module add CS2040</code><br>
+Expected: Module is added to the timetable. Details of the added module are shown in the status message. Timestamp in the status bar is updated.</p>
+</li>
+<li>
+<p>Test case: <code>module add text</code><br>
+Expected: No module is added. Error details are shown in the status message. Status bar remains the same.</p>
+</li>
+<li>
+<p>Other incorrect delete commands to try: <code>module add</code>,<br>
+Expected: Similar to previous.</p>
+</li>
+</ol>
+</div>
+</li>
+<li>
+<p>Adding a module while a timetable is selected with the same module existing in the same timetable</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>Prerequisites: Select a timetable using the <code>timetable active</code> command. Add a module using the <code>module add CS2040</code> command</p>
+</li>
+<li>
+<p>Test case: <code>module add CS2040</code><br>
+Expected: No module is added. Error details are shown in the status message. Status bar remains the same.</p>
+</li>
+</ol>
+</div>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect2">
+<h3 id="deleting-a-module"><a class="link" href="#deleting-a-module">Deleting a Module</a></h3>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Deleting a module while a timetable is selected and the selected timetable&#8217;s modules are listed</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>Prerequisites: Select a timetable using the <code>timetable active</code> command. A timetable will be set as the active timetable. Then list modules with <code>module list</code>. At least one module should be listed.</p>
+</li>
+<li>
+<p>Test case: <code>module remove MODULE_CODE</code> (where <code>MODULE_CODE</code> is one of the listed modules).<br>
+Expected: Specified module is deleted from the list. Details of the deleted timetable are shown in the status message. Timestamp in the status bar is updated.</p>
+</li>
+<li>
+<p>Test case: <code>module remove</code><br>
+Expected: No module is deleted. Error details are shown in the status message. Status bar remains the same.</p>
+</li>
+<li>
+<p>Other incorrect delete commands to try: <code>module remove text</code><br>
+Expected: Similar to previous.</p>
+</li>
+</ol>
+</div>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect2">
+<h3 id="setting-the-grade-of-a-module"><a class="link" href="#setting-the-grade-of-a-module">Setting the Grade of a Module</a></h3>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Setting the grade of a module while a timetable is selected and the selected timetable&#8217;s modules are listed</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>Prerequisites: Select a timetable using the <code>timetable active</code> command. A timetable will be set as the active timetable. Then list modules with <code>module list</code>. At least one module should be listed.</p>
+</li>
+<li>
+<p>Test case: <code>module grade MODULE_CODE grade/A</code> (where <code>MODULE_CODE</code> is one of the listed modules).<br>
+Expected: Grade of specified module is updated. Details of the deleted timetable are shown in the status message. Timestamp in the status bar is updated.</p>
+</li>
+<li>
+<p>Test case: <code>module grade</code><br>
+Expected: Module grade is not updated. Error details are shown in the status message. Status bar remains the same.</p>
+</li>
+<li>
+<p>Other incorrect delete commands to try: <code>module grade text</code><br>
+Expected: Similar to previous.</p>
+</li>
+</ol>
+</div>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect2">
+<h3 id="viewing-the-grade-of-a-module"><a class="link" href="#viewing-the-grade-of-a-module">Viewing the Grade of a Module</a></h3>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Viewing the grade of a module while a timetable is selected and the selected timetable&#8217;s modules are listed</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>Prerequisites: Select a timetable using the <code>timetable active</code> command. A timetable will be set as the active timetable. Then list modules with <code>module list</code>. At least one module should be listed.</p>
+</li>
+<li>
+<p>Test case: <code>module grade MODULE_CODE</code> (where <code>MODULE_CODE</code> is one of the listed modules).<br>
+Expected: Grade of specified module is displayed. Details of the deleted timetable are shown in the status message. Timestamp in the status bar is updated.</p>
+</li>
+<li>
+<p>Test case: <code>module grade</code><br>
+Expected: Module grade is not displayed. Error details are shown in the status message. Status bar remains the same.</p>
+</li>
+<li>
+<p>Other incorrect delete commands to try: <code>module grade text</code><br>
+Expected: Similar to previous.</p>
+</li>
+</ol>
+</div>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect2">
+<h3 id="viewing-the-grades-of-a-plan"><a class="link" href="#viewing-the-grades-of-a-plan">Viewing the Grades of a Plan</a></h3>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Viewing the grades of a plan while the plan is selected</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>Prerequisites: Select a plan using the <code>student active</code> command. A plan will be set as the active plan.</p>
+</li>
+<li>
+<p>Test case: <code>student grade</code><br>
+Expected: Selected student&#8217;s grades are listed in the status message.</p>
+</li>
+</ol>
+</div>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect2">
+<h3 id="viewing-the-graduation-requirements-of-a-plan"><a class="link" href="#viewing-the-graduation-requirements-of-a-plan">Viewing the Graduation Requirements of a Plan</a></h3>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Viewing the graduation requirements of a plan while the plan is selected</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>Prerequisites: Select a plan using the <code>student active</code> command. A plan will be set as the active plan.</p>
+</li>
+<li>
+<p>Test case: <code>major status</code><br>
+Expected: Selected student&#8217;s graduation requirements are listed in the status message.</p>
+</li>
+</ol>
+</div>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect2">
+<h3 id="setting-the-specialisation-of-a-plan"><a class="link" href="#setting-the-specialisation-of-a-plan">Setting the Specialisation of a Plan</a></h3>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Setting the specialisation of a plan while the plan is selected</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>Prerequisites: Select a plan using the <code>student active</code> command. A plan will be set as the active plan.</p>
+</li>
+<li>
+<p>Test case: <code>specialisation set algo</code><br>
+Expected: Selected student&#8217;s specialisation is updated. Details of the new specialisation are shown in the status message. Timestamp in the status bar is updated.</p>
+</li>
+<li>
+<p>Test case: <code>specialisation set abcdefg</code><br>
+Expected: Selected student&#8217;s specialisation is not updated. Error details are shown in the status message. Status bar remains the same.</p>
+</li>
+<li>
+<p>Other incorrect delete commands to try: <code>specialisation set</code><br>
+Expected: Similar to previous.</p>
+</li>
+</ol>
+</div>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect2">
+<h3 id="adding-a-lesson"><a class="link" href="#adding-a-lesson">Adding a Lesson</a></h3>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Adding a lesson while a active student is selected</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>Prerequisites: Set active student with command <code>student active</code>.</p>
+</li>
+<li>
+<p>Test case: <code>lessons add m/CS1231 lesson/10 sem/ONE</code><br>
+Expected: Lesson is added to the active student timetable. Details of the added lessons are shown in the status message. Calendar is filled up to show the change.</p>
+</li>
+<li>
+<p>Test case: <code>lessons add text</code><br>
+Expected: No lessons is added. Error details are shown in the status message. Status bar remains the same. Calendar remains the same.</p>
+</li>
+<li>
+<p>Other incorrect delete commands to try: <code>lessons add</code>,<br>
+Expected: Similar to previous.</p>
+</li>
+</ol>
+</div>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect2">
+<h3 id="removing-a-lesson"><a class="link" href="#removing-a-lesson">Removing a Lesson</a></h3>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Removing a lesson while a active student is selected</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>Prerequisites: Set active student with command <code>student active</code> and at least one lesson is added.</p>
+</li>
+<li>
+<p>Test case: <code>lessons remove 1</code><br>
+Expected: Lesson is moved from the active student timetable. Details of the removed lessons are shown in the status message. Calendar is updated to show the change.</p>
+</li>
+<li>
+<p>Test case: <code>lessons remove text</code><br>
+Expected: No lessons is removed. Error details are shown in the status message. Status bar remains the same. Calendar remains the same.</p>
+</li>
+<li>
+<p>Other incorrect delete commands to try: <code>lessons remove</code>,<br>
+Expected: Similar to previous.</p>
+</li>
+</ol>
+</div>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect2">
+<h3 id="listing-all-lesson"><a class="link" href="#listing-all-lesson">Listing all Lesson</a></h3>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Listing all lessons while a active student is selected</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>Prerequisites: Set active student with command <code>student active</code>.</p>
+</li>
+<li>
+<p>Test case: <code>lessons list</code><br>
+Expected: Lesson is listed out in the status message. You can also launch calendar to see the bottom scroll pane which will have the same information as well.</p>
+</li>
+</ol>
+</div>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect2">
+<h3 id="viewing-module-information"><a class="link" href="#viewing-module-information">Viewing module information</a></h3>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Viewing the module information</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>Prerequisites: Module has been successfully loaded.</p>
+</li>
+<li>
+<p>Test case: Click on any module in the module pane.
+Expected: A new window is opened to show the module information.</p>
+</li>
+</ol>
+</div>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect2">
+<h3 id="viewing-lesson-information-for-a-module"><a class="link" href="#viewing-lesson-information-for-a-module">Viewing lesson information for a module</a></h3>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Viewing the lesson information for a module</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>Prerequisites: A module has been selected.</p>
+</li>
+<li>
+<p>Test case: Click on either of the semesters button on the module description page if applicable.
+Expected: A new window is opened to show the timetable containing the lesson information.</p>
+</li>
+</ol>
+</div>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect2">
+<h3 id="saving-data"><a class="link" href="#saving-data">Saving Data</a></h3>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Dealing with missing/corrupted data files</p>
+</li>
+</ol>
+</div>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>Test case: Delete the file named <code>planner.json</code> in the <code>data</code> folder, relative to the path of the jar file.
+Launch the app by double-clicking the jar file.<br>
+Expected: Shows the GUI with a set of sample plans.</p>
+</li>
+<li>
+<p>Test case: Edit the file named <code>planner.json</code> in the <code>data</code> folder such that it is no longer valid JSON.
+This can be done by deleting the last non-whitespace character in the file, which should be a curly closing bracket.<br>
+Expected: Shows the GUI with a set of sample plans.</p>
+</li>
+</ol>
+</div>
+</div>
+</div>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2020-04-12 08:08:39 UTC</div></div></div></body></html>
