@@ -208,6 +208,125 @@
 </tr>
 </tbody>
 </table>
+</div>
+</div>
+<div class="sect1">
+<h2 id="features"><a class="link" href="#features">Features</a></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p><em>(Benjamin wrote the preamble of "Features" below.)</em></p>
+</div>
+<div class="paragraph">
+<p>These are the key features that are part of the NUSModPlnr!</p>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+Before you dive into the commands themselves, do familiarise yourself with how the <strong>User Guide</strong> has been formatted in terms of the commands to key in!
+</td>
+</tr>
+</table>
+</div>
+<div class="exampleblock">
+<div class="content">
+<div class="paragraph">
+<p><strong>Command Format</strong></p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Words in <code>UPPER_CASE</code> are the parameters to be supplied by you (e.g. in <code>student add n/NAME major/MAJOR</code>, <code>NAME</code> is a parameter which can be used as <code>student add n/John Doe major/CS</code>).</p>
+</li>
+<li>
+<p>Items in square brackets are optional (e.g <code>module grade CS2103T [grade/GRADE]</code> can be used as <code>module grade CS2103T grade/A+</code> or as <code>module grade CS2103T</code>).</p>
+</li>
+<li>
+<p>Items surrounded by <code>&lt;</code> and <code>&gt;</code> can be used any positive number of times (at least once, e.g. <code>&lt;MODULE_CODE&gt;</code> can be used as <code>CS2040</code> (1 time), <code>CS2040 CS2030 CS2103T</code> (3 times), etc).</p>
+</li>
+<li>
+<p>Parameters can be in any order (e.g. if the command specifies <code>n/NAME major/MAJOR</code>, <code>major/MAJOR n/NAME</code> is also acceptable).</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="exampleblock">
+<div class="content">
+<div id="common-parameter-list" class="paragraph">
+<p><strong>Common Parameters</strong></p>
+</div>
+<div class="paragraph">
+<p>These are parameters that are commonly used in commands available in NUSModPlnr.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>MODULE_CODE</code> - a code for a module in NUS</p>
+</li>
+<li>
+<p><code>INDEX</code> - a index number of an item listed</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Must be a positive integer</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><code>LESSON_NUMBER</code> - a number for the class number for a module</p>
+</li>
+<li>
+<p><code>NAME</code> - a name of a entity</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Must be alphanumeric, spaces are allowed</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><code>SEM</code> - an academic semester</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Must be one of the following: <code>ONE</code>, <code>TWO</code>, <code>SPECIAL_ONE</code>, <code>SPECIAL_TWO</code></p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><code>YEAR</code> - a year of study (e.g. Year 1, 2, 3, 4, 5, 6)</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Must be a non-negative integer from 1 to 6</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><code>GRADE</code> a letter grade for a module</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Must be one of the following: <code>A+</code>, <code>A</code>, <code>A-</code>, <code>B+</code>, <code>B</code>, <code>B-</code>, <code>C+</code>, <code>C</code>, <code>D+</code>, <code>D</code>, <code>F</code>, <code>CS</code>, <code>CU</code>, <code>W</code>, <code>EXE</code></p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="paragraph">
+<p>Let&#8217;s begin!</p>
+</div>
 <div class="sect2">
 <h3 id="module-management"><a class="link" href="#module-management">Module Management</a></h3>
 <div class="paragraph">
@@ -904,4 +1023,4 @@ All the following commands require a <a href="#timetable-management">timetable</
 </div>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2020-04-12 15:22:02 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2020-04-12 17:01:08 UTC</div></div></div></body></html>
