@@ -1,0 +1,1639 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><!--[if IE]><meta http-equiv="X-UA-Compatible" content="IE=edge"><![endif]--><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="generator" content="Asciidoctor 1.5.6.1"><title>Vincent Chow - Project Portfolio</title><link rel="stylesheet" href="../stylesheets/gh-pages.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.5.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="../stylesheets/coderay-asciidoctor.css"></head><body class="article"><div id="seedu-header"><nav class="navbar navbar-lg navbar-light bg-lighter"><div class="container"><a class="navbar-brand" href="https://se-edu.github.io/"><img src="../images/SeEduLogo.png" alt="SE-EDU"></a><ul class="navbar-nav"><li class="nav-item"><a class="nav-link" href="https://se-edu.github.io/addressbook-level1">AB-1</a></li><li class="nav-item"><a class="nav-link" href="https://se-edu.github.io/addressbook-level2">AB-2</a></li><li class="nav-item"><a class="nav-link active" href="../index.html">AB-3</a></li><li class="nav-item"><a class="nav-link" href="https://se-edu.github.io/addressbook-level4">AB-4</a></li><li class="nav-item"><a class="nav-link" href="https://se-edu.github.io/collate">Collate</a></li><li class="nav-item"><a class="nav-link" href="https://se-edu.github.io/se-book">Book</a></li><li class="nav-item"><a class="nav-link" href="https://se-edu.github.io/learningresources">Resources</a></li></ul></div></nav></div><div id="site-header"><nav class="navbar navbar-light bg-light"><div class="container"><a class="navbar-brand" href="../index.html">NUS Mod Plnr</a><ul class="navbar-nav"><li class="nav-item"><a class="nav-link" href="../UserGuide.html">User Guide</a></li><li class="nav-item"><a class="nav-link" href="../DeveloperGuide.html">Developer Guide</a></li><li class="nav-item"><a class="nav-link" href="../LearningOutcomes.html">LOs</a></li><li class="nav-item"><a class="nav-link active" href="../AboutUs.html">About Us</a></li><li class="nav-item"><a class="nav-link" href="../ContactUs.html">Contact Us</a></li><li class="navitem"><a class="nav-link" href="https://github.com/AY1920S2-CS2103T-W13-4/main"><span class="fa fa-github fa-lg" aria-hidden="true"></span>&nbsp;View on GitHub</a></li></ul></div></nav></div><div id="header"><h1>Vincent Chow - Project Portfolio</h1></div><div id="content"><div class="sect1">
+<h2 id="project-nus-module-planner"><a class="link" href="#project-nus-module-planner">PROJECT: NUS Module Planner</a></h2>
+<div class="sectionbody">
+
+</div>
+</div>
+<div class="sect1">
+<h2 id="overview"><a class="link" href="#overview">Overview</a></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>NUS Module Planner (<em>NUSModPlnr</em>) is for Computer Science (CS) students at the National University of Singapore (NUS) to manage their enrollments in NUS modules over their school life. <strong>With NUSModPlnr, module planning has never been easier!</strong></p>
+</div>
+<div class="paragraph">
+<p>Users can interact with it using a CLI, and it has a GUI created with JavaFX. NUSModPlnr is based on the AddressBook-Level3 application by SE-EDU, and currently has about 15+ KLoC.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="summary-of-contributions"><a class="link" href="#summary-of-contributions">Summary of contributions</a></h2>
+<div class="sectionbody">
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Major enhancement</strong>: Added commands to manage students, timetables and modules and grades</p>
+<div class="ulist">
+<ul>
+<li>
+<p>What it does: Allow the user to create, remove, select and list students, and timetables and modules taken by each student.</p>
+</li>
+<li>
+<p>Justification: This feature is critical for the product since the user cannot plan their academic study without having the ability to add timetables, modules and grades.
+Having student profiles also allows users to explore different academic plans.</p>
+</li>
+<li>
+<p>Highlights: This enhancement affects all other features and commands. It required an in-depth analysis of design alternatives.
+The implementation was challenging as it required an extension of commands into sub-commands, and manipulation of deeply nested structures.
+Significant effort has been used to test the correctness of the main commands.</p>
+</li>
+<li>
+<p>Credits: Logic and Command code used in AddressBook Level 3</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><strong>Major enhancement</strong>: Designed and created Model and JSON serialisation of many classes involved in the product</p>
+<div class="ulist">
+<ul>
+<li>
+<p>What it does: Stores, loads and saves the Module Planner&#8217;s state in memory and to file.</p>
+</li>
+<li>
+<p>Justification: This feature is needed to enable commands and other features to modify data and work correctly.</p>
+</li>
+<li>
+<p>Highlights: This enhancement supported development of other features of the product. Other developers have used the Model API to implement other functionality.
+Great care had to be taken to ensure storage and serialisation worked consistently for all conditions.</p>
+</li>
+<li>
+<p>Credits: Storage code used in AddressBook Level 3</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><strong>Minor enhancement</strong>: Added a <code>status</code> command to display the currently selected student and timetable.</p>
+</li>
+<li>
+<p><strong>Code contributed</strong>: Please see the <a href="++https://nus-cs2103-ay1920s2.github.io/tp-dashboard/#=undefined&amp;search=thetruevincentchow">RepoSense Report here</a>!</p>
+</li>
+<li>
+<p><strong>Other contributions</strong>:</p>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Project management:</strong>:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Managed release v1.2 (1 release) on GitHub</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><strong>Community:</strong>:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Created initial UML diagram draft of project structure and classes (<a href="https://github.com/AY1920S2-CS2103T-W13-4/main/pull/36">#36</a>)</p>
+</li>
+<li>
+<p>Updated non-feature sections of the Developer Guide (<a href="https://github.com/AY1920S2-CS2103T-W13-4/main/pull/64">#64</a>, <a href="https://github.com/AY1920S2-CS2103T-W13-4/main/pull/96">#96</a>)</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><strong>Enhancements to Existing Features</strong>:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Wrote tests to increase code coverage from 24.5% to 36.1% (<a href="https://github.com/AY1920S2-CS2103T-W13-4/main/pull/199">#199</a>)</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="contributions-to-the-user-guide-in-draft"><a class="link" href="#contributions-to-the-user-guide-in-draft">Contributions to the User Guide [IN DRAFT]</a></h2>
+<div class="sectionbody">
+<div class="sect3">
+<h4 id="status-command"><a class="link" href="#status-command">Viewing your selections: <code>status</code></a></h4>
+<div class="paragraph">
+<p>(Vincent wrote the subsection "Viewing your selections" below)</p>
+</div>
+<div class="paragraph">
+<p>You can use the <code>status</code> command to view your currently selected students and timetables. The figure below shows a possible result of the command.</p>
+</div>
+<div class="imageblock" style="text-align: left">
+<div class="content">
+<img src="../images/StatusCommand.png" alt="StatusCommand" width="600">
+</div>
+<div class="title">Figure 1. Possible Result of Status Command</div>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+Use the commands in <a href="#student-management"><strong>Student Management</strong></a> to create and manage students.<br>
+</td>
+</tr>
+</table>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+Use the commands in <a href="#timetable-management"><strong>Timetable Management</strong></a> and <a href="#module-management"><strong>Module Management</strong></a> to manage the timetables and modules that are displayed.
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>Format: <code>status</code></p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="student-management"><a class="link" href="#student-management">Student Management</a></h3>
+<div class="paragraph">
+<p>(Vincent wrote the section "Student Management" below)</p>
+</div>
+<div class="paragraph">
+<p>The following commands below are part of the application&#8217;s <strong>Student Management</strong>, which allow you manage the students <em>which include you</em> for the academic planning. You are highly encouraged to use this <strong>Student Management</strong> feature to explore different academic plans.</p>
+</div>
+<div class="sect3">
+<h4 id="adding-a-student-code-student-add-code"><a class="link" href="#adding-a-student-code-student-add-code">Adding a student: <code>student add</code></a></h4>
+<div class="paragraph">
+<p>You can use this command to add a <a href="#student-management">student</a> to the student list.</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+You may not add multiple students with the same name.
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>Format: <code>student add n/NAME major/MAJOR</code></p>
+</div>
+<div class="paragraph">
+<p>Example:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>student add n/Alice major/CS</code></p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect3">
+<h4 id="removing-a-student-code-student-remove-code"><a class="link" href="#removing-a-student-code-student-remove-code">Removing a student: <code>student remove</code></a></h4>
+<div class="paragraph">
+<p>You can use this command to remove the <a href="#student-management">student</a> with the number <code>INDEX</code> from the student list.</p>
+</div>
+<div class="admonitionblock warning">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-warning" title="Warning"></i>
+</td>
+<td class="content">
+This command cannot be undone. Removing a student will permanently delete its data from the save file.<br>
+Be sure to remove your intended student by checking the list of students with the <a href="#student-list-command"><code>student list</code></a> command.
+</td>
+</tr>
+</table>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+When you use this command on the same student as the student you are currently selecting (see the <a href="#student-active-command"><code>student active</code></a> command),
+the timetable you have currently selected (see the <a href="#timetable-active-command"><code>timetable active</code></a> command) will be deselected (if a timetable was selected).
+</td>
+</tr>
+</table>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+To work on another student&#8217;s timetable, first use the  <a href="#student-active-command"><code>student active</code></a> command to select a student, then
+use the <a href="#timetable-active-command"><code>timetable active</code></a> command to select another timetable.<br>
+You may see the list of students using the <a href="#student-list-command"><code>student list</code></a> command, and
+the list of timetables of a selected student has using the <a href="#timetable-list-command"><code>timetable list</code></a> command.
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>Format: <code>student remove INDEX</code></p>
+</div>
+<div class="paragraph">
+<p>Example:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>student remove 1</code></p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect3">
+<h4 id="student-active-command"><a class="link" href="#student-active-command">Selecting a student: <code>student active</code></a></h4>
+<div class="paragraph">
+<p>You can use this command to select the <a href="#student-management">student</a> with the number <code>INDEX</code> from the student list.</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+When you use this command, any timetable you have selected (see the <a href="#timetable-active-command"><code>timetable active</code></a> command) will be deselected.
+To work on the newly selected student&#8217;s timetable, use the <a href="#timetable-active-command"><code>timetable active</code></a> command to select a timetable.<br>
+You may see the list of timetables the selected student has using the <a href="#timetable-list-command"><code>timetable list</code></a> command.
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>Format: <code>student active INDEX</code></p>
+</div>
+<div class="paragraph">
+<p>Example:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>student active 1</code></p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect3">
+<h4 id="student-list-command"><a class="link" href="#student-list-command">Viewing the student list: <code>student list</code></a></h4>
+<div class="paragraph">
+<p>You can use this command to display a numbered list of students in the student list (if populated).</p>
+</div>
+<div class="paragraph">
+<p>Format: <code>student list</code></p>
+</div>
+<div class="paragraph">
+<p>Example:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>student list</code></p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="timetable-management"><a class="link" href="#timetable-management">Timetable Management</a></h3>
+<div class="paragraph">
+<p>(Vincent wrote the section "Timetable Management" below)</p>
+</div>
+<div class="paragraph">
+<p>The following commands below are part of the application&#8217;s <strong>Timetable Management</strong>, which allow you manage the timetables of your academic plan.</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+All the following commands require a <a href="#student-management">student</a> to be selected (using the <a href="#student-active-command"><code>student active</code></a> command).
+</td>
+</tr>
+</table>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+To see a summary of the student and timetable you have selected, use the <a href="#status-command"><code>status</code></a> command.
+</td>
+</tr>
+</table>
+</div>
+<div class="sect3">
+<h4 id="adding-a-timetable-code-timetable-add-code"><a class="link" href="#adding-a-timetable-code-timetable-add-code">Adding a timetable: <code>timetable add</code></a></h4>
+<div class="paragraph">
+<p>You can use this command to add a <a href="#timetable-management">timetable</a> to the specified <a href="#common-parameter-list">semester</a> of the selected <a href="#student-management">student</a> (see the <a href="#student-active-command"><code>student active</code></a> command).</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+This command requires the <code>YEAR</code> and <code>SEM</code> to conform to the parameter syntax in <a href="#common-parameter-list"><strong>Common Parameters</strong></a>.<br>
+The <code>YEAR</code> parameter must be a valid degree year (from 1 to 6, inclusive).<br>
+The <code>SEM</code> parameter must be one of the following: <code>ONE</code>, <code>TWO</code>, <code>SPECIAL_ONE</code>, <code>SPECIAL_TWO</code>.
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>Format: <code>timetable add year/YEAR sem/SEM</code></p>
+</div>
+<div class="paragraph">
+<p>Example:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>timetable add year/2 sem/ONE</code></p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect3">
+<h4 id="removing-a-timetable-code-timetable-remove-code"><a class="link" href="#removing-a-timetable-code-timetable-remove-code">Removing a timetable: <code>timetable remove</code></a></h4>
+<div class="paragraph">
+<p>You can use this command to remove a <a href="#timetable-management">timetable</a> to the specified <a href="#common-parameter-list">semester</a> of the selected <a href="#student-management">student</a> (see the <a href="#student-active-command"><code>student active</code></a> command).</p>
+</div>
+<div class="admonitionblock warning">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-warning" title="Warning"></i>
+</td>
+<td class="content">
+This command cannot be undone. Removing a timetable from the selected student will permanently delete its data from the save file.<br>
+Be sure to remove your intended timetable by checking the list of timetables with the <a href="#student-list-command"><code>timetable list</code></a> command.
+</td>
+</tr>
+</table>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+This command requires the <code>YEAR</code> and <code>SEM</code> to conform to the parameter syntax in <a href="#common-parameter-list"><strong>Common Parameters</strong></a>.<br>
+The <code>YEAR</code> parameter must be a valid degree year (from 1 to 6, inclusive).<br>
+The <code>SEM</code> parameter must be one of the following: <code>ONE</code>, <code>TWO</code>, <code>SPECIAL_ONE</code>, <code>SPECIAL_TWO</code>.
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>Format: <code>timetable remove year/YEAR sem/SEM</code></p>
+</div>
+<div class="paragraph">
+<p>Example:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>timetable remove year/2 sem/ONE</code></p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect3">
+<h4 id="timetable-active-command"><a class="link" href="#timetable-active-command">Selecting a timetable: <code>timetable active</code></a></h4>
+<div class="paragraph">
+<p>You can use this command to select a <a href="#timetable-management">timetable</a> of the specified <a href="#common-parameter-list">semester</a> of the selected <a href="#student-management">student</a> (see the <a href="#student-active-command"><code>student active</code></a> command).</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+This command requires the <code>YEAR</code> and <code>SEM</code> to conform to the parameter syntax in <a href="#common-parameter-list"><strong>Common Parameters</strong></a>.<br>
+The <code>YEAR</code> parameter must be a valid degree year (from 1 to 6, inclusive).<br>
+The <code>SEM</code> parameter must be one of the following: <code>ONE</code>, <code>TWO</code>, <code>SPECIAL_ONE</code>, <code>SPECIAL_TWO</code>.
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>Format: <code>timetable active year/YEAR sem/SEM</code></p>
+</div>
+<div class="paragraph">
+<p>Example:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>timetable active year/2 sem/ONE</code></p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect3">
+<h4 id="timetable-list-command"><a class="link" href="#timetable-list-command">Viewing the timetable list: <code>timetable list</code></a></h4>
+<div class="paragraph">
+<p>You can use this command to list all the <a href="#timetable-management">timetables</a>  of the selected <a href="#student-management">student</a> (see the <a href="#student-active-command"><code>student active</code></a> command).</p>
+</div>
+<div class="paragraph">
+<p>Format: <code>timetable list</code></p>
+</div>
+<div class="paragraph">
+<p>Example:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>timetable list</code></p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="grade-management"><a class="link" href="#grade-management">Grade Management</a></h3>
+<div class="paragraph">
+<p>(Vincent wrote the section "Grade Management" below)</p>
+</div>
+<div class="paragraph">
+<p>The following commands below are part of the application&#8217;s <strong>Grade Management</strong>, which allow you to manage and view your grades to see modules affected in your academic plan.</p>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+The same module can be added into multiple timetables of the same student. Therefore, each enrollment (one per semester) of the same module can have a separate grade.<br>
+For example, it is possible for you to enroll in the module <code>CS2040</code> during <code>year/1 sem/ONE</code> and then <code>year/1 sem/TWO</code>.<br>
+You may refer to <a href="#timetable-management"><strong>Timetable Management</strong></a> to see how you can use timetables.
+</td>
+</tr>
+</table>
+</div>
+<div class="sect3">
+<h4 id="managing-a-module-s-grade-code-module-grade-code"><a class="link" href="#managing-a-module-s-grade-code-module-grade-code">Managing a module&#8217;s grade: <code>module grade</code></a></h4>
+<div class="paragraph">
+<p>You can use this command to manage the grades of your modules. The following variants of the command can view and set the grade of the module you specify.</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+This command and its variants require a timetable to be selected (using the <a href="#timetable-active-command"><code>timetable active</code></a> command).
+</td>
+</tr>
+</table>
+</div>
+<div class="sect4">
+<h5 id="viewing-a-module-s-grade"><a class="link" href="#viewing-a-module-s-grade">Viewing a module&#8217;s grade</a></h5>
+<div class="paragraph">
+<p>You can use this command to display the <a href="#grade-management">grade</a> of the specified module.</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+This command only shows the grade of the specified module in your currently selected timetable.<br>
+You can use the <a href="#student-grade-command"><code>student grade</code></a> command to view the grades of all modules together.
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>Format: <code>module grade MODULE_CODE</code></p>
+</div>
+<div class="paragraph">
+<p>Example:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>module grade CS2040</code></p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect4">
+<h5 id="setting-a-module-s-grade"><a class="link" href="#setting-a-module-s-grade">Setting a module&#8217;s grade</a></h5>
+<div class="paragraph">
+<p>You can use this command to set the <a href="#grade-management">grade</a> of the specified module.<br>
+The modules which you set the grades of using this command will be counted towards your academic performance (see the <a href="#student-grade-command"><code>student grade</code></a> command).</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+This command only modifies the grade of the module in the selected timetable. Other enrollments with the same module code in different semesters will not be affected.
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>Format: <code>module grade MODULE_CODE grade/GRADE</code></p>
+</div>
+<div class="paragraph">
+<p>Example:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>module grade CS2040 grade/A</code></p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect4">
+<h5 id="exercising-the-satisfactory-unsatisfactory-option-for-a-module"><a class="link" href="#exercising-the-satisfactory-unsatisfactory-option-for-a-module">Exercising the Satisfactory/Unsatisfactory option for a module</a></h5>
+<div class="paragraph">
+<p>You can declare that you have chosen to exercise the <a href="#su">Satisfactory/Unsatisfactory</a> for a module using the following variant of this command.<br>
+The modules which you set the grades of using this command are not counted towards your academic performance (see the <a href="#student-grade-command"><code>student grade</code></a> command). However, grade you specify will still be recorded.</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+This command only modifies the grade of the module in the selected timetable. Other enrollments with the same module code in different semesters will not be affected.
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>Format: <code>module grade MODULE_CODE su/GRADE</code></p>
+</div>
+<div class="paragraph">
+<p>Example:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>module grade IS1103 su/F</code></p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="student-grade-command"><a class="link" href="#student-grade-command">Viewing a student&#8217;s grade: <code>student grade</code></a></h4>
+<div class="paragraph">
+<p>You can use this command to display the <a href="#cap">Cumulative Average Point</a> of the selected student (see the <a href="#student-active-command"><code>student active</code></a> command).<br>
+Other statistics such as the number of modules declared as <a href="#su">Satisfactory/Unsatisfactory</a> are also shown.<br>
+You may also see a list of modules taken and their grades.</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+This command requires a student to be selected (using the <a href="#student-active-command"><code>student active</code></a> command).
+</td>
+</tr>
+</table>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+Use the <a href="#module-grade-command"><code>module grade</code></a> command to set the grade of modules in the currently selected timetable of a student.
+</td>
+</tr>
+</table>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+The same module can be added into multiple timetables of the same student. Refer to <a href="#timetable-management"><strong>Timetable Management</strong></a> to see how you can use timetables.
+</td>
+</tr>
+</table>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+Use this command to be informed of your academic progress and to plan ahead for difficult modules.
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>Format: <code>student grade</code></p>
+</div>
+<div class="paragraph">
+<p>Example:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>student grade</code></p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="contributions-to-the-developer-guide-in-draft"><a class="link" href="#contributions-to-the-developer-guide-in-draft">Contributions to the Developer Guide [IN DRAFT]</a></h2>
+<div class="sectionbody">
+<table class="tableblock frame-all grid-all spread">
+<colgroup>
+<col style="width: 100%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><em>Given below are sections I contributed to the Developer Guide. They showcase my ability to write technical documentation and the technical depth of my contributions to the project.</em></p></td>
+</tr>
+</tbody>
+</table>
+<div class="sect2">
+<h3 id="Implementation-Grade"><a class="link" href="#Implementation-Grade">Grade Management</a></h3>
+<div class="paragraph">
+<p>(Vincent wrote the section "Grade Management" below)</p>
+</div>
+<div class="paragraph">
+<p>The <strong>Grade Management</strong> feature allows users to record and keep track of their grades in their academic plan,
+helping them to make better academic plans.</p>
+</div>
+<div class="paragraph">
+<p>The <strong>Grade Management</strong> feature is made of two parts:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Module Grade Management</strong>: <code>module grade</code></p>
+</li>
+<li>
+<p><strong>Student Grade Display</strong>:  <code>student grade</code></p>
+</li>
+</ul>
+</div>
+<div class="sect3">
+<h4 id="module-grade-management"><a class="link" href="#module-grade-management">Module Grade Management</a></h4>
+<div class="paragraph">
+<p>The <strong>Module Grade Management</strong> allows users to record their grades.</p>
+</div>
+<div class="sect4">
+<h5 id="grade-representation"><a class="link" href="#grade-representation">Grade Representation</a></h5>
+<div class="paragraph">
+<p>Each enrollment in each timetable of a student stores a module grade. The module grade can be pending, have the Satisfactory/Unsatisfactory option exercised, or be graded.<br>
+More specifically:</p>
+</div>
+<div class="paragraph">
+<p>Each <code>Student</code> stores <code>Enrollment</code> objects in each value (of type <code>TimeTable</code>) of its <code>timeTableMap : TimeTableMap</code>.
+Each <code>Enrollment</code> is then 1-1 associated to exactly one <code>credit : Optional&lt;Grade&gt;</code>.</p>
+</div>
+<div class="paragraph">
+<p>When <code>credit</code> is equal to <code>Optional.&lt;Grade&gt;empty()</code>, the enrollment is considered to have a pending module grade.
+When <code>credit.isPresent()</code> is true, then the <code>Grade</code> stored within can be interpreted as follows:</p>
+</div>
+<div class="paragraph">
+<p><code>Grade</code> objects are immutable, and its fields therefore can have <code>public</code> access modifiers and are <code>final</code>. Suppose there is a <code>grade : Grade</code> object.
+The <code>grade.letterGrade : LetterGrade</code> represents the letter grade received for an enrollment, which can be one of: <br>
+<code>A+</code>, <code>A</code>, <code>A-</code>, <code>B+</code>, <code>B</code>, <code>B-</code>, <code>C+</code>, <code>C-</code>, <code>D+</code>, <code>D</code>, <code>F</code>, <code>CS</code>, <code>CU</code>, <code>W</code> or <code>EXE</code>.</p>
+</div>
+<div class="paragraph">
+<p>The <code>grade.isSu : boolean</code> represents whether the Satisfactory/Unsatisfactory option was exercised for the grade.
+For example, a student could choose to exercise the Satisfactory/Unsatisfactory option for a grade of "B+".<br>
+This is distinct from the <code>grade.letterGrade.isSu : boolean</code>, which determines if the letter grade itself is ungraded.
+This occurs for module grades such as "CS" and "CU".<br>
+When at least one of <code>grade.isSu</code> or <code>grade.letterGrade.isSu</code> is true, the <code>Grade</code> object does not count towards academic performance.</p>
+</div>
+<div class="paragraph">
+<p>The semantics of the <code>Optional&lt;Grade&gt;</code> object in an <code>Enrollment</code> can be summarised in the activity diagram below.</p>
+</div>
+<div class="imageblock" style="text-align: center">
+<div class="content">
+<img src="../images/GradeRepresentationActivityDiagram.png" alt="GradeRepresentationActivityDiagram">
+</div>
+<div class="title">Figure 2. Activity Diagram of Grade Representation</div>
+</div>
+</div>
+<div class="sect4">
+<h5 id="module-grade-commands"><a class="link" href="#module-grade-commands">Module Grade Commands</a></h5>
+<div class="paragraph">
+<p>The user views and sets grades of enrollments with a single command <code>"module grade"</code>. Parsing of the command is handled by <code>ModuleGradeCommandParser</code>.</p>
+</div>
+<div class="paragraph">
+<p>The <code>ModuleGradeCommandParser</code> parses the command string (e.g. <code>"CS2040 grade/A"</code>) into the preamble which contains the module code, and the arguments which contains the grade.<br>
+Then it returns a subclass of <code>ModuleGradeCommand</code> (itself a subclass of <code>ModuleCommand</code>) which is declared abstract.<br>
+Its concrete subclasses are <code>ModuleGradeViewCommand</code>, <code>ModuleGradeSetCommand</code> and <code>ModuleGradeResetCommand</code>.
+Refer to <a href="#Backend-SubCmd">Sub-Commands</a> to see how the <code>ModuleGradeCommandParser</code> is invoked by <code>ModuleCommandParser</code>.</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>To view a grade, the user uses the command format <code>"module grade MODULE_CODE"</code>. This will generate a <code>ModuleGradeViewCommand</code> object.</p>
+</li>
+<li>
+<p>To set a grade, there are two options. Both generate a <code>ModuleGradeSetCommand</code> object.</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>To set a grade counted towards academic performance, the user uses the command format <code>"module grade MODULE_CODE grade/GRADE"</code>.</p>
+</li>
+<li>
+<p>To exercise the Satisfactory/Unsatisfactory option, the user uses the command format <code>"module grade MODULE_CODE su/GRADE"</code>.</p>
+</li>
+</ol>
+</div>
+</li>
+<li>
+<p>To reset a grade, the user uses the command format <code>"module grade MODULE_CODE grade/"</code>. This will generate a <code>ModuleGradeResetCommand</code> object.</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>If both <code>module/GRADE</code> and <code>su/GRADE</code> parameters are supplied, the <code>ModuleGradeCommandParser</code> throws a <code>ParseException</code></p>
+</div>
+<div class="paragraph">
+<p>The <code>ModuleGrade*Command#execute(Model)</code> methods of the command objects generated then use <code>Model#getModuleGrade(ModuleCode)</code> and <code>Model#setModuleGrade(ModuleCode)</code> to get and set the enrollment&#8217;s grade, respectively.</p>
+</div>
+<div class="paragraph">
+<p>The following class diagram summarises the associations of classes involved in the <code>"module grade"</code> command.</p>
+</div>
+<div class="imageblock" style="text-align: center">
+<div class="content">
+<img src="../images/ModuleGradeCommandClassDiagram.png" alt="ModuleGradeCommandClassDiagram">
+</div>
+<div class="title">Figure 3. Class Diagram of <code>module grade</code> classes</div>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="student-grade-display"><a class="link" href="#student-grade-display">Student Grade Display</a></h4>
+<div class="paragraph">
+<p>The user may also view the cumulative grades of the selected <code>Student</code> using the <code>"student grade"</code> command.<br>
+The <code>StudentCommandParser</code> directly creates a <code>StudentGradeCommand</code> object (a subclass of <code>StudentCommand</code>), and all preamble and arguments are ignored.</p>
+</div>
+<div class="paragraph">
+<p><code>StudentGradeCommand#execute(Model)</code> then loops through all <code>StudentSemester</code> the selected student has using <code>Model#getStudentSemesters()</code>,
+which returns the <code>StudentSemester</code> in chronological order (as defined in <code>StudentSemester#compareTo()</code>).
+This ordering is more convenient to the user compared to the arbitrary ordering of internal to <code>TimeTableMap</code>.</p>
+</div>
+<div class="paragraph">
+<p>Using <code>Student#getTimeTable(StudentSemester) : TimeTable</code> and <code>TimeTable#getEnrollments() : UniqueEnrollmentList</code>, each enrollment of each timetable is iterated in order.
+Then <code>Enrollment#getGrade() : Optional&lt;Grade&gt;</code> is used to get the grade (pending, or S/U option exercised, or graded).
+Since <code>Grade#toString()</code> is overloaded, <code>StudentGradeCommand</code> only needs to handle the case where the <code>Optional&lt;Grade&gt;</code> is empty.</p>
+</div>
+<div class="paragraph">
+<p>The result text is accumulated to form a listing of modules taken and their grades.</p>
+</div>
+<div class="paragraph">
+<p>During iteration, a <code>CumulativeGrade</code> accumulator object is also used to tally up statistics related to the grades of the enrollments.
+<code>CumulativeGrade</code> handles the number of credits taken for graded, S/U-exercised and all <code>Grade</code> objects supplied.<br>
+<code>StudentGradeCommand</code> invokes the <code>CumulativeGrade#accumulate(Grade grade, int credits)</code> method, which handles all the logic necessary to correctly accumulate grade statistics.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="design-considerations"><a class="link" href="#design-considerations">Design Considerations</a></h4>
+<div class="sect4">
+<h5 id="aspect-syntax-of-code-module-grade-code-command"><a class="link" href="#aspect-syntax-of-code-module-grade-code-command">Aspect: Syntax of <code>"module grade"</code> command</a></h5>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Alternative 1: (current choice)</strong> Use a single command with <code>grade/</code> and <code>su/</code> prefixes which are mutually exclusive</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Pros: Only a single command is needed to handle both graded and S/U-exercised grades. Resetting an enrollment&#8217;s grade is also easy by allowing the user to specify an empty <code>grade/</code> argument.</p>
+</li>
+<li>
+<p>Cons: The syntax might be confusing to the user, and there is the edge case of both <code>grade/</code> and <code>su/</code> being supplied, which must be handled.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><strong>Alternative 2:</strong> Use separate sub-commands for setting, resetting and exercising the Satisfactory/Unsatisfactory option.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Pros: The syntax is simpler for the user because there is only one format for each command.</p>
+</li>
+<li>
+<p>Cons: Further commands have to be implemented, which causes code duplication.</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect4">
+<h5 id="aspect-representation-of-enrollment-grades"><a class="link" href="#aspect-representation-of-enrollment-grades">Aspect: Representation of enrollment grades</a></h5>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Alternative 1: (current choice)</strong> Use an <code>Optional&lt;Grade&gt;</code> which stores a <code>LetterGrade</code> and <code>isSu : boolean</code></p>
+<div class="ulist">
+<ul>
+<li>
+<p>Pros: Clearly distinguishes between a pending grade, a grade with Satisfactory/Unsatisfactory option exercised, and a grade which is counted towards academic performance.<br>
+Serialisation also directly corresponds to <code>null</code> for a pending grade.</p>
+</li>
+<li>
+<p>Cons: Handling the case where the grade is pending is not convenient for iteration.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><strong>Alternative 2:</strong> Use <code>Grade</code> to store whether the the grade is pending</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Pros: More convenient to use for developers.</p>
+</li>
+<li>
+<p>Cons: Serialisation is more complex, and more complex code is needed to handle pending grades in the implementation of <code>Grade</code>.</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="Implementation-PlannerModel"><a class="link" href="#Implementation-PlannerModel">Planner Model</a></h3>
+<div class="paragraph">
+<p>(Vincent wrote this section "Planner Model" below)</p>
+</div>
+<div class="paragraph">
+<p>The <a href="https://github.com/AY1920S2-CS2103T-W13-4/main/tree/master/src/main/java/seedu/planner/model/Planner.java"><code>Planner</code></a> class stores information about the App&#8217;s state.</p>
+</div>
+<div class="paragraph">
+<p>Many operations of the <code>Planner</code> must be inherently stateful because user operations include selecting students and timetables,
+which are then also known as the 'active student' and 'active timetable', respectively.
+These selection operations affect which students and timetables future operations use.
+The App needs access to the list of students, the selected student, and the selected timetable of the selected student need to be stored.</p>
+</div>
+<div class="paragraph">
+<p>As described in <strong>Student Model</strong> (in <a href="#Design-Model"><strong>Model Component</strong></a>), the <code>Student</code> stores information related to the timetables it has, which stores the enrollments for each timetable. The <code>Planner</code> only needs to retain indices/keys to the active student and semester.</p>
+</div>
+<div class="paragraph">
+<p>Therefore, <code>Planner</code> stores information including:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>UniqueStudentList : students</code>, which is the list of students in the planner.<br>
+Uniqueness (using <code>Student#isSameStudent</code>) of the students is enforced. This prevents two students from having the same name.</p>
+</li>
+<li>
+<p><code>int : activeStudentIndex</code>, an index for the currently selected <code>Student</code>.<br>
+This index refers to a valid student exactly when the index is within the bounds of the <code>students</code> list.<br>
+Therefore, no student is selected if the index is out of bounds of the <code>students</code> list.</p>
+</li>
+<li>
+<p><code>StudentSemester : activeSemester</code>, which corresponds to the currently selected <code>TimeTable</code> for the currently selected <code>Student</code>.
+This is <code>null</code> when there is no active timetable selected.<br>
+The <code>Planner</code> must have a valid <code>Student</code> selected in order to have a non-null <code>activeSemester</code>, which is an invariant enforced by <code>Planner#getActiveTimeTable()</code></p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>All of these fields have the <code>protected</code> access modifier to hide and encapsulate the data. To access this data, the following methods are used by the <code>Model</code>:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>Student getActiveStudent()</code> to get the active <code>Student</code>.<br>
+Note that the active <code>Student</code> is not stored directly, but with an index <code>activeStudentIndex</code> as previously mentioned.</p>
+</li>
+<li>
+<p><code>Student getActiveSemester()</code> to get the active <code>StudentSemester</code> corresponding to the active timetable.</p>
+</li>
+<li>
+<p><code>TimeTable getActiveTimeTable()</code> to get the active <code>TimeTable</code>.<br>
+This throws a <code>NoActiveStudentException</code> exception if  a <code>Student</code> is not already selected.<br>
+Note that the active <code>TimeTable</code> is not stored directly, but with <code>activeSemester</code> as previously mentioned.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>The following methods change which student or timetable is selected:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>void activateStudent(Student student)</code> selects the <code>student</code> in the <code>Planner</code><br>
+This throws a <code>StudentNotFoundException</code> exception if the <code>student</code> is not in the <code>Planner</code>.<br>
+Note that the student is considered the same as another student in the list if <code>Student#isSameStudent()</code> returns <code>true</code>.
+This allows activation of a student after its timetable is changed.</p>
+</li>
+<li>
+<p><code>void activateSemester(StudentSemester semester)</code> selects the timetable corresponding to <code>semester</code> as the active timetable.<br>
+This throws a <code>NoActiveStudentException</code> exception if a <code>Student</code> is not already selected.</p>
+</li>
+<li>
+<p><code>void activateValidStudent()</code> and <code>void activateValidSemester()</code> are similar, but may select any arbitrary valid student and timetable respectively.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>The following methods replace values stored by the student list:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>void setStudents(List&lt;Student&gt; students)</code> replaces the student list entirely. This does <em>not</em> reset the active student or active timetable, which may become invalidated.<br>
+Make sure to use <code>Planner#activateStudent(null)</code> if you wish to reset this too.</p>
+</li>
+<li>
+<p><code>void replaceActiveStudent(Student student)</code> replaces the currently selected <code>Student</code> with the specified <code>student</code> in the student list.</p>
+</li>
+<li>
+<p><code>void replaceActiveTimeTable(TimeTable timeTable)</code> replaces the currently selected <code>TimeTable</code> with the specified <code>timeTable</code> in the selected student&#8217;s <code>TimeTableMap</code>.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Many further methods modify properties of the selected student and timetable. Some examples are:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>void addExemptedModule(ModuleCode moduleCode)</code> which adds an exempted module with the given <code>moduleCode</code> to the active student.</p>
+</li>
+<li>
+<p><code>void addSemesterTimeTable(StudentSemester studentSemester)</code> which adds a timetable to the selected student using the specified <code>studentSemester</code>.</p>
+</li>
+<li>
+<p><code>void removeEnrollment(ModuleCode moduleCode)</code> which removes an enrollment with the given <code>moduleCode</code> from the selected timetable.</p>
+</li>
+</ul>
+</div>
+<div class="admonitionblock warning">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-warning" title="Warning"></i>
+</td>
+<td class="content">
+Avoid storing references to, and avoid directly calling methods with mutate <code>Student</code> or <code>Planner</code> objects retrieved from <code>Planner</code> or <code>Model</code>, as <code>Student</code> is mutable.<br>
+Consider using the methods of <code>Model</code> directly to interact with the Model instead.
+</td>
+</tr>
+</table>
+</div>
+<div class="sect3">
+<h4 id="design-considerations-2"><a class="link" href="#design-considerations-2">Design Considerations</a></h4>
+<div class="sect4">
+<h5 id="aspect-mutability-of-data-stored-in-code-planner-code"><a class="link" href="#aspect-mutability-of-data-stored-in-code-planner-code">Aspect: Mutability of data stored in <code>Planner</code></a></h5>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Alternative 1: (current choice)</strong> <code>Planner</code> stores references to mutable <code>Student</code> objects which store mutable <code>TimeTable</code> objects.<br>
+Mutation of <code>Student</code> objects is allowed, but only through getter/setter methods.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Pros: Mutability of <code>Student</code> enables developers to directly modify a <code>Student</code> directly with its methods. This is very convenient and decouples the implementation of <code>Student</code> from the implementation of <code>Planner</code>.<br>
+This also makes implementation of <code>Planner</code> significantly easier, especially due to the nesting of data structures.</p>
+</li>
+<li>
+<p>Cons: There are no guarantees of immutability, and operations which mutate a <code>Student</code> can affect the <code>Planner</code>. The <code>Planner</code> is unable to observe any changes made to the <code>Student</code> object stored.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><strong>Alternative 2:</strong> <code>Planner</code> stores a list of immutable <code>Student</code> objects, which also store immutable <code>TimeTable</code> objects.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Pros: Immutability of the <code>Student</code> objects is enforced. Accidental mutation of a stored <code>Student</code> using a reference is not possible without using methods of the <code>Planner</code>.</p>
+</li>
+<li>
+<p>Cons: Making modifications to a stored <code>Student</code> would require the instantiation of a new modified copy.<br>
+All involved classes (<code>Planner</code>, <code>Student</code>, <code>TimeTableMap</code>, <code>TimeTable</code>, etc.) would have to implement methods to mutate the required fields.</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="Implementation-Student"><a class="link" href="#Implementation-Student">Student Features</a></h3>
+<div class="paragraph">
+<p>(Vincent wrote the section "Student Features" below)</p>
+</div>
+<div class="paragraph">
+<p>The <strong>Student Feature</strong> allows users to manage multiple academic plans, add and remove enrollments, and check their degree progression and grades.
+As described in <strong>Student Model</strong> (in <a href="#Design-Model"><strong>Model Component</strong></a>), the <code>Student</code> stores information related to the timetables it has, which in turn stores the enrollments for each timetable. This section will focus on the management of <code>Student</code> using commands provided to the user.</p>
+</div>
+<div class="paragraph">
+<p>As users may want to do multiple operations on the same student, the user can select one student as the 'active student'.
+Many commands then operate on the 'active student'. Certain commands (such as <code>"student active"</code> and <code>"student remove"</code>) can cause the 'active student' to be deselected.  How this is stored is described in more detail in <a href="#Implementation-PlannerModel"><strong>Planner Model</strong></a>.</p>
+</div>
+<div class="paragraph">
+<p>The following sequence diagram shows how the <code>StudentAddCommand</code> works by showing interactions
+within the <code>Model</code> component when
+<code>Logic#execute("student add n/Alice major/CS")</code> is called.</p>
+</div>
+<div class="imageblock" style="text-align: center">
+<div class="content">
+<img src="../images/StudentAddCommandSequenceDiagram.png" alt="StudentAddCommandSequenceDiagram">
+</div>
+<div class="title">Figure 4. Sequence Diagram of <code>StudentAddCommand</code></div>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+The lifeline for <code>StudentAddCommand</code> should end at the destroy marker (X). However, due to a limitation of PlantUML, the lifeline reaches the end of diagram.
+</td>
+</tr>
+</table>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+For brevity, the <code>Student</code> that the <code>StudentAddCommand</code> was constructed with is denoted as <code>"s"</code>.<br>
+The actual parsing (i.e. <code>PlannerParser</code> calling <code>StudentCommandParser</code> which calls <code>StudentAddCommandParser</code>) is omitted for clarity.<br>
+For brevity, the parameter of <code>PlannerParser#parseCommand()</code> (which is just <code>"student add n/Alice major/CS"</code>) is also omitted.
+</td>
+</tr>
+</table>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+"Active student" and "selected student" are used interchangably to refer to the student the user has selected with the <code>"student active"</code> command.
+</td>
+</tr>
+</table>
+</div>
+<div class="sect3">
+<h4 id="student-management-2"><a class="link" href="#student-management-2">Student Management</a></h4>
+<div class="paragraph">
+<p>The user may add, remove, select and list students with the <code>"student add"</code>, <code>"student remove"</code>, <code>"student active"</code> and <code>"student list"</code> command strings, respectively.
+These correspond to the <code>StudentAddCommand</code>, <code>StudentRemoveCommand</code>, <code>StudentActiveCommand</code> and <code>StudentListCommand</code> classes.</p>
+</div>
+<div class="paragraph">
+<p>These sub-commands are parsed by the <code>Student*CommandParser</code> sub-command parsers, with the exception of <code>StudentListCommand</code> which is directly returned by <code>StudentCommandParser</code>.
+Refer to <a href="#Backend-SubCmd">Sub-Commands</a> to see how <code>Student*CommandParser</code> are invoked by <code>StudentCommandParser</code>.</p>
+</div>
+<div class="paragraph">
+<p>The sub-commands <code>"remove"</code> and <code>"active"</code> for the <code>"student"</code> command both require a unsigned positive integer <code>"INDEX"</code> in the command string.
+No arguments are allowed because they will be interpreted as being part of the <code>"INDEX"</code> string.<br>
+Similarly, the <code>"add"</code> sub-command allows exactly <code>"n/NAME major/MAJOR"</code> in its parameters.<br>
+This can be explained by <code>ArgumentTokenizer.tokenize()</code> only splitting arguments using the prefixes provided to it.
+Therefore, the commands correctly reject prefixes not specified in the command usage text, although the error message can be confusing
+since the user might expect that all prefixes are split before validation.</p>
+</div>
+<div class="paragraph">
+<p>Then, <code>Student*Command</code> objects are created and returned by the <code>Student*CommandParser#parse()</code>.
+* For the <code>"student add"</code> command, <code>StudentAddCommand</code> is constructed with a new <code>Student</code> object created from the <code>"NAME"</code> and <code>"MAJOR"</code> arguments provided.
+* For the <code>"student remove"</code> and <code>"student active"</code> commands, the <code>Student*Command</code> is constructed with an <code>Index</code> object representing the <code>"INDEX"</code> argument provided.</p>
+</div>
+<div class="sect4">
+<h5 id="adding-a-student"><a class="link" href="#adding-a-student">Adding a Student</a></h5>
+<div class="paragraph">
+<p>When the user enters the <code>"student add"</code> command, <code>StudentAddCommand#execute(Model model)</code> is executed. The following steps occur:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Checks if the <code>student : Student</code> is present in the <code>Model</code> using <code>Model#hasStudent(Student)</code>.</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>If so, then a <code>CommandException</code> is thrown.</p>
+</li>
+</ol>
+</div>
+</li>
+<li>
+<p>Otherwise, Add the <code>student</code> to the <code>Model</code> using <code>Model#addStudent(Student)</code>.</p>
+</li>
+<li>
+<p>Generate success message and return a <code>CommandResult</code>.</p>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect4">
+<h5 id="listing-students"><a class="link" href="#listing-students">Listing Students</a></h5>
+<div class="paragraph">
+<p>When the user enters the <code>"student list"</code> command, <code>StudentListCommand#execute(Model model)</code> is executed.<br>
+The list of students is obtained with <code>Model#getStudentList()</code>. The list of students is then formatted into a newline-separated, numbered list string,
+which is used in the success message.</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+This operation cannot fail in any valid <code>Planner</code> state.
+</td>
+</tr>
+</table>
+</div>
+</div>
+<div class="sect4">
+<h5 id="removing-and-selecting-a-student"><a class="link" href="#removing-and-selecting-a-student">Removing and Selecting a Student</a></h5>
+<div class="paragraph">
+<p>When the user enters the <code>"student remove"</code> or the <code>"student active"</code> command, <code>Student*Command#execute(Model model)</code> (corresponding to the sub-command) is executed.
+The following steps occur:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>The <code>Index</code> supplied to the <code>Student*Command</code> constructor is checked if it is in the bounds of the student list by comapring with <code>Model#getStudentList().size()</code>.</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>If not, a <code>CommandException</code> is thrown with the <code>Messages.MESSAGE_INVALID_STUDENT_DISPLAYED_INDEX</code> text.</p>
+</li>
+</ol>
+</div>
+</li>
+<li>
+<p>The <code>Student</code> corresponding to the <code>Index</code> is retrieved using <code>Model#getStudentList().get(int)</code>.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>For a <code>StudentRemoveCommand</code>, <code>Model#removeStudent(Student)</code> is called to remove the student.<br>
+By removing the reference to the <code>Student</code> in the list of students in <code>Planner</code>, all data related to the student is hence removed.</p>
+</li>
+<li>
+<p>For a <code>StudentRemoveCommand</code>, <code>Model#activateStudent(Student)</code> is called to select the student.</p>
+</li>
+</ul>
+</div>
+</li>
+</ol>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="design-considerations-3"><a class="link" href="#design-considerations-3">Design Considerations</a></h4>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Alternative 1: (current choice)</strong> <code>Student</code> is mutable.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Pros: Very convenient for developers to change <code>Student</code> objects imperatively.</p>
+</li>
+<li>
+<p>Cons: If references of the <code>Student</code> object are retained and then mutated unintentionally, the <code>Student</code> object in the <code>Planner</code> will also be mutated.<br>
+Hence, developers need to be careful about calling methods which mutate the <code>Student</code> object. This increases coupling between <code>Student</code> and <code>Planner</code>.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><strong>Alternative 2:</strong> <code>Student</code> is immutable.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Pros: Immutability is guaranteed. Accidental mutation of the <code>Planner</code> cannot occur with any stray references.</p>
+</li>
+<li>
+<p>Cons: Mutating nested data structures in the <code>Student</code> object (e.g. a single <code>Grade</code> of an <code>Enrollment</code> stored in a <code>TimeTable</code> of the <code>Student</code>) can be very messy.
+To mutate such data, <code>Student</code> or the caller needs to know about the implementation details of all involved nested classes (e.g. <code>TimeTableMap</code>, <code>StudentSemester</code>, <code>TimeTable</code>, <code>Enrollment</code>, etc.),
+which increase coupling significantly.<br>
+An alternative is that <code>Model</code> and <code>Planner</code> implements all the required mutation methods, handling said dependencies. This increases implementation complexity massively.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><strong>Alternative 3:</strong> <code>Student</code> is mutable, but only deep copies of <code>Student</code> are returned by <code>Model</code>.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Pros:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Immutability of the <code>Student</code> objects in the <code>Planner</code> is preserved. Accidental mutation of a returned copy does not result in mutation of the original stored in <code>Planner</code>.<br>
+Developers can use the mutation methods of <code>Student</code> directly without worrying of mutating <code>Planner</code> accidentally.<br></p>
+</li>
+<li>
+<p>The implementation is also less complex than full immutability.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Cons:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>The implementation of a deep copy must be handled carefully to prevent the same reference from being used anywhere in a copied class (and thus only providing a shallow copy).<br></p>
+</li>
+<li>
+<p>The usage of copies to mutate a <code>Student</code> in the <code>Planner</code> is also not as convenient, because the old copy must be swapped with a new one.<br>
+This can become problematic in future operations where the user is allowed to change identity fields (those affecting <code>Student#isSameStudent()</code>), such as changing the name of the student.
+Since the new student will have a different name from the original, a different method of identifying students modified will need to be used.</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="Implementation-Timetable"><a class="link" href="#Implementation-Timetable">Timetable Features</a></h3>
+<div class="paragraph">
+<p>(Vincent wrote the section "Timetable Features" below)</p>
+</div>
+<div class="paragraph">
+<p>The <strong>Timetable Feature</strong> allows users to manage timetables across semesters.</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+"Active timetable" and "selected timetable" are used interchangably to refer to the timetable the user has selected with the <code>"timetable active"</code> command.
+</td>
+</tr>
+</table>
+</div>
+<div class="sect3">
+<h4 id="timetable-implementation"><a class="link" href="#timetable-implementation">Timetable Implementation</a></h4>
+<div class="paragraph">
+<p>Each <code>Student</code> stores a <code>TimeTableMap</code> representing the timetables of the student. The <code>TimeTableMap</code> stores a key-value pair mapping a <code>StudentSemester</code> to a <code>TimeTable</code>.</p>
+</div>
+<div class="paragraph">
+<p>For each <code>TimeTableMap</code>, the <code>StudentSemester</code> keys must be unique. Therefore, there should not be duplicate semester keys.
+This corresponds to each semester in the <code>TimeTableMap</code> only having one timetable.<br>
+Note that this does not preclude multiple equal (<code>TimeTable#equals()</code>) but not identical (<code>==</code>) <code>TimeTable</code> objects
+from being associated to different <code>StudentSemester</code> objects. This happens whenever an empty timetable is added to two different semesters with the <code>"timetable add"</code> command.</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+A <code>StudentSemester</code> stores a <code>SemesterYear</code> instead of a <code>Semester</code> directly.<br>
+While storing the academic year (<code>acadYear</code>) is supported by <code>SemesterYear</code>, it is currently unused in the App&#8217;s code.
+Only <code>SemesterYear.sem</code> is used for storing the <code>Semester</code> represented.
+</td>
+</tr>
+</table>
+</div>
+</div>
+<div class="sect3">
+<h4 id="timetable-management-2"><a class="link" href="#timetable-management-2">Timetable Management</a></h4>
+<div class="paragraph">
+<p>Using the <code>"timetable add"</code>, <code>"timetable remove"</code>, <code>"timetable list"</code> and <code>"timetable active"</code> commands, users can manage the timetables of <code>Student</code> objects in the <code>Planner</code>.</p>
+</div>
+<div class="sect4">
+<h5 id="listing-timetables"><a class="link" href="#listing-timetables">Listing Timetables</a></h5>
+<div class="paragraph">
+<p>The <code>StudentSemester</code> objects corresponding to the student&#8217;s timetables can be listed using the <code>"timetable list"</code> command string.
+The <code>TimeTableCommandParser</code> directly creates a <code>TimeTableListCommand</code> object (a subclass of <code>TimeTableCommand</code>), and all preamble and arguments are ignored.</p>
+</div>
+<div class="paragraph">
+<p><code>TimeTableListCommand#execute(Model)</code> first checks if there is an active student with <code>Model#hasActiveStudent()</code>. If not, it throws a <code>CommandException</code> with text <code>Messages.MESSAGE_NO_STUDENT_ACTIVE</code>.<br>
+Then it gets all <code>StudentSemester</code> keys the selected student has in its <code>TimeTableMap</code> using <code>Model#getStudentSemesters()</code>,
+which returns the <code>StudentSemester</code> in chronological order (as defined in <code>StudentSemester#compareTo()</code>).
+This ordering is more convenient to the user compared to the arbitrary ordering of internal to <code>TimeTableMap</code>.</p>
+</div>
+<div class="paragraph">
+<p>This list is then passed to <code>StringUtil.wrapCollection(Collection)</code>, which formats the list of <code>StudentSemester</code> into a comma-separated string.
+The string is also wrapped for better readability by the user.</p>
+</div>
+</div>
+<div class="sect4">
+<h5 id="specifying-timetables-in-add-remove-and-active-commands"><a class="link" href="#specifying-timetables-in-add-remove-and-active-commands">Specifying Timetables in Add, Remove and Active Commands</a></h5>
+<div class="paragraph">
+<p>The sub-commands <code>"add"</code>, <code>"remove"</code> and <code>"active"</code> for the <code>"timetable"</code> command all require the arguments <code>"year/YEAR sem/SEM"</code>,
+which are the <code>DegreeYear</code> and <code>Semester</code> corresponding to the <code>StudentSemester</code> respectively.</p>
+</div>
+<div class="paragraph">
+<p>Both arguments are mandatory.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>If both arguments are missing, a <code>ParseException</code> will be thrown with the <code>MESSAGE_USAGE</code> string of the corresponding <code>TimeTable*Command</code>.<br>
+This provides instruction about the specific sub-command for the user.</p>
+</li>
+<li>
+<p>If any argument is missing, the <code>TimeTable*CommandParser</code> will throw a <code>ParseException</code>.<br>
+Validation of <code>"YEAR"</code> and <code>"SEM"</code> also occur. If <code>"YEAR"</code> is not a valid degree year (unsigned integer from 1 to 6 inclusive),
+or if <code>"SEM"</code> is not one of <code>"ONE", "TWO", "SPECIAL_ONE", "SPECIAL_TWO"</code>, then the sub-command parser will also throw a <code>ParseException</code>.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Once the command string is parsed, the <code>DegreeYear</code> and <code>Semester</code> will be used to create a <code>StudentSemester</code>, which is passed to the constructor of <code>TimeTable*Command</code>.</p>
+</div>
+</div>
+<div class="sect4">
+<h5 id="adding-removing-and-selecting-a-timetable"><a class="link" href="#adding-removing-and-selecting-a-timetable">Adding, Removing and Selecting a Timetable</a></h5>
+<div class="paragraph">
+<p>The <code>TimeTable*Command</code> classes then receive a <code>StudentSemester</code> in its constructor parameter.</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>All <code>TimeTable*Command#execute(Model)</code> methods first check that <code>Model#hasActiveStudent() : boolean</code> is <code>true</code>. This is needed because all these commands require an active student.<br>
+Similar to <code>TimeTableListCommand</code> (documented above in <strong>Listing Timetables</strong>), if there is no active student, a <code>CommandException</code> will be thrown.</p>
+</li>
+<li>
+<p>Further checks may occur for different timetable sub-commands:</p>
+<div class="ulist">
+<ul>
+<li>
+<p><code>TimeTableAddCommand</code> checks if there is no matching semester (with <code>Model#hasSemester()</code>), then adds the timetable with <code>Model#addSemesterTimeTable()</code></p>
+</li>
+<li>
+<p><code>TimeTableRemoveCommand</code> checks if there is a matching semester (with <code>Model#hasSemester()</code>), then removes the timetable with <code>Model#removeSemesterTimeTable()</code><br>
+By removing the reference to the <code>TimeTable</code> in the <code>TimeTableMap</code> of the selected <code>Student</code>, all data related to the timetable is hence removed.</p>
+</li>
+<li>
+<p><code>TimeTableActiveCommand</code> checks if there is a matching semester (with <code>Model#hasSemester()</code>), then sets the timetable as active with <code>Model#activateSemester()</code></p>
+</li>
+</ul>
+</div>
+</li>
+</ol>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="design-considerations-4"><a class="link" href="#design-considerations-4">Design Considerations</a></h4>
+<div class="sect4">
+<h5 id="aspect-storage-of-different-timetables-across-semesters"><a class="link" href="#aspect-storage-of-different-timetables-across-semesters">Aspect: Storage of different timetables across semesters</a></h5>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Alternative 1: (current choice)</strong> <code>TimeTableMap</code> is a <code>Map&lt;StudentSemester, TimeTable&gt;</code></p>
+<div class="ulist">
+<ul>
+<li>
+<p>Pros: Enforces uniqueness of a <code>TimeTable</code> value in the <code>TimeTableMap</code>, as explained <a href="#Implementation-Timetable">earlier</a>.</p>
+</li>
+<li>
+<p>Cons:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Serialisation of the <code>TimeTableMap</code> is more complex, requiring conversion to <code>JsonAdaptedTimeTableMap</code>, which is a list of <code>JsonAdaptedTimeTablePair</code>.
+Deserialisation of <code>Map&lt;K,V&gt;</code> cannot happen automatically for custom classes <code>K</code> due to some limitations of Jackson.<br></p>
+</li>
+<li>
+<p>Ordering of timetables in <code>TimeTableMap.entrySet()</code> is arbitrary, which may be inconvenient for users.</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><strong>Alternative 2:</strong> <code>TimeTableMap</code> is a <code>List</code> of <code>Pair&lt;StudentSemester, TimeTable&gt;</code></p>
+<div class="ulist">
+<ul>
+<li>
+<p>Pros:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Serialisation of <code>TimeTableMap</code> is straightforward.<br></p>
+</li>
+<li>
+<p>Ordering of <code>StudentSemester</code> can easily be enforced by sorting the <code>TimeTableMap</code> by <code>StudentSemester</code> after every operation.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Cons: Uniqueness constraint will have to be enforced by ensuring that insertions and deletions with a given <code>StudentSemester</code> key do not cause duplicate <code>StudentSemester</code> objects.</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="backend-debugging"><a class="link" href="#backend-debugging">Backend &amp; Debugging</a></h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="Backend-SubCmd"><a class="link" href="#Backend-SubCmd">Sub-Commands</a></h3>
+<div class="paragraph">
+<p>(Vincent wrote the section "Sub-Commands" below)</p>
+</div>
+<div class="paragraph">
+<p>Central to the command syntax of the App is the organisation of commands into sub-commands.
+Commands such as <code>"student"</code> show the relevant instructions for how to use its sub-commands, such as <code>"student add"</code>.
+This organisation of commands into a hierarchy improves usability by the user, and the organisation of the command implementations into packages.</p>
+</div>
+<div class="paragraph">
+<p>Many commands of the App are organized into 'parent commands', such as <code>"student"</code>.
+Its sub-commands are known as 'child commands' (e.g. <code>"student add"</code>).<br>
+'Parent commands' must have a corresponding <code>Parser</code> and a <code>Command</code>.<br>
+For example,
+the corresponding <code>Parser</code> subclasses for the <code>"student"</code> command and its sub-commands are in the
+<a href="https://github.com/AY1920S2-CS2103T-W13-4/main/tree/master/src/main/java/seedu/planner/logic/parser/student"><code>parser.student</code></a> package,
+while the <code>Command</code> subclasses are in the
+<a href="https://github.com/AY1920S2-CS2103T-W13-4/main/tree/master/src/main/java/seedu/planner/logic/commands/student"><code>commands.student</code></a> package.</p>
+</div>
+<div class="paragraph">
+<p>Note that for a sub-command (e.g. <code>"student add"</code>), the 'parent command' parser only parses the command word for the 'parent command' (e.g. <code>"student"</code>), while the 'child command' only parses the command word for its sub-command (e.g. <code>"add"</code>).</p>
+</div>
+<div class="paragraph">
+<p>The following sequence diagram shows the interaction between the <code>*Command</code> and <code>*CommandParser</code> classes of 'parent commands' and 'child commands' when a command string is parsed.<br>
+The 'parent command' is denoted as <code>"X"</code>, while the 'child command' is denoted as <code>"Y"</code>. The corresponding <code>Command</code> and <code>Parser</code> classes have been named accordingly.</p>
+</div>
+<div class="imageblock" style="text-align: center">
+<div class="content">
+<img src="../images/SubCommandSequenceDiagram.png" alt="SubCommandSequenceDiagram">
+</div>
+<div class="title">Figure 5. Sequence Diagram of Parent and Child Commands</div>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+The lifeline for <code>XCommandParser</code> and <code>XYCommandParser</code> should end at the destroy marker (X) but due to a limitation of PlantUML, the lifeline reaches the end of diagram.
+</td>
+</tr>
+</table>
+</div>
+<div class="sect3">
+<h4 id="parent-and-child-command-classes"><a class="link" href="#parent-and-child-command-classes">Parent and child command classes</a></h4>
+<div class="paragraph">
+<p>The 'parent command' class (e.g. <code>StudentCommand</code>) should be declared <code>abstract</code>, and directly extend the <code>Command</code> class.
+All sub-command classes should then extend the 'parent command' class (e.g. <code>StudentAddCommand</code> extends <code>StudentCommand</code>).</p>
+</div>
+<div class="paragraph">
+<p>Similar to non-hierarchical commands, 'parent command' classes may contain the fields <code>COMMAND_WORD</code> and <code>MESSAGE_USAGE</code>
+for use in the corresponding 'parent command' parsers. This decouples the message details of the command from the parsing of the commands.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="parent-command-parser-class"><a class="link" href="#parent-command-parser-class">Parent command parser class</a></h4>
+<div class="paragraph">
+<p>'Parent command' parsers are required to dispatch parsing to a sub-command. This is somewhat similar to the main <code>PlannerParser</code>.
+However, the splitting of the sub-command string into the sub-command name and its arguments
+is handled by <a href="https://github.com/AY1920S2-CS2103T-W13-4/main/tree/master/src/main/java/seedu/planner/logic/parser/SubCommandSplitter.java"><code>SubCommandSplitter.java</code></a>.
+This utility class handles some edge cases related to whitespace, and is preferred when implementing a 'parent command'.<br></p>
+</div>
+<div class="paragraph">
+<p>The <code>Parser</code> for the 'parent command' (e.g. <code>StudentCommandParser</code>) should implement the <code>Parser&lt;T&gt;</code> interface,
+where <code>T</code> is the class of the 'parent command' (e.g. <code>StudentCommand</code>).<br></p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+This is different from child <code>Command</code> classes, which should extend their parent <code>Command</code> class
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>To split the sub-command string into the sub-command and arguments, use:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>SubCommandSplitter(String userInput, String failureMessage)</code> to construct the <code>SubCommandSplitter</code> object</p>
+</li>
+<li>
+<p><code>SubCommandSplitter#getCommand()</code> to get the command string</p>
+</li>
+<li>
+<p><code>SubCommandSplitter#getSubCommand()</code> to get the arguments.<br>
+Note that it is possible to create a more deeply nested hierarchy of commands subclassing the <code>Command</code> subclass appropriately.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Parsing of a hierarchical command string (e.g.<code>"student add n/Alice major/CS"</code>) happens in the following manner:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p><a href="https://github.com/AY1920S2-CS2103T-W13-4/main/tree/master/src/main/java/seedu/planner/logic/parser/PlannerParser.java"><code>PlannerParser</code></a>
+removes <code>student</code> from the command string. A leading space followed by <code>"add n/Alice major/CS"</code> is passed to <code>StudentCommandParser</code>.</p>
+</li>
+<li>
+<p><code>StudentCommandParser</code> invokes methods in <code>SubCommandSplitter</code> which parses the remaining command string
+into the <code>"add"</code> command word and <code>"n/Alice major/CS"</code> as the arguments.</p>
+</li>
+<li>
+<p><code>StuentCommandParser</code> matches the <code>"add"</code> string and creates a new <code>StudentAddCommandParser</code> with the input string <code>"n/Alice major/CS"</code>.</p>
+</li>
+<li>
+<p><code>StudentAddCommandParser</code> can now parse the given preamble and arguments using
+<a href="https://github.com/AY1920S2-CS2103T-W13-4/main/tree/master/src/main/java/seedu/planner/logic/parser/ArgumentTokenizer.java"><code>ArgumentTokenizer</code></a></p>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect3">
+<h4 id="child-command-parser-class"><a class="link" href="#child-command-parser-class">Child command parser class</a></h4>
+<div class="paragraph">
+<p>'Child command' parsers should implement <code>Parser&lt;T&gt;</code>, where <code>T</code> is the 'child command' class.<br>
+'Child command' parsers are responsible for parsing the preamble and arguments of the input.</p>
+</div>
+<div class="paragraph">
+<p>It is not always necessary to create a parser for a 'child command'.
+If the 'child command' may ignore any given preamble or arguments provided by the user,
+the 'parent command' parser may simply return an instance of the 'child command' directly.<br></p>
+</div>
+<div class="paragraph">
+<p>For example, <code>StudentCommandParser</code> directly returns a <code>StudentListCommand</code> given the <code>"list"</code> command word.</p>
+</div>
+</div>
+</div>
+</div>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2020-04-12 08:53:53 UTC</div></div></div></body></html>
