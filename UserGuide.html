@@ -22,6 +22,7 @@
 <li><a href="#viewing-help-code-help-code">4.1.1. Viewing help: <code>help</code></a></li>
 <li><a href="#exiting-the-program-code-exit-code">4.1.2. Exiting the program: <code>exit</code></a></li>
 <li><a href="#status-command">4.1.3. Viewing your selections: <code>status</code></a></li>
+<li><a href="#reset-all-settings-and-data-code-clear-code">4.1.4. Reset all settings and data: <code>clear</code></a></li>
 </ul>
 </li>
 <li><a href="#student-management">4.2. Student Management</a>
@@ -83,12 +84,13 @@
 </li>
 <li><a href="#saving-your-data">4.10. Saving Your Data</a></li>
 <li><a href="#sharing-your-data-files-code-coming-in-v2-0-code">4.11. Sharing Your Data Files <code>[coming in v2.0]</code></a></li>
+<li><a href="#proposed-future-enhancements">4.12. Proposed Future Enhancements</a></li>
 </ul>
 </li>
 <li><a href="#faq">5. FAQ</a>
 <ul class="sectlevel2">
 <li><a href="#general-questions">5.1. General Questions</a></li>
-<li><a href="#feature-specific">5.2. Feature Specific</a></li>
+<li><a href="#feature-specific-questions">5.2. Feature Specific Questions</a></li>
 </ul>
 </li>
 <li><a href="#glossary">6. Glossary</a></li>
@@ -140,6 +142,9 @@
 <div class="sect1">
 <h2 id="how-to-use-this-user-guide"><a class="anchor" href="#how-to-use-this-user-guide"></a><a class="link" href="#how-to-use-this-user-guide">2. How To Use This User Guide</a></h2>
 <div class="sectionbody">
+<div class="paragraph">
+<p><em>(Danish wrote this section on "How To Use This User Guide" below.)</em></p>
+</div>
 <div class="paragraph">
 <p>NUSModPlnr is a timetable and enrollment management application, which help you add plans which consist of your degree programme and timetables for different semesters.</p>
 </div>
@@ -230,7 +235,7 @@ This symbol and corresponding box has tips from the team, which we think might b
 <i class="fa icon-warning" title="Warning"></i>
 </td>
 <td class="content">
-This symbol and corresponding box has warnings which you might want to be aware of.
+This symbol and corresponding box has warnings on possibly destructive commands or actions that cannot be undone.
 </td>
 </tr>
 </table>
@@ -242,6 +247,9 @@ This symbol and corresponding box has warnings which you might want to be aware 
 <div class="sect1">
 <h2 id="quick-start"><a class="anchor" href="#quick-start"></a><a class="link" href="#quick-start">3. Quick Start</a></h2>
 <div class="sectionbody">
+<div class="paragraph">
+<p><em>(Danish adapted this section on "Quick Start" below.)</em></p>
+</div>
 <div class="paragraph">
 <p>If you are looking to jump right into the application, you can follow the below quick steps to get the application up and running:</p>
 </div>
@@ -285,6 +293,9 @@ These steps are recommended only if you have experience in setting up the applic
 <div class="sect1">
 <h2 id="features"><a class="anchor" href="#features"></a><a class="link" href="#features">4. Features</a></h2>
 <div class="sectionbody">
+<div class="paragraph">
+<p><em>(Benjamin wrote the preamble of "Features" below.)</em></p>
+</div>
 <div class="paragraph">
 <p>These are the key features that are part of the NUSModPlnr!</p>
 </div>
@@ -461,6 +472,27 @@ Use the commands in <a href="#timetable-management"><strong>Timetable Management
 <p>Format: <code>status</code></p>
 </div>
 </div>
+<div class="sect3">
+<h4 id="reset-all-settings-and-data-code-clear-code"><a class="anchor" href="#reset-all-settings-and-data-code-clear-code"></a><a class="link" href="#reset-all-settings-and-data-code-clear-code">4.1.4. Reset all settings and data: <code>clear</code></a></h4>
+<div class="paragraph">
+<p>If you would like to start the NUS Module Planner from a clean slate, you can use the <code>clear</code> command.</p>
+</div>
+<div class="admonitionblock warning">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-warning" title="Warning"></i>
+</td>
+<td class="content">
+This command is irreversible and will erase all existing data! Please back up your data, should ever need to access it again.
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>Format: <code>exit</code></p>
+</div>
+</div>
 </div>
 <div class="sect2">
 <h3 id="student-management"><a class="anchor" href="#student-management"></a><a class="link" href="#student-management">4.2. Student Management</a></h3>
@@ -616,6 +648,9 @@ You may see the list of timetables the selected student has using the <a href="#
 </div>
 <div class="sect2">
 <h3 id="degree-management"><a class="anchor" href="#degree-management"></a><a class="link" href="#degree-management">4.3. Degree Management</a></h3>
+<div class="paragraph">
+<p><em>(Danish wrote this section on "Degree Management" below.)</em></p>
+</div>
 <div class="paragraph">
 <p>The following commands below are part of the application&#8217;s <strong>Degree Management</strong>, which allow you to declare important details of your academic plan, such as your <a href="#glossary">majors</a> and <a href="#glossary">specialisations</a>.</p>
 </div>
@@ -856,10 +891,13 @@ The <code>SEM</code> parameter must be one of the following: <code>ONE</code>, <
 <div class="sect2">
 <h3 id="calendar-interface"><a class="anchor" href="#calendar-interface"></a><a class="link" href="#calendar-interface">4.5. Calendar Interface</a></h3>
 <div class="paragraph">
+<p><em>(Hak Wee wrote this section on "Calendar Interface" below.)</em></p>
+</div>
+<div class="paragraph">
 <p>The application has a calendar feature to see the timetable schedule. Once a lesson has been added, it will show up in calendar after pressing the launch calendar button.</p>
 </div>
 <div class="paragraph">
-<p>You can see the <strong>Launch Calendar Button</strong> (<em>Figure X. below</em>).</p>
+<p>You can see the <strong>Launch Calendar Button</strong> (<em>Figure 3. below</em>).</p>
 </div>
 <div class="imageblock" style="text-align: center">
 <div class="content">
@@ -873,7 +911,7 @@ The <code>SEM</code> parameter must be one of the following: <code>ONE</code>, <
 <p>There are two ways to view the Calendar. You can click on the launch calendar to see the lessons that you have added. Another way is to click on the semester button in the module description page to see the lessons available.</p>
 </div>
 <div class="paragraph">
-<p>You can see the <strong>Calendar Schedule</strong> (<em>Figure X. below</em>).</p>
+<p>You can see the <strong>Calendar Schedule</strong> (<em>Figure 4. below</em>).</p>
 </div>
 <div class="imageblock" style="text-align: center">
 <div class="content">
@@ -886,11 +924,14 @@ The <code>SEM</code> parameter must be one of the following: <code>ONE</code>, <
 <div class="sect2">
 <h3 id="module-interface-and-search"><a class="anchor" href="#module-interface-and-search"></a><a class="link" href="#module-interface-and-search">4.6. Module Interface and Search</a></h3>
 <div class="paragraph">
+<p><em>(Hak Wee wrote this section on "Module Interface and Search" below.)</em></p>
+</div>
+<div class="paragraph">
 <p>When the application is first launched, you can see all the modules available to you in NUS. You can scroll through all the modules
 to find the desirable module to take for the semester.</p>
 </div>
 <div class="paragraph">
-<p>You can see the <strong>Module Panel Screen</strong> (<em>Figure X. below</em>).</p>
+<p>You can see the <strong>Module Panel Screen</strong> (<em>Figure 5. below</em>).</p>
 </div>
 <div class="imageblock" style="text-align: center">
 <div class="content">
@@ -904,7 +945,7 @@ to find the desirable module to take for the semester.</p>
 <p>You can click on any of the modules to see the module description. It will launch a separate screen to show you the details.</p>
 </div>
 <div class="paragraph">
-<p>Here is the <strong>Module Description Screen</strong> (<em>Figure X. below</em>).</p>
+<p>Here is the <strong>Module Description Screen</strong> (<em>Figure 6. below</em>).</p>
 </div>
 <div class="imageblock" style="text-align: center">
 <div class="content">
@@ -919,7 +960,7 @@ to find the desirable module to take for the semester.</p>
 <p>You can use the search bar to search for any module based on their module code or module name. Click on the search button to begin the search.</p>
 </div>
 <div class="paragraph">
-<p>Here is the <strong>Search Screen</strong> (<em>Figure X. below</em>).</p>
+<p>Here is the <strong>Search Screen</strong> (<em>Figure 7. below</em>).</p>
 </div>
 <div class="imageblock" style="text-align: center">
 <div class="content">
@@ -932,11 +973,14 @@ to find the desirable module to take for the semester.</p>
 <div class="sect2">
 <h3 id="module-management"><a class="anchor" href="#module-management"></a><a class="link" href="#module-management">4.7. Module Management</a></h3>
 <div class="paragraph">
+<p><em>(Benjamin wrote this section on "Module Management" below.)</em></p>
+</div>
+<div class="paragraph">
 <p>The following commands below are part of the application&#8217;s <strong>Module Management</strong>, which allow you manage the modules of your academic plan.</p>
 </div>
 <div class="paragraph">
 <p>Do note that you can click on the modules to see the module description.
-When managing your <a href="#module-management">modules</a>, you will be able to see the <strong>Module View Screen</strong> (<em>Figure 2. below</em>).</p>
+When managing your <a href="#module-management">modules</a>, you will be able to see the <strong>Module View Screen</strong> (<em>Figure 8. below</em>).</p>
 </div>
 <div class="imageblock" style="text-align: center">
 <div class="content">
@@ -1089,7 +1133,7 @@ All the following commands require a <a href="#timetable-management">timetable</
 <p>The following commands below are part of the application&#8217;s <strong>Lesson Management</strong>, which allows you manage the lessons for the academic planning. You are highly encouraged to use this <strong>Lesson Management</strong> feature to explore different academic plans.</p>
 </div>
 <div class="paragraph">
-<p>When managing lessons, you will be able to see the <strong>Lesson View Screen</strong> below.</p>
+<p>When managing lessons, you will be able to see the <strong>Lesson View Screen</strong> (<em>Figure 9. below</em>).</p>
 </div>
 <div class="imageblock" style="text-align: center">
 <div class="content">
@@ -1376,6 +1420,9 @@ Use this command to be informed of your academic progress and to plan ahead for 
 <div class="sect2">
 <h3 id="saving-your-data"><a class="anchor" href="#saving-your-data"></a><a class="link" href="#saving-your-data">4.10. Saving Your Data</a></h3>
 <div class="paragraph">
+<p><em>(Benjamin adapted this section on "Saving Your Data" below.)</em></p>
+</div>
+<div class="paragraph">
 <p>NUS Module Planner data is saved to the hard disk automatically after any command that changes the data.<br></p>
 </div>
 <div class="paragraph">
@@ -1388,11 +1435,51 @@ Use this command to be informed of your academic progress and to plan ahead for 
 <p>Coming soon to you!</p>
 </div>
 </div>
+<div class="sect2">
+<h3 id="proposed-future-enhancements"><a class="anchor" href="#proposed-future-enhancements"></a><a class="link" href="#proposed-future-enhancements">4.12. Proposed Future Enhancements</a></h3>
+<div class="paragraph">
+<p><em>(Benjamin wrote this section on "Proposed Future Enhancements" below.)</em></p>
+</div>
+<div class="paragraph">
+<p>NUS Module Planner has a lot more potential to grow!</p>
+</div>
+<div class="paragraph">
+<p>Below are some of the other great features we think can be implemented in v2.0 onward:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Module Viewer with Search</strong> - Other than just searching for modules, search for their content instead, such as modules that deal with <em>Heat Transfer</em> or <em>Geology</em>.</p>
+</li>
+<li>
+<p><strong>Timetable Planner with Friends</strong> - Instead of just viewing timetables of different students (<em>i.e. friends</em>) separately, be able to overlay them in one <em>"Timetable View"</em>, for easier group planning.</p>
+</li>
+<li>
+<p><strong>Requirements Double-Upper</strong> - Instead of just one <code>Major</code>, handle double <code>Major</code> programme students, or even those with Minors.</p>
+</li>
+<li>
+<p><strong>Module Popularity Prediction</strong> - Get and analyse historic data from NUSMods about module uptake, so that students do not have to plan for modules that would be overly subscribed.</p>
+</li>
+<li>
+<p><strong>Support for Overseas Exchange and University Town College Programmes</strong> - Be able to plan for special modules only offered in these programmes, if a student is enrolled in them.</p>
+</li>
+<li>
+<p><strong>Live Module Data</strong> - Get the latest Module Data available from NUS Mods and plan your Semester before it starts.</p>
+</li>
+<li>
+<p><strong>Module Data History</strong> - View historical data on Module enrollments and decide if when you want to take a certain <code>Module</code>.</p>
+</li>
+</ul>
+</div>
+</div>
 </div>
 </div>
 <div class="sect1">
 <h2 id="faq"><a class="anchor" href="#faq"></a><a class="link" href="#faq">5. FAQ</a></h2>
 <div class="sectionbody">
+<div class="paragraph">
+<p><em>(Hak Wee populated this section on "FAQ" below.)</em></p>
+</div>
 <div class="paragraph">
 <p>This provides a list of <strong>Frequently Asked Questions (FAQ)</strong> that you may have.</p>
 </div>
@@ -1408,18 +1495,18 @@ Use this command to be informed of your academic progress and to plan ahead for 
 </div>
 </div>
 <div class="sect2">
-<h3 id="feature-specific"><a class="anchor" href="#feature-specific"></a><a class="link" href="#feature-specific">5.2. Feature Specific</a></h3>
+<h3 id="feature-specific-questions"><a class="anchor" href="#feature-specific-questions"></a><a class="link" href="#feature-specific-questions">5.2. Feature Specific Questions</a></h3>
 <div class="paragraph">
 <p><strong>Q</strong>: Who can I add as students?<br>
 <strong>A</strong>: You can add yourself to track your degree progression, or add your friends as well, if you would like to sync your academic plan together.</p>
 </div>
 <div class="paragraph">
-<p><strong>Q</strong>: Why is there alphabets beside the lesson number in the calendar?<br>
-<strong>A</strong>: NUS provides a alphabet code to each lesson type. Type in the lesson number without the lesson number for the lesson management section.</p>
+<p><strong>Q</strong>: Why are there letters beside the lesson number in the calendar?<br>
+<strong>A</strong>: NUS assigns letter codes to each lesson type for their internal management. Nonetheless, you only need to type the lesson number when managing your lessons.</p>
 </div>
 <div class="paragraph">
-<p><strong>Q</strong>: Why is the lessons not shifted for each timetable?<br>
-<strong>A</strong>: Lessons is tagged to the active students so you can always see what lesson you took from the previous semesters.</p>
+<p><strong>Q</strong>: Why are the lessons not shifted for each respective timetable?<br>
+<strong>A</strong>: Lessons are tagged to the <code>Active Student</code>, to allow you to see historical data on all lessons you have taken in previous semesters.</p>
 </div>
 <div class="admonitionblock tip">
 <table>
@@ -1542,6 +1629,9 @@ If you need more in-depth information on a specific command, you can <span class
 </li>
 <li>
 <p><strong>Viewing your selections</strong>: <code>status</code></p>
+</li>
+<li>
+<p><strong>Resetting all settings and data</strong>: <code>clear</code></p>
 </li>
 </ul>
 </div>
@@ -1684,4 +1774,4 @@ If you need more in-depth information on a specific command, you can <span class
 </div>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2020-04-12 11:11:47 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2020-04-12 12:15:59 UTC</div></div></div></body></html>
