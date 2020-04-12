@@ -1739,7 +1739,7 @@ This provides instruction about the specific sub-command for the user.</p>
 <li>
 <p>If any argument is missing, the <code>TimeTable*CommandParser</code> will throw a <code>ParseException</code>.<br>
 Validation of <code>"YEAR"</code> and <code>"SEM"</code> also occur. If <code>"YEAR"</code> is not a valid degree year (unsigned integer from 1 to 6 inclusive),
-or if <code>"SEM"</code> is not one of <code>"ONE", "TWO", "SPECIAL_ONE", "SPECIAL_TWO"</code>, then the sub-command parser will also throw a <code>ParseException</code>.</p>
+or if <code>"SEM"</code> is not one of <code>"1", "2", "st1", "st2"</code>, then the sub-command parser will also throw a <code>ParseException</code>.</p>
 </li>
 </ul>
 </div>
@@ -3370,11 +3370,11 @@ Expected: Similar to previous.</p>
 <p>Prerequisites: Select a plan using the <code>student active</code> command. A plan will be set as the active plan. Plan should be empty.</p>
 </li>
 <li>
-<p>Test case: <code>timetable add year/1 sem/ONE</code><br>
+<p>Test case: <code>timetable add year/1 sem/1</code><br>
 Expected: Timetable is added to the plan. Details of the added timetable are shown in the status message. Timestamp in the status bar is updated.</p>
 </li>
 <li>
-<p>Test case: <code>timetable add year/1 sem/THREE</code><br>
+<p>Test case: <code>timetable add year/1 sem/3</code><br>
 Expected: No timetable is added. Error details are shown in the status message. Status bar remains the same.</p>
 </li>
 <li>
@@ -3389,10 +3389,10 @@ Expected: Similar to previous.</p>
 <div class="olist loweralpha">
 <ol class="loweralpha" type="a">
 <li>
-<p>Prerequisites: Select a plan using the <code>student active</code> command. Add a timetable using the <code>timetable add year/1 sem/ONE</code> command</p>
+<p>Prerequisites: Select a plan using the <code>student active</code> command. Add a timetable using the <code>timetable add year/1 sem/1</code> command</p>
 </li>
 <li>
-<p>Test case: <code>timetable add year/1 sem/ONE</code><br>
+<p>Test case: <code>timetable add year/1 sem/1</code><br>
 Expected: No timetable is added. Error details are shown in the status message. Status bar remains the same.</p>
 </li>
 </ol>
@@ -3807,4 +3807,4 @@ Expected: Shows the GUI with a set of sample plans.</p>
 <style type="text/css">.imageblock > .title { text-align: center; !important; }</style>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2020-04-12 17:01:08 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2020-04-12 18:32:09 UTC</div></div></div></body></html>
