@@ -21,105 +21,175 @@
 </div>
 </div>
 <div class="sect1">
-<h2 id="summary-of-contributions"><a class="link" href="#summary-of-contributions">Summary of contributions</a></h2>
+<h2 id="summary-of-contributions"><a class="link" href="#summary-of-contributions">Summary of Contributions</a></h2>
 <div class="sectionbody">
 <div class="ulist">
 <ul>
 <li>
-<p><strong>Major enhancement</strong>: added <strong>Graduation Requirement implementations and associated commands</strong>.</p>
+<p><strong>Major Feature: Co-Developed <code>Graduation Requirements</code> implementations with associated commands</strong>.</p>
 <div class="ulist">
 <ul>
 <li>
-<p>What it does: This feature allows students to ensure their Graduation Requirements are correct as of the NUS Website.</p>
+<p><strong>What it does</strong>: This feature allows students to ensure their <code>Graduation Requirements</code> are correct as of the NUS Website, or in this case, for the requirements of NUS Computing&#8217;s <strong>Computer Science</strong> and <strong>Information Systems</strong> <code>Majors</code> for Undergraduate Students.</p>
 </li>
 <li>
-<p>Justification: This is a core feature, as the ability to ensure that modules are added and fulfil the criteria of a student&#8217;s graduation requirements is monumental to their module planning.</p>
+<p><strong>Justification</strong>: This is a core feature, as the ability to ensure that modules are added and fulfil the criteria of a student&#8217;s graduation requirements is monumental to their module planning.</p>
 </li>
 <li>
-<p>Highlights: This enhancement affects existing commands and commands to be added in future. It required an in-depth analysis of design alternatives. The implementation too was challenging as it required changes to existing commands.</p>
+<p><strong>Highlights</strong>: This feature <strong>is the core feature</strong> of the entire application, which is to allow students to better plan their modules better across semesters. This feature will also greatly affect existing commands and commands to be added in future.</p>
 </li>
 <li>
-<p>Credits: This feature was implemented with existing library support of the Java 11 bundle.</p>
+<p><strong>Credits</strong>: This feature was co-developed with <em><a href="https://github.com/Capeguy">@Capeguy</a></em>.</p>
 </li>
 </ul>
 </div>
 </li>
 <li>
-<p><strong>Major enhancement</strong>: Implemented Major and Major Set Command, for Users who wish to change their Student&#8217;s Major retroactively</p>
+<p><strong>Major Feature: Implemented <code>Major</code> and <code>Major Set</code> Command, for Users who wish to change their Student&#8217;s Major retroactively.</strong></p>
 <div class="ulist">
 <ul>
 <li>
-<p>What it does: This feature allows students to change their Major, with CS and IS Majors currently supported</p>
+<p><strong>What it does</strong>: This feature allows students to change their <code>Major</code>, with <em>Computer Science (CS)</em> and <em>Information Systems (IS)</em> Majors currently supported.</p>
 </li>
 <li>
-<p>Justification:</p>
+<p><strong>Justification</strong>: This feature allows students to ensure that their <code>Graduation Requirements</code> match the <code>Major</code> that they are taking for their course.</p>
 </li>
 <li>
-<p>Highlights:</p>
-</li>
-<li>
-<p>Credits:</p>
+<p><strong>Highlights</strong>: This feature was interesting to implement because of how the different majors were listed on the NUS Website (particularly for NUS Computing).</p>
 </li>
 </ul>
 </div>
 </li>
 <li>
-<p><strong>Major enhancement</strong>: Worked with @Capeguy to ensure Modules Loaded from JSON files contained the right information to be used for the application</p>
+<p><strong>Major Feature: Co-Developed the foundational code for <code>Planner</code> and associated classes for all other advanced features to be built upon.</strong></p>
 <div class="ulist">
 <ul>
 <li>
-<p>What it does:</p>
+<p><strong>What it does</strong>: allows the other developers to work around a baseline formed around the framework provided by AddressBook-Level3.</p>
 </li>
 <li>
-<p>Justification:</p>
+<p><strong>Justification</strong>: This initial refactoring of AddressBook to Planner is important and needs to be done synchronously and before other portions of code can be developed as this forms the basis of which other features rely on.</p>
 </li>
 <li>
-<p>Highlights:</p>
+<p><strong>Highlights</strong>: This feature blocks the entire application development and needed to be completed fast so as not to impede progress of other team members. As this was a lot to do at once, I have had the help of <a href="https://github.com/Capeguy">@Capeguy</a> and @gruntultra in order to push this foundational code out.</p>
 </li>
 <li>
-<p>Credits:</p>
+<p><strong>Credits</strong>: The original code from AddressBook-Level3, <a href="https://github.com/Capeguy">@Capeguy</a> and <a href="https://github.com/gruntultra">@gruntultra</a>.</p>
 </li>
 </ul>
 </div>
 </li>
 <li>
-<p><strong>Major feature</strong>: Co-Developed the foundational code for Planner and associated classes for all other advanced features to be built upon.</p>
+<p><strong>Major Enhancement: Worked with <a href="https://github.com/Capeguy">@Capeguy</a> to ensure all <code>Module</code> entities loaded from all JSON files contained the right information to be used in the application.</strong></p>
 <div class="ulist">
 <ul>
 <li>
-<p>What it does: allows the other developers to work around a baseline formed around the framework provided by AddressBook-Level3.</p>
+<p><strong>What it does</strong>: Ensures that the <code>Module</code> entities are properly populated with the right data from the JSON files created and retrieved from NUSMods.</p>
 </li>
 <li>
-<p>Justification: This initial refactoring of AddressBook to Planner is important and needs to be done synchronously and before other portions of code can be developed as this forms the basis of which other features rely on.</p>
+<p><strong>Justification</strong>: This aspect was important as aside from allowing the application to work offline, the data needed to be properly parsed in order to be able to populate the <code>Module</code> entities in the application.</p>
 </li>
 <li>
-<p>Highlights: This feature blocks the entire application development and needed to be completed fast so as not to impede progress of other team members. As this was a lot to do at once, I have had the help of @Capeguy and @gruntultra in order to push this foundational code out.</p>
+<p><strong>Highlights</strong>: This was an interesting enhancement to complete because of the complexity in the amount of data that can be retrieved from the NUSMods API via JSON.</p>
 </li>
 <li>
-<p>Credits: The original code from AddressBook-Level3, @Capeguy, @gruntultra</p>
+<p><strong>Credits</strong>: This feature was co-developed with <a href="https://github.com/Capeguy">@Capeguy</a>.</p>
 </li>
 </ul>
 </div>
 </li>
 <li>
-<p><strong>Minor enhancement</strong>: added and modified a significant amount of the Test Cases and Unit Tests for the NUS Module Planner.</p>
+<p><strong>Minor Enhancement</strong>: Added and modified a significant amount of the Test Cases and Unit Tests for the NUS Module Planner.</p>
 </li>
 <li>
-<p><strong>Minor enhancement</strong>: created helper classes to faciliate easier testing of models such as TypicalModule and ModuleBuilder</p>
+<p><strong>Minor Enhancement</strong>: Created helper classes to facilitate easier testing of models such as TypicalModule and ModuleBuilder</p>
 </li>
 <li>
-<p><strong>Code contributed</strong>: Please see the <a href="++https://nus-cs2103-ay1920s2.github.io/tp-dashboard/#=undefined&amp;search=danamic">RepoSense Report here</a>!</p>
+<p><strong>Code Contributed</strong>: Please see the <a href="++https://nus-cs2103-ay1920s2.github.io/tp-dashboard/#=undefined&amp;search=danamic">RepoSense Report here</a>!</p>
 </li>
 <li>
-<p><strong>Other contributions</strong>:</p>
+<p><strong>Other Contributions</strong></p>
 <div class="ulist">
 <ul>
 <li>
-<p>Project management:</p>
+<p><strong>Project Management</strong></p>
 <div class="ulist">
 <ul>
 <li>
-<p>Managed releases <code>v1.0</code> - <code>v1.4</code> (4 Releases) on GitHub</p>
+<p>Managed <em>Milestones</em>, <em>Project Boards</em> and <em>Issue Tracker</em> for all <code>v1.0</code> - <code>v1.4</code> <em>(5 Versions)</em> on GitHub.</p>
+</li>
+<li>
+<p>Managed releases for <code>v1.3</code> and <code>v1.4</code> <em>(2 Releases)</em> on GitHub.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><strong>Enhancements to Existing Features</strong>:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Refactoring of AddressBook-Level3 to accommodate application use case</p>
+</li>
+<li>
+<p>Wrote additional tests for existing features to increase coverage from 88% to 92% (<a href="https://github.com/AY1920S2-CS2103T-W13-4/main/commit/de2f4905ab4fca21123e791c89f3a1492905083d">#1</a>, <a href="https://github.com/AY1920S2-CS2103T-W13-4/main/commit/b551d956232e451cd3ba28f622fc476d582d5541">#2</a>)</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><strong>Documentation</strong>:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Generated diagrams to enhance readability of Developer Guide</p>
+</li>
+<li>
+<p>Contributed to Features and Module Management sections of User Guide</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><strong>Community</strong>:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>PRs reviewed: <a href="https://github.com/AY1920S2-CS2103T-W13-4/main/pulls?q=is%3Apr+is%3Aclosed+reviewed-by%3ADANamic">Approved &amp; Reviewed PRs</a>.</p>
+</li>
+<li>
+<p>Reported bugs and suggestions for other teams in the class: <a href="https://github.com/nus-cs2103-AY1920S2/forum/issues?q=is%3Aissue+is%3Aopen+commenter%3ADANamic">CS2103T Forum</a> and <a href="https://github.com/DANamic/ped/issues">CS2103T PED</a>.</p>
+</li>
+<li>
+<p>Worked with <a href="https://github.com/Capeguy">@Capeguy</a> and <a href="https://github.com/gruntultra">@gruntultra</a> to perform initial codebase refactoring to allow for the easier building of features into the application (<a href="https://github.com/AY1920S2-CS2103T-W13-4/main/commit/84794318b47b811b4e93240887f65cd868f0b0bc">#1</a>, <a href="https://github.com/AY1920S2-CS2103T-W13-4/main/commit/b2f17711a82642ba5105aaf712630450a76dcc97">#2</a>, <a href="https://github.com/AY1920S2-CS2103T-W13-4/main/commit/1ca9337db8a5e5f707f7d48ff9e06d990d1c611a">#3</a>, <a href="https://github.com/AY1920S2-CS2103T-W13-4/main/commit/090e80893484b50829379f05e9229fb9be65f8db">#4</a>).</p>
+</li>
+<li>
+<p>Worked with <a href="https://github.com/Capeguy">@Capeguy</a> on <code>GraduationRequirements</code> which the core functionality of the application, modelling complex real life graduation requirements and implemented different types of <code>GraduationRequirements</code>, each with their own fulfilment logic (<a href="https://github.com/AY1920S2-CS2103T-W13-4/main/commit/634eb17ceade1209666d1818f53cb40d950f2ac7">#1</a>, <a href="https://github.com/AY1920S2-CS2103T-W13-4/main/commit/350227ff50ce7096cfeed8481af74dd2f197c18c">#2</a>, <a href="https://github.com/AY1920S2-CS2103T-W13-4/main/commit/4951405dfd7bdc78056fbc611362c8e56df0e619">#3</a>, <a href="https://github.com/AY1920S2-CS2103T-W13-4/main/commit/1742fa442116983afd421e93e29df5a560bd52d8">#4</a>, <a href="https://github.com/AY1920S2-CS2103T-W13-4/main/commit/9f550d59a22a39ead66d68e54abd258622050363">#5</a>, <a href="https://github.com/AY1920S2-CS2103T-W13-4/main/commit/fce1cfc53e7be1b2fa58162595ce4bf0d5c014da">#6</a>).</p>
+</li>
+<li>
+<p>Implemented <code>MajorCommand</code>, <code>MajorStatusCommand</code> and <code>MajorSetCommand</code> to allow a <code>Student</code> to have his/her <code>Major</code> set, followed by a listing of graduation requirements and their fulfilments (<a href="https://github.com/AY1920S2-CS2103T-W13-4/main/commit/2c45d815f807fc288ced21d9d898794fd0ca23d5">#1</a>, <a href="https://github.com/AY1920S2-CS2103T-W13-4/main/commit/0900e3cf39724a1ab8edfa1bfa2bc9ad2e128697">#2</a>).</p>
+</li>
+<li>
+<p>Implemented both <code>ComputerScienceProgramme</code> and <code>InformationSystemsProgramme</code> which contains 13 specialisations, each with a different list of primary and elective modules (<a href="https://github.com/AY1920S2-CS2103T-W13-4/main/commit/92f7b933664fcc3c742dd7fd81f59fdc2c8e12d6">#1</a>, <a href="https://github.com/AY1920S2-CS2103T-W13-4/main/commit/92f7b933664fcc3c742dd7fd81f59fdc2c8e12d6">#2</a>).</p>
+</li>
+<li>
+<p>Written JavaDocs and Test Cases for relevant classes (<a href="https://github.com/AY1920S2-CS2103T-W13-4/main/commit/9d58114f93f4080496fc570d1e55e3b8b7823554">#1</a>, <a href="https://github.com/AY1920S2-CS2103T-W13-4/main/commit/4b1ff8efc1af8316927ee485cc4c118595aa13e1">#2</a>).</p>
+</li>
+<li>
+<p>Fixed CheckStyle issues caused by refactoring (<a href="https://github.com/AY1920S2-CS2103T-W13-4/main/commit/0900e3cf39724a1ab8edfa1bfa2bc9ad2e128697">#1</a>, <a href="https://github.com/AY1920S2-CS2103T-W13-4/main/commit/f8372ba0c54e316f74e978b00eca922231b4caf6">#2</a>, <a href="https://github.com/AY1920S2-CS2103T-W13-4/main/commit/ae9b522414e14f1e487a076c981fa8ae577a927e">#3</a>, <a href="https://github.com/AY1920S2-CS2103T-W13-4/main/commit/cdbfdc4a11b233a7cbf4137939da509fd2c59b3a">#4</a>).</p>
+</li>
+<li>
+<p>Fixed bugs discovered by PE Dry Run (<a href="https://github.com/DANamic/ped/issues/1">#1</a>, <a href="https://github.com/DANamic/ped/issues/2">#2</a>, <a href="https://github.com/DANamic/ped/issues/3">#3</a>, <a href="https://github.com/DANamic/ped/issues/4">#4</a>, <a href="https://github.com/DANamic/ped/issues/5">#5</a>, <a href="https://github.com/DANamic/ped/issues/6">#6</a>, <a href="https://github.com/DANamic/ped/issues/7">#7</a>, <a href="https://github.com/DANamic/ped/issues/8">#8</a>, <a href="https://github.com/DANamic/ped/issues/9">#9</a>).</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Tools:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Integrated continuous integration to the project (<a href="https://github.com/AY1920S2-CS2103T-W13-4/main/pull/1">#1</a>).</p>
 </li>
 </ul>
 </div>
@@ -132,7 +202,7 @@
 </div>
 </div>
 <div class="sect1">
-<h2 id="contributions-to-the-user-guide-in-draft"><a class="link" href="#contributions-to-the-user-guide-in-draft">Contributions to the User Guide [IN DRAFT]</a></h2>
+<h2 id="contributions-to-the-user-guide"><a class="link" href="#contributions-to-the-user-guide">Contributions to the User Guide</a></h2>
 <div class="sectionbody">
 <table class="tableblock frame-all grid-all spread">
 <colgroup>
@@ -147,7 +217,215 @@
 </div>
 </div>
 <div class="sect1">
-<h2 id="contributions-to-the-developer-guide-in-draft"><a class="link" href="#contributions-to-the-developer-guide-in-draft">Contributions to the Developer Guide [IN DRAFT]</a></h2>
+<h2 id="how-to-use-this-user-guide"><a class="link" href="#how-to-use-this-user-guide">How To Use This User Guide</a></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>NUSModPlnr is a timetable and enrollment management application, which help you add plans which consist of your degree programme and timetables for different semesters.</p>
+</div>
+<div class="exampleblock">
+<div class="content">
+<div class="paragraph">
+<p>This <strong>User Guide</strong> is designed to bring you through the following features:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Viewing Help</p>
+</li>
+<li>
+<p>Creating a New Student</p>
+</li>
+<li>
+<p>Declaring a Specialisations and Focus Areas</p>
+</li>
+<li>
+<p>Viewing and Adding Modules</p>
+</li>
+<li>
+<p>Viewing, Adding and Selecting Timetables</p>
+</li>
+<li>
+<p>Managing and Viewing Grades</p>
+</li>
+<li>
+<p>Viewing your Graduation Requirements</p>
+</li>
+<li>
+<p>Exiting the Application</p>
+</li>
+</ol>
+</div>
+</div>
+</div>
+<div class="exampleblock">
+<div class="content">
+<div class="paragraph">
+<p>Please note the following which may serve as points of interests throughout this <strong>User Guide</strong>:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p><code>keyword</code> : This grey highlight indicates commands that you can type with more info in Features.</p>
+</li>
+<li>
+<p><kbd>Enter</kbd> : This grey highlight with white outline indicates a keyboard&#8217;s key to use.</p>
+</li>
+<li>
+<p><span class="underline">underlined</span> : This underline indicates clickable links referring to other sections of this <strong>User Guide</strong>. When used in conjunction with a grey highlight (e.g. <a href="#student-active-command"><code>student active</code></a>), this indicates a clickable reference to another command.</p>
+</li>
+<li>
+<p><strong>bold</strong> : This bold font indicates sections of this <strong>User Guide</strong>.</p>
+</li>
+</ol>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+This symbol and corresponding box has information that you may wish to take note of.
+</td>
+</tr>
+</table>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+This symbol and corresponding box has tips from the team, which we think might be useful for you.
+</td>
+</tr>
+</table>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="quick-start"><a class="link" href="#quick-start">Quick Start</a></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>If you are looking to jump right into the application, you can follow the below quick steps to get the application up and running:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Ensure you have Java <code>11</code> or above installed in your Computer.</p>
+</li>
+<li>
+<p>Download the latest <code>nusmodplnr.jar</code> <a href="{repoURL}/releases">here</a>.</p>
+</li>
+<li>
+<p>Copy the file to the folder you want to use as the home folder for your NUS Module Planner.</p>
+</li>
+<li>
+<p>Double-click the file to start the app. The GUI should appear in a few seconds.</p>
+</li>
+<li>
+<p>Type the command in the command box and press <kbd>Enter</kbd> to execute it.<br>
+e.g. typing <strong><code>help</code></strong> and pressing <kbd>Enter</kbd> will open the help window.</p>
+</li>
+<li>
+<p>Refer to Section 3, “Features” for details of each command.</p>
+</li>
+</ol>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+These steps are recommended only if you have experience in setting up the application for first time use, or already have a saved file you would like to continue working with.
+</td>
+</tr>
+</table>
+</div>
+<div class="sect2">
+<h3 id="degree-management"><a class="link" href="#degree-management">Degree Management</a></h3>
+<div class="paragraph">
+<p>The following commands below are part of the application&#8217;s <strong>Degree Management</strong>, which allow you to declare important details of your academic plan, such as your <a href="#glossary">majors</a> and <a href="#glossary">specialisations</a>.</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+All the following commands require a <a href="#student-management">student</a> to be selected (using the <a href="#student-active-command"><code>student active</code></a> command).
+</td>
+</tr>
+</table>
+</div>
+<div class="sect3">
+<h4 id="declaring-your-major-code-major-set-code"><a class="link" href="#declaring-your-major-code-major-set-code">Declaring your major: <code>major set</code></a></h4>
+<div class="paragraph">
+<p>You can use this command to declare the <a href="#degree-management">major</a> of your studies, which is also required for the module planning.</p>
+</div>
+<div class="paragraph">
+<p>Format: <code>major set MAJOR</code></p>
+</div>
+<div class="paragraph">
+<p>Examples:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>major set CS</code></p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect3">
+<h4 id="declaring-your-specialisation-code-specialisation-set-code"><a class="link" href="#declaring-your-specialisation-code-specialisation-set-code">Declaring your specialisation: <code>specialisation set</code></a></h4>
+<div class="paragraph">
+<p>You can use this command to declare any <a href="#degree-management">specialisations</a> in your studies, should you require them in module planning.</p>
+</div>
+<div class="paragraph">
+<p>Format: <code>specalisation set [SPEC]</code></p>
+</div>
+<div class="paragraph">
+<p>Examples:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>specialisation set algo</code></p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect3">
+<h4 id="viewing-your-degree-progression-code-major-status-code"><a class="link" href="#viewing-your-degree-progression-code-major-status-code">Viewing your degree progression: <code>major status</code></a></h4>
+<div class="paragraph">
+<p>You can use this command view your degree progression.</p>
+</div>
+<div class="paragraph">
+<p>Format: <code>major status</code></p>
+</div>
+<div class="paragraph">
+<p>Examples:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>major status</code></p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="contributions-to-the-developer-guide"><a class="link" href="#contributions-to-the-developer-guide">Contributions to the Developer Guide</a></h2>
 <div class="sectionbody">
 <table class="tableblock frame-all grid-all spread">
 <colgroup>
@@ -159,17 +437,525 @@
 </tr>
 </tbody>
 </table>
+<div class="sect2">
+<h3 id="Design-Architecture"><a class="link" href="#Design-Architecture">Architecture</a></h3>
+<div class="imageblock text-center" style="text-align: center">
+<div class="content">
+<img src="../images/ArchitectureDiagram.png" alt="ArchitectureDiagram">
+</div>
+<div class="title">Figure 1. Architecture Diagram</div>
+</div>
+<div class="paragraph">
+<p>The <strong><em>Architecture Diagram</em></strong> given above explains the high-level design of the App. Given below is a quick overview of each component.</p>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+The <code>.puml</code> files used to create diagrams in this document can be found in the <a href="{repoURL}/docs/diagrams/">diagrams</a> folder.
+Refer to the <a href="UsingPlantUml.html">Using PlantUML guide</a> to learn how to create and edit diagrams.
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p><code>Main</code> has two classes called <a href="{repoURL}/src/main/java/seedu/planner/Main.java"><code>Main</code></a> and <a href="{repoURL}/src/main/java/seedu/planner/MainApp.java"><code>MainApp</code></a>. It is responsible for,</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>At app launch: Initializes the components in the correct sequence, and connects them up with each other.</p>
+</li>
+<li>
+<p>At shut down: Shuts down the components and invokes cleanup method where necessary.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p><a href="#Design-Commons"><strong><code>Commons</code></strong></a> represents a collection of classes used by multiple other components.
+The following class plays an important role at the architecture level:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>LogsCenter</code> : Used by many classes to write log messages to the App&#8217;s log file.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>The rest of the App consists of four components.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="#Design-Ui"><strong><code>UI</code></strong></a>: The UI of the App.</p>
+</li>
+<li>
+<p><a href="#Design-Logic"><strong><code>Logic</code></strong></a>: The command executor.</p>
+</li>
+<li>
+<p><a href="#Design-Model"><strong><code>Model</code></strong></a>: Holds the data of the App in-memory.</p>
+</li>
+<li>
+<p><a href="#Design-Storage"><strong><code>Storage</code></strong></a>: Reads data from, and writes data to, the hard disk.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Each of the four components</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Defines its <em>API</em> in an <code>interface</code> with the same name as the Component.</p>
+</li>
+<li>
+<p>Exposes its functionality using a <code>{Component Name}Manager</code> class.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>For example, the <code>Logic</code> component (see the class diagram given below) defines it&#8217;s API in the <code>Logic.java</code> interface and exposes its functionality using the <code>LogicManager.java</code> class.</p>
+</div>
+<div class="imageblock" style="text-align: center">
+<div class="content">
+<img src="../images/LogicClassDiagram.png" alt="LogicClassDiagram">
+</div>
+<div class="title">Figure 2. Class Diagram of the Logic Component</div>
+</div>
+<h4 id="how-the-architecture-components-interact-with-each-other" class="discrete">How the architecture components interact with each other</h4>
+<div class="paragraph">
+<p>The <em>Sequence Diagram</em> below shows how the components interact with each other for the scenario where the user issues the command <code>student remove 1</code>.</p>
+</div>
+<div class="imageblock" style="text-align: center">
+<div class="content">
+<img src="../images/ArchitectureSequenceDiagram.png" alt="ArchitectureSequenceDiagram">
+</div>
+<div class="title">Figure 3. Component interactions for <code>student remove 1</code> command</div>
+</div>
+<div class="paragraph">
+<p>The sections below give more details of each component.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="Design-Logic"><a class="link" href="#Design-Logic">Logic Component</a></h3>
+<div id="fig-LogicClassDiagram" class="imageblock" style="text-align: center">
+<div class="content">
+<img src="../images/LogicClassDiagram.png" alt="LogicClassDiagram">
+</div>
+<div class="title">Figure 4. Structure of the Logic Component</div>
+</div>
+<div class="paragraph">
+<p><strong>API</strong> :
+<a href="{repoURL}/src/main/java/seedu/planner/logic/Logic.java"><code>Logic.java</code></a></p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p><code>Logic</code> uses the <code>PlannerParser</code> class to parse the user command.</p>
+</li>
+<li>
+<p>This results in a <code>Command</code> object which is executed by the <code>LogicManager</code>.</p>
+</li>
+<li>
+<p>The command execution can affect the <code>Model</code> (e.g. adding a Student).</p>
+</li>
+<li>
+<p>The result of the command execution is encapsulated as a <code>CommandResult</code> object which is passed back to the <code>Ui</code>.</p>
+</li>
+<li>
+<p>In addition, the <code>CommandResult</code> object can also instruct the <code>Ui</code> to perform certain actions, such as displaying help to the user.</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>Given below is the Sequence Diagram for interactions within the <code>Logic</code> component for the <code>execute("student remove 1")</code> API call.</p>
+</div>
+<div class="imageblock" style="text-align: center">
+<div class="content">
+<img src="../images/DeleteSequenceDiagram.png" alt="DeleteSequenceDiagram">
+</div>
+<div class="title">Figure 5. Interactions Inside the Logic Component for the <code>student remove 1</code> Command</div>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+The lifeline for <code>StudentRemoveCommandParser</code> should end at the destroy marker (X) but due to a limitation of PlantUML, the lifeline reaches the end of diagram.
+</td>
+</tr>
+</table>
+</div>
+</div>
+<div class="sect2">
+<h3 id="Implementation-GradReq"><a class="link" href="#Implementation-GradReq">Graduation Requirements Features</a></h3>
+<div class="paragraph">
+<p>The <strong>Graduation Requirements</strong> feature is what allows students to ensure that their academic plan and corresponding modules are assisting them towards fulfilling their own criteria to graduate.</p>
+</div>
+<div class="sect3">
+<h4 id="degree-management-2"><a class="link" href="#degree-management-2">Degree Management</a></h4>
+<div class="paragraph">
+<p>The Graduation Requirements are made up of 2 implemented components:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Declaration of Major:</strong> <code>major set</code></p>
+</li>
+<li>
+<p><strong>Declaration of Specialisation:</strong> <code>specialisation set</code></p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>The <code>Major</code> and <code>Specialisation</code> entities are automatically created and populated through the JSON data received from NUSMods. Furthermore, <code>Student</code> entities can only be associated in a <em>1-0..1</em> relationship with a <code>Specialisation</code> entity.</p>
+</div>
+<div class="paragraph">
+<p>The following high-level sequence diagrams illustrates the interactions between the <code>Ui</code>, <code>Logic</code> &amp; <code>Model</code> components when either a <strong>Major</strong> or <strong>Specialisation</strong> is being set:</p>
+</div>
+<div class="imageblock" style="text-align: center">
+<div class="content">
+<img src="../images/sequenceDiagramMajorSetLogicModelStorage.png" alt="sequenceDiagramMajorSetLogicModelStorage">
+</div>
+<div class="title">Figure 6. Sequence Diagram for <code>Major</code> being set, with respect to <code>MainWindow</code> from <code>Ui</code>, <code>Logic</code> &amp; <code>Model</code></div>
+</div>
+<div class="imageblock" style="text-align: center">
+<div class="content">
+<img src="../images/sequenceDiagramMajorSet.png" alt="sequenceDiagramMajorSet">
+</div>
+<div class="title">Figure 7. Sequence Diagram for <code>Major</code> being set with respect to the <code>MajorSetCommand</code></div>
+</div>
+<div class="imageblock" style="text-align: center">
+<div class="content">
+<img src="../images/sequenceDiagramSpecialisationSet.png" alt="sequenceDiagramSpecialisationSet">
+</div>
+<div class="title">Figure 8. Sequence Diagram for <code>Specialisation</code> being set (e.g. <code>AlgorithmsAndTheorySpecialisation</code>) with regards to <code>SpecialisationSetCommand</code></div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="verification-of-graduation-requirement-fulfilment"><a class="link" href="#verification-of-graduation-requirement-fulfilment">Verification of Graduation Requirement Fulfilment</a></h4>
+<div class="paragraph">
+<p>Once the <strong>Major</strong> and <strong>Specialisation</strong> (if any), or a <strong>Student</strong> is set, the following logic is used to verify if the <code>Student</code> 's <code>GraduationRequirements</code> are being met, based on the list of <code>Module</code> which which the <code>Student</code> has enrolled in:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Retrieval of the main base of the <code>GraduationRequirement</code> based on the <code>Major</code> and ultimately <code>DegreeProgram</code> of the <code>Student</code>.</p>
+</li>
+<li>
+<p>Retrieval of the list of <code>Module</code> which the <code>Student</code> has enrolled in.</p>
+</li>
+<li>
+<p>Passing in of the list of enrolled <code>Module</code> into each <code>GraduationRequirement</code> and determining if the <code>GraduationRequirement</code> has been met.</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>The modelling of the actual <strong>Graduation Requirements</strong> of NUS CS and IS undergraduate students are accomplished by making use of the various implementations of <code>GraduationRequirement</code> such as</p>
+<div class="olist lowerroman">
+<ol class="lowerroman" type="i">
+<li>
+<p><code>CompoundGraduationRequirement</code> for groups of <code>Module</code> s which a <code>Student</code> is allowed to choose from, with certain conditions for fulfilment such as:</p>
+<div class="olist upperalpha">
+<ol class="upperalpha" type="A">
+<li>
+<p>Minimum number of Modules</p>
+</li>
+<li>
+<p>Minimum number of Module Credits</p>
+</li>
+<li>
+<p>Minimum number of Modules that must be 4000-level or above</p>
+</li>
+</ol>
+</div>
+</li>
+<li>
+<p><code>SpecialisationGraduationRequirement</code> for <em>"Specialisations" or "Tracks"</em> depending on the terminology of the respective faculty that the <code>Major</code> belongs to).</p>
+</li>
+<li>
+<p><code>WildcardGraduationRequirement</code> for Requirements that need to be fulfilled from a fixed pool of <code>Module</code> s which have <code>ModuleCode</code> s starting with certain characters (<em>e.g. GEH, GES, GET</em>)</p>
+</li>
+</ol>
+</div>
+</li>
+</ol>
+</div>
+</li>
+<li>
+<p>Thereafter, the corresponding <code>Module</code> entities that have been added will be verified against the compiled <code>Graduation Requirements</code>.</p>
+</li>
+<li>
+<p>Finally, requirements that are met, are checked or crossed accordingly - which is displayed in the left-panel of the GUI.</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>The flow of how the <code>Graduation Requirements</code> is put together with information from <code>Major</code> and <code>Specialisation</code> can be found in the below class diagram:</p>
+</div>
+<div class="imageblock" style="text-align: center">
+<div class="content">
+<img src="../images/GraduationRequirementsCD-expanded.png" alt="GraduationRequirementsCD expanded">
+</div>
+<div class="title">Figure 9. Extended Class Diagram of Graduation Requirements Implementation</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="design-considerations"><a class="link" href="#design-considerations">Design Considerations</a></h4>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Alternative 1 (Current Implementation):</strong> Model real life graduation requirements in an OOP-manner with a different class for different types of requirements containing different logic determining the fulfilment of the graduation requirement, each inheriting from a base class to allow for polymorphism.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Pros: Well Structured and separates actual requirements from the model by creating classes that provide the logic needed for fulfilment calculation.</p>
+</li>
+<li>
+<p>Cons: Each Programme will have to construct it&#8217;s own combination of the various implementations <code>GraduationRequirement</code> to model actual graduation requirements.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><strong>Alternative 2:</strong> Implement each <code>DegreeProgram</code> 's graduation requirement as a class on it&#8217;s own.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Pros: Each <code>DegreeProgram</code> can have the flexibility of customising fulfilment logic.</p>
+</li>
+<li>
+<p>Cons: Duplicate codes due to many classes may have the same fulfilment logic, but different data.</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="logging"><a class="link" href="#logging">Logging</a></h3>
+<div class="paragraph">
+<p>We are using <code>java.util.logging</code> package for logging. The <code>LogsCenter</code> class is used to manage the logging levels and logging destinations.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>The logging level can be controlled using the <code>logLevel</code> setting in the configuration file (See <a href="#Backend-Configuration">[Backend-Configuration]</a>)</p>
+</li>
+<li>
+<p>The <code>Logger</code> for a class can be obtained using <code>LogsCenter.getLogger(Class)</code> which will log messages according to the specified logging level</p>
+</li>
+<li>
+<p>Currently log messages are output through: <code>Console</code> and to a <code>.log</code> file.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p><strong>Logging Levels</strong></p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>SEVERE</code> : Critical problem detected which may possibly cause the termination of the application</p>
+</li>
+<li>
+<p><code>WARNING</code> : Can continue, but with caution</p>
+</li>
+<li>
+<p><code>INFO</code> : Information showing the noteworthy actions by the App</p>
+</li>
+<li>
+<p><code>FINE</code> : Details that is not usually noteworthy but may be useful in debugging e.g. print the actual list instead of just its size</p>
+</li>
+</ul>
+</div>
+</div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="project-granado-espada-for-sea"><a class="link" href="#project-granado-espada-for-sea">PROJECT: Granado-Espada-For-SEA</a></h2>
+<h2 id="user-stories"><a class="link" href="#user-stories">User Stories</a></h2>
 <div class="sectionbody">
-<hr>
 <div class="paragraph">
-<p>Worked on the Korean to English (SEA) locationisation of the MMORPG, <em>Granado Espada</em>.</p>
+<p>Priorities: High (must have) - <code>* * *</code>, Medium (nice to have) - <code>* *</code>, Low (unlikely to have) - <code>*</code></p>
 </div>
-<div class="paragraph">
-<p>A link to the <a href="https://github.com/DANamic/Granado-Espada-for-SEA">repo can be found here</a>!</p>
+<table class="tableblock frame-all grid-all" style="width: 59%;">
+<colgroup>
+<col style="width: 22%;">
+<col style="width: 23%;">
+<col style="width: 25%;">
+<col style="width: 30%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Priority</th>
+<th class="tableblock halign-left valign-top">As a &#8230;&#8203;</th>
+<th class="tableblock halign-left valign-top">I want to &#8230;&#8203;</th>
+<th class="tableblock halign-left valign-top">So that I &#8230;&#8203;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>* * *</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">freshman</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">declare what my major is</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">get the right graduation requirements to follow</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>* * *</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">freshman</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">declare what I am exempted from (e.g. Polytechnic Exemptions)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">am not recommended modules that I am exempted from</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>* * *</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">freshman</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">declare what tracks/specializations (Focus Areas) I am interested/am taking</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">am given recommendations that will fulfill the requirements of that track/specialization</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>* * *</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">current undergraduate student</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">view the list of modules which I have taken</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">can remember what modules I have taken</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>* * *</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">current undergraduate student</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">view the list of modules which I have declared exempted from</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">can remember what modules I am exempted from</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>* * *</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">freshman</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">see a list of all available modules in NUS</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">can see what modules is available for me to take</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>* * *</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">current undergraduate student</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">enter the grades I got for each module</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">can view my Cumulative Average Point (CAP) for each and all semesters</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>* * *</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">current undergraduate student</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">can see if a module is being offered in a semester that I want</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">can plan my academic plan correctly</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>* * *</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">current undergraduate student</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">see the list of grades I obtained for each module</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">can have a better understanding of my academic performance</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>* *</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">current undergraduate student in-residence</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">declare that I am part of a Residential College program</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">am given recommendations that take into account UTCP modules</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>* *</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">current undergraduate student</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">declare my intention of overloading modules</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">am given recommendations to graduate faster</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>* *</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">current undergraduate student</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">declare my intention of underloading modules</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">am given recommendations to graduate faster</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>* *</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">freshman</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">verify if I can graduate on time given currently selected modules</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">am given recommendations of feasible modules to take</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>* *</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">current undergraduate student</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">check which lecturer is teaching the module</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">can decide if I should take that module in that semester</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>* *</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">current undergraduate student with NOC acceptance</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">declare that I am part of NOC programme</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">can count NOC modules towards my graduation requirements</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>* *</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">current undergraduate student with USP acceptance</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">declare that I am part of the university scholar programme</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">can replace my requirements for graduation with USP modules</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>* *</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">current undergraduate student</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">can check the venue of the class</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">can plan my traveling route during module planning</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>* *</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">current undergraduate student</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">change the colours of the module planner for customizable</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">can enjoy dark theme</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>* *</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">current undergraduate student on internship</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">declare when I would like to undergo an internship</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">can plan the timing of my modules</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>* *</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">current undergraduate student</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">view changes in Grade Point Average (GPA) according to projected grades</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">can have a better understanding of my academic performance</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>* *</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">freshman</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">automatically select non-conflicting lecture and tutorial slots based on preferences</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">can create usable timetables based on my preferences</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>*</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">current undergraduate student on exchange</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">set the module to be non graded to pass or fail</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">can set the overseas module to be pass or fail without affecting my CAP</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>*</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">freshman</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">declare what my minor(s) is/are</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">get the right graduation requirements to follow</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>*</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">current undergraduate student</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">see which pathways would be more challenging (i.e. Level 3K, 4K, 5K modules)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">can choose a better course pathway in terms of maximising GPA/fulfilling course requirements</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>*</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">freshman</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">set preferences (e.g. ‘free’ days/only after 12 PM) in order to automatically organise the timetable</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">have an efficient and personalised timetable</p>
+<p class="tableblock">== PROJECT: Granado-Espada-For-SEA</p>
+<p class="tableblock">---</p>
+<p class="tableblock">Worked on the Korean to English (SEA) locationisation of the MMORPG, <em>Granado Espada</em>.</p>
+<p class="tableblock">A link to the <a href="https://github.com/DANamic/Granado-Espada-for-SEA">repo can be found here</a>!</p></td>
+</tr>
+</tbody>
+</table>
 </div>
-</div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2020-04-12 04:33:47 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2020-04-12 04:33:59 UTC</div></div></div></body></html>
