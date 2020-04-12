@@ -314,7 +314,7 @@ Before you dive into the commands themselves, do familiarise yourself with how t
 <p>Items in square brackets are optional (e.g <code>module grade CS2103T [grade/GRADE]</code> can be used as <code>module grade CS2103T grade/A+</code> or as <code>module grade CS2103T</code>).</p>
 </li>
 <li>
-<p>Items with <code>…</code>​ after them can be used multiple times including zero times (e.g. <code>[t/TAG]&#8230;&#8203;</code> can be used as <code>&#160;</code> (i.e. 0 times), <code>t/friend</code>, <code>t/friend t/family</code> etc).</p>
+<p>Items surrounded by <code>&lt;</code> and <code>&gt;</code> can be used any positive number of times (at least once, e.g. <code>&lt;MODULE_CODE&gt;</code> can be used as <code>CS2040</code> (1 time), <code>CS2040 CS2030 CS2103T</code> (3 times), etc).</p>
 </li>
 <li>
 <p>Parameters can be in any order (e.g. if the command specifies <code>n/NAME major/MAJOR</code>, <code>major/MAJOR n/NAME</code> is also acceptable).</p>
@@ -959,10 +959,10 @@ All the following commands require a <a href="#timetable-management">timetable</
 <div class="sect3">
 <h4 id="adding-a-module-code-module-add-code"><a class="anchor" href="#adding-a-module-code-module-add-code"></a><a class="link" href="#adding-a-module-code-module-add-code">4.7.1. Adding a module: <code>module add</code></a></h4>
 <div class="paragraph">
-<p>You can use this command to add a <a href="#module-management">module</a> to your <a href="#timetable-management">timetable</a>  for the selected <a href="#common-parameter-list">semester</a> (see the <a href="#timetable-active-command"><code>timetable active</code></a> command) and <a href="#student-management">student</a> (see the <a href="#student-active-command"><code>student active</code></a> command).</p>
+<p>You can use this command to add a number of <a href="#module-management">modules</a> to your <a href="#timetable-management">timetable</a>  for the selected <a href="#common-parameter-list">semester</a> (see the <a href="#timetable-active-command"><code>timetable active</code></a> command) and <a href="#student-management">student</a> (see the <a href="#student-active-command"><code>student active</code></a> command).</p>
 </div>
 <div class="paragraph">
-<p>Format: <code>module add MODULE_CODE</code></p>
+<p>Format: <code>module add &lt;MODULE_CODE&gt;</code></p>
 </div>
 <div class="paragraph">
 <p>Example:</p>
@@ -972,16 +972,19 @@ All the following commands require a <a href="#timetable-management">timetable</
 <li>
 <p><code>module add CS2040</code></p>
 </li>
+<li>
+<p><code>module add CS2040 CS2103T CS2101</code></p>
+</li>
 </ul>
 </div>
 </div>
 <div class="sect3">
 <h4 id="removing-a-module-code-module-remove-code"><a class="anchor" href="#removing-a-module-code-module-remove-code"></a><a class="link" href="#removing-a-module-code-module-remove-code">4.7.2. Removing a module: <code>module remove</code></a></h4>
 <div class="paragraph">
-<p>You can use this command to remove a <a href="#module-management">module</a> to your <a href="#timetable-management">timetable</a> for the selected <a href="#common-parameter-list">semester</a> (see the <a href="#timetable-active-command"><code>timetable active</code></a> command) and <a href="#student-management">student</a> (see the <a href="#student-active-command"><code>student active</code></a> command).</p>
+<p>You can use this command to remove a number of <a href="#module-management">modules</a> from your <a href="#timetable-management">timetable</a> for the selected <a href="#common-parameter-list">semester</a> (see the <a href="#timetable-active-command"><code>timetable active</code></a> command) and <a href="#student-management">student</a> (see the <a href="#student-active-command"><code>student active</code></a> command).</p>
 </div>
 <div class="paragraph">
-<p>Format: <code>module remove MODULE_CODE</code></p>
+<p>Format: <code>module remove &lt;MODULE_CODE&gt;</code></p>
 </div>
 <div class="paragraph">
 <p>Example:</p>
@@ -990,6 +993,9 @@ All the following commands require a <a href="#timetable-management">timetable</
 <ul>
 <li>
 <p><code>module remove CS2040</code></p>
+</li>
+<li>
+<p><code>module remove CS2040 CS2103T CS2101</code></p>
 </li>
 </ul>
 </div>
@@ -1016,10 +1022,10 @@ All the following commands require a <a href="#timetable-management">timetable</
 <div class="sect3">
 <h4 id="exempt-add-command"><a class="anchor" href="#exempt-add-command"></a><a class="link" href="#exempt-add-command">4.7.4. Adding an exempted module: <code>exempt add</code></a></h4>
 <div class="paragraph">
-<p>You can use this command to add an exempted module for the selected <a href="#student-management">student</a> (see the <a href="#student-active-command"><code>student active</code></a> command).</p>
+<p>You can use this command to add a number of exempted modules for the selected <a href="#student-management">student</a> (see the <a href="#student-active-command"><code>student active</code></a> command).</p>
 </div>
 <div class="paragraph">
-<p>Format: <code>exempt add MODULE_CODE</code></p>
+<p>Format: <code>exempt add &lt;MODULE_CODE&gt;</code></p>
 </div>
 <div class="paragraph">
 <p>Example:</p>
@@ -1029,16 +1035,19 @@ All the following commands require a <a href="#timetable-management">timetable</
 <li>
 <p><code>exempt add CS2040</code></p>
 </li>
+<li>
+<p><code>exempt add CS2040 CS2103T CS2101</code></p>
+</li>
 </ul>
 </div>
 </div>
 <div class="sect3">
 <h4 id="removing-an-exempted-module-code-exempt-remove-code"><a class="anchor" href="#removing-an-exempted-module-code-exempt-remove-code"></a><a class="link" href="#removing-an-exempted-module-code-exempt-remove-code">4.7.5. Removing an exempted module: <code>exempt remove</code></a></h4>
 <div class="paragraph">
-<p>You can use this command to remove an exempted module from the selected <a href="#student-management">student</a> (see the <a href="#student-active-command"><code>student active</code></a> command).</p>
+<p>You can use this command to remove a number of exempted modules from the selected <a href="#student-management">student</a> (see the <a href="#student-active-command"><code>student active</code></a> command).</p>
 </div>
 <div class="paragraph">
-<p>Format: <code>exempt remove MODULE_CODE</code></p>
+<p>Format: <code>exempt remove &lt;MODULE_CODE&gt;</code></p>
 </div>
 <div class="paragraph">
 <p>Example:</p>
@@ -1047,6 +1056,9 @@ All the following commands require a <a href="#timetable-management">timetable</
 <ul>
 <li>
 <p><code>exempt remove CS2040</code></p>
+</li>
+<li>
+<p><code>exempt remove CS2040 CS2103T CS2101</code></p>
 </li>
 </ul>
 </div>
@@ -1672,4 +1684,4 @@ If you need more in-depth information on a specific command, you can <span class
 </div>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2020-04-12 09:22:43 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2020-04-12 10:15:23 UTC</div></div></div></body></html>
