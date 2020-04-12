@@ -27,7 +27,7 @@
 <div class="ulist">
 <ul>
 <li>
-<p>What it does: Allows the user to view the list of all the modules offered by NUS, including details such as Faculty, Workload, Description, Module Credits and which semesters it is offered in.</p>
+<p>What it does: Allows the user to view the list of all the modules offered by NUS, including details such as Faculty, Workload, Description, Module Credits and in which semesters it is offered.</p>
 </li>
 <li>
 <p>Justification: This feature improves the product significantly because a user can view actual accurate data of the modules currently being offered by NUS, with the latest data available.</p>
@@ -42,26 +42,77 @@
 </div>
 </li>
 <li>
-<p><strong>Major feature</strong>: Handled the storage and JSON serialisation mechanism for all models to maintain the state of the application consistent throughout different runs.</p>
+<p><strong>Major feature</strong>: Handled the storage and JSON serialisation mechanism for all models to maintain a consistent state throughout multiple runs of the application.</p>
 <div class="ulist">
 <ul>
 <li>
-<p>What it does: allows the user use the application offline, and has it&#8217;s state saved and restored upon every launch of the app. It can also allow for moving of the data across computers by moving the relevant JSON files along with the executable.</p>
+<p>What it does: Allows the user to use the application offline, and have its state saved and restored upon every launch of the app. It can also allow for moving of the data across devices by moving the relevant JSON files along with the executable.</p>
 </li>
 <li>
-<p>Justification: This feature improves the product usability significantly because a user can come back to the app across multiple stretches of time and will still be able to pick up where the user left off - a very practical scenario of a Student who wants to update his records after every semester.</p>
+<p>Justification: This feature improves the product usability significantly because a user can come back to the app across multiple stretches of time and will still be able to pick up where they left off - a very practical scenario of a Student who wants to update his records after every semester.</p>
 </li>
 <li>
-<p>Highlights: This enhancement greatly affects the overall usability of the the application and existing commands and changes to models will require modification in order to ensure that the data is stored and loaded correctly. The implementation required an in-depth analysis of how different model come together. The implementation too was challenging as it required content changes from the additions of models.</p>
+<p>Highlights: This enhancement greatly affects the overall usability of the application and existing commands and changes to models will require modification in order to ensure that the data is stored and loaded correctly. The implementation required an in-depth analysis of how different models come together. The implementation was challenging as well, as it required content changes from the additions of models.</p>
 </li>
 <li>
-<p>Credits: The original JSON Storage code used in Address Book Level 3</p>
+<p>Credits: The original JSON Storage code used in Address Book Level 3.</p>
 </li>
 </ul>
 </div>
 </li>
 <li>
-<p><strong>Minor enhancement</strong>: added a history command that allows the user to navigate to previous commands using up/down keys.</p>
+<p><strong>Major feature</strong>: Co-Developed GraduationRequirements and DegreeProgramme with @DANamic modelled after actual graduation requirements of NUS Computer Science and Information Systems undergraduate students to support complex fulfilment logic.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>What it does: Allows the users to determine if he/she has fulfilled individual graduation requirements based on his/her enrolled modules.</p>
+</li>
+<li>
+<p>Justification: This feature improves the product usability significantly by allowing users to view the modules that he/she is required to take in order to fulfil certain graduation requirements.</p>
+</li>
+<li>
+<p>Highlights: This feature <strong>is the core feature</strong> of the entire application, and is the very purpose of what the application aims to achieve - to allow students to better plan their modules better across semesters.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><strong>Major feature</strong>: Co-Developed Specialisations with @DANamic, which is modelled after actual specialisations of NUS Computer Science and Information Systems undergraduate students to support further complex fulfilment logic between Primary and Elective modules.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>What it does: Allows the users to determine if he/she has fulfilled specialisations based on his/her enrolled modules.</p>
+</li>
+<li>
+<p>Justification: This feature improves the product usability significantly by allowing users to view the modules he/she is required to take in order to fulfil certain specialisations.</p>
+</li>
+<li>
+<p>Highlights: This feature <strong>is another core feature</strong> of the entire application, complementing GraduationRequirements in order to model a Student&#8217;s constraints as accurately as possible.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><strong>Major feature</strong>: Co-Developed the foundational code for Planner and associated classes for all other advanced features to be built upon.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>What it does: Allows other developers to work with a baseline formed around the framework provided by AddressBook-Level3.</p>
+</li>
+<li>
+<p>Justification: This initial refactoring of AddressBook to Planner is important and needs to be done synchronously and before other portions of code can be developed as this forms the basis of which other features rely on.</p>
+</li>
+<li>
+<p>Highlights: This feature blocks the entire application development and needed to be completed fast, as it would have impeded the progress of my team members. As this was a lot to do at once, I have had the help of @DANamic and <a href="https://github.com/gruntultra">@gruntultra</a> in order to push this foundational code out.</p>
+</li>
+<li>
+<p>Credits: The original code from AddressBook-Level3, <a href="https://github.com/DANamic">@DANamic</a>, <a href="https://github.com/gruntultra">@gruntultra</a></p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><strong>Minor enhancement</strong>: Created helper classes to facilitate easier testing of models such as TypicalStudent and StudentBuilder.</p>
 </li>
 <li>
 <p><strong>Code contributed</strong>: Please see the <a href="++https://nus-cs2103-ay1920s2.github.io/tp-dashboard/#=undefined&amp;search=capeguy">RepoSense Report here</a>!</p>
@@ -71,11 +122,11 @@
 <div class="ulist">
 <ul>
 <li>
-<p>Project management:</p>
+<p>Project contributions:</p>
 <div class="ulist">
 <ul>
 <li>
-<p>Managed releases <code>v1.3</code> - <code>v1.5rc</code> (3 releases) on GitHub</p>
+<p>Contributed to releases <code>v1.0</code> - <code>v1.4</code> (5 releases) on GitHub</p>
 </li>
 </ul>
 </div>
@@ -85,10 +136,10 @@
 <div class="ulist">
 <ul>
 <li>
-<p>Updated the GUI color scheme (Pull requests <a href="https://github.com">#33</a>, <a href="https://github.com">#34</a>)</p>
+<p>Refactoring of AddressBook-Level3 to accommodate application use case</p>
 </li>
 <li>
-<p>Wrote additional tests for existing features to increase coverage from 88% to 92% (Pull requests <a href="https://github.com">#36</a>, <a href="https://github.com">#38</a>)</p>
+<p>Wrote additional tests for existing features to increase coverage from 88% to 92% (<a href="https://github.com/AY1920S2-CS2103T-W13-4/main/commit/de2f4905ab4fca21123e791c89f3a1492905083d">#1</a>, <a href="https://github.com/AY1920S2-CS2103T-W13-4/main/commit/b551d956232e451cd3ba28f622fc476d582d5541">#2</a>)</p>
 </li>
 </ul>
 </div>
@@ -98,7 +149,10 @@
 <div class="ulist">
 <ul>
 <li>
-<p>Did cosmetic tweaks to existing contents of the User Guide: <a href="https://github.com">#14</a></p>
+<p>Generated diagrams to enhance readability of Developer Guide</p>
+</li>
+<li>
+<p>Contributed to Features and Module Management sections of User Guide</p>
 </li>
 </ul>
 </div>
@@ -108,40 +162,36 @@
 <div class="ulist">
 <ul>
 <li>
-<p>PRs reviewed (with non-trivial review comments): <a href="https://github.com">#12</a>, <a href="https://github.com">#32</a>, <a href="https://github.com">#19</a>, <a href="https://github.com">#42</a></p>
+<p>PRs reviewed: <a href="https://github.com/AY1920S2-CS2103T-W13-4/main/pull/81">#81</a>, <a href="https://github.com/AY1920S2-CS2103T-W13-4/main/pull/85">#85</a>, <a href="https://github.com/AY1920S2-CS2103T-W13-4/main/pull/86">#86</a>, <a href="https://github.com/AY1920S2-CS2103T-W13-4/main/pull/87">#87</a>, <a href="https://github.com/AY1920S2-CS2103T-W13-4/main/pull/96">#96</a>, <a href="https://github.com/AY1920S2-CS2103T-W13-4/main/pull/97">#97</a>, <a href="https://github.com/AY1920S2-CS2103T-W13-4/main/pull/101">#101</a>, <a href="https://github.com/AY1920S2-CS2103T-W13-4/main/pull/105">#105</a>, <a href="https://github.com/AY1920S2-CS2103T-W13-4/main/pull/107">#107</a>, <a href="https://github.com/AY1920S2-CS2103T-W13-4/main/pull/108">#108</a>, <a href="https://github.com/AY1920S2-CS2103T-W13-4/main/pull/109">#109</a>, <a href="https://github.com/AY1920S2-CS2103T-W13-4/main/pull/110">#110</a>, <a href="https://github.com/AY1920S2-CS2103T-W13-4/main/pull/179">#179</a>, <a href="https://github.com/AY1920S2-CS2103T-W13-4/main/pull/185">#185</a>, <a href="https://github.com/AY1920S2-CS2103T-W13-4/main/pull/186">#186</a>, <a href="https://github.com/AY1920S2-CS2103T-W13-4/main/pull/188">#188</a>, <a href="https://github.com/AY1920S2-CS2103T-W13-4/main/pull/189">#189</a>, <a href="https://github.com/AY1920S2-CS2103T-W13-4/main/pull/194">#194</a>, <a href="https://github.com/AY1920S2-CS2103T-W13-4/main/pull/197">#197</a>, <a href="https://github.com/AY1920S2-CS2103T-W13-4/main/pull/198">#198</a>, <a href="https://github.com/AY1920S2-CS2103T-W13-4/main/pull/199">#199</a>, <a href="https://github.com/AY1920S2-CS2103T-W13-4/main/pull/203">#203</a></p>
 </li>
 <li>
-<p>Contributed to forum discussions (examples:  <a href="https://github.com">1</a>, <a href="https://github.com">2</a>, <a href="https://github.com">3</a>, <a href="https://github.com">4</a>)</p>
+<p>Reported bugs and suggestions for other teams in the class: <a href="https://github.com/Capeguy/ped/issues/1">#1</a>, <a href="https://github.com/Capeguy/ped/issues/2">#2</a>, <a href="https://github.com/Capeguy/ped/issues/3">#3</a>, <a href="https://github.com/Capeguy/ped/issues/4">#4</a>, <a href="https://github.com/Capeguy/ped/issues/5">#5</a>, <a href="https://github.com/Capeguy/ped/issues/6">#6</a>, <a href="https://github.com/Capeguy/ped/issues/7">#7</a>, <a href="https://github.com/Capeguy/ped/issues/8">#8</a>, <a href="https://github.com/Capeguy/ped/issues/9">#9</a>, <a href="https://github.com/Capeguy/ped/issues/10">#10</a>, <a href="https://github.com/Capeguy/ped/issues/11">#11</a>, <a href="https://github.com/Capeguy/ped/issues/12">#12</a>, <a href="https://github.com/Capeguy/ped/issues/13">#13</a>, <a href="https://github.com/Capeguy/ped/issues/14">#14</a>, <a href="https://github.com/Capeguy/ped/issues/15">#15</a>, <a href="https://github.com/Capeguy/ped/issues/16">#16</a></p>
 </li>
 <li>
-<p>Reported bugs and suggestions for other teams in the class (examples:  <a href="https://github.com">1</a>, <a href="https://github.com">2</a>, <a href="https://github.com">3</a>)</p>
+<p>Worked with <a href="https://github.com/DANamic">@DANamic</a> and <a href="https://github.com/gruntultra">@gruntultra</a> to perform initial codebase refactoring to allow for the easier building of features into the application <a href="https://github.com/AY1920S2-CS2103T-W13-4/main/commit/032244ae8e14d66cc9afd6dcda5a969b967e8207">#1</a>, <a href="https://github.com/AY1920S2-CS2103T-W13-4/main/commit/65f455547183c96bf1ec035a642ce29ca9ae9e49">#2</a>, <a href="https://github.com/AY1920S2-CS2103T-W13-4/main/commit/e1dcbe5d9f02364ffcde773d54764b846c99ed34">#3</a>, <a href="https://github.com/AY1920S2-CS2103T-W13-4/main/commit/fbda3f9a45a4c321830907902e8900bc9c3fbbff">#4</a></p>
 </li>
 <li>
-<p>Some parts of the history feature I added was adopted by several other class mates (<a href="https://github.com">1</a>, <a href="https://github.com">2</a>)</p>
-</li>
-</ul>
-</div>
+<p>Implemented the first JSON Serializable and Adapted classes for models to be easily saved and loaded to and from JSON files, which was further used by other team members for their models, alongside ModuleDataImporterUtil to load a list of Modules from NUSMods API (<a href="https://github.com/AY1920S2-CS2103T-W13-4/main/commit/2a83ae8b8b3fbced5509e938b6eedebaa0fc8299">#1</a>, <a href="https://github.com/AY1920S2-CS2103T-W13-4/main/commit/ef252534564506a15bc216034b25dee0b400d219">#2</a>, <a href="https://github.com/AY1920S2-CS2103T-W13-4/main/commit/6a4da6c14bdef454f9474ea6fd2e8adc37e9620f">#3</a>)</p>
 </li>
 <li>
-<p>Tools:</p>
-<div class="ulist">
-<ul>
-<li>
-<p>Integrated a third party library (Natty) to the project (<a href="https://github.com">#42</a>)</p>
+<p>Written Test Cases for tests broken by refactoring (<a href="https://github.com/AY1920S2-CS2103T-W13-4/main/commit/dda0154e15e9be62854bd8e4150899655c4323f2">#1</a>)</p>
 </li>
 <li>
-<p>Integrated a new Github plugin (CircleCI) to the team repo</p>
+<p>Fixed CheckStyle issues caused by refactoring (<a href="https://github.com/AY1920S2-CS2103T-W13-4/main/commit/841f43b55ce97551731a589ece70023da4a63c47">#1</a>, <a href="https://github.com/AY1920S2-CS2103T-W13-4/main/commit/f8372ba0c54e316f74e978b00eca922231b4caf6">#2</a>, <a href="https://github.com/AY1920S2-CS2103T-W13-4/main/commit/ae9b522414e14f1e487a076c981fa8ae577a927e">#3</a>, <a href="https://github.com/AY1920S2-CS2103T-W13-4/main/commit/cdbfdc4a11b233a7cbf4137939da509fd2c59b3a">#4</a>)</p>
 </li>
-</ul>
-</div>
+<li>
+<p>Worked with <a href="https://github.com/DANamic">@DANamic</a> to develop Graduation Requirements (<a href="https://github.com/AY1920S2-CS2103T-W13-4/main/commit/dc7933eb892c49b2658aa5aaab6eab3449e929fd">#1</a>)</p>
+</li>
+<li>
+<p>Fixed bugs discovered by PE Dry Run (<a href="https://github.com/AY1920S2-CS2103T-W13-4/main/commit/86daa5c1cfdc3a603b23a52e79bb178921d0abc9">#1</a>, <a href="https://github.com/AY1920S2-CS2103T-W13-4/main/commit/f66ac1ce40faeb34f4fc2264f38d3e8d3a8634f2">#2</a>, <a href="https://github.com/AY1920S2-CS2103T-W13-4/main/commit/f9fee0888d9b1d335a8ccc7a653d0a6277f4d9ce">#3</a>, <a href="https://github.com/AY1920S2-CS2103T-W13-4/main/commit/f1c81575443ac2f4ff218b437353306047c40d8e">#4</a>)</p>
 </li>
 </ul>
 </div>
 </li>
 </ul>
 </div>
-<div class="paragraph">
-<p><em>{you can add/remove categories in the list above}</em></p>
+</li>
+</ul>
 </div>
 </div>
 </div>
@@ -161,6 +211,264 @@
 </div>
 </div>
 <div class="sect1">
+<h2 id="features"><a class="link" href="#features">Features</a></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>These are the key features that are part of the NUSModPlnr!</p>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+Before you dive into the commands themselves, do familiarise yourself with how the <strong>User Guide</strong> has been formatted in terms of the commands to key in!
+</td>
+</tr>
+</table>
+</div>
+<div class="exampleblock">
+<div class="content">
+<div class="paragraph">
+<p><strong>Command Format</strong></p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Words in <code>UPPER_CASE</code> are the parameters to be supplied by you (e.g. in <code>student add n/NAME major/MAJOR</code>, <code>NAME</code> is a parameter which can be used as <code>student add n/John Doe major/CS</code>).</p>
+</li>
+<li>
+<p>Items in square brackets are optional (e.g <code>module grade CS2103T [grade/GRADE]</code> can be used as <code>module grade CS2103T grade/A+</code> or as <code>module grade CS2103T</code>).</p>
+</li>
+<li>
+<p>Items with <code>…</code>​ after them can be used multiple times including zero times (e.g. <code>[t/TAG]&#8230;&#8203;</code> can be used as <code>&#160;</code> (i.e. 0 times), <code>t/friend</code>, <code>t/friend t/family</code> etc).</p>
+</li>
+<li>
+<p>Parameters can be in any order (e.g. if the command specifies <code>n/NAME major/MAJOR</code>, <code>major/MAJOR n/NAME</code> is also acceptable).</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="exampleblock">
+<div class="content">
+<div id="common-parameter-list" class="paragraph">
+<p><strong>Common Parameters</strong></p>
+</div>
+<div class="paragraph">
+<p>These are parameters that are commonly used in commands available in NUSModPlnr.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>MODULE_CODE</code> - a code for a module in NUS</p>
+</li>
+<li>
+<p><code>INDEX</code> - a index number of an item listed</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Must be a positive integer</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><code>LESSON_NUMBER</code> - a number for the class number for a module</p>
+</li>
+<li>
+<p><code>NAME</code> - a name of a entity</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Must be alphanumeric, spaces are allowed</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><code>SEM</code> - an academic semester</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Must be one of the following: <code>ONE</code>, <code>TWO</code>, <code>SPECIAL_ONE</code>, <code>SPECIAL_TWO</code></p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><code>YEAR</code> - a year of study (e.g. Year 1, 2, 3, 4, 5, 6)</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Must be a non-negative integer from 1 to 6</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><code>GRADE</code> a letter grade for a module</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Must be one of the following: <code>A+</code>, <code>A</code>, <code>A-</code>, <code>B+</code>, <code>B</code>, <code>B-</code>, <code>C+</code>, <code>C</code>, <code>D+</code>, <code>D</code>, <code>F</code>, <code>CS</code>, <code>CU</code>, <code>W</code>, <code>EXE</code></p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="paragraph">
+<p>Let&#8217;s begin!</p>
+</div>
+<div class="sect2">
+<h3 id="module-management"><a class="link" href="#module-management">Module Management</a></h3>
+<div class="paragraph">
+<p>The following commands below are part of the application&#8217;s <strong>Module Management</strong>, which allow you manage the modules of your academic plan.</p>
+</div>
+<div class="paragraph">
+<p>Do note that you can click on the modules to see the module description.
+When managing your <a href="#module-management">modules</a>, you will be able to see the <strong>Module View Screen</strong> (<em>Figure 2. below</em>).</p>
+</div>
+<div class="imageblock" style="text-align: left">
+<div class="content">
+<img src="../images/ModuleList.png" alt="ModuleList" width="600">
+</div>
+<div class="title">Figure 1. Home Screen View</div>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+All the following commands require a <a href="#timetable-management">timetable</a>  to be selected (using the <a href="#timetable-active-command"><code>timetable active</code></a> command).
+</td>
+</tr>
+</table>
+</div>
+<div class="sect3">
+<h4 id="adding-a-module-code-module-add-code"><a class="link" href="#adding-a-module-code-module-add-code">Adding a module: <code>module add</code></a></h4>
+<div class="paragraph">
+<p>You can use this command to add a <a href="#module-management">module</a> to your <a href="#timetable-management">timetable</a>  for the selected <a href="#common-parameter-list">semester</a> (see the <a href="#timetable-active-command"><code>timetable active</code></a> command) and <a href="#student-management">student</a> (see the <a href="#student-active-command"><code>student active</code></a> command).</p>
+</div>
+<div class="paragraph">
+<p>Format: <code>module add MODULE_CODE</code></p>
+</div>
+<div class="paragraph">
+<p>Example:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>module add CS2040</code></p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect3">
+<h4 id="removing-a-module-code-module-remove-code"><a class="link" href="#removing-a-module-code-module-remove-code">Removing a module: <code>module remove</code></a></h4>
+<div class="paragraph">
+<p>You can use this command to remove a <a href="#module-management">module</a> to your <a href="#timetable-management">timetable</a> for the selected <a href="#common-parameter-list">semester</a> (see the <a href="#timetable-active-command"><code>timetable active</code></a> command) and <a href="#student-management">student</a> (see the <a href="#student-active-command"><code>student active</code></a> command).</p>
+</div>
+<div class="paragraph">
+<p>Format: <code>module remove MODULE_CODE</code></p>
+</div>
+<div class="paragraph">
+<p>Example:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>module remove CS2040</code></p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect3">
+<h4 id="viewing-added-modules-code-module-list-code"><a class="link" href="#viewing-added-modules-code-module-list-code">Viewing added modules: <code>module list</code></a></h4>
+<div class="paragraph">
+<p>You can use this command to display a list of <a href="#module-management">modules</a> of your <a href="#timetable-management">timetable</a> for the selected <a href="#common-parameter-list">semester</a> (see the <a href="#timetable-active-command"><code>timetable active</code></a> command) and <a href="#student-management">student</a> (see the <a href="#student-active-command"><code>student active</code></a> command).</p>
+</div>
+<div class="paragraph">
+<p>Format: <code>module list</code></p>
+</div>
+<div class="paragraph">
+<p>Example:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>module list</code></p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect3">
+<h4 id="exempt-add-command"><a class="link" href="#exempt-add-command">Adding an exempted module: <code>exempt add</code></a></h4>
+<div class="paragraph">
+<p>You can use this command to add an exempted module for the selected <a href="#student-management">student</a> (see the <a href="#student-active-command"><code>student active</code></a> command).</p>
+</div>
+<div class="paragraph">
+<p>Format: <code>exempt add MODULE_CODE</code></p>
+</div>
+<div class="paragraph">
+<p>Example:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>exempt add CS2040</code></p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect3">
+<h4 id="removing-an-exempted-module-code-exempt-remove-code"><a class="link" href="#removing-an-exempted-module-code-exempt-remove-code">Removing an exempted module: <code>exempt remove</code></a></h4>
+<div class="paragraph">
+<p>You can use this command to remove an exempted module from the selected <a href="#student-management">student</a> (see the <a href="#student-active-command"><code>student active</code></a> command).</p>
+</div>
+<div class="paragraph">
+<p>Format: <code>exempt remove MODULE_CODE</code></p>
+</div>
+<div class="paragraph">
+<p>Example:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>exempt remove CS2040</code></p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect3">
+<h4 id="viewing-exempted-modules-code-exempt-list-code"><a class="link" href="#viewing-exempted-modules-code-exempt-list-code">Viewing exempted modules: <code>exempt list</code></a></h4>
+<div class="paragraph">
+<p>You can use this command to display a list of <a href="#module-management">modules</a> that you have declared as exempted.</p>
+</div>
+<div class="paragraph">
+<p>Format: <code>exempt list</code></p>
+</div>
+<div class="paragraph">
+<p>Example:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>exempt list</code></p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
 <h2 id="contributions-to-the-developer-guide"><a class="link" href="#contributions-to-the-developer-guide">Contributions to the Developer Guide</a></h2>
 <div class="sectionbody">
 <table class="tableblock frame-all grid-all spread">
@@ -173,14 +481,528 @@
 </tr>
 </tbody>
 </table>
+<div class="sect2">
+<h3 id="Design-Model"><a class="link" href="#Design-Model">Model Component</a></h3>
+<div class="sect3">
+<h4 id="planner-model"><a class="link" href="#planner-model">Planner Model</a></h4>
+<div class="imageblock" style="text-align: center">
+<div class="content">
+<img src="../images/ModelClassDiagram.png" alt="ModelClassDiagram">
+</div>
+<div class="title">Figure 2. Structure of the Model Component</div>
+</div>
+<div class="paragraph">
+<p><strong>API</strong> : <a href="{repoURL}/src/main/java/seedu/planner/model/Planner.java"><code>Planner.java</code></a></p>
+</div>
+<div class="paragraph">
+<p>The <code>Planner</code>,</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>stores a <code>UserPref</code> object that represents the user&#8217;s preferences.</p>
+</li>
+<li>
+<p>stores the Planner data such as the list of <code>Student</code>, <code>Module</code></p>
+</li>
+<li>
+<p>store an index for the currently active <code>Student</code></p>
+</li>
+<li>
+<p>store an index for the currently active <code>Semester</code></p>
+</li>
+<li>
+<p>exposes an unmodifiable <code>ObservableList&lt;Student&gt;</code> that can be 'observed' e.g. the UI can be bound to this list so that the UI automatically updates when the data in the list change.</p>
+</li>
+<li>
+<p>exposes an unmodifiable <code>ObservableList&lt;Module&gt;</code> that can be 'observed' e.g. the UI can be bound to this list so that the UI automatically updates when the data in the list change.</p>
+</li>
+<li>
+<p>does not depend on any of the other three components.</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect3">
+<h4 id="student-model"><a class="link" href="#student-model">Student Model</a></h4>
+<div class="imageblock" style="text-align: center">
+<div class="content">
+<img src="../images/ModelStudent.png" alt="ModelStudent">
+</div>
+<div class="title">Figure 3. Student Class Diagram</div>
+</div>
+<div class="paragraph">
+<p><strong>API</strong> : <a href="{repoURL}/src/main/java/seedu/planner/model/student/Student.java"><code>Student.java</code></a></p>
+</div>
+<div class="paragraph">
+<p>The <code>Student</code>,</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>stores a <code>Name</code> object that represents the Student&#8217;s Name</p>
+</li>
+<li>
+<p>stores a <code>Major</code> object that represents the Student&#8217;s Major</p>
+</li>
+<li>
+<p>stores a <code>Enrollment</code> object that represents the Student&#8217;s Name</p>
+</li>
+<li>
+<p>stores a <code>TimeTableMap</code> object that represents the Student&#8217;s TimeTables</p>
+</li>
+<li>
+<p>stores a <code>GenericSpecialisation</code> object that represents the Student&#8217;s Specialisation</p>
+</li>
+<li>
+<p>stores a <code>List&lt;Lesson&gt;</code> object that represents the Student&#8217;s currently selected Lessons</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect3">
+<h4 id="module-model"><a class="link" href="#module-model">Module Model</a></h4>
+<div class="imageblock" style="text-align: center">
+<div class="content">
+<img src="../images/ModelModule.png" alt="ModelModule">
+</div>
+<div class="title">Figure 4. Module Class Diagram</div>
+</div>
+<div class="paragraph">
+<p><strong>API</strong> : <a href="{repoURL}/src/main/java/seedu/planner/model/module/Module.java"><code>Module.java</code></a></p>
+</div>
+<div class="paragraph">
+<p>The <code>Module</code>,</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>stores a <code>ModuleCode</code> object that represents the Module&#8217;s Module Code. This is used as the key identifier between modules.</p>
+</li>
+<li>
+<p>stores a <code>List&lt;SemesterData&gt;</code> object that represents the Semester-specific data of the Module, such as Exam Dates, Exam Duration and Timetable.</p>
+</li>
+<li>
+<p>stores other <code>String</code> objects that represents the various other attributes of the Module such as:</p>
+<div class="ulist">
+<ul>
+<li>
+<p><code>acadYear</code> representing Academic Year</p>
+</li>
+<li>
+<p><code>preclusion</code> representing Precluded Modules</p>
+</li>
+<li>
+<p><code>description</code> representing Module Description</p>
+</li>
+<li>
+<p><code>title</code> representing Module Title</p>
+</li>
+<li>
+<p><code>department</code> representing Module department</p>
+</li>
+<li>
+<p><code>faculty</code> representing Module faculty</p>
+</li>
+<li>
+<p><code>workload</code> representing Module workload</p>
+</li>
+<li>
+<p><code>prerequisite</code> representing Module prerequisites</p>
+</li>
+<li>
+<p><code>moduleCredit</code> representing Module Credits</p>
+</li>
+<li>
+<p><code>prereqTree</code> representing Module prerequisite tree</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p><strong>API</strong> : <a href="{repoURL}/src/main/java/seedu/planner/commons/util/ModuleDataImporterUtil.java"><code>ModuleDataImporterUtil.java</code></a></p>
+</div>
+<div class="paragraph">
+<p>The <code>ModuleDataImporterUtil</code>,</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>is a helper class used to load Modules from a JSON file downloaded from NUSMods API</p>
+</li>
+<li>
+<p>handles the conversion of Modules from JSON format to <code>Module</code> objects using <code>JsonSerializableModule</code> and <code>JsonAdaptedModule</code></p>
+</li>
+<li>
+<p>loads <code>SemesterData</code> into each <code>Module</code></p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect3">
+<h4 id="graduation-models"><a class="link" href="#graduation-models">Graduation Models</a></h4>
+<div class="imageblock" style="text-align: center">
+<div class="content">
+<img src="../images/ModelPackageGraduation.png" alt="ModelPackageGraduation">
+</div>
+<div class="title">Figure 5. Graduation Package Class Diagram</div>
+</div>
+<div class="paragraph">
+<p><strong>API</strong> : <a href="{repoURL}/src/main/java/seedu/planner/model/graduation/"><code>Graduation Package</code></a></p>
+</div>
+<div class="paragraph">
+<p>The <code>Graduation</code> package,</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>contains a list of <code>GraduationRequirement</code> classes that represents the Modules which are required to be taken by Student in order to Graduate.</p>
+</li>
+<li>
+<p>contains an <code>AggregationType</code> class</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect3">
+<h4 id="graduation-requirement-model"><a class="link" href="#graduation-requirement-model">Graduation Requirement Model</a></h4>
+<div class="paragraph">
+<p><strong>API</strong> : <a href="{repoURL}/src/main/java/seedu/planner/model/graduation/GraduationRequirement.java"><code>GraduationRequirement.java</code></a></p>
+</div>
+<div class="paragraph">
+<p>The <code>GraduationRequirement</code> interface,</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>provides the interface of all implementations of <code>GraduationRequirement</code></p>
+</li>
+<li>
+<p>provides a helper function <code>getStatusIcon</code> to display a tick or cross depending on whether the <code>GraduationRequirement</code> is fulfilled or not.</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect3">
+<h4 id="single-graduation-requirement-model"><a class="link" href="#single-graduation-requirement-model">Single Graduation Requirement Model</a></h4>
+<div class="paragraph">
+<p><strong>API</strong> : <a href="{repoURL}/src/main/java/seedu/planner/model/graduation/SingleGraduationRequirement.java"><code>SingleGraduationRequirement.java</code></a></p>
+</div>
+<div class="paragraph">
+<p>The <code>SingleGraduationRequirement</code> class,</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>is an implementation of the interface <code>GraduationRequirement</code></p>
+</li>
+<li>
+<p>acts as a basic <code>GraduationRequirement</code> containing only a single <code>Module</code></p>
+</li>
+<li>
+<p>determines if the <code>SingleGraduationRequirement</code> is fulfilled by checking if the <code>Student</code> has enrolled in the specified <code>Module</code></p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect3">
+<h4 id="compound-graduation-requirement-model"><a class="link" href="#compound-graduation-requirement-model">Compound Graduation Requirement Model</a></h4>
+<div class="paragraph">
+<p><strong>API</strong> : <a href="{repoURL}/src/main/java/seedu/planner/model/graduation/CompoundGraduationRequirement.java"><code>CompoundGraduationRequirement.java</code></a></p>
+</div>
+<div class="paragraph">
+<p>The <code>CompoundGraduationRequirement</code> class,</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>is an implementation of the interface <code>GraduationRequirement</code></p>
+</li>
+<li>
+<p>contains a list of <code>GraduationRequirement</code> objects</p>
+</li>
+<li>
+<p>contains an <code>AggregationType</code> enum to represent how to calculate fulfillment of the <code>CompoundGraduationRequirement</code> object</p>
+</li>
+<li>
+<p>acts as a aggregator of <code>GraduationRequirement</code> representing requirements where a Student needs to complete a group of modules in certain ways such as:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>any module can be completed or</p>
+</li>
+<li>
+<p>all modules must be completed or</p>
+</li>
+<li>
+<p>completed modules must be within a specified list</p>
+</li>
+<li>
+<p>add up to a certain amount of Module Credits</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>determines if the <code>CompoundGraduationRequirement</code> is fulfilled by checking if the <code>Student</code> has fulfilled the internal list of <code>GraduationRequirement</code> stored in the <code>CompoundGraduationRequirement</code>, with checks based on the <code>AggregationType</code> specified.</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect3">
+<h4 id="specialisation-graduation-requirement-model"><a class="link" href="#specialisation-graduation-requirement-model">Specialisation Graduation Requirement Model</a></h4>
+<div class="paragraph">
+<p><strong>API</strong> : <a href="{repoURL}/src/main/java/seedu/planner/model/graduation/SpecialisationGraduationRequirement.java"><code>SpecialisationGraduationRequirement.java</code></a></p>
+</div>
+<div class="paragraph">
+<p>The <code>SpecialisationGraduationRequirement</code> class,</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>is an implementation of the interface <code>GraduationRequirement</code></p>
+</li>
+<li>
+<p>contains a list of <code>GraduationRequirement</code> objects to represent a Specialisation&#8217;s primary modules</p>
+</li>
+<li>
+<p>contains a list of <code>GraduationRequirement</code> objects to represent a Specialisation&#8217;s elective modules</p>
+</li>
+<li>
+<p>handles the calculation of fulfillment for the <code>SpecialisationGraduationRequirement</code> object based on <code>Major</code> and primary and elective modules</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="Design-Storage"><a class="link" href="#Design-Storage">Storage Component</a></h3>
+<div class="imageblock" style="text-align: center">
+<div class="content">
+<img src="../images/StorageDiagram.png" alt="StorageDiagram">
+</div>
+<div class="title">Figure 6. Structure of the Storage Component</div>
+</div>
+<div class="paragraph">
+<p><strong>API</strong> : <a href="{repoURL}/src/main/java/seedu/planner/storage/Storage.java"><code>Storage.java</code></a></p>
+</div>
+<div class="paragraph">
+<p>The <code>Storage</code> component,</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>can save <code>UserPref</code> objects in json format and read it back.</p>
+</li>
+<li>
+<p>can save the Planner data in json format and read it back.</p>
+</li>
+<li>
+<p>consists of various JSON implementations of Models</p>
+</li>
+<li>
+<p>handles the saving and loading of Models to provide stateful behaviour in the application</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Additional details on how certain Models were stored in JSON format is available at <a href="#Backend-JSON">JSON Handling &amp; Module Data Management</a>.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="Backend-JSON"><a class="link" href="#Backend-JSON">JSON Handling &amp; Module Data Management</a></h3>
+<div class="paragraph">
+<p>As mentioned in several sections (of <a href="#Implementation">[Implementation]</a>) above, NUS Module Planner has the capability to pull live data for entities, such as, <code>Major</code> and <code>Module</code>, via <strong>JSON</strong>.</p>
+</div>
+<div class="paragraph">
+<p><strong>JSON</strong> stands for <em>JavaScript Object Notation</em> and is a lightweight format for storing and transporting data. We choose this syntax as it is "self-describing" and thus, human-readable and easy to understand, while keeping our application size low.</p>
+</div>
+<div class="paragraph">
+<p><strong>Jackson</strong> is a standard JSON library for Java that contains a suite of data-processing tools, including JSON parsers and generators. Jackson is used for the JSON-related operations mentioned below.</p>
+</div>
+<div class="paragraph">
+<p>The original schema of the JSON file came from NUSMods via version 2 of their API available <a href="http://nusmods.com/api/v2">here</a>. The endpoints we used were:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>/{acadYear}/moduleInfo.json</code></p>
+</li>
+<li>
+<p><code>/{acadYear}/modules/{moduleCode}.json</code></p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>The Academic Year (<code>acadYear</code>) used is: <code>2019/2020</code>.</p>
+</div>
+<div class="paragraph">
+<p>From the JSON responses of the above API endpoints, we created several classes to help convert the JSON representation of the object into a working Java Object that the application can use, as well as the other direction which is used to stored the current state of the <code>Planner</code> in a JSON file.</p>
+</div>
+<div class="paragraph">
+<p>Such classes include:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>JsonSerializableLesson</code></p>
+</li>
+<li>
+<p><code>JsonSerializableModule</code></p>
+</li>
+<li>
+<p><code>JsonSerializablePlanner</code></p>
+</li>
+<li>
+<p><code>JsonSerializableSemesterData</code></p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>The <code>ModuleDataImporterUtil</code> is used to parsed the raw JSON files containing Module information and convert them into <code>JsonSerializableModule</code> objects which contain various attributes such as a list of <code>JsonSerializableSemesterData</code>.</p>
+</div>
+<div class="imageblock" style="text-align: center">
+<div class="content">
+<img src="../images/sequenceDiagramModuleDataImporterUtil.png" alt="sequenceDiagramModuleDataImporterUtil">
+</div>
+<div class="title">Figure 7. Sequence Diagram for a <code>run</code> operation in <code>ModuleDataImporterUtil</code></div>
+</div>
+<div class="paragraph">
+<p>The <code>LessonDataImporter</code> is used to parsed the raw JSON files containing Module-specific Lesson information and convert them into <code>JsonSerializableModule</code> objects which contain various attributes such as a list of <code>JsonSerializableLesson</code>.</p>
+</div>
+<div class="imageblock" style="text-align: center">
+<div class="content">
+<img src="../images/sequenceDiagramLessonDataImporterUtil.png" alt="sequenceDiagramLessonDataImporterUtil">
+</div>
+<div class="title">Figure 8. Sequence Diagram for a <code>run</code> operation in <code>LessonDataImporter</code></div>
+</div>
+<div class="paragraph">
+<p>The following classes are used to convert objects of various classes (such as Module, Lesson, Student) into Jackson-friendly versions.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>JsonAdaptedEnrollment</code></p>
+</li>
+<li>
+<p><code>JsonAdaptedGrade</code></p>
+</li>
+<li>
+<p><code>JsonAdaptedLesson</code></p>
+</li>
+<li>
+<p><code>JsonAdaptedModule</code></p>
+</li>
+<li>
+<p><code>JsonAdaptedModuleCode</code></p>
+</li>
+<li>
+<p><code>JsonAdaptedSemesterData</code></p>
+</li>
+<li>
+<p><code>JsonAdaptedSemesterYear</code></p>
+</li>
+<li>
+<p><code>JsonAdaptedStudent</code></p>
+</li>
+<li>
+<p><code>JsonAdaptedStudentSemester</code></p>
+</li>
+<li>
+<p><code>JsonAdaptedTimeTable</code></p>
+</li>
+<li>
+<p><code>JsonAdaptedTimeTableMap</code></p>
+</li>
+<li>
+<p><code>JsonAdaptedTimeTablePair</code></p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>When saving the <code>Planner</code>, <code>JsonSerializablePlanner</code> is used to stored all the various attributes of the <code>Planner</code> in a JSON-compatible format, such as list of <code>Student</code>, currently active <code>Student</code> index, currently active <code>SemesterYear</code>.</p>
+</div>
+</div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="project-powerpointlabs"><a class="link" href="#project-powerpointlabs">PROJECT: PowerPointLabs</a></h2>
+<h2 id="proposed-future-enhancements"><a class="link" href="#proposed-future-enhancements">Proposed Future Enhancements</a></h2>
 <div class="sectionbody">
-<hr>
 <div class="paragraph">
-<p><em>{Optionally, you may include other projects in your portfolio.}</em></p>
+<p>NUS Module Planner has a lot more potential to grow!</p>
+</div>
+<div class="paragraph">
+<p>Below are some of the other great features we think can be implemented in v2.0 onward:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Module Viewer with Search</strong> - Other than just searching for modules, search for their content instead, such as modules that deal with <em>Heat Transfer</em> or <em>Geology</em>.</p>
+</li>
+<li>
+<p><strong>Timetable Planner with Friends</strong> - Instead of just viewing timetables of different students (<em>i.e. friends</em>) separately, be able to overlay them in one <em>"Timetable View"</em>, for easier group planning.</p>
+</li>
+<li>
+<p><strong>Requirements Double-Upper</strong> - Instead of just one <code>Major</code>, handle double <code>Major</code> programme students, or even those with Minors.</p>
+</li>
+<li>
+<p><strong>Module Popularity Prediction</strong> - Get and analyse historic data from NUSMods about module uptake, so that students do not have to plan for modules that would be overly subscribed.</p>
+</li>
+<li>
+<p><strong>Support for Overseas Exchange and University Town College Programmes</strong> - Be able to plan for special modules only offered in these programmes, if a student is enrolled in them.</p>
+</li>
+<li>
+<p><strong>Live Module Data</strong> - Get the latest Module Data available from NUS Mods and plan your Semester before it starts.</p>
+</li>
+<li>
+<p><strong>Module Data History</strong> - View historical data on Module enrollments and decide if when you want to take a certain <code>Module</code>.</p>
+</li>
+</ul>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2020-04-11 18:57:08 UTC</div></div></div></body></html>
+</div>
+<div class="sect1">
+<h2 id="product-scope"><a class="link" href="#product-scope">Appendix A: Product Scope</a></h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="target-user-profile"><a class="link" href="#target-user-profile">Target User Profile</a></h3>
+<div class="ulist">
+<ul>
+<li>
+<p>targets prospective, incoming and current Undergraduate NUS Students</p>
+</li>
+<li>
+<p>needs to plan/track academic progression via enrolling and passed modules</p>
+</li>
+<li>
+<p>prefer desktop apps over other types</p>
+</li>
+<li>
+<p>can type fast</p>
+</li>
+<li>
+<p>prefers typing over mouse input</p>
+</li>
+<li>
+<p>is reasonably comfortable using CLI apps</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="value-proposition"><a class="link" href="#value-proposition">Value Proposition</a></h3>
+<div class="ulist">
+<ul>
+<li>
+<p>aggregates all information regarding modules and graduation requirements in a single app</p>
+</li>
+<li>
+<p>manages academic progress and module planning faster than a typical mouse/GUI driven app</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2020-04-12 04:33:47 UTC</div></div></div></body></html>

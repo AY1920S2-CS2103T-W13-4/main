@@ -36,7 +36,7 @@
 <li><a href="#backend-debugging">5. Backend &amp; Debugging</a>
 <ul class="sectlevel2">
 <li><a href="#Backend-Configuration">5.1. Configuration</a></li>
-<li><a href="#Backend-JSON">5.2. JSON Handling &amp; Live Data Management</a></li>
+<li><a href="#Backend-JSON">5.2. JSON Handling &amp; Module Data Management</a></li>
 <li><a href="#logging">5.3. Logging</a></li>
 <li><a href="#Backend-SubCmd">5.4. Sub-Commands</a></li>
 </ul>
@@ -124,7 +124,7 @@ As usual, if you have questions, feature suggestions or bugs to report, feel fre
 <div class="sectionbody">
 <div class="sect2">
 <h3 id="Design-Architecture"><a class="anchor" href="#Design-Architecture"></a><a class="link" href="#Design-Architecture">3.1. Architecture</a></h3>
-<div class="imageblock">
+<div class="imageblock text-center" style="text-align: center">
 <div class="content">
 <img src="images/ArchitectureDiagram.png" alt="ArchitectureDiagram">
 </div>
@@ -205,7 +205,7 @@ The following class plays an important role at the architecture level:</p>
 <div class="paragraph">
 <p>For example, the <code>Logic</code> component (see the class diagram given below) defines it&#8217;s API in the <code>Logic.java</code> interface and exposes its functionality using the <code>LogicManager.java</code> class.</p>
 </div>
-<div class="imageblock">
+<div class="imageblock" style="text-align: center">
 <div class="content">
 <img src="images/LogicClassDiagram.png" alt="LogicClassDiagram">
 </div>
@@ -215,7 +215,7 @@ The following class plays an important role at the architecture level:</p>
 <div class="paragraph">
 <p>The <em>Sequence Diagram</em> below shows how the components interact with each other for the scenario where the user issues the command <code>student remove 1</code>.</p>
 </div>
-<div class="imageblock">
+<div class="imageblock" style="text-align: center">
 <div class="content">
 <img src="images/ArchitectureSequenceDiagram.png" alt="ArchitectureSequenceDiagram">
 </div>
@@ -227,7 +227,7 @@ The following class plays an important role at the architecture level:</p>
 </div>
 <div class="sect2">
 <h3 id="Design-Ui"><a class="anchor" href="#Design-Ui"></a><a class="link" href="#Design-Ui">3.2. UI Component</a></h3>
-<div class="imageblock">
+<div class="imageblock" style="text-align: center">
 <div class="content">
 <img src="images/UiClassDiagram.png" alt="UiClassDiagram">
 </div>
@@ -258,7 +258,7 @@ The following class plays an important role at the architecture level:</p>
 </div>
 <div class="sect2">
 <h3 id="Design-Logic"><a class="anchor" href="#Design-Logic"></a><a class="link" href="#Design-Logic">3.3. Logic Component</a></h3>
-<div id="fig-LogicClassDiagram" class="imageblock">
+<div id="fig-LogicClassDiagram" class="imageblock" style="text-align: center">
 <div class="content">
 <img src="images/LogicClassDiagram.png" alt="LogicClassDiagram">
 </div>
@@ -290,7 +290,7 @@ The following class plays an important role at the architecture level:</p>
 <div class="paragraph">
 <p>Given below is the Sequence Diagram for interactions within the <code>Logic</code> component for the <code>execute("student remove 1")</code> API call.</p>
 </div>
-<div class="imageblock">
+<div class="imageblock" style="text-align: center">
 <div class="content">
 <img src="images/DeleteSequenceDiagram.png" alt="DeleteSequenceDiagram">
 </div>
@@ -313,7 +313,7 @@ The lifeline for <code>StudentRemoveCommandParser</code> should end at the destr
 <h3 id="Design-Model"><a class="anchor" href="#Design-Model"></a><a class="link" href="#Design-Model">3.4. Model Component</a></h3>
 <div class="sect3">
 <h4 id="planner-model"><a class="anchor" href="#planner-model"></a><a class="link" href="#planner-model">3.4.1. Planner Model</a></h4>
-<div class="imageblock">
+<div class="imageblock" style="text-align: center">
 <div class="content">
 <img src="images/ModelClassDiagram.png" alt="ModelClassDiagram">
 </div>
@@ -353,10 +353,11 @@ The lifeline for <code>StudentRemoveCommandParser</code> should end at the destr
 </div>
 <div class="sect3">
 <h4 id="student-model"><a class="anchor" href="#student-model"></a><a class="link" href="#student-model">3.4.2. Student Model</a></h4>
-<div class="imageblock">
+<div class="imageblock" style="text-align: center">
 <div class="content">
 <img src="images/ModelStudent.png" alt="ModelStudent">
 </div>
+<div class="title">Figure 8. Student Class Diagram</div>
 </div>
 <div class="paragraph">
 <p><strong>API</strong> : <a href="https://github.com/AY1920S2-CS2103T-W13-4/main/tree/master/src/main/java/seedu/planner/model/student/Student.java"><code>Student.java</code></a></p>
@@ -389,10 +390,11 @@ The lifeline for <code>StudentRemoveCommandParser</code> should end at the destr
 </div>
 <div class="sect3">
 <h4 id="module-model"><a class="anchor" href="#module-model"></a><a class="link" href="#module-model">3.4.3. Module Model</a></h4>
-<div class="imageblock">
+<div class="imageblock" style="text-align: center">
 <div class="content">
 <img src="images/ModelModule.png" alt="ModelModule">
 </div>
+<div class="title">Figure 9. Module Class Diagram</div>
 </div>
 <div class="paragraph">
 <p><strong>API</strong> : <a href="https://github.com/AY1920S2-CS2103T-W13-4/main/tree/master/src/main/java/seedu/planner/model/module/Module.java"><code>Module.java</code></a></p>
@@ -451,7 +453,7 @@ The lifeline for <code>StudentRemoveCommandParser</code> should end at the destr
 <p><strong>API</strong> : <a href="https://github.com/AY1920S2-CS2103T-W13-4/main/tree/master/src/main/java/seedu/planner/commons/util/ModuleDataImporterUtil.java"><code>ModuleDataImporterUtil.java</code></a></p>
 </div>
 <div class="paragraph">
-<p>The <code>ModuleDataImportUtil</code>,</p>
+<p>The <code>ModuleDataImporterUtil</code>,</p>
 </div>
 <div class="ulist">
 <ul>
@@ -469,10 +471,11 @@ The lifeline for <code>StudentRemoveCommandParser</code> should end at the destr
 </div>
 <div class="sect3">
 <h4 id="graduation-models"><a class="anchor" href="#graduation-models"></a><a class="link" href="#graduation-models">3.4.4. Graduation Models</a></h4>
-<div class="imageblock">
+<div class="imageblock" style="text-align: center">
 <div class="content">
 <img src="images/ModelPackageGraduation.png" alt="ModelPackageGraduation">
 </div>
+<div class="title">Figure 10. Graduation Package Class Diagram</div>
 </div>
 <div class="paragraph">
 <p><strong>API</strong> : <a href="https://github.com/AY1920S2-CS2103T-W13-4/main/tree/master/src/main/java/seedu/planner/model/graduation/"><code>Graduation Package</code></a></p>
@@ -526,6 +529,9 @@ The lifeline for <code>StudentRemoveCommandParser</code> should end at the destr
 <li>
 <p>acts as a basic <code>GraduationRequirement</code> containing only a single <code>Module</code></p>
 </li>
+<li>
+<p>determines if the <code>SingleGraduationRequirement</code> is fulfilled by checking if the <code>Student</code> has enrolled in the specified <code>Module</code></p>
+</li>
 </ul>
 </div>
 </div>
@@ -567,6 +573,9 @@ The lifeline for <code>StudentRemoveCommandParser</code> should end at the destr
 </ul>
 </div>
 </li>
+<li>
+<p>determines if the <code>CompoundGraduationRequirement</code> is fulfilled by checking if the <code>Student</code> has fulfilled the internal list of <code>GraduationRequirement</code> stored in the <code>CompoundGraduationRequirement</code>, with checks based on the <code>AggregationType</code> specified.</p>
+</li>
 </ul>
 </div>
 </div>
@@ -598,11 +607,11 @@ The lifeline for <code>StudentRemoveCommandParser</code> should end at the destr
 </div>
 <div class="sect2">
 <h3 id="Design-Storage"><a class="anchor" href="#Design-Storage"></a><a class="link" href="#Design-Storage">3.5. Storage Component</a></h3>
-<div class="imageblock">
+<div class="imageblock" style="text-align: center">
 <div class="content">
 <img src="images/StorageDiagram.png" alt="StorageDiagram">
 </div>
-<div class="title">Figure 8. Structure of the Storage Component</div>
+<div class="title">Figure 11. Structure of the Storage Component</div>
 </div>
 <div class="paragraph">
 <p><strong>API</strong> : <a href="https://github.com/AY1920S2-CS2103T-W13-4/main/tree/master/src/main/java/seedu/planner/storage/Storage.java"><code>Storage.java</code></a></p>
@@ -625,6 +634,9 @@ The lifeline for <code>StudentRemoveCommandParser</code> should end at the destr
 <p>handles the saving and loading of Models to provide stateful behaviour in the application</p>
 </li>
 </ul>
+</div>
+<div class="paragraph">
+<p>Additional details on how certain Models were stored in JSON format is available at <a href="#Backend-JSON">Section 5.2, &#8220;JSON Handling &amp; Module Data Management&#8221;</a>.</p>
 </div>
 </div>
 <div class="sect2">
@@ -668,7 +680,7 @@ The lifeline for <code>StudentRemoveCommandParser</code> should end at the destr
 <div class="content">
 <img src="images/CalendarActivityDiagram.png" alt="CalendarActivityDiagram">
 </div>
-<div class="title">Figure 9. Activity Diagram for launching Calendar</div>
+<div class="title">Figure 12. Activity Diagram for launching Calendar</div>
 </div>
 <div class="paragraph">
 <p>The Calendar populates each of the Label in the grid pane based on the list of <code>Lesson</code> provided by the planner.</p>
@@ -777,27 +789,75 @@ The lifeline for <code>StudentRemoveCommandParser</code> should end at the destr
 <p>The <code>Major</code> and <code>Specialisation</code> entities are automatically created and populated through the JSON data received from NUSMods. Furthermore, <code>Student</code> entities can only be associated in a <em>1-0..1</em> relationship with a <code>Specialisation</code> entity.</p>
 </div>
 <div class="paragraph">
-<p>The following high-level sequence diagram illustrates the interactions between the <code>Ui</code>, <code>Logic</code> &amp; <code>Model</code> components when either a <strong>Major</strong> or <strong>Specialisation</strong> is being set:</p>
+<p>The following high-level sequence diagrams illustrates the interactions between the <code>Ui</code>, <code>Logic</code> &amp; <code>Model</code> components when either a <strong>Major</strong> or <strong>Specialisation</strong> is being set:</p>
 </div>
 <div class="imageblock" style="text-align: center">
 <div class="content">
-<img src="images/#INSERTDIAGRAM" alt="#INSERTDIAGRAM">
+<img src="images/sequenceDiagramMajorSetLogicModelStorage.png" alt="sequenceDiagramMajorSetLogicModelStorage">
 </div>
-<div class="title">Figure 10. Sequence Diagram for Degree Management (i.e. Handling of <code>Major</code> or <code>Specialisation</code>)</div>
+<div class="title">Figure 13. Sequence Diagram for <code>Major</code> being set, with respect to <code>MainWindow</code> from <code>Ui</code>, <code>Logic</code> &amp; <code>Model</code></div>
+</div>
+<div class="imageblock" style="text-align: center">
+<div class="content">
+<img src="images/sequenceDiagramMajorSet.png" alt="sequenceDiagramMajorSet">
+</div>
+<div class="title">Figure 14. Sequence Diagram for <code>Major</code> being set with respect to the <code>MajorSetCommand</code></div>
+</div>
+<div class="imageblock" style="text-align: center">
+<div class="content">
+<img src="images/sequenceDiagramSpecialisationSet.png" alt="sequenceDiagramSpecialisationSet">
+</div>
+<div class="title">Figure 15. Sequence Diagram for <code>Specialisation</code> being set (e.g. <code>AlgorithmsAndTheorySpecialisation</code>) with regards to <code>SpecialisationSetCommand</code></div>
 </div>
 </div>
 <div class="sect3">
-<h4 id="verification-of-graduation"><a class="anchor" href="#verification-of-graduation"></a><a class="link" href="#verification-of-graduation">4.3.2. Verification of Graduation</a></h4>
+<h4 id="verification-of-graduation-requirement-fulfilment"><a class="anchor" href="#verification-of-graduation-requirement-fulfilment"></a><a class="link" href="#verification-of-graduation-requirement-fulfilment">4.3.2. Verification of Graduation Requirement Fulfilment</a></h4>
 <div class="paragraph">
-<p>Once the <strong>Major</strong> and <strong>Specialisation</strong> (if any), or a <strong>Student</strong> is set, the following logic is used to verify if the student&#8217;s <strong>Graduation Rquirements</strong> are being met, as modules are managed:</p>
+<p>Once the <strong>Major</strong> and <strong>Specialisation</strong> (if any), or a <strong>Student</strong> is set, the following logic is used to verify if the <code>Student</code> 's <code>GraduationRequirements</code> are being met, based on the list of <code>Module</code> which which the <code>Student</code> has enrolled in:</p>
 </div>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p>Retrival of the main base of the <code>Graduation Requirements</code> based on the <code>Major</code> of the <code>Student</code> entity.</p>
+<p>Retrieval of the main base of the <code>GraduationRequirement</code> based on the <code>Major</code> and ultimately <code>DegreeProgram</code> of the <code>Student</code>.</p>
 </li>
 <li>
-<p>Matching of the sub <code>Graduation Requirements</code> (which can come in the form of <em>"Specialisations" or "Tracks"</em> depending on the terminology of the respective faculty that the <code>Major</code> belongs to), of the <code>Specialisation</code> given and compiled.</p>
+<p>Retrieval of the list of <code>Module</code> which the <code>Student</code> has enrolled in.</p>
+</li>
+<li>
+<p>Passing in of the list of enrolled <code>Module</code> into each <code>GraduationRequirement</code> and determining if the <code>GraduationRequirement</code> has been met.</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>The modelling of the actual <strong>Graduation Requirements</strong> of NUS CS and IS undergraduate students are accomplished by making use of the various implementations of <code>GraduationRequirement</code> such as</p>
+<div class="olist lowerroman">
+<ol class="lowerroman" type="i">
+<li>
+<p><code>CompoundGraduationRequirement</code> for groups of <code>Module</code> s which a <code>Student</code> is allowed to choose from, with certain conditions for fulfilment such as:</p>
+<div class="olist upperalpha">
+<ol class="upperalpha" type="A">
+<li>
+<p>Minimum number of Module</p>
+</li>
+<li>
+<p>Minimum number of Module Credits</p>
+</li>
+<li>
+<p>At least a specified number of Modules with 4000-level or above</p>
+</li>
+</ol>
+</div>
+</li>
+<li>
+<p><code>SpecialisationGraduationRequirement</code> for <em>"Specialisations" or "Tracks"</em> depending on the terminology of the respective faculty that the <code>Major</code> belongs to).</p>
+</li>
+<li>
+<p><code>WildcardGraduationRequirement</code> for Requirements that need to be fulfilled from a fixed pool of <code>Module</code> s which have <code>ModuleCode</code> s starting with certain characters (such as GEH, GES, GET)</p>
+</li>
+</ol>
+</div>
+</li>
+</ol>
+</div>
 </li>
 <li>
 <p>Thereafter, the corresponding <code>Module</code> entities that have been added will be verified against the compiled <code>Graduation Requirements</code>.</p>
@@ -814,7 +874,7 @@ The lifeline for <code>StudentRemoveCommandParser</code> should end at the destr
 <div class="content">
 <img src="images/#INSERTDIAGRAM" alt="#INSERTDIAGRAM">
 </div>
-<div class="title">Figure 11. Class Diagram of Graduation Requirements Implementation</div>
+<div class="title">Figure 16. Class Diagram of Graduation Requirements Implementation</div>
 </div>
 </div>
 <div class="sect3">
@@ -822,27 +882,27 @@ The lifeline for <code>StudentRemoveCommandParser</code> should end at the destr
 <div class="ulist">
 <ul>
 <li>
-<p><strong>Alternative 1:</strong></p>
+<p><strong>Alternative 1 (Current Implementation):</strong> Model real life graduation requirements in an OOP-manner with a different class for different types of requirements containing different logic determining the fulfilment of the graduation requirement, each inheriting from a base class to allow for polymorphism.</p>
 <div class="ulist">
 <ul>
 <li>
-<p>Pros:</p>
+<p>Pros: Well Structured and separates actual requirements from the model by creating classes that provide the logic needed for fulfilment calculation.</p>
 </li>
 <li>
-<p>Cons:</p>
+<p>Cons: Each Programme will have to construct it&#8217;s own combination of the various implementations <code>GraduationRequirement</code> to model actual graduation requirements.</p>
 </li>
 </ul>
 </div>
 </li>
 <li>
-<p><strong>Alternative 2:</strong></p>
+<p><strong>Alternative 2:</strong> Implement each <code>DegreeProgram</code> 's graduation requirement as a class on it&#8217;s own.</p>
 <div class="ulist">
 <ul>
 <li>
-<p>Pros:</p>
+<p>Pros: Each <code>DegreeProgram</code> can have the flexibility of customising fulfilment logic.</p>
 </li>
 <li>
-<p>Cons:</p>
+<p>Cons: Duplicate codes due to many classes may have the same fulfilment logic, but different data.</p>
 </li>
 </ul>
 </div>
@@ -868,7 +928,7 @@ The lifeline for <code>StudentRemoveCommandParser</code> should end at the destr
 <div class="content">
 <img src="images/LessonClassDiagram.png" alt="LessonClassDiagram">
 </div>
-<div class="title">Figure 12. Class Diagram of <code>Lesson</code> Implementation</div>
+<div class="title">Figure 17. Class Diagram of <code>Lesson</code> Implementation</div>
 </div>
 <div class="paragraph">
 <p>The attributes of the <code>Lesson</code> class are retrieved from the serialised JSON file.</p>
@@ -892,7 +952,7 @@ The lifeline for <code>StudentRemoveCommandParser</code> should end at the destr
 <div class="sect4">
 <h5 id="adding-of-lesson"><a class="anchor" href="#adding-of-lesson"></a><a class="link" href="#adding-of-lesson">4.4.1.1. Adding of Lesson</a></h5>
 <div class="paragraph">
-<p>The <code>LessonAddCommandParser</code> method is called and it will get the <code>ModuleCode</code> and <code>Semester</code> provided by the arguments. It will run the <code>LessonDataImporter</code> class run method to convert the json file to <code>Lesson</code> Object. This is then added to the active student on the planner.</p>
+<p>The <code>LessonAddCommandParser</code> method is called and it will get the <code>ModuleCode</code> and <code>Semester</code> provided by the arguments. It will run the <code>LessonDataImporterUtil</code> class run method to convert the json file to <code>Lesson</code> Object. This is then added to the active student on the planner.</p>
 </div>
 </div>
 <div class="sect4">
@@ -956,7 +1016,7 @@ The lifeline for <code>StudentRemoveCommandParser</code> should end at the destr
 <div class="content">
 <img src="images/ModuleClassDiagram.png" alt="ModuleClassDiagram">
 </div>
-<div class="title">Figure 13. Class Diagram of <code>Module</code> Implementation</div>
+<div class="title">Figure 18. Class Diagram of <code>Module</code> Implementation</div>
 </div>
 <div class="paragraph">
 <p>The attributes of the <code>Module</code> class are retrieved from the serialised JSON file.</p>
@@ -977,7 +1037,7 @@ The lifeline for <code>StudentRemoveCommandParser</code> should end at the destr
 <div class="content">
 <img src="images/sequenceDiagramSearch.png" alt="sequenceDiagramSearch">
 </div>
-<div class="title">Figure 14. Sequence Diagram for Module Search</div>
+<div class="title">Figure 19. Sequence Diagram for Module Search</div>
 </div>
 <div class="paragraph">
 <p>If any results match the query enetered, they are populated into the <strong>Search Screen</strong> GUI for the user.</p>
@@ -1158,15 +1218,117 @@ The lifeline for <code>StudentRemoveCommandParser</code> should end at the destr
 </div>
 </div>
 <div class="sect2">
-<h3 id="Backend-JSON"><a class="anchor" href="#Backend-JSON"></a><a class="link" href="#Backend-JSON">5.2. JSON Handling &amp; Live Data Management</a></h3>
+<h3 id="Backend-JSON"><a class="anchor" href="#Backend-JSON"></a><a class="link" href="#Backend-JSON">5.2. JSON Handling &amp; Module Data Management</a></h3>
 <div class="paragraph">
 <p>As mentioned in several sections (of <a href="#Implementation">Section 4, &#8220;Implementation&#8221;</a>) above, NUS Module Planner has the capability to pull live data for entities, such as, <code>Major</code> and <code>Module</code>, via <strong>JSON</strong>.</p>
 </div>
 <div class="paragraph">
-<p><strong>JSON</strong> stands for <em>JavaScript Object Notation</em> and is a lightweight format for storing and transporting data. We choose this syntax as it is "self-describing" and thus, easy to understand, while keeping our application size low.</p>
+<p><strong>JSON</strong> stands for <em>JavaScript Object Notation</em> and is a lightweight format for storing and transporting data. We choose this syntax as it is "self-describing" and thus, human-readable and easy to understand, while keeping our application size low.</p>
 </div>
 <div class="paragraph">
-<p><em>We will add more about how we implemented JSON and how we get, format, read and store the data.</em></p>
+<p><strong>Jackson</strong> is a standard JSON library for Java that contains a suite of data-processing tools, including JSON parsers and generators. Jackson is used for the JSON-related operations mentioned below.</p>
+</div>
+<div class="paragraph">
+<p>The original schema of the JSON file came from NUSMods via version 2 of their API available <a href="http://nusmods.com/api/v2">here</a>. The endpoints we used were:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>/{acadYear}/moduleInfo.json</code></p>
+</li>
+<li>
+<p><code>/{acadYear}/modules/{moduleCode}.json</code></p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>The Academic Year (<code>acadYear</code>) used is: <code>2019/2020</code>.</p>
+</div>
+<div class="paragraph">
+<p>From the JSON responses of the above API endpoints, we created several classes to help convert the JSON representation of the object into a working Java Object that the application can use, as well as the other direction which is used to stored the current state of the <code>Planner</code> in a JSON file.</p>
+</div>
+<div class="paragraph">
+<p>Such classes include:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>JsonSerializableLesson</code></p>
+</li>
+<li>
+<p><code>JsonSerializableModule</code></p>
+</li>
+<li>
+<p><code>JsonSerializablePlanner</code></p>
+</li>
+<li>
+<p><code>JsonSerializableSemesterData</code></p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>The <code>ModuleDataImporterUtil</code> is used to parsed the raw JSON files containing Module information and convert them into <code>JsonSerializableModule</code> objects which contain various attributes such as a list of <code>JsonSerializableSemesterData</code>.</p>
+</div>
+<div class="imageblock" style="text-align: center">
+<div class="content">
+<img src="images/sequenceDiagramModuleDataImporterUtil.png" alt="sequenceDiagramModuleDataImporterUtil">
+</div>
+<div class="title">Figure 20. Sequence Diagram for a <code>run</code> operation in <code>ModuleDataImporterUtil</code></div>
+</div>
+<div class="paragraph">
+<p>The <code>LessonDataImporter</code> is used to parsed the raw JSON files containing Module-specific Lesson information and convert them into <code>JsonSerializableModule</code> objects which contain various attributes such as a list of <code>JsonSerializableLesson</code>.</p>
+</div>
+<div class="imageblock" style="text-align: center">
+<div class="content">
+<img src="images/sequenceDiagramLessonDataImporterUtil.png" alt="sequenceDiagramLessonDataImporterUtil">
+</div>
+<div class="title">Figure 21. Sequence Diagram for a <code>run</code> operation in <code>LessonDataImporter</code></div>
+</div>
+<div class="paragraph">
+<p>The following classes are used to convert objects of various classes (such as Module, Lesson, Student) into Jackson-friendly versions.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>JsonAdaptedEnrollment</code></p>
+</li>
+<li>
+<p><code>JsonAdaptedGrade</code></p>
+</li>
+<li>
+<p><code>JsonAdaptedLesson</code></p>
+</li>
+<li>
+<p><code>JsonAdaptedModule</code></p>
+</li>
+<li>
+<p><code>JsonAdaptedModuleCode</code></p>
+</li>
+<li>
+<p><code>JsonAdaptedSemesterData</code></p>
+</li>
+<li>
+<p><code>JsonAdaptedSemesterYear</code></p>
+</li>
+<li>
+<p><code>JsonAdaptedStudent</code></p>
+</li>
+<li>
+<p><code>JsonAdaptedStudentSemester</code></p>
+</li>
+<li>
+<p><code>JsonAdaptedTimeTable</code></p>
+</li>
+<li>
+<p><code>JsonAdaptedTimeTableMap</code></p>
+</li>
+<li>
+<p><code>JsonAdaptedTimeTablePair</code></p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>When saving the <code>Planner</code>, <code>JsonSerializablePlanner</code> is used to stored all the various attributes of the <code>Planner</code> in a JSON-compatible format, such as list of <code>Student</code>, currently active <code>Student</code> index, currently active <code>SemesterYear</code>.</p>
 </div>
 </div>
 <div class="sect2">
@@ -1264,6 +1426,12 @@ The lifeline for <code>StudentRemoveCommandParser</code> should end at the destr
 </li>
 <li>
 <p><strong>Support for Overseas Exchange and University Town College Programmes</strong> - Be able to plan for special modules only offered in these programmes, if a student is enrolled in them.</p>
+</li>
+<li>
+<p><strong>Live Module Data</strong> - Get the latest Module Data available from NUS Mods and plan your Semester before it starts.</p>
+</li>
+<li>
+<p><strong>Module Data History</strong> - View historical data on Module enrollments and decide if when you want to take a certain <code>Module</code>.</p>
 </li>
 </ul>
 </div>
@@ -2631,4 +2799,4 @@ Expected: Shows the GUI with a set of sample plans.</p>
 </div>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2020-04-11 18:57:08 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2020-04-12 04:33:47 UTC</div></div></div></body></html>
