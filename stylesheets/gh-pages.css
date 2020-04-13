@@ -204,6 +204,10 @@ table.tableblock > .title,
 
 /* Do not display site header on print mediums */
 @media print {
+    a[href]:after {
+        content:none !important;
+    }
+
     #seedu-header {
         display: none;
     }
